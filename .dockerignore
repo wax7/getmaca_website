@@ -1,0 +1,14 @@
+.git
+.gitignore
+.github
+logs
+node_modules
+dist
+build
+*.md
+*.log
+.DS_Store
+.vscode
+.env
+.env.*
+docker-compose.yml
