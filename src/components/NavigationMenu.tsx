@@ -11,7 +11,7 @@ interface NavigationMenuProps {
 }
 
 export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode }: NavigationMenuProps) {
-  const appStoreUrl = "https://apps.apple.com/app/maca-audio-mixer";
+  const appStoreUrl = "https://apps.apple.com/us/app/maca-master-audio-control/id6759258773";
 
   const menuItems = {
     de: {
