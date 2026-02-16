@@ -4,6 +4,7 @@
 logs
 node_modules
 dist
+build
 *.md
 *.log
 .DS_Store

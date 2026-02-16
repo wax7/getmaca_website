@@ -25,8 +25,8 @@ LABEL org.opencontainers.image.source="https://github.com/wax7/Multilingualmarke
 COPY nginx/nginx.conf  /etc/nginx/nginx.conf
 COPY nginx/conf.d/     /etc/nginx/conf.d/
 
-# Statische Build-Artefakte aus Stage 1
-COPY --from=build /app/dist /usr/share/nginx/html
+# Statische Build-Artefakte aus Stage 1 (outDir: 'build' in vite.config.ts)
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Log-Verzeichnis vorbereiten (wird zur Laufzeit per Volume überschrieben)
 RUN mkdir -p /var/log/nginx && \
