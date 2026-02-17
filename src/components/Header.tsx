@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Volume2, Moon, Sun, Star, Menu } from 'lucide-react';
 import { ReactNode, useState } from 'react';
+import { Link, useParams } from 'react-router';
 import type { Language } from '../locales/translations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { NavigationMenu } from './NavigationMenu';
@@ -33,7 +34,7 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-3">
+              <Link to={`/${currentLang}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <ImageWithFallback
                   src={macaAppLogo}
                   alt="MACA"
@@ -43,7 +44,7 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
                   <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">MACA</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400 -mt-1">{badge}</span>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="flex items-center gap-3">
               {onToggleDarkMode && (

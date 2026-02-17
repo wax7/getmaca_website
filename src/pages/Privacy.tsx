@@ -340,21 +340,6 @@ export function Privacy() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to={`/${currentLang}/feedback`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Feedback & Bugs' :
-                     currentLang === 'es' ? 'Comentarios y errores' :
-                     currentLang === 'fr' ? 'Commentaires et bugs' :
-                     currentLang === 'it' ? 'Feedback e bug' :
-                     currentLang === 'pt' ? 'Feedback e bugs' :
-                     currentLang === 'ja' ? 'フィードバックとバグ' :
-                     currentLang === 'zh' ? '反馈和错误' :
-                     'Feedback & Bugs'}
-                  </Link>
-                </li>
-                <li>
                   <a href="mailto:Support@getmaca.de" className="hover:text-white transition-colors">
                     Support@getmaca.de
                   </a>
