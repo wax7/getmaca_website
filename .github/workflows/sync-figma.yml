@@ -1,0 +1,134 @@
+name: Sync Figma Files from Testweb
+
+on:
+  # Manuell auslösbar in GitHub Actions UI
+  workflow_dispatch:
+
+  # Alle 15 Minuten prüfen ob Testweb neue Commits hat
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout getmaca_website (Produktion)
+        uses: actions/checkout@v4
+        with:
+          path: production
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Testweb (Figma Source)
+        uses: actions/checkout@v4
+        with:
+          repository: wax7/Testweb
+          path: figma
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for Figma changes
+        id: check
+        run: |
+          # Letzten synced Commit merken (falls Datei existiert)
+          LAST_SYNC=""
+          if [ -f production/.figma-last-sync ]; then
+            LAST_SYNC=$(cat production/.figma-last-sync)
+          fi
+
+          # Aktuellen Figma Commit holen
+          CURRENT=$(cd figma && git rev-parse HEAD)
+          echo "current=$CURRENT" >> "$GITHUB_OUTPUT"
+
+          if [ "$LAST_SYNC" = "$CURRENT" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "✅ Keine neuen Figma-Änderungen (letzter Sync: $CURRENT)"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "🔄 Neue Figma-Änderungen gefunden! Sync von $LAST_SYNC → $CURRENT"
+          fi
+
+      - name: Sync Figma files
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd production
+
+          echo "📁 Synce Figma-Dateien..."
+
+          # ── 1) src/ komplett übernehmen (Figma-Hauptinhalt) ──
+          rm -rf src/
+          cp -r ../figma/src/ src/
+
+          # ── 2) index.html übernehmen ──
+          if [ -f ../figma/index.html ]; then
+            cp ../figma/index.html index.html
+          fi
+
+          # ── 3) public/ Ordner übernehmen (falls vorhanden) ──
+          if [ -d ../figma/public ]; then
+            rm -rf public/
+            cp -r ../figma/public/ public/
+          fi
+
+          # ── 4) package.json: Figma-Dependencies übernehmen, ──
+          #        aber unsere Scripts + devDependencies behalten
+          if [ -f ../figma/package.json ]; then
+            # Installiere jq für JSON-Merge
+            sudo apt-get -qq install -y jq > /dev/null 2>&1
+
+            # Figma-Dependencies extrahieren
+            FIGMA_DEPS=$(jq '.dependencies // {}' ../figma/package.json)
+
+            # In unser package.json mergen (überschreibt nur dependencies)
+            jq --argjson deps "$FIGMA_DEPS" '.dependencies = $deps' package.json > package.json.tmp
+            mv package.json.tmp package.json
+          fi
+
+          # ── 5) vite.config.ts übernehmen, aber outDir: 'build' sichern ──
+          if [ -f ../figma/vite.config.ts ]; then
+            cp ../figma/vite.config.ts vite.config.ts
+
+            # Sicherstellen dass outDir: 'build' gesetzt ist
+            if grep -q "outDir:" vite.config.ts; then
+              # outDir bereits vorhanden → auf 'build' setzen
+              sed -i "s/outDir:.*$/outDir: 'build',/" vite.config.ts
+            else
+              # outDir fehlt → nach 'build: {' einfügen
+              sed -i "/build: {/a\\      target: 'esnext',\n      outDir: 'build'," vite.config.ts
+            fi
+          fi
+
+          # ── 6) Letzten Sync-Commit merken ──
+          echo "${{ steps.check.outputs.current }}" > .figma-last-sync
+
+          echo "✅ Sync abgeschlossen!"
+          echo ""
+          echo "📋 Geschützte Dateien (NICHT verändert):"
+          echo "   - Dockerfile"
+          echo "   - docker-compose.yml"
+          echo "   - nginx/"
+          echo "   - .github/workflows/deploy.yml"
+          echo "   - tsconfig.json / tsconfig.node.json"
+          echo "   - .dockerignore / .gitignore"
+
+      - name: Commit & Push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd production
+          git config user.name "Figma Sync Bot"
+          git config user.email "figma-sync@getmaca.de"
+
+          git add -A
+
+          # Nur committen wenn es tatsächlich Änderungen gibt
+          if git diff --staged --quiet; then
+            echo "ℹ️ Keine Datei-Änderungen nach Sync."
+          else
+            FIGMA_SHORT="${{ steps.check.outputs.current }}"
+            FIGMA_SHORT="${FIGMA_SHORT:0:7}"
+            git commit -m "feat: sync Figma design update (${FIGMA_SHORT})"
+            git push
+            echo "✅ Figma-Update gepusht! Deploy-Workflow wird automatisch gestartet."
+          fi
