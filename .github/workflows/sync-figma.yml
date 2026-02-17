@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: production
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Testweb (Figma Source, public)
         uses: actions/checkout@v4
@@ -42,22 +43,26 @@ jobs:
 
           if [ "$LAST_SYNC" = "$CURRENT" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "✅ Keine neuen Figma-Änderungen (letzter Sync: $CURRENT)"
+            echo "Keine neuen Figma-Aenderungen (letzter Sync: $CURRENT)"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "🔄 Neue Figma-Änderungen gefunden! Sync von $LAST_SYNC → $CURRENT"
+            echo "Neue Figma-Aenderungen gefunden! Sync von $LAST_SYNC zu $CURRENT"
           fi
 
       - name: Sync Figma files
         if: steps.check.outputs.changed == 'true'
         run: |
+          set -e
           cd production
 
-          echo "📁 Synce Figma-Dateien..."
+          echo "Synce Figma-Dateien..."
 
-          # ── 1) src/ komplett übernehmen (Figma-Hauptinhalt) ──
-          rm -rf src/
-          cp -r ../figma/src/ src/
+          # 1) src/ komplett uebernehmen
+          if [ -d ../figma/src ]; then
+            rm -rf src/
+            cp -r ../figma/src/ src/
+            echo "src/ synced"
+          fi
 
           # ── 2) index.html übernehmen ──
           if [ -f ../figma/index.html ]; then
@@ -101,15 +106,7 @@ jobs:
           # ── 6) Letzten Sync-Commit merken ──
           echo "${{ steps.check.outputs.current }}" > .figma-last-sync
 
-          echo "✅ Sync abgeschlossen!"
-          echo ""
-          echo "📋 Geschützte Dateien (NICHT verändert):"
-          echo "   - Dockerfile"
-          echo "   - docker-compose.yml"
-          echo "   - nginx/"
-          echo "   - .github/workflows/deploy.yml"
-          echo "   - tsconfig.json / tsconfig.node.json"
-          echo "   - .dockerignore / .gitignore"
+          echo "Sync abgeschlossen!"
 
       - name: Commit & Push
         if: steps.check.outputs.changed == 'true'
@@ -122,11 +119,10 @@ jobs:
 
           # Nur committen wenn es tatsächlich Änderungen gibt
           if git diff --staged --quiet; then
-            echo "ℹ️ Keine Datei-Änderungen nach Sync."
+            echo "Keine Datei-Aenderungen nach Sync."
           else
-            FIGMA_SHORT="${{ steps.check.outputs.current }}"
-            FIGMA_SHORT="${FIGMA_SHORT:0:7}"
+            FIGMA_SHORT=$(echo "${{ steps.check.outputs.current }}" | cut -c1-7)
             git commit -m "feat: sync Figma design update (${FIGMA_SHORT})"
             git push
-            echo "✅ Figma-Update gepusht! Deploy-Workflow wird automatisch gestartet."
+            echo "Figma-Update gepusht!"
           fi
