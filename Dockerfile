@@ -19,7 +19,7 @@ FROM nginx:1.27-alpine
 
 LABEL maintainer="wax7"
 LABEL description="GetMaca Website – getmaca.de"
-LABEL org.opencontainers.image.source="https://github.com/wax7/Multilingualmarketingwebsite"
+LABEL org.opencontainers.image.source="https://github.com/wax7/getmaca_website"
 
 # Nginx-Konfiguration
 COPY nginx/nginx.conf  /etc/nginx/nginx.conf

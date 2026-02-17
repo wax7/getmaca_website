@@ -1,6 +1,6 @@
 services:
   website:
-    image: ghcr.io/wax7/multilingualmarketingwebsite:latest
+    image: ghcr.io/wax7/getmaca_website:latest
     container_name: getmaca-website
     restart: unless-stopped
 
