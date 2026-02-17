@@ -5,9 +5,9 @@ services:
     restart: unless-stopped
 
     # Port-Mapping: Container 80 → Host 4000
-    # NPM (Nginx Proxy Manager) proxied dann zu 127.0.0.1:4000
+    # NPM (Nginx Proxy Manager) proxied über Docker-Bridge (172.18.0.1:4000)
     ports:
-      - "127.0.0.1:4000:80"
+      - "172.18.0.1:4000:80"
 
     # Bind-Mount für Logs → Fail2ban auf dem Host kann diese lesen
     volumes:
