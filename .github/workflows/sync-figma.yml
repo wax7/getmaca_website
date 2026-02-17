@@ -123,6 +123,7 @@ jobs:
           else
             FIGMA_SHORT=$(echo "${{ steps.check.outputs.current }}" | cut -c1-7)
             git commit -m "feat: sync Figma design update (${FIGMA_SHORT})"
+            git pull --rebase origin main
             git push
             echo "Figma-Update gepusht!"
           fi
