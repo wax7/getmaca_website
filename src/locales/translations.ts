@@ -212,19 +212,19 @@ export const translations: Record<Language, Translation> = {
         description: 'Kill the sound of any app instantly without touching its volume. Perfect for interruptions, ads, or unexpected calls.',
       },
       focusMode: {
-        title: 'Modo de Enfoque',
-        description: 'Preconfigurado para más de 100 aplicaciones de comunicación (Teams, Discord, Zoom, FaceTime y más). Silencia todas las demás aplicaciones con un clic o atajo de teclado. Sin música que distraiga durante las reuniones.',
+        title: 'Focus Mode',
+        description: 'Pre-configured for 100+ communication apps (Teams, Discord, Zoom, FaceTime, and more). Mute all other apps with one click or keyboard shortcut. No distracting music during meetings.',
       },
       audioProfiles: {
-        title: 'Smarte Profile',
-        description: 'Work. Gaming. Musikproduktion. Erstelle eigene Audio-Setups und wechsle sofort zwischen ihnen. Dein perfekter Sound, immer nur einen Klick entfernt.',
+        title: 'Smart Profiles',
+        description: 'Work. Gaming. Music Production. Create custom audio setups and switch between them instantly. Your perfect sound, always one click away.',
       },
       keyboardShortcuts: {
-        title: 'Tastatur-Power',
-        description: 'Steuere alles, ohne die Hände zu heben. Eigene Shortcuts für Stummschaltung, Lautstärke und Profilwechsel. Maximale Effizienz.',
+        title: 'Keyboard Power',
+        description: 'Control everything without lifting your hands. Custom shortcuts for muting, volume, and profile switching. Maximum efficiency.',
       },
       nativeDesign: {
-        title: 'Echtes macOS Native',
+        title: 'Native macOS Design',
         description: 'Built exclusively for Mac. No ugly interfaces, no system bloat, no kernel extensions. Just clean, fast, native macOS perfection.',
       },
       magicBoost: {
@@ -233,15 +233,15 @@ export const translations: Record<Language, Translation> = {
       },
     },
     useCases: {
-      title: 'Perfekt für deinen Workflow',
-      designerTitle: 'Für Designer',
-      designer: 'Perfekt für Designer, die Musik während Video-Meetings brauchen',
-      producerTitle: 'Für Musik-Produzenten',
-      producer: 'Unverzichtbar für Produzenten mit mehreren Audio-Quellen',
-      developerTitle: 'Für Entwickler',
-      developer: 'Ideal für Developer mit Musik, Docs und Standups gleichzeitig',
-      remoteTitle: 'Für Remote-Worker',
-      remote: 'Ein Muss für Remote-Worker, die Calls und Content jonglieren',
+      title: 'Who Uses MACA?',
+      designerTitle: 'Designers & Creators',
+      designer: 'Spotify playing, Adobe open, video calls on standby. Perfect audio levels without the hassle.',
+      producerTitle: 'Producers & Musicians',
+      producer: 'DAW at 80%, samples at 70%, references at 60%. Full control for mixing and producing without distraction.',
+      developerTitle: 'Developers & Coders',
+      developer: 'Music for focus, Stack Overflow open, notifications silenced. Code with the perfect soundtrack.',
+      remoteTitle: 'Remote Workers',
+      remote: 'Zoom at 100%, music at 30%, notifications at 0%. Meetings without interruptions.',
     },
     devices: {
       headphones: 'Headphones',
@@ -267,7 +267,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Why Not Other Tools?',
       subtitle: 'Compare MACA with popular alternatives',
-      macaPrice: '$14.99',
+      macaPrice: 'In-App Purchase',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -331,7 +331,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'In-App Purchase',
         features: [
           'Unlimited apps',
           'All Free features',
@@ -341,7 +341,7 @@ export const translations: Record<Language, Translation> = {
           'Unlimited custom EQ presets',
           'One-time payment • No subscription'
         ],
-        cta: 'Upgrade to Pro',
+        cta: 'Download on App Store',
         badge: 'Most Popular',
       },
     },
@@ -464,7 +464,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Warum nicht andere Tools?',
       subtitle: 'MACA mit beliebten Alternativen vergleichen',
-      macaPrice: '$14.99',
+      macaPrice: 'In-App-Kauf',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -528,7 +528,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'In-App-Kauf',
         features: [
           'Unbegrenzte Apps',
           'Alle Funktionen von Kostenlos',
@@ -538,7 +538,7 @@ export const translations: Record<Language, Translation> = {
           'Unbegrenzte benutzerdefinierte EQ-Voreinstellungen',
           'Einmalzahlung • Kein Abo'
         ],
-        cta: 'Auf Pro upgraden',
+        cta: 'Im App Store laden',
         badge: 'Am beliebtesten',
       },
     },
@@ -574,13 +574,210 @@ export const translations: Record<Language, Translation> = {
   },
   es: {
     name: 'Español',
-    headerBadge: '⚡ Seu Áudio. Perfeitamente Controlado. Instantaneamente.',
+    headerBadge: '⚡ Tu Audio. Perfectamente Controlado. Al Instante.',
     hero: {
-      badge: '⚡ Seu Áudio. Perfeitamente Controlado. Instantaneamente.',
-      title: 'Finalmente tienes el control total del audio',
-      subtitle: 'Controla cada app de forma independiente. Mude entre perfis em segundos. Controle instantâneo para cada situação.',
-      cta: 'Obtener MACA Grátis',
-      secondaryCta: 'Ver em Ação',
+      badge: '⚡ Tu Audio. Perfectamente Controlado. Al Instante.',
+      title: 'Finalmente, tienes control total del audio',
+      subtitle: 'Controla cada app de forma independiente. Cambia de perfil en segundos. Control instantáneo para cada situación.',
+      cta: 'Obtener MACA Gratis',
+      secondaryCta: 'Ver en Acción',
+    },
+    problem: {
+      title: '¿Te Suena Familiar?',
+      items: [
+        'Spotify ahoga tus llamadas de Zoom',
+        'Los sonidos del juego explotan mientras haces streaming',
+        'Los anuncios de YouTube despiertan a toda la casa',
+        'No hay manera fácil de controlar volúmenes de apps por separado',
+      ],
+    },
+    solution: {
+      title: 'MACA Lo Resuelve en Un Clic',
+      subtitle: 'Control de volumen individual para cada app. Directo desde tu barra de menú. Nativo, rápido y hermosamente simple.',
+    },
+    features: {
+      title: 'Por Qué MACA Gana',
+      perAppVolume: {
+        title: 'Controles de Volumen por App',
+        description: 'Control instantáneo sobre cada app. Música al 30%, llamadas al 100%, navegador al 50%. Configúralo una vez, olvídalo para siempre.',
+      },
+      quickMute: {
+        title: 'Silenciar con Un Clic',
+        description: 'Silencia cualquier app al instante sin tocar su volumen. Perfecto para interrupciones, anuncios o llamadas inesperadas.',
+      },
+      focusMode: {
+        title: 'Modo de Enfoque',
+        description: 'Pre-configurado para más de 100 aplicaciones de comunicación (Teams, Discord, Zoom, FaceTime y más). Silencia todas las demás aplicaciones con un clic o atajo de teclado. Sin música que distraiga durante las reuniones.',
+      },
+      audioProfiles: {
+        title: 'Perfiles Inteligentes',
+        description: 'Trabajo. Gaming. Producción Musical. Crea configuraciones de audio personalizadas y cambia entre ellas al instante. Tu sonido perfecto, siempre a un clic.',
+      },
+      keyboardShortcuts: {
+        title: 'Poder del Teclado',
+        description: 'Controla todo sin levantar las manos. Atajos personalizados para silenciar, volumen y cambio de perfil. Máxima eficiencia.',
+      },
+      nativeDesign: {
+        title: 'Verdadero macOS Nativo',
+        description: 'Construido exclusivamente para Mac. Sin interfaces feas, sin hinchazón del sistema, sin extensiones del kernel. Solo perfección macOS nativa, limpia y rápida.',
+      },
+      magicBoost: {
+        title: 'Magic Boost',
+        description: 'Amplifica audio silencioso hasta +12dB sin distorsión. No más esfuerzo para escuchar videos o podcasts silenciosos.',
+      },
+    },
+    useCases: {
+      title: '¿Quién Usa MACA?',
+      designerTitle: 'Diseñadores y Creadores',
+      designer: 'Spotify sonando, Adobe abierto, videollamadas en espera. Niveles de audio perfectos sin complicaciones.',
+      producerTitle: 'Productores y Músicos',
+      producer: 'DAW al 80%, samples al 70%, referencias al 60%. Control total para mezclar y producir sin distracciones.',
+      developerTitle: 'Desarrolladores y Programadores',
+      developer: 'Música para concentrarse, Stack Overflow abierto, notificaciones silenciadas. Codifica con la banda sonora perfecta.',
+      remoteTitle: 'Trabajadores Remotos',
+      remote: 'Zoom al 100%, música al 30%, notificaciones al 0%. Reuniones sin interrupciones.',
+    },
+    devices: {
+      headphones: 'Auriculares',
+      speaker: 'Altavoz',
+      display: 'Pantalla',
+      bluetooth: 'Bluetooth',
+      airpods: 'AirPods',
+    },
+    comparison: {
+      title: 'MACA vs. Otras Herramientas de Audio',
+      subtitle: 'Mira por qué miles cambiaron a MACA',
+      maca: 'MACA',
+      others: 'Otras Herramientas',
+      features: {
+        easySetup: 'Funciona al instante',
+        noDrivers: 'Sin drivers/extensiones',
+        oneTimePurchase: 'Paga una vez, tuyo para siempre',
+        profiles: 'Perfiles de audio incluidos',
+        nativeUI: 'Diseño macOS nativo',
+        lightweight: 'Ultra ligero',
+      },
+    },
+    whyNotOthers: {
+      title: '¿Por Qué No Otras Herramientas?',
+      subtitle: 'Compara MACA con alternativas populares',
+      macaPrice: 'Compra in-app',
+      competitors: {
+        soundSource: {
+          name: 'SoundSource',
+          price: '$39',
+          issues: ['Modelo de suscripción caro', 'Interfaz compleja', 'Requiere controlador de audio del sistema'],
+        },
+        audioHijack: {
+          name: 'Audio Hijack',
+          price: '$64+',
+          issues: ['Muy caro', 'Funciones abrumadoras', 'Curva de aprendizaje pronunciada'],
+        },
+      },
+    },
+    privacy: {
+      title: 'Privacidad Primero',
+      subtitle: 'Tus datos están seguros con MACA',
+      guaranteeTitle: 'Garantía de Privacidad',
+      guaranteeDescription: 'Estamos comprometidos a proteger tu privacidad y seguridad de datos.',
+      features: {
+        noData: {
+          title: 'Ningún dato enviado a la nube',
+          description: 'Ningún dato se envía a la nube',
+        },
+        localProcessing: {
+          title: 'Procesamiento Local',
+          description: 'Todo el procesamiento se realiza localmente en tu Mac',
+        },
+        noCloud: {
+          title: 'Sin almacenamiento o sincronización en la nube',
+          description: 'Sin almacenamiento o sincronización en la nube',
+        },
+        noTracking: {
+          title: 'Cero Rastreo',
+          description: 'Cero rastreo—tu privacidad importa',
+        },
+      },
+      guarantee: 'Garantizamos tu privacidad y seguridad de datos.',
+    },
+    testimonials: {
+      title: 'Lo Que Dicen Nuestros Usuarios',
+      subtitle: 'Escucha testimonios de clientes satisfechos',
+      comingSoon: 'Próximamente',
+      joinUsers: 'Únete a miles de usuarios de Mac que aman MACA',
+    },
+    pricing: {
+      title: 'Precios',
+      subtitle: 'Elige el plan adecuado para ti',
+      free: {
+        title: 'Gratis',
+        price: '$0',
+        features: [
+          'Controlar hasta 3 apps',
+          'Control de volumen por app',
+          'Silenciar por app',
+          'Enrutamiento de audio por app',
+          'Control de volumen maestro',
+          'EQ de 10 bandas con presets',
+          'Atajos de teclado'
+        ],
+        cta: 'Descargar Gratis',
+      },
+      pro: {
+        title: 'Pro',
+        price: 'Compra in-app',
+        features: [
+          'Apps ilimitadas',
+          'Todas las funciones gratuitas',
+          'Perfiles de audio ilimitados',
+          'Control EQ paramétrico completo',
+          'Normalizador de audio',
+          'Presets de EQ personalizados ilimitados',
+          'Pago único • Sin suscripción'
+        ],
+        cta: 'Descargar en App Store',
+        badge: 'Más Popular',
+      },
+    },
+    benefits: {
+      noSubscriptions: 'Sin Suscripciones',
+      noTracking: 'Sin Rastreo',
+      noAds: 'Sin Anuncios',
+      nativeSupport: 'Soporte Nativo',
+    },
+    finalCta: {
+      title: 'Comienza Hoy',
+      subtitle: 'Únete a miles de usuarios de Mac que aman MACA',
+      cta: 'Descargar en la App Store',
+    },
+    footer: {
+      product: 'Producto',
+      legal: 'Legal',
+      imprint: 'Aviso Legal',
+      privacy: 'Política de Privacidad',
+      terms: 'Términos de Servicio',
+      support: 'Soporte',
+      tagline: 'Control de audio profesional para todos',
+      copyright: '© 2026 AMX Mediensystem. Todos los derechos reservados.',
+    },
+    imprint: {
+      title: 'Aviso Legal',
+      owner: 'Propietario',
+      address: 'Dirección',
+      contact: 'Contacto',
+      responsible: 'Responsable del contenido',
+      disclaimer: 'Aviso: Todos los nombres de productos, logotipos y marcas son propiedad de sus respectivos dueños.',
+    },
+  },
+  fr_DUPLICATE_SECTION_REMOVED: {
+    name: 'Français',
+    headerBadge: '⚡ Votre Audio. Contrôlé Parfaitement. Instantanément.',
+    hero: {
+      badge: '⚡ Votre Audio. Contrôlé Parfaitement. Instantanément.',
+      title: 'Enfin, vous maîtrisez totalement votre audio',
+      subtitle: 'Contrôlez chaque app indépendamment. Changez de profil en quelques secondes. Contrôle instantané pour toutes les situations.',
+      cta: 'Obtenir MACA Gratuitement',
+      secondaryCta: 'Voir en Action',
     },
     problem: {
       title: 'Parece Familiar?',
@@ -713,9 +910,9 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'Compra no app',
         features: ['Todas as funcionalidades do Gratuito', 'Perfis de áudio', 'Magic Boost'],
-        cta: 'Atualizar para Pro',
+        cta: 'Baixar no App Store',
         badge: 'Mais Popular',
       },
     },
@@ -748,7 +945,7 @@ export const translations: Record<Language, Translation> = {
       responsible: 'Responsável pelo conteúdo',
       disclaimer: 'Aviso: Todos os nomes de produtos, logotipos e marcas são propriedade de seus respectivos donos.',
     },
-  },
+  }, // END OF DUPLICATE SECTION */
   fr: {
     name: 'Français',
     headerBadge: '⚡ Votre Audio. Contrôlé Parfaitement. Instantanément.',
@@ -834,7 +1031,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Pourquoi pas d\'autres outils ?',
       subtitle: 'Comparez MACA avec des alternatives populaires',
-      macaPrice: '$14.99',
+      macaPrice: 'Achat in-app',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -898,7 +1095,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'Achat intégré',
         features: [
           'Applications illimitées',
           'Toutes les fonctionnalités Gratuites',
@@ -908,7 +1105,7 @@ export const translations: Record<Language, Translation> = {
           'Préréglages EQ personnalisés illimités',
           'Paiement unique • Pas d\'abonnement'
         ],
-        cta: 'Passer à Pro',
+        cta: 'Télécharger sur App Store',
         badge: 'Le plus populaire',
       },
     },
@@ -1027,7 +1224,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Perché non altri strumenti?',
       subtitle: 'Confronta MACA con alternative popolari',
-      macaPrice: '$14.99',
+      macaPrice: 'Acquisto in-app',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1091,7 +1288,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'Compra in-app',
         features: [
           'App illimitate',
           'Tutte le funzionalità Gratuite',
@@ -1101,7 +1298,7 @@ export const translations: Record<Language, Translation> = {
           'Preset EQ personalizzati illimitati',
           'Pagamento unico • Nessun abbonamento'
         ],
-        cta: 'Aggiorna a Pro',
+        cta: 'Scarica su App Store',
         badge: 'Più Popolare',
       },
     },
@@ -1220,7 +1417,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Por que não outros ferramentas?',
       subtitle: 'Compare MACA com alternativas populares',
-      macaPrice: '$14.99',
+      macaPrice: 'Compra in-app',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1276,9 +1473,9 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'Compra no app',
         features: ['Todas as funcionalidades do Gratuito', 'Perfis de áudio', 'Magic Boost'],
-        cta: 'Atualizar para Pro',
+        cta: 'Baixar no App Store',
         badge: 'Mais Popular',
       },
     },
@@ -1397,7 +1594,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'なぜ他のツールは？',
       subtitle: 'MACAと人気のある代替品を比較',
-      macaPrice: '$14.99',
+      macaPrice: 'アプリ内購入',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1461,7 +1658,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'アプリ内課金',
         features: [
           '無制限のアプリ',
           'すべての無料機能',
@@ -1471,7 +1668,7 @@ export const translations: Record<Language, Translation> = {
           '無制限のカスタムEQプリセット',
           '1回限りの支払い • サブスクリプションなし'
         ],
-        cta: 'Proにアップグレード',
+        cta: 'App Storeでダウンロード',
         badge: '最も人気',
       },
     },
@@ -1484,7 +1681,7 @@ export const translations: Record<Language, Translation> = {
     finalCta: {
       title: 'アップグレード準備ができましたか？',
       subtitle: 'MACA Proのフルパワーを体験してください',
-      cta: 'Proにアップグレード',
+      cta: 'App Storeでダウンロード',
     },
     footer: {
       product: '製品',
@@ -1590,7 +1787,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: '为什么不是其他工具？',
       subtitle: '将 MACA 与流行替代品进行比较',
-      macaPrice: '$14.99',
+      macaPrice: '应用内购买',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1654,7 +1851,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: '专业版',
-        price: '$14.99',
+        price: '应用内购买',
         features: [
           '无限应用',
           '所有免费功能',
@@ -1664,7 +1861,7 @@ export const translations: Record<Language, Translation> = {
           '无限自定义EQ预设',
           '一次性付款 • 无订阅'
         ],
-        cta: '升级到专业版',
+        cta: '在App Store下载',
         badge: '最受欢迎',
       },
     },
@@ -1677,7 +1874,7 @@ export const translations: Record<Language, Translation> = {
     finalCta: {
       title: '准备升级？',
       subtitle: '体验 MACA Pro 的全部功能',
-      cta: '升级到 Pro',
+      cta: '在App Store下载',
     },
     footer: {
       product: '产品',

@@ -187,7 +187,7 @@ function createFallbackTranslation(): Translation {
       },
       pro: {
         title: 'Pro',
-        price: '$14.99',
+        price: 'In-App Purchase',
         features: [
           'Unlimited apps',
           'Audio Profiles',
