@@ -20,14 +20,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: production
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout Testweb (Figma Source)
+      - name: Checkout Testweb (Figma Source, public)
         uses: actions/checkout@v4
         with:
           repository: wax7/Testweb
           path: figma
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check for Figma changes
         id: check
