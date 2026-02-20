@@ -188,11 +188,11 @@ export function MacBookIllustration({ currentLang }: { currentLang: Language }) 
   ];
 
   return (
-    <div className="relative w-full py-0 -mb-12">
+    <div className="relative w-full py-8 overflow-hidden">
       <svg 
         viewBox="-400 -280 800 460" 
-        className="w-full h-auto max-w-7xl mx-auto relative z-10"
-        style={{ minHeight: '480px' }}
+        className="w-full h-auto max-w-6xl mx-auto"
+        preserveAspectRatio="xMidYMid meet"
       >
         {/* Gradient definitions */}
         <defs>

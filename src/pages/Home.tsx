@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Download, Volume2, VolumeX, Shield, Zap, ChevronDown, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star } from 'lucide-react';
@@ -6,6 +6,7 @@ import { translations, type Language } from '../locales/translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
 import { AnimatedEqualizer } from '../components/AnimatedEqualizer';
 import { ProblemSolutionSection } from '../components/ProblemSolutionSection';
 import { ScreenshotShowcase } from '../components/ScreenshotShowcase';
@@ -176,7 +177,7 @@ function getFAQItems(lang: Language) {
       },
       {
         question: 'MACAはデータを収集しますか？',
-        answer: '絶対にしません。MACAはすべてをMac上でローカルに処理します。お客様のデータを収集、保存、送信することは一切ありません。プライバシーは私たちの最優先事項です。'
+        answer: '絶対にしません。MACAはすべてをMac上でローカルに処理します。お客様のデータを収集、保、送信することは一切ありません。プライバシーは私たちの最優先事項です。'
       },
       {
         question: 'どのmacOSバージョンがサポートされていますか？',
@@ -198,7 +199,7 @@ function getFAQItems(lang: Language) {
       },
       {
         question: 'MACA会收集我的数据吗？',
-        answer: '绝对不会。MACA在您的Mac上本地处理所有内容。我们不收集、存储或传输您的任何数据。您的隐私是我们的首要任务。'
+        answer: '绝对不会。MACA在您的Mac上本地处理所有内容。我们不收集、存储或传输您的任何数据。您的隐是我们的首要任务。'
       },
       {
         question: '支持哪些macOS版本？',
@@ -213,8 +214,8 @@ function getFAQItems(lang: Language) {
 export function Home() {
   const { lang } = useParams();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const scrolled = useScrolled(50);
   
   // Validate language and default to 'en' if invalid
   const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
@@ -223,7 +224,7 @@ export function Home() {
   // Always use a valid language, fallback to 'en'
   const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
   
-  // Detect browser language on first visit
+  // Detect browser language on first visit, or redirect if invalid
   useEffect(() => {
     if (!lang) {
       const browserLang = navigator.language.toLowerCase();
@@ -243,24 +244,7 @@ export function Home() {
       navigate('/en', { replace: true });
     }
   }, [lang, requestedLang, navigate]);
-  
-  // If no lang parameter at all, redirect immediately
-  useEffect(() => {
-    if (!lang) {
-      navigate('/en', { replace: true });
-    } else if (!validLanguages.includes(requestedLang)) {
-      navigate('/en', { replace: true });
-    }
-  }, [lang, requestedLang, navigate]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
   // Get translations directly with fallback to English
   const t = useMemo(() => {
     // Always have a fallback
@@ -348,7 +332,7 @@ export function Home() {
     },
     copyright: currentLang === 'de' ? 'Alle Rechte vorbehalten.' :
                currentLang === 'es' ? 'Todos los derechos reservados.' :
-               currentLang === 'fr' ? 'Tous droits réservés.' :
+               currentLang === 'fr' ? 'Tous droits rservés.' :
                currentLang === 'it' ? 'Tutti i diritti riservati.' :
                currentLang === 'pt' ? 'Todos os direitos reservados.' :
                currentLang === 'ja' ? '全著作権所有。' :
@@ -357,13 +341,14 @@ export function Home() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 overflow-x-hidden">
       {/* Header */}
       <Header 
         scrolled={scrolled} 
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
+        onLanguageChange={handleLanguageChange}
         badge={t.headerBadge}
       >
         <LanguageSelector 
@@ -466,7 +451,7 @@ export function Home() {
       />
 
       {/* MacBook Audio Devices Illustration */}
-      <section className="py-6 px-6 bg-white dark:bg-slate-900">
+      <section className="py-6 px-6 bg-white dark:bg-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -628,7 +613,7 @@ export function Home() {
       />
 
       {/* Pricing Section */}
-      <section className="py-20 px-6 bg-white dark:bg-slate-900/50">
+      <section className="py-20 px-6 bg-white dark:bg-slate-900/50 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -640,7 +625,7 @@ export function Home() {
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">{t.pricing.subtitle}</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-2">
             <PricingCard
               title={t.pricing.free.title}
               price={t.pricing.free.price}
@@ -762,6 +747,21 @@ export function Home() {
                      'Privacy Policy'}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to={`/${currentLang}/terms`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {currentLang === 'de' ? 'Nutzungsbedingungen' :
+                     currentLang === 'es' ? 'Términos de uso' :
+                     currentLang === 'fr' ? 'Conditions d\'utilisation' :
+                     currentLang === 'it' ? 'Termini di utilizzo' :
+                     currentLang === 'pt' ? 'Termos de uso' :
+                     currentLang === 'ja' ? '利用規約' :
+                     currentLang === 'zh' ? '使用条款' :
+                     'Terms of Use'}
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -769,6 +769,14 @@ export function Home() {
             <div>
               <h3 className="text-white font-semibold mb-4">{t.footer.support}</h3>
               <ul className="space-y-2">
+                <li>
+                  <Link
+                    to={`/${currentLang}/faq`}
+                    className="hover:text-white transition-colors"
+                  >
+                    FAQ
+                  </Link>
+                </li>
                 <li>
                   <a href="mailto:Support@getmaca.de" className="hover:text-white transition-colors">
                     Support@getmaca.de

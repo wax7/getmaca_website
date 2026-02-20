@@ -122,12 +122,28 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
 
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Mobile-spezifische Optimierungen */
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+    }
   }
 }
 

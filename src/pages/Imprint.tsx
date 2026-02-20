@@ -6,12 +6,13 @@ import { type Language, translations } from '../locales/translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
 
 export function Imprint() {
   const { lang } = useParams();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const scrolled = useScrolled(50);
   
   // Validate language and default to 'en' if invalid
   const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
@@ -70,6 +71,7 @@ export function Imprint() {
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
+        onLanguageChange={handleLanguageChange}
         badge={t.headerBadge}
       >
         <LanguageSelector 

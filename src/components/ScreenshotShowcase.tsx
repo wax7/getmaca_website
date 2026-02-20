@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 // Import real screenshots
 import screenshot1 from 'figma:asset/31fb86d38219c922a45a6dc661131a10a1ad8e23.png';
@@ -44,6 +44,8 @@ interface Screenshot {
 
 export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotShowcaseProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isScrollingRef = useRef(false);
 
   const screenshots: Screenshot[] = [
     {
@@ -209,16 +211,72 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     }
   ];
 
+  const lang = currentLang as keyof typeof screenshots[0]['title'];
+
+  // Scroll to a specific slide
+  const scrollToSlide = useCallback((index: number) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    const slideWidth = container.offsetWidth;
+    isScrollingRef.current = true;
+    container.scrollTo({
+      left: slideWidth * index,
+      behavior: 'smooth'
+    });
+    setCurrentIndex(index);
+    
+    // Reset scrolling flag after animation
+    setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 500);
+  }, []);
+
+  // Handle native scroll events to update current index
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+    
+    const handleScroll = () => {
+      if (isScrollingRef.current) return;
+      
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const slideWidth = container.offsetWidth;
+        const newIndex = Math.round(container.scrollLeft / slideWidth);
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < screenshots.length) {
+          setCurrentIndex(newIndex);
+        }
+      }, 50);
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [currentIndex, screenshots.length]);
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % screenshots.length);
+    scrollToSlide((currentIndex + 1) % screenshots.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+    scrollToSlide((currentIndex - 1 + screenshots.length) % screenshots.length);
   };
 
+  // Handle keyboard navigation
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  }, [currentIndex, screenshots.length]);
+
   const currentScreenshot = screenshots[currentIndex];
-  const lang = currentLang as keyof typeof currentScreenshot.title;
 
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
@@ -233,83 +291,110 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
           <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">{subtitle}</p>
         </motion.div>
 
-        {/* Screenshot Carousel */}
-        <div className="relative max-w-5xl mx-auto">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
+        {/* Screenshot Carousel - CSS Scroll Snap */}
+        <div
+          className="relative max-w-5xl mx-auto"
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="region"
+          aria-label="Screenshot carousel"
+          aria-roledescription="carousel"
+        >
+          {/* Scroll Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-x',
+              overscrollBehaviorX: 'contain',
+            }}
           >
-            {/* Main Screenshot */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex items-center justify-center" style={{ minHeight: '400px', maxHeight: '700px' }}>
-              <ImageWithFallback
-                src={currentScreenshot.image}
-                alt={currentScreenshot.title[lang]}
-                className="w-auto h-auto max-w-full max-h-[700px] object-contain"
-              />
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-colors z-10"
-              aria-label="Previous screenshot"
-            >
-              <ChevronLeft className="w-6 h-6 text-slate-900 dark:text-white" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-colors z-10"
-              aria-label="Next screenshot"
-            >
-              <ChevronRight className="w-6 h-6 text-slate-900 dark:text-white" />
-            </button>
-          </motion.div>
-
-          {/* Screenshot Info */}
-          <motion.div
-            key={`info-${currentIndex}`}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-8 text-center"
-          >
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">
-              {currentScreenshot.title[lang]}
-            </h3>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              {currentScreenshot.description[lang]}
-            </p>
-          </motion.div>
-
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-8">
-            {screenshots.map((_, index) => (
-              <button
+            {screenshots.map((screenshot, index) => (
+              <div
                 key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentIndex
-                    ? 'bg-blue-600 dark:bg-blue-400 w-8'
-                    : 'bg-slate-400 dark:bg-slate-600 hover:bg-slate-500 dark:hover:bg-slate-500'
-                }`}
-                aria-label={`Go to screenshot ${index + 1}`}
-              />
+                className="w-full flex-shrink-0 snap-center px-2 sm:px-4"
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${index + 1} / ${screenshots.length}: ${screenshot.title[lang]}`}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex items-center justify-center" style={{ minHeight: '300px', maxHeight: '700px' }}>
+                  <ImageWithFallback
+                    src={screenshot.image}
+                    alt={screenshot.title[lang]}
+                    className="w-auto h-auto max-w-full max-h-[700px] object-contain"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Screenshot Counter */}
-          <div className="text-center mt-4 text-sm text-slate-500 dark:text-slate-400">
-            {currentIndex + 1} / {screenshots.length}
-          </div>
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all z-10 hover:scale-110 active:scale-95"
+            aria-label="Previous screenshot"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 dark:text-white" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all z-10 hover:scale-110 active:scale-95"
+            aria-label="Next screenshot"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 dark:text-white" />
+          </button>
         </div>
 
-        {/* Decorative Elements */}
-        <div className="absolute -top-20 -left-20 w-40 h-40 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Screenshot Info */}
+        <motion.div
+          key={`info-${currentIndex}`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mt-8 text-center max-w-5xl mx-auto"
+        >
+          <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">
+            {currentScreenshot.title[lang]}
+          </h3>
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            {currentScreenshot.description[lang]}
+          </p>
+        </motion.div>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Screenshot navigation">
+          {screenshots.map((screenshot, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToSlide(index)}
+              role="tab"
+              aria-selected={index === currentIndex}
+              aria-label={screenshot.title[lang]}
+              className={`h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? 'bg-blue-600 dark:bg-blue-400 w-8'
+                  : 'bg-slate-400 dark:bg-slate-600 hover:bg-slate-500 dark:hover:bg-slate-500 w-3'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Screenshot Counter */}
+        <div className="text-center mt-4 text-sm text-slate-500 dark:text-slate-400">
+          {currentIndex + 1} / {screenshots.length}
+        </div>
       </div>
+
+      {/* Hide scrollbar globally for this component */}
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }

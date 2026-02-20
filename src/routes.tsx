@@ -4,6 +4,10 @@ import { Imprint } from "./pages/Imprint";
 import { Feedback } from "./pages/Feedback";
 import { Privacy } from "./pages/Privacy";
 import { FAQ } from "./pages/FAQ";
+import { Sitemap } from "./pages/Sitemap";
+import { Terms } from "./pages/Terms";
+import { History } from "./pages/History";
+import { NotFound } from "./pages/NotFound";
 import { RootLayout } from "./layouts/RootLayout";
 
 export const router = createBrowserRouter([
@@ -15,12 +19,24 @@ export const router = createBrowserRouter([
         element: <Navigate to="/en" replace />,
       },
       {
+        path: "/sitemap",
+        element: <Sitemap />,
+      },
+      {
+        path: "/history",
+        element: <History />,
+      },
+      {
         path: "/:lang",
         element: <Home />,
       },
       {
         path: "/:lang/imprint",
         element: <Imprint />,
+      },
+      {
+        path: "/:lang/terms",
+        element: <Terms />,
       },
       {
         path: "/:lang/feedback",
@@ -36,7 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Navigate to="/en" replace />,
+        element: <NotFound />,
       },
     ],
   },

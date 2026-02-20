@@ -7,12 +7,13 @@ import { faqContentTranslations } from '../utils/faq-content-translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
 
 export function FAQ() {
   const { lang } = useParams();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const scrolled = useScrolled(50);
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
@@ -24,14 +25,6 @@ export function FAQ() {
       navigate('/en/faq', { replace: true });
     }
   }, [lang, requestedLang, navigate]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const content = useMemo(() => {
     return faqContentTranslations[currentLang] || faqContentTranslations.en;
@@ -80,6 +73,7 @@ export function FAQ() {
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
+        onLanguageChange={handleLanguageChange}
         badge={headerBadge}
       >
         <LanguageSelector

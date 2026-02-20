@@ -6,6 +6,7 @@ import { translations, Language } from '../locales/translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
 
 type FeedbackType = 'bug' | 'feature';
 
@@ -29,7 +30,7 @@ export function Feedback() {
   const [images, setImages] = useState<CompressedImage[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScrolled(50);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -305,11 +306,12 @@ export function Feedback() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 ${isDarkMode ? 'dark' : ''}`}>
-      <Header 
-        scrolled={scrolled} 
+      <Header
+        scrolled={scrolled}
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
+        onLanguageChange={handleLanguageChange}
         badge={t.headerBadge}
       >
         <LanguageSelector 

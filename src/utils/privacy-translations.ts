@@ -4,7 +4,30 @@ export interface PrivacyTranslation {
   title: string;
   lastUpdated: string;
   intro: string;
+  websiteNotice: string;
   sections: {
+    websiteData: {
+      title: string;
+      localStorage: {
+        title: string;
+        items: {
+          name: string;
+          purpose: string;
+          legal: string;
+          duration: string;
+        }[];
+      };
+      externalServices: {
+        title: string;
+        items: {
+          name: string;
+          purpose: string;
+          dataTransfer: string;
+          privacyLink: string;
+          legal: string;
+        }[];
+      };
+    };
     dataCollection: {
       title: string;
       content: string[];
@@ -33,6 +56,10 @@ export interface PrivacyTranslation {
       title: string;
       content: string[];
     };
+    supervisoryAuthority: {
+      title: string;
+      content: string[];
+    };
     changes: {
       title: string;
       content: string[];
@@ -47,9 +74,48 @@ export interface PrivacyTranslation {
 export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   en: {
     title: 'Privacy Policy',
-    lastUpdated: 'Last Updated: February 4, 2026',
+    lastUpdated: 'Last Updated: February 20, 2026',
     intro: 'At MACA (Master Audio Control App), your privacy is our highest priority. This Privacy Policy explains how we handle your data—or rather, how we don\'t collect it.',
+    websiteNotice: 'This privacy policy covers both the MACA app AND this website (getmaca.de).',
     sections: {
+      websiteData: {
+        title: '0. This Website (getmaca.de)',
+        localStorage: {
+          title: 'Browser Storage (LocalStorage)',
+          items: [
+            {
+              name: 'maca-cookie-consent',
+              purpose: 'Stores your cookie consent choice',
+              legal: 'Art. 6 (1) lit. a GDPR (Consent)',
+              duration: 'Permanent (until you delete it)'
+            },
+            {
+              name: 'maca-dark-mode',
+              purpose: 'Stores your dark mode preference',
+              legal: 'Art. 6 (1) lit. f GDPR (Legitimate Interest)',
+              duration: 'Permanent (until you delete it)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Stores your language preference',
+              legal: 'Art. 6 (1) lit. f GDPR (Legitimate Interest)',
+              duration: 'Permanent (until you delete it)'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'External Services Used by This Website',
+          items: [
+            {
+              name: 'Apple App Store (Download Links)',
+              purpose: 'App download and purchase',
+              dataTransfer: 'Click data is transmitted to Apple when you click download links',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 (1) lit. f GDPR (Legitimate Interest)'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Data Collection',
         content: [
@@ -115,8 +181,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'Parents can safely allow their children to use MACA without privacy concerns.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Supervisory Authority',
+        content: [
+          'If you have any concerns about the processing of your personal data, you can contact the supervisory authority in your country.',
+          'In the European Union, the supervisory authority is the European Data Protection Board (EDPB).',
+          'In the United States, you can contact the Federal Trade Commission (FTC) or the California Privacy Protection Agency (CPPA).'
+        ]
+      },
       changes: {
-        title: '8. Changes to This Policy',
+        title: '9. Changes to This Policy',
         content: [
           'We may update this Privacy Policy from time to time.',
           'Any changes will be posted on this page with an updated "Last Updated" date.',
@@ -124,7 +198,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Contact Us',
+        title: '10. Contact Us',
         content: [
           'If you have any questions about this Privacy Policy, please contact us:',
           'Email: Support@getmaca.de',
@@ -136,9 +210,48 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   de: {
     title: 'Datenschutzerklärung',
-    lastUpdated: 'Zuletzt aktualisiert: 4. Februar 2026',
+    lastUpdated: 'Zuletzt aktualisiert: 20. Februar 2026',
     intro: 'Bei MACA (Master Audio Control App) hat deine Privatsphäre höchste Priorität. Diese Datenschutzerklärung erklärt, wie wir mit deinen Daten umgehen – oder besser gesagt, wie wir sie NICHT sammeln.',
+    websiteNotice: 'Diese Datenschutzerklärung umfasst sowohl die MACA App ALS AUCH diese Website (getmaca.de).',
     sections: {
+      websiteData: {
+        title: '0. Diese Website (getmaca.de)',
+        localStorage: {
+          title: 'Browser-Speicher (LocalStorage)',
+          items: [
+            {
+              name: 'maca-cookie-consent',
+              purpose: 'Speichert deine Cookie-Zustimmung',
+              legal: 'Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)',
+              duration: 'Permanent (bis du es löschst)'
+            },
+            {
+              name: 'maca-dark-mode',
+              purpose: 'Speichert deine Dark Mode Einstellung',
+              legal: 'Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse)',
+              duration: 'Permanent (bis du es löschst)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Speichert deine Sprachpräferenz',
+              legal: 'Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse)',
+              duration: 'Permanent (bis du es löschst)'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'Externe Dienste dieser Website',
+          items: [
+            {
+              name: 'Apple App Store (Download-Links)',
+              purpose: 'App-Download und Kauf',
+              dataTransfer: 'Klickdaten werden an Apple übertragen wenn du Download-Links klickst',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse)'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Datenerfassung',
         content: [
@@ -204,8 +317,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'Eltern können ihren Kindern bedenkenlos erlauben, MACA zu nutzen.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Aufsichtsbehörde',
+        content: [
+          'Wenn du Bedenken bezüglich der Verarbeitung deiner personenbezogenen Daten hast, kannst du die Aufsichtsbehörde in deinem Land kontaktieren.',
+          'In der Europäischen Union ist die Aufsichtsbehörde der Europäische Datenschutzbeauftragte (EDPB).',
+          'In den Vereinigten Staaten kannst du die Federal Trade Commission (FTC) oder die California Privacy Protection Agency (CPPA) kontaktieren.'
+        ]
+      },
       changes: {
-        title: '8. Änderungen dieser Richtlinie',
+        title: '9. Änderungen dieser Richtlinie',
         content: [
           'Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren.',
           'Alle Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.',
@@ -213,7 +334,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Kontakt',
+        title: '10. Kontakt',
         content: [
           'Bei Fragen zu dieser Datenschutzerklärung kontaktiere uns bitte:',
           'E-Mail: Support@getmaca.de',
@@ -227,7 +348,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: 'Política de Privacidad',
     lastUpdated: 'Última actualización: 4 de febrero de 2026',
     intro: 'En MACA (Master Audio Control App), tu privacidad es nuestra máxima prioridad. Esta Política de Privacidad explica cómo manejamos tus datos—o más bien, cómo NO los recopilamos.',
+    websiteNotice: 'Este sitio web utiliza cookies y otras tecnologías de seguimiento para mejorar tu experiencia y proporcionar contenido personalizado. Al usar este sitio web, das tu consentimiento para el uso de estas tecnologías.',
     sections: {
+      websiteData: {
+        title: 'Datos del Sitio Web',
+        localStorage: {
+          title: 'Almacenamiento Local',
+          items: [
+            {
+              name: 'theme',
+              purpose: 'Almacenar la preferencia de tema del usuario',
+              legal: 'RGPD, CCPA',
+              duration: 'Sesión'
+            },
+            {
+              name: 'language',
+              purpose: 'Almacenar la preferencia de idioma del usuario',
+              legal: 'RGPD, CCPA',
+              duration: 'Sesión'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'Servicios Externos',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Rastrear el uso y el rendimiento del sitio web',
+              dataTransfer: 'A Google LLC',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'RGPD, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Recopilación de Datos',
         content: [
@@ -293,8 +447,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'Los padres pueden permitir con seguridad que sus hijos usen MACA sin preocupaciones de privacidad.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Autoridad Supervisora',
+        content: [
+          'Si tienes preocupaciones sobre el procesamiento de tus datos personales, puedes contactar a la autoridad supervisora en tu país.',
+          'En la Unión Europea, la autoridad supervisora es el European Data Protection Board (EDPB).',
+          'En los Estados Unidos, puedes contactar a la Federal Trade Commission (FTC) o a la California Privacy Protection Agency (CPPA).'
+        ]
+      },
       changes: {
-        title: '8. Cambios en Esta Política',
+        title: '9. Cambios en Esta Política',
         content: [
           'Podemos actualizar esta Política de Privacidad de vez en cuando.',
           'Cualquier cambio se publicará en esta página con una fecha de "Última actualización" actualizada.',
@@ -302,7 +464,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Contáctanos',
+        title: '10. Contáctanos',
         content: [
           'Si tienes alguna pregunta sobre esta Política de Privacidad, contáctanos:',
           'Correo electrónico: Support@getmaca.de',
@@ -316,7 +478,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: 'Politique de Confidentialité',
     lastUpdated: 'Dernière mise à jour : 4 février 2026',
     intro: 'Chez MACA (Master Audio Control App), votre vie privée est notre priorité absolue. Cette Politique de Confidentialité explique comment nous gérons vos données—ou plutôt, comment nous ne les collectons PAS.',
+    websiteNotice: 'Ce site Web utilise des cookies et d\'autres technologies de suivi pour améliorer votre expérience et fournir du contenu personnalisé. En utilisant ce site Web, vous consentez à l\'utilisation de ces technologies.',
     sections: {
+      websiteData: {
+        title: 'Données du Site Web',
+        localStorage: {
+          title: 'Stockage Local',
+          items: [
+            {
+              name: 'theme',
+              purpose: 'Stocke la préférence de thème de l\'utilisateur',
+              legal: 'RGPD, CCPA',
+              duration: 'Session'
+            },
+            {
+              name: 'language',
+              purpose: 'Stocke la préférence de langue de l\'utilisateur',
+              legal: 'RGPD, CCPA',
+              duration: 'Session'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'Services Externes',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Suivre l\'utilisation et les performances du site Web',
+              dataTransfer: 'À Google LLC',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'RGPD, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Collecte de Données',
         content: [
@@ -382,8 +577,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'Les parents peuvent autoriser en toute sécurité leurs enfants à utiliser MACA sans souci de confidentialité.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Autorité de Contrôle',
+        content: [
+          'Si vous avez des inquiétudes concernant le traitement de vos données personnelles, vous pouvez contacter l\'autorité de contrôle dans votre pays.',
+          'En Union européenne, l\'autorité de contrôle est le European Data Protection Board (EDPB).',
+          'Aux États-Unis, vous pouvez contacter la Federal Trade Commission (FTC) ou la California Privacy Protection Agency (CPPA).'
+        ]
+      },
       changes: {
-        title: '8. Modifications de Cette Politique',
+        title: '9. Modifications de Cette Politique',
         content: [
           'Nous pouvons mettre à jour cette Politique de Confidentialité de temps en temps.',
           'Toute modification sera publiée sur cette page avec une date de "Dernière mise à jour" actualisée.',
@@ -391,7 +594,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Nous Contacter',
+        title: '10. Nous Contacter',
         content: [
           'Si vous avez des questions sur cette Politique de Confidentialité, veuillez nous contacter :',
           'E-mail : Support@getmaca.de',
@@ -405,7 +608,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: 'Informativa sulla Privacy',
     lastUpdated: 'Ultimo aggiornamento: 4 febbraio 2026',
     intro: 'In MACA (Master Audio Control App), la tua privacy è la nostra massima priorità. Questa Informativa sulla Privacy spiega come gestiamo i tuoi dati—o meglio, come NON li raccogliamo.',
+    websiteNotice: 'Questo sito web utilizza cookie e altre tecnologie di tracciamento per migliorare la tua esperienza e fornire contenuti personalizzati. Utilizzando questo sito web, acconsenti all\'uso di queste tecnologie.',
     sections: {
+      websiteData: {
+        title: 'Dati del Sito Web',
+        localStorage: {
+          title: 'Archiviazione Locale',
+          items: [
+            {
+              name: 'theme',
+              purpose: 'Archivia la preferenza di tema dell\'utente',
+              legal: 'GDPR, CCPA',
+              duration: 'Sessione'
+            },
+            {
+              name: 'language',
+              purpose: 'Archivia la preferenza di lingua dell\'utente',
+              legal: 'GDPR, CCPA',
+              duration: 'Sessione'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'Servizi Esterni',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Tracciare l\'utilizzo e le prestazioni del sito web',
+              dataTransfer: 'A Google LLC',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'GDPR, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Raccolta Dati',
         content: [
@@ -471,8 +707,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'I genitori possono consentire in sicurezza ai loro figli di utilizzare MACA senza preoccupazioni sulla privacy.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Autorità di Controllo',
+        content: [
+          'Se hai preoccupazioni sul trattamento dei tuoi dati personali, puoi contattare l\'autorità di controllo nel tuo paese.',
+          'Nell\'Unione Europea, l\'autorità di controllo è il European Data Protection Board (EDPB).',
+          'Negli Stati Uniti, puoi contattare la Federal Trade Commission (FTC) o la California Privacy Protection Agency (CPPA).'
+        ]
+      },
       changes: {
-        title: '8. Modifiche a Questa Informativa',
+        title: '9. Modifiche a Questa Informativa',
         content: [
           'Potremmo aggiornare questa Informativa sulla Privacy di tanto in tanto.',
           'Eventuali modifiche saranno pubblicate su questa pagina con una data di "Ultimo aggiornamento" aggiornata.',
@@ -480,7 +724,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Contattaci',
+        title: '10. Contattaci',
         content: [
           'Se hai domande su questa Informativa sulla Privacy, contattaci:',
           'Email: Support@getmaca.de',
@@ -494,7 +738,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: 'Política de Privacidade',
     lastUpdated: 'Última atualização: 4 de fevereiro de 2026',
     intro: 'Na MACA (Master Audio Control App), sua privacidade é nossa maior prioridade. Esta Política de Privacidade explica como lidamos com seus dados—ou melhor, como NÃO os coletamos.',
+    websiteNotice: 'Este site usa cookies e outras tecnologias de rastreamento para melhorar sua experiência e fornecer conteúdo personalizado. Ao usar este site, você concorda com o uso dessas tecnologias.',
     sections: {
+      websiteData: {
+        title: 'Dados do Site',
+        localStorage: {
+          title: 'Armazenamento Local',
+          items: [
+            {
+              name: 'theme',
+              purpose: 'Armazena a preferência de tema do usuário',
+              legal: 'GDPR, CCPA',
+              duration: 'Sessão'
+            },
+            {
+              name: 'language',
+              purpose: 'Armazena a preferência de idioma do usuário',
+              legal: 'GDPR, CCPA',
+              duration: 'Sessão'
+            }
+          ]
+        },
+        externalServices: {
+          title: 'Serviços Externos',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Rastrear o uso e o desempenho do site',
+              dataTransfer: 'Para Google LLC',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'GDPR, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. Coleta de Dados',
         content: [
@@ -560,8 +837,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           'Os pais podem permitir com segurança que seus filhos usem MACA sem preocupações de privacidade.'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. Autoridade Supervisora',
+        content: [
+          'Se você tiver preocupações sobre o processamento de seus dados pessoais, pode entrar em contato com a autoridade supervisora em seu país.',
+          'Na União Europeia, a autoridade supervisora é o European Data Protection Board (EDPB).',
+          'Nos Estados Unidos, você pode entrar em contato com a Federal Trade Commission (FTC) ou a California Privacy Protection Agency (CPPA).'
+        ]
+      },
       changes: {
-        title: '8. Alterações Nesta Política',
+        title: '9. Alterações Nesta Política',
         content: [
           'Podemos atualizar esta Política de Privacidade de tempos em tempos.',
           'Quaisquer alterações serão publicadas nesta página com uma data de "Última atualização" atualizada.',
@@ -569,7 +854,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. Entre em Contato',
+        title: '10. Entre em Contato',
         content: [
           'Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato:',
           'E-mail: Support@getmaca.de',
@@ -583,7 +868,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: 'プライバシーポリシー',
     lastUpdated: '最終更新日：2026年2月4日',
     intro: 'MACA（Master Audio Control App）では、お客様のプライバシーを最優先事項としています。このプライバシーポリシーでは、データの取り扱い方法、またはむしろデータを収集しない方法について説明します。',
+    websiteNotice: 'このウェブサイトでは、あなたの経験を向上させ、パーソナライズされたコンテンツを提供するために、クッキーとその他の追跡技術を使用しています。このウェブサイトを使用することで、これらの技術の使用に同意したことになります。',
     sections: {
+      websiteData: {
+        title: 'ウェブサイトデータ',
+        localStorage: {
+          title: 'ローカルストレージ',
+          items: [
+            {
+              name: 'theme',
+              purpose: 'ユーザーのテーマ設定を保存',
+              legal: 'GDPR, CCPA',
+              duration: 'セッション'
+            },
+            {
+              name: 'language',
+              purpose: 'ユーザーの言語設定を保存',
+              legal: 'GDPR, CCPA',
+              duration: 'セッション'
+            }
+          ]
+        },
+        externalServices: {
+          title: '外部サービス',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: 'ウェブサイトの使用とパフォーマンスを追跡',
+              dataTransfer: 'Google LLCへ',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'GDPR, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. データ収集',
         content: [
@@ -649,8 +967,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           '保護者はプライバシーの心配なく、お子様にMACAを使用させることができます。'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. 監督機関',
+        content: [
+          'あなたの個人情報の処理について懸念がある場合は、あなたの国での監督機関に連絡してください。',
+          'ヨーロッパ連合では、監督機関はヨーロッパデータ保護ボード（EDPB）です。',
+          'アメリカ合衆国では、連邦貿易委員会（FTC）またはカリフォルニアプライバシープロテクションエージェンシー（CPPA）に連絡できます。'
+        ]
+      },
       changes: {
-        title: '8. このポリシーの変更',
+        title: '9. このポリシーの変更',
         content: [
           'このプライバシーポリシーは随時更新される場合があります。',
           '変更があった場合は、このページに更新された「最終更新日」とともに掲載されます。',
@@ -658,7 +984,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. お問い合わせ',
+        title: '10. お問い合わせ',
         content: [
           'このプライバシーポリシーについてご質問がある場合は、お問い合わせください：',
           'メール：Support@getmaca.de',
@@ -672,7 +998,40 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
     title: '隐私政策',
     lastUpdated: '最后更新：2026年2月4日',
     intro: '在MACA（Master Audio Control App）中，您的隐私是我们的最高优先事项。本隐私政策解释了我们如何处理您的数据——或者更确切地说，我们如何不收集数据。',
+    websiteNotice: '此网站使用cookie和其他跟踪技术来改善您的体验并提供个性化内容。使用此网站即表示您同意使用这些���术。',
     sections: {
+      websiteData: {
+        title: '网站数据',
+        localStorage: {
+          title: '本地存储',
+          items: [
+            {
+              name: 'theme',
+              purpose: '存储用户主题偏好',
+              legal: 'GDPR, CCPA',
+              duration: '会话'
+            },
+            {
+              name: 'language',
+              purpose: '存储用户语言偏好',
+              legal: 'GDPR, CCPA',
+              duration: '会话'
+            }
+          ]
+        },
+        externalServices: {
+          title: '外部服务',
+          items: [
+            {
+              name: 'Google Analytics',
+              purpose: '跟踪网站使用情况和性能',
+              dataTransfer: '向Google LLC',
+              privacyLink: 'https://policies.google.com/privacy',
+              legal: 'GDPR, CCPA'
+            }
+          ]
+        }
+      },
       dataCollection: {
         title: '1. 数据收集',
         content: [
@@ -738,8 +1097,16 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           '家长可以放心让孩子使用MACA，无需担心隐私问题。'
         ]
       },
+      supervisoryAuthority: {
+        title: '8. 监督机构',
+        content: [
+          '如果您对个人数据的处理有任何疑虑，可以联系您所在国家的监督机构。',
+          '在欧盟，监督机构是欧洲数据保护委员会（EDPB）。',
+          '在美国，您可以联系联邦贸易委员会（FTC）或加利福尼亚隐私保护机构（CPPA）。'
+        ]
+      },
       changes: {
-        title: '8. 本政策的变更',
+        title: '9. 本政策的变更',
         content: [
           '我们可能会不时更新本隐私政策。',
           '任何更改都将在本页面上发布，并更新"最后更新"日期。',
@@ -747,7 +1114,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
         ]
       },
       contact: {
-        title: '9. 联系我们',
+        title: '10. 联系我们',
         content: [
           '如果您对本隐私政策有任何疑问，请联系我们：',
           '电子邮件：Support@getmaca.de',

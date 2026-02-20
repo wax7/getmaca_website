@@ -1,4 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
+import { useEffect, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Shield, ArrowLeft, Volume2 } from 'lucide-react';
@@ -6,13 +8,12 @@ import { Language } from '../locales/translations';
 import { privacyTranslations } from '../utils/privacy-translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
-import { useDarkMode } from '../hooks/useDarkMode';
 
 export function Privacy() {
   const { lang } = useParams();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const scrolled = useScrolled(50);
 
   const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
   const requestedLang = lang as Language;
@@ -23,14 +24,6 @@ export function Privacy() {
       navigate('/en/privacy', { replace: true });
     }
   }, [lang, requestedLang, navigate]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const t = useMemo(() => {
     return privacyTranslations[currentLang] || privacyTranslations.en;
@@ -66,6 +59,7 @@ export function Privacy() {
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
+        onLanguageChange={handleLanguageChange}
         badge={headerBadge}
       >
         <LanguageSelector
@@ -116,8 +110,83 @@ export function Privacy() {
             <p className="text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
               {t.intro}
             </p>
+            
+            {/* Website Notice */}
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-2xl p-6 mb-8">
+              <p className="text-base text-blue-900 dark:text-blue-100">
+                {t.websiteNotice}
+              </p>
+            </div>
 
             <div className="space-y-12">
+              {/* Website Data */}
+              <div>
+                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-6">
+                  {t.sections.websiteData.title}
+                </h2>
+                
+                {/* LocalStorage */}
+                <div className="mb-6">
+                  <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                    {t.sections.websiteData.localStorage.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {t.sections.websiteData.localStorage.items.map((item, index) => (
+                      <div key={index} className="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 border border-slate-200 dark:border-slate-600">
+                        <div className="font-mono text-sm text-purple-600 dark:text-purple-400 mb-2">
+                          {item.name}
+                        </div>
+                        <div className="text-slate-700 dark:text-slate-300 mb-1">
+                          <strong>Purpose:</strong> {item.purpose}
+                        </div>
+                        <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
+                          <strong>Legal Basis:</strong> {item.legal}
+                        </div>
+                        <div className="text-slate-600 dark:text-slate-400 text-sm">
+                          <strong>Duration:</strong> {item.duration}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* External Services */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                    {t.sections.websiteData.externalServices.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {t.sections.websiteData.externalServices.items.map((item, index) => (
+                      <div key={index} className="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 border border-slate-200 dark:border-slate-600">
+                        <div className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                          {item.name}
+                        </div>
+                        <div className="text-slate-700 dark:text-slate-300 mb-1">
+                          <strong>Purpose:</strong> {item.purpose}
+                        </div>
+                        <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
+                          <strong>Data Transfer:</strong> {item.dataTransfer}
+                        </div>
+                        <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
+                          <strong>Legal Basis:</strong> {item.legal}
+                        </div>
+                        <div className="text-slate-600 dark:text-slate-400 text-sm">
+                          <strong>Privacy Policy:</strong>{' '}
+                          <a 
+                            href={item.privacyLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 hover:underline"
+                          >
+                            {item.privacyLink}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
               {/* Data Collection */}
               <div>
                 <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
@@ -217,6 +286,21 @@ export function Privacy() {
                   {t.sections.children.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-pink-600 dark:text-pink-400 mt-1">♥</span>
+                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Supervisory Authority */}
+              <div>
+                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                  {t.sections.supervisoryAuthority.title}
+                </h2>
+                <ul className="space-y-3">
+                  {t.sections.supervisoryAuthority.content.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 mt-1">⚖</span>
                       <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
