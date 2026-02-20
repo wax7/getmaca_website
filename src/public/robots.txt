@@ -1,11 +1,15 @@
-# User-agent: *
+# MACA – Master Audio Control
+# https://getmaca.de
+
+User-agent: *
 Allow: /
 
+# Disallow utility/system paths
+Disallow: /history
+Disallow: /sitemap
+
 # Sitemap
-Sitemap: https://maca-app.com/sitemap.xml
+Sitemap: https://getmaca.de/sitemap.xml
 
-# Crawl-delay (optional)
+# Polite crawl-delay for bots that respect it
 Crawl-delay: 1
-
-# Disallow sensitive paths (if any)
-# Disallow: /admin/

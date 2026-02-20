@@ -46,6 +46,14 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isScrollingRef = useRef(false);
+  const isPausedRef = useRef(false);
+  const currentIndexRef = useRef(0);
+  const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Keep ref in sync with state for stale-closure-safe autoplay
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
 
   const screenshots: Screenshot[] = [
     {
@@ -267,12 +275,45 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     scrollToSlide((currentIndex - 1 + screenshots.length) % screenshots.length);
   };
 
+  // Autoplay: advance every 4.5 s, pauses on hover / touch / keyboard focus
+  const startAutoplay = useCallback(() => {
+    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
+    autoplayIntervalRef.current = setInterval(() => {
+      if (!isPausedRef.current) {
+        const next = (currentIndexRef.current + 1) % screenshots.length;
+        scrollToSlide(next);
+      }
+    }, 4500);
+  }, [scrollToSlide, screenshots.length]);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
+    };
+  }, [startAutoplay]);
+
+  const pauseAutoplay = () => { isPausedRef.current = true; };
+  const resumeAutoplay = () => { isPausedRef.current = false; };
+
+  // Restart timer after manual navigation so user gets full 4.5 s before next auto-advance
+  const handleManualNav = (fn: () => void) => {
+    pauseAutoplay();
+    fn();
+    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
+    // Brief delay, then resume autoplay with fresh interval
+    setTimeout(() => {
+      isPausedRef.current = false;
+      startAutoplay();
+    }, 8000); // 8 s grace period after manual interaction
+  };
+
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'ArrowLeft') {
-      prevSlide();
+      handleManualNav(prevSlide);
     } else if (e.key === 'ArrowRight') {
-      nextSlide();
+      handleManualNav(nextSlide);
     }
   }, [currentIndex, screenshots.length]);
 
@@ -295,6 +336,12 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         <div
           className="relative max-w-5xl mx-auto"
           onKeyDown={handleKeyDown}
+          onMouseEnter={pauseAutoplay}
+          onMouseLeave={resumeAutoplay}
+          onTouchStart={pauseAutoplay}
+          onTouchEnd={() => setTimeout(resumeAutoplay, 3000)}
+          onFocus={pauseAutoplay}
+          onBlur={resumeAutoplay}
           tabIndex={0}
           role="region"
           aria-label="Screenshot carousel"
@@ -334,19 +381,22 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
 
           {/* Navigation Arrows */}
           <button
-            onClick={prevSlide}
+            onClick={() => handleManualNav(prevSlide)}
             className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all z-10 hover:scale-110 active:scale-95"
             aria-label="Previous screenshot"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 dark:text-white" />
           </button>
           <button
-            onClick={nextSlide}
+            onClick={() => handleManualNav(nextSlide)}
             className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-white dark:hover:bg-slate-700 transition-all z-10 hover:scale-110 active:scale-95"
             aria-label="Next screenshot"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 dark:text-white" />
           </button>
+
+          {/* Autoplay progress bar */}
+          <AutoplayProgressBar key={currentIndex} isPaused={isPausedRef} duration={4500} />
         </div>
 
         {/* Screenshot Info */}
@@ -370,7 +420,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
           {screenshots.map((screenshot, index) => (
             <button
               key={index}
-              onClick={() => scrollToSlide(index)}
+              onClick={() => handleManualNav(() => scrollToSlide(index))}
               role="tab"
               aria-selected={index === currentIndex}
               aria-label={screenshot.title[lang]}
@@ -396,5 +446,37 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         }
       `}</style>
     </section>
+  );
+}
+
+// Thin animated progress bar that fills up during autoplay interval
+function AutoplayProgressBar({
+  isPaused: _isPaused,
+  duration,
+}: {
+  isPaused?: React.MutableRefObject<boolean>;
+  duration: number;
+}) {
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    // Trigger reflow
+    void bar.offsetWidth;
+    bar.style.transition = `width ${duration}ms linear`;
+    bar.style.width = '100%';
+  }, [duration]);
+
+  return (
+    <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-300/40 dark:bg-slate-700/40 rounded-b-2xl overflow-hidden pointer-events-none">
+      <div
+        ref={barRef}
+        className="h-full bg-blue-500/70 dark:bg-blue-400/70 rounded-full"
+        style={{ width: '0%' }}
+      />
+    </div>
   );
 }
