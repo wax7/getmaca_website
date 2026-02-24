@@ -8,6 +8,7 @@ import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { Footer } from '../components/Footer';
 
 export function FAQ() {
   const { lang } = useParams();
@@ -82,6 +83,7 @@ export function FAQ() {
         />
       </Header>
 
+      <main id="main-content">
       {/* Hero Section */}
       <section className="relative pt-32 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
@@ -326,105 +328,10 @@ export function FAQ() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-slate-900 text-slate-400">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Volume2 className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-semibold text-white">MACA</span>
-              </div>
-              <p className="text-slate-500">
-                {currentLang === 'de' ? 'Individuelle Lautstärkeregelung für jede App' :
-                 currentLang === 'es' ? 'Control de volumen individual para cada aplicación' :
-                 currentLang === 'fr' ? 'Contrôle du volume individuel pour chaque application' :
-                 currentLang === 'it' ? 'Controllo del volume individuale per ogni app' :
-                 currentLang === 'pt' ? 'Controle de volume individual para cada aplicativo' :
-                 currentLang === 'ja' ? '各アプリの個別音量制御' :
-                 currentLang === 'zh' ? '每个应用的单独音量控制' :
-                 'Individual volume control for every app'}
-              </p>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">
-                {currentLang === 'de' ? 'Rechtliches' :
-                 currentLang === 'es' ? 'Legal' :
-                 currentLang === 'fr' ? 'Légal' :
-                 currentLang === 'it' ? 'Legale' :
-                 currentLang === 'pt' ? 'Legal' :
-                 currentLang === 'ja' ? '法的情報' :
-                 currentLang === 'zh' ? '法律' :
-                 'Legal'}
-              </h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to={`/${currentLang}/imprint`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Impressum' :
-                     currentLang === 'es' ? 'Aviso legal' :
-                     currentLang === 'fr' ? 'Mentions légales' :
-                     currentLang === 'it' ? 'Note legali' :
-                     currentLang === 'pt' ? 'Imprimir' :
-                     currentLang === 'ja' ? '法的情報' :
-                     currentLang === 'zh' ? '版本说明' :
-                     'Imprint'}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/${currentLang}/privacy`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Datenschutz' :
-                     currentLang === 'es' ? 'Privacidad' :
-                     currentLang === 'fr' ? 'Confidentialité' :
-                     currentLang === 'it' ? 'Privacy' :
-                     currentLang === 'pt' ? 'Privacidade' :
-                     currentLang === 'ja' ? 'プライバシー' :
-                     currentLang === 'zh' ? '隐私' :
-                     'Privacy Policy'}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="mailto:support@getmaca.de" className="hover:text-white transition-colors">
-                    support@getmaca.de
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
-            <p>
-              © {new Date().getFullYear()} AMX Mediensysteme.{' '}
-              {currentLang === 'de' ? 'Alle Rechte vorbehalten.' :
-               currentLang === 'es' ? 'Todos los derechos reservados.' :
-               currentLang === 'fr' ? 'Tous droits réservés.' :
-               currentLang === 'it' ? 'Tutti i diritti riservati.' :
-               currentLang === 'pt' ? 'Todos os direitos reservados.' :
-               currentLang === 'ja' ? '全著作権所有。' :
-               currentLang === 'zh' ? '版权所有。' :
-               'All rights reserved.'}
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer currentLang={currentLang} />
     </div>
   );
 }

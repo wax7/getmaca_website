@@ -1,89 +1,90 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
+import { Shield } from 'lucide-react';
 import { type Language } from '../locales/translations';
 
-const cookieBannerTexts: Record<Language, {
+const privacyNoticeTexts: Record<Language, {
   title: string;
   description: string;
-  accept: string;
-  decline: string;
+  learnMore: string;
+  dismiss: string;
 }> = {
   en: {
-    title: 'Privacy Notice',
-    description: 'This website uses only essential cookies for basic functionality. We do not collect any personal data or use tracking cookies. Your privacy is important to us.',
-    accept: 'Accept',
-    decline: 'Decline'
+    title: 'Your privacy is protected',
+    description: 'This website stores only your display preferences (language, dark mode) locally in your browser. No cookies, no personal data collection, no tracking — nothing leaves your device.',
+    learnMore: 'Privacy Policy',
+    dismiss: 'Got it',
   },
   de: {
-    title: 'Datenschutzhinweis',
-    description: 'Diese Website verwendet nur essenzielle Cookies für die Grundfunktionalität. Wir sammeln keine persönlichen Daten und verwenden keine Tracking-Cookies. Ihre Privatsphäre ist uns wichtig.',
-    accept: 'Akzeptieren',
-    decline: 'Ablehnen'
+    title: 'Deine Privatsphäre ist geschützt',
+    description: 'Diese Website speichert lediglich deine Anzeigeeinstellungen (Sprache, Dark Mode) lokal in deinem Browser. Keine Cookies, keine Erhebung persönlicher Daten, kein Tracking — nichts verlässt dein Gerät.',
+    learnMore: 'Datenschutz',
+    dismiss: 'Verstanden',
   },
   fr: {
-    title: 'Avis de confidentialité',
-    description: 'Ce site Web utilise uniquement des cookies essentiels pour les fonctionnalités de base. Nous ne collectons aucune donnée personnelle et n\'utilisons pas de cookies de suivi.',
-    accept: 'Accepter',
-    decline: 'Refuser'
+    title: 'Votre vie privée est protégée',
+    description: 'Ce site enregistre uniquement vos préférences d\'affichage (langue, mode sombre) localement dans votre navigateur. Pas de cookies, pas de collecte de données personnelles, pas de suivi — rien ne quitte votre appareil.',
+    learnMore: 'Confidentialité',
+    dismiss: 'Compris',
   },
   es: {
-    title: 'Aviso de privacidad',
-    description: 'Este sitio web utiliza solo cookies esenciales para la funcionalidad básica. No recopilamos datos personales ni utilizamos cookies de seguimiento.',
-    accept: 'Aceptar',
-    decline: 'Rechazar'
+    title: 'Tu privacidad está protegida',
+    description: 'Este sitio web solo almacena tus preferencias de visualización (idioma, modo oscuro) localmente en tu navegador. Sin cookies, sin recopilación de datos personales, sin seguimiento — nada sale de tu dispositivo.',
+    learnMore: 'Privacidad',
+    dismiss: 'Entendido',
   },
   it: {
-    title: 'Informativa sulla privacy',
-    description: 'Questo sito Web utilizza solo cookie essenziali per le funzionalità di base. Non raccogliamo dati personali né utilizziamo cookie di tracciamento.',
-    accept: 'Accetta',
-    decline: 'Rifiuta'
+    title: 'La tua privacy è protetta',
+    description: 'Questo sito memorizza solo le tue preferenze di visualizzazione (lingua, modalità scura) localmente nel tuo browser. Nessun cookie, nessuna raccolta di dati personali, nessun tracciamento — nulla lascia il tuo dispositivo.',
+    learnMore: 'Privacy',
+    dismiss: 'Ho capito',
   },
   pt: {
-    title: 'Aviso de privacidade',
-    description: 'Este site usa apenas cookies essenciais para funcionalidade básica. Não coletamos dados pessoais nem usamos cookies de rastreamento.',
-    accept: 'Aceitar',
-    decline: 'Recusar'
+    title: 'A sua privacidade está protegida',
+    description: 'Este site armazena apenas as suas preferências de exibição (idioma, modo escuro) localmente no seu navegador. Sem cookies, sem coleta de dados pessoais, sem rastreamento — nada sai do seu dispositivo.',
+    learnMore: 'Privacidade',
+    dismiss: 'Entendido',
   },
   ja: {
-    title: 'プライバシーに関するお知らせ',
-    description: 'このウェブサイトは基本機能のために必要最低限のCookieのみを使用しています。個人データの収集やトラッキングCookieの使用は一切行いません。',
-    accept: '同意する',
-    decline: '拒否する'
+    title: 'プライバシーは保護されています',
+    description: 'このウェブサイトは、表示設定（言語、ダークモード）のみをブラウザにローカル保存します。Cookie、個人データの収集、トラッキングは一切なく、データがデバイスから外部���送信されることはありません。',
+    learnMore: 'プライバシー',
+    dismiss: '了解',
   },
   zh: {
-    title: '隐私声明',
-    description: '本网站仅使用基本功能所需的必要Cookie。我们不收集任何个人数据，也不使用跟踪Cookie。您的隐私对我们非常重要。',
-    accept: '接受',
-    decline: '拒绝'
-  }
+    title: '您的隐私受到保护',
+    description: '本网站仅在您的浏览器中本地保存显示偏好设置（语言、深色模式）。没有Cookie，不收集个人数据，不进行跟踪——没有任何数据离开您的设备。',
+    learnMore: '隐私政策',
+    dismiss: '知道了',
+  },
 };
 
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const { lang } = useParams<{ lang: string }>();
   const currentLang = (lang || 'en') as Language;
-  const texts = cookieBannerTexts[currentLang] || cookieBannerTexts.en;
+  const texts = privacyNoticeTexts[currentLang] || privacyNoticeTexts.en;
 
   useEffect(() => {
-    // Prüfe ob der Nutzer bereits eine Entscheidung getroffen hat
-    const cookieConsent = localStorage.getItem('maca-cookie-consent');
-    if (!cookieConsent) {
-      // Zeige Banner nach kurzer Verzögerung
-      const timer = setTimeout(() => setShowBanner(true), 1000);
-      return () => clearTimeout(timer);
+    // Show notice only once — after user dismisses, don't show again
+    // Also honor the old key so existing visitors don't see the banner again
+    const dismissed = localStorage.getItem('maca-privacy-notice-dismissed');
+    const legacyConsent = localStorage.getItem('maca-cookie-consent');
+    if (dismissed || legacyConsent) {
+      // Migrate old key silently
+      if (legacyConsent && !dismissed) {
+        localStorage.setItem('maca-privacy-notice-dismissed', 'true');
+        localStorage.removeItem('maca-cookie-consent');
+      }
+      return;
     }
+    const timer = setTimeout(() => setShowBanner(true), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('maca-cookie-consent', 'accepted');
-    localStorage.setItem('maca-dark-mode', localStorage.getItem('maca-dark-mode') || 'false');
-    setShowBanner(false);
-  };
-
-  const handleDecline = () => {
-    localStorage.setItem('maca-cookie-consent', 'declined');
-    // Entferne alle nicht-essentiellen Cookies
+  const handleDismiss = () => {
+    localStorage.setItem('maca-privacy-notice-dismissed', 'true');
     setShowBanner(false);
   };
 
@@ -95,29 +96,34 @@ export function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+          className="fixed bottom-0 left-0 right-0 z-[60] p-4 md:p-6"
+          role="status"
+          aria-label={texts.title}
         >
-          <div className="max-w-6xl mx-auto bg-card border border-border rounded-lg shadow-2xl p-4 md:p-6">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg mb-2">{texts.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {texts.description}
-                </p>
+          <div className="max-w-4xl mx-auto bg-card border border-border rounded-2xl shadow-2xl p-5 md:p-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+              <div className="flex items-start gap-3 flex-1">
+                <Shield className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                <div>
+                  <h3 className="font-semibold mb-1">{texts.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {texts.description}
+                  </p>
+                </div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
-                <button
-                  onClick={handleDecline}
-                  className="px-4 py-2 border border-border rounded-lg hover:bg-muted transition-colors text-sm whitespace-nowrap"
+
+              <div className="flex items-center gap-3 w-full md:w-auto">
+                <Link
+                  to={`/${currentLang}/privacy`}
+                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
                 >
-                  {texts.decline}
-                </button>
+                  {texts.learnMore}
+                </Link>
                 <button
-                  onClick={handleAccept}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm whitespace-nowrap"
+                  onClick={handleDismiss}
+                  className="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm whitespace-nowrap ml-auto md:ml-0"
                 >
-                  {texts.accept}
+                  {texts.dismiss}
                 </button>
               </div>
             </div>

@@ -22,9 +22,21 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
         setIsOpen(false);
       }
     }
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        buttonRef.current?.focus();
+      }
+    }
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen && buttonRef.current) {
@@ -51,6 +63,9 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-200 shadow-sm hover:shadow"
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        aria-label="Select language"
       >
         <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 dark:text-slate-400" />
         <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">{languageNames[currentLang]}</span>

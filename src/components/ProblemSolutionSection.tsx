@@ -6,13 +6,21 @@ interface ProblemSolutionSectionProps {
   problems: string[];
   solutionTitle: string;
   solutionSubtitle: string;
+  statOneClick?: string;
+  statOneClickLabel?: string;
+  statApps?: string;
+  statAppsLabel?: string;
 }
 
 export function ProblemSolutionSection({ 
   problemTitle, 
   problems, 
   solutionTitle, 
-  solutionSubtitle 
+  solutionSubtitle,
+  statOneClick = '1 Click',
+  statOneClickLabel = 'Instant Control',
+  statApps = '∞ Apps',
+  statAppsLabel = 'No Limits',
 }: ProblemSolutionSectionProps) {
   return (
     <section className="py-16 px-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
@@ -88,10 +96,10 @@ export function ProblemSolutionSection({
                 className="p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 text-center"
               >
                 <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
-                  1 Click
+                  {statOneClick}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-400">
-                  Instant Control
+                  {statOneClickLabel}
                 </div>
               </motion.div>
               <motion.div
@@ -102,10 +110,10 @@ export function ProblemSolutionSection({
                 className="p-4 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 text-center"
               >
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
-                  ∞ Apps
+                  {statApps}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-400">
-                  No Limits
+                  {statAppsLabel}
                 </div>
               </motion.div>
             </div>

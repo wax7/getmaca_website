@@ -74,7 +74,7 @@ export interface PrivacyTranslation {
 export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   en: {
     title: 'Privacy Policy',
-    lastUpdated: 'Last Updated: February 20, 2026',
+    lastUpdated: 'Last Updated: February 24, 2026',
     intro: 'At MACA (Master Audio Control App), your privacy is our highest priority. This Privacy Policy explains how we handle your data—or rather, how we don\'t collect it.',
     websiteNotice: 'This privacy policy covers both the MACA app AND this website (getmaca.de).',
     sections: {
@@ -210,7 +210,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   de: {
     title: 'Datenschutzerklärung',
-    lastUpdated: 'Zuletzt aktualisiert: 20. Februar 2026',
+    lastUpdated: 'Zuletzt aktualisiert: 24. Februar 2026',
     intro: 'Bei MACA (Master Audio Control App) hat deine Privatsphäre höchste Priorität. Diese Datenschutzerklärung erklärt, wie wir mit deinen Daten umgehen – oder besser gesagt, wie wir sie NICHT sammeln.',
     websiteNotice: 'Diese Datenschutzerklärung umfasst sowohl die MACA App ALS AUCH diese Website (getmaca.de).',
     sections: {
@@ -346,38 +346,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   es: {
     title: 'Política de Privacidad',
-    lastUpdated: 'Última actualización: 4 de febrero de 2026',
+    lastUpdated: 'Última actualización: 24 de febrero de 2026',
     intro: 'En MACA (Master Audio Control App), tu privacidad es nuestra máxima prioridad. Esta Política de Privacidad explica cómo manejamos tus datos—o más bien, cómo NO los recopilamos.',
-    websiteNotice: 'Este sitio web utiliza cookies y otras tecnologías de seguimiento para mejorar tu experiencia y proporcionar contenido personalizado. Al usar este sitio web, das tu consentimiento para el uso de estas tecnologías.',
+    websiteNotice: 'Esta política de privacidad cubre tanto la app MACA COMO este sitio web (getmaca.de).',
     sections: {
       websiteData: {
-        title: 'Datos del Sitio Web',
+        title: '0. Este Sitio Web (getmaca.de)',
         localStorage: {
-          title: 'Almacenamiento Local',
+          title: 'Almacenamiento del Navegador (LocalStorage)',
           items: [
             {
-              name: 'theme',
-              purpose: 'Almacenar la preferencia de tema del usuario',
-              legal: 'RGPD, CCPA',
-              duration: 'Sesión'
+              name: 'maca-cookie-consent',
+              purpose: 'Almacena tu elección de consentimiento de cookies',
+              legal: 'Art. 6 (1) lit. a RGPD (Consentimiento)',
+              duration: 'Permanente (hasta que lo elimines)'
             },
             {
-              name: 'language',
-              purpose: 'Almacenar la preferencia de idioma del usuario',
-              legal: 'RGPD, CCPA',
-              duration: 'Sesión'
+              name: 'maca-dark-mode',
+              purpose: 'Almacena tu preferencia de modo oscuro',
+              legal: 'Art. 6 (1) lit. f RGPD (Interés Legítimo)',
+              duration: 'Permanente (hasta que lo elimines)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Almacena tu preferencia de idioma',
+              legal: 'Art. 6 (1) lit. f RGPD (Interés Legítimo)',
+              duration: 'Permanente (hasta que lo elimines)'
             }
           ]
         },
         externalServices: {
-          title: 'Servicios Externos',
+          title: 'Servicios Externos Utilizados por Este Sitio Web',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: 'Rastrear el uso y el rendimiento del sitio web',
-              dataTransfer: 'A Google LLC',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'RGPD, CCPA'
+              name: 'Apple App Store (Enlaces de Descarga)',
+              purpose: 'Descarga y compra de la app',
+              dataTransfer: 'Los datos de clic se transmiten a Apple cuando haces clic en los enlaces de descarga',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 (1) lit. f RGPD (Interés Legítimo)'
             }
           ]
         }
@@ -476,38 +482,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   fr: {
     title: 'Politique de Confidentialité',
-    lastUpdated: 'Dernière mise à jour : 4 février 2026',
+    lastUpdated: 'Dernière mise à jour : 24 février 2026',
     intro: 'Chez MACA (Master Audio Control App), votre vie privée est notre priorité absolue. Cette Politique de Confidentialité explique comment nous gérons vos données—ou plutôt, comment nous ne les collectons PAS.',
-    websiteNotice: 'Ce site Web utilise des cookies et d\'autres technologies de suivi pour améliorer votre expérience et fournir du contenu personnalisé. En utilisant ce site Web, vous consentez à l\'utilisation de ces technologies.',
+    websiteNotice: 'Cette politique de confidentialité couvre à la fois l\'application MACA ET ce site web (getmaca.de).',
     sections: {
       websiteData: {
-        title: 'Données du Site Web',
+        title: '0. Ce Site Web (getmaca.de)',
         localStorage: {
-          title: 'Stockage Local',
+          title: 'Stockage du Navigateur (LocalStorage)',
           items: [
             {
-              name: 'theme',
-              purpose: 'Stocke la préférence de thème de l\'utilisateur',
-              legal: 'RGPD, CCPA',
-              duration: 'Session'
+              name: 'maca-cookie-consent',
+              purpose: 'Stocke votre choix de consentement aux cookies',
+              legal: 'Art. 6 (1) lit. a RGPD (Consentement)',
+              duration: 'Permanent (jusqu\'à suppression)'
             },
             {
-              name: 'language',
-              purpose: 'Stocke la préférence de langue de l\'utilisateur',
-              legal: 'RGPD, CCPA',
-              duration: 'Session'
+              name: 'maca-dark-mode',
+              purpose: 'Stocke votre préférence de mode sombre',
+              legal: 'Art. 6 (1) lit. f RGPD (Intérêt Légitime)',
+              duration: 'Permanent (jusqu\'à suppression)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Stocke votre préférence de langue',
+              legal: 'Art. 6 (1) lit. f RGPD (Intérêt Légitime)',
+              duration: 'Permanent (jusqu\'à suppression)'
             }
           ]
         },
         externalServices: {
-          title: 'Services Externes',
+          title: 'Services Externes Utilisés par Ce Site Web',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: 'Suivre l\'utilisation et les performances du site Web',
-              dataTransfer: 'À Google LLC',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'RGPD, CCPA'
+              name: 'Apple App Store (Liens de Téléchargement)',
+              purpose: 'Téléchargement et achat de l\'application',
+              dataTransfer: 'Les données de clic sont transmises à Apple lorsque vous cliquez sur les liens de téléchargement',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 (1) lit. f RGPD (Intérêt Légitime)'
             }
           ]
         }
@@ -606,38 +618,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   it: {
     title: 'Informativa sulla Privacy',
-    lastUpdated: 'Ultimo aggiornamento: 4 febbraio 2026',
+    lastUpdated: 'Ultimo aggiornamento: 24 febbraio 2026',
     intro: 'In MACA (Master Audio Control App), la tua privacy è la nostra massima priorità. Questa Informativa sulla Privacy spiega come gestiamo i tuoi dati—o meglio, come NON li raccogliamo.',
-    websiteNotice: 'Questo sito web utilizza cookie e altre tecnologie di tracciamento per migliorare la tua esperienza e fornire contenuti personalizzati. Utilizzando questo sito web, acconsenti all\'uso di queste tecnologie.',
+    websiteNotice: 'Questa informativa sulla privacy copre sia l\'app MACA CHE questo sito web (getmaca.de).',
     sections: {
       websiteData: {
-        title: 'Dati del Sito Web',
+        title: '0. Questo Sito Web (getmaca.de)',
         localStorage: {
-          title: 'Archiviazione Locale',
+          title: 'Archiviazione del Browser (LocalStorage)',
           items: [
             {
-              name: 'theme',
-              purpose: 'Archivia la preferenza di tema dell\'utente',
-              legal: 'GDPR, CCPA',
-              duration: 'Sessione'
+              name: 'maca-cookie-consent',
+              purpose: 'Archivia la tua scelta di consenso ai cookie',
+              legal: 'Art. 6 (1) lit. a GDPR (Consenso)',
+              duration: 'Permanente (fino alla cancellazione)'
             },
             {
-              name: 'language',
-              purpose: 'Archivia la preferenza di lingua dell\'utente',
-              legal: 'GDPR, CCPA',
-              duration: 'Sessione'
+              name: 'maca-dark-mode',
+              purpose: 'Archivia la tua preferenza di modalità scura',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legittimo)',
+              duration: 'Permanente (fino alla cancellazione)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Archivia la tua preferenza di lingua',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legittimo)',
+              duration: 'Permanente (fino alla cancellazione)'
             }
           ]
         },
         externalServices: {
-          title: 'Servizi Esterni',
+          title: 'Servizi Esterni Utilizzati da Questo Sito Web',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: 'Tracciare l\'utilizzo e le prestazioni del sito web',
-              dataTransfer: 'A Google LLC',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'GDPR, CCPA'
+              name: 'Apple App Store (Link di Download)',
+              purpose: 'Download e acquisto dell\'app',
+              dataTransfer: 'I dati di clic vengono trasmessi ad Apple quando clicchi sui link di download',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legittimo)'
             }
           ]
         }
@@ -736,38 +754,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   pt: {
     title: 'Política de Privacidade',
-    lastUpdated: 'Última atualização: 4 de fevereiro de 2026',
+    lastUpdated: 'Última atualização: 24 de fevereiro de 2026',
     intro: 'Na MACA (Master Audio Control App), sua privacidade é nossa maior prioridade. Esta Política de Privacidade explica como lidamos com seus dados—ou melhor, como NÃO os coletamos.',
-    websiteNotice: 'Este site usa cookies e outras tecnologias de rastreamento para melhorar sua experiência e fornecer conteúdo personalizado. Ao usar este site, você concorda com o uso dessas tecnologias.',
+    websiteNotice: 'Esta política de privacidade cobre tanto o app MACA COMO este site (getmaca.de).',
     sections: {
       websiteData: {
-        title: 'Dados do Site',
+        title: '0. Este Site (getmaca.de)',
         localStorage: {
-          title: 'Armazenamento Local',
+          title: 'Armazenamento do Navegador (LocalStorage)',
           items: [
             {
-              name: 'theme',
-              purpose: 'Armazena a preferência de tema do usuário',
-              legal: 'GDPR, CCPA',
-              duration: 'Sessão'
+              name: 'maca-cookie-consent',
+              purpose: 'Armazena sua escolha de consentimento de cookies',
+              legal: 'Art. 6 (1) lit. a GDPR (Consentimento)',
+              duration: 'Permanente (até você excluir)'
             },
             {
-              name: 'language',
-              purpose: 'Armazena a preferência de idioma do usuário',
-              legal: 'GDPR, CCPA',
-              duration: 'Sessão'
+              name: 'maca-dark-mode',
+              purpose: 'Armazena sua preferência de modo escuro',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legítimo)',
+              duration: 'Permanente (até você excluir)'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: 'Armazena sua preferência de idioma',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legítimo)',
+              duration: 'Permanente (até você excluir)'
             }
           ]
         },
         externalServices: {
-          title: 'Serviços Externos',
+          title: 'Serviços Externos Utilizados por Este Site',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: 'Rastrear o uso e o desempenho do site',
-              dataTransfer: 'Para Google LLC',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'GDPR, CCPA'
+              name: 'Apple App Store (Links de Download)',
+              purpose: 'Download e compra do app',
+              dataTransfer: 'Os dados de clique são transmitidos à Apple quando você clica nos links de download',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'Art. 6 (1) lit. f GDPR (Interesse Legítimo)'
             }
           ]
         }
@@ -866,38 +890,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   ja: {
     title: 'プライバシーポリシー',
-    lastUpdated: '最終更新日：2026年2月4日',
+    lastUpdated: '最終更新日：2026年2月24日',
     intro: 'MACA（Master Audio Control App）では、お客様のプライバシーを最優先事項としています。このプライバシーポリシーでは、データの取り扱い方法、またはむしろデータを収集しない方法について説明します。',
-    websiteNotice: 'このウェブサイトでは、あなたの経験を向上させ、パーソナライズされたコンテンツを提供するために、クッキーとその他の追跡技術を使用しています。このウェブサイトを使用することで、これらの技術の使用に同意したことになります。',
+    websiteNotice: 'このプライバシーポリシーは、MACAアプリおよびこのウェブサイト（getmaca.de）の両方を対象としています。',
     sections: {
       websiteData: {
-        title: 'ウェブサイトデータ',
+        title: '0. このウェブサイト（getmaca.de）',
         localStorage: {
-          title: 'ローカルストレージ',
+          title: 'ブラウザストレージ（LocalStorage）',
           items: [
             {
-              name: 'theme',
-              purpose: 'ユーザーのテーマ設定を保存',
-              legal: 'GDPR, CCPA',
-              duration: 'セッション'
+              name: 'maca-cookie-consent',
+              purpose: 'Cookie同意の選択を保存',
+              legal: 'GDPR第6条(1)項(a)（同意）',
+              duration: '永続的（削除するまで）'
             },
             {
-              name: 'language',
-              purpose: 'ユーザーの言語設定を保存',
-              legal: 'GDPR, CCPA',
-              duration: 'セッション'
+              name: 'maca-dark-mode',
+              purpose: 'ダークモード設定を保存',
+              legal: 'GDPR第6条(1)項(f)（正当な利益）',
+              duration: '永続的（削除するまで）'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: '言語設定を保存',
+              legal: 'GDPR第6条(1)項(f)（正当な利益）',
+              duration: '永続的（削除するまで）'
             }
           ]
         },
         externalServices: {
-          title: '外部サービス',
+          title: 'このウェブサイトで使用する外部サービス',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: 'ウェブサイトの使用とパフォーマンスを追跡',
-              dataTransfer: 'Google LLCへ',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'GDPR, CCPA'
+              name: 'Apple App Store（ダウンロードリンク）',
+              purpose: 'アプリのダウンロードと購入',
+              dataTransfer: 'ダウンロードリンクをクリックすると、クリックデータがAppleに送信されます',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'GDPR第6条(1)項(f)（正当な利益）'
             }
           ]
         }
@@ -996,38 +1026,44 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
   },
   zh: {
     title: '隐私政策',
-    lastUpdated: '最后更新：2026年2月4日',
+    lastUpdated: '最后更新：2026年2月24日',
     intro: '在MACA（Master Audio Control App）中，您的隐私是我们的最高优先事项。本隐私政策解释了我们如何处理您的数据——或者更确切地说，我们如何不收集数据。',
-    websiteNotice: '此网站使用cookie和其他跟踪技术来改善您的体验并提供个性化内容。使用此网站即表示您同意使用这些���术。',
+    websiteNotice: '本隐私政策涵盖MACA应用程序和本网站（getmaca.de）。',
     sections: {
       websiteData: {
-        title: '网站数据',
+        title: '0. 本网站（getmaca.de）',
         localStorage: {
-          title: '本地存储',
+          title: '浏览器存储（LocalStorage）',
           items: [
             {
-              name: 'theme',
-              purpose: '存储用户主题偏好',
-              legal: 'GDPR, CCPA',
-              duration: '会话'
+              name: 'maca-cookie-consent',
+              purpose: '存储您的Cookie同意选择',
+              legal: 'GDPR第6条(1)项(a)（同意）',
+              duration: '永久（直到您删除）'
             },
             {
-              name: 'language',
-              purpose: '存储用户语言偏好',
-              legal: 'GDPR, CCPA',
-              duration: '会话'
+              name: 'maca-dark-mode',
+              purpose: '存储您的深色模式偏好',
+              legal: 'GDPR第6条(1)项(f)（合法利益）',
+              duration: '永久（直到您删除）'
+            },
+            {
+              name: 'maca-preferred-language',
+              purpose: '存储您的语言偏好',
+              legal: 'GDPR第6条(1)项(f)（合法利益）',
+              duration: '永久（直到您删除）'
             }
           ]
         },
         externalServices: {
-          title: '外部服务',
+          title: '本网站使用的外部服务',
           items: [
             {
-              name: 'Google Analytics',
-              purpose: '跟踪网站使用情况和性能',
-              dataTransfer: '向Google LLC',
-              privacyLink: 'https://policies.google.com/privacy',
-              legal: 'GDPR, CCPA'
+              name: 'Apple App Store（下载链接）',
+              purpose: '应用下载和购买',
+              dataTransfer: '当您点击下载链接时，点击数据会传输到Apple',
+              privacyLink: 'https://www.apple.com/legal/privacy/',
+              legal: 'GDPR第6条(1)项(f)（合法利益）'
             }
           ]
         }

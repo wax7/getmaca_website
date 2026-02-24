@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+
+  <!-- ============================================================
+       HOME PAGES  (priority 1.0)
+       ============================================================ -->
+
+  <url>
+    <loc>https://getmaca.de/en</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/de</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/fr</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/es</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/it</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/pt</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/ja</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/zh</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en"/>
+  </url>
+
+  <!-- ============================================================
+       FAQ PAGES  (priority 0.8)
+       ============================================================ -->
+
+  <url>
+    <loc>https://getmaca.de/en/faq</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/de/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/fr/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/es/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/it/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/pt/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/ja/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+  <url><loc>https://getmaca.de/zh/faq</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/faq"/>
+  </url>
+
+  <!-- ============================================================
+       PRIVACY PAGES  (priority 0.6)
+       ============================================================ -->
+
+  <url><loc>https://getmaca.de/en/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://getmaca.de/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://getmaca.de/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/privacy"/>
+  </url>
+  <url><loc>https://getmaca.de/de/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/fr/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/es/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/it/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/pt/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/ja/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://getmaca.de/zh/privacy</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- ============================================================
+       TERMS PAGES  (priority 0.5)
+       ============================================================ -->
+
+  <url><loc>https://getmaca.de/en/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/terms"/>
+  </url>
+  <url><loc>https://getmaca.de/de/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/fr/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/es/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/it/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/pt/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/ja/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getmaca.de/zh/terms</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- ============================================================
+       IMPRINT PAGES  (priority 0.4)
+       ============================================================ -->
+
+  <url><loc>https://getmaca.de/en/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/imprint"/>
+  </url>
+  <url><loc>https://getmaca.de/de/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/fr/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/es/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/it/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/pt/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/ja/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://getmaca.de/zh/imprint</loc><lastmod>2026-02-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+</urlset>

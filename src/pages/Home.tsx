@@ -1,23 +1,22 @@
 import { useEffect, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
-import { Download, Volume2, VolumeX, Shield, Zap, ChevronDown, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star } from 'lucide-react';
+import { Download, Volume2, VolumeX, Shield, Zap, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
-import { AnimatedEqualizer } from '../components/AnimatedEqualizer';
 import { ProblemSolutionSection } from '../components/ProblemSolutionSection';
 import { ScreenshotShowcase } from '../components/ScreenshotShowcase';
 import { MacBookIllustration } from '../components/MacBookIllustration';
 import { UseCaseCard } from '../components/UseCaseCard';
 import { FeatureCard } from '../components/FeatureCard';
 import { PrivacySection } from '../components/PrivacySection';
-import { TestimonialsSection } from '../components/TestimonialsSection';
 import { PricingCard } from '../components/PricingCard';
 import { BenefitBadge } from '../components/BenefitBadge';
 import { FAQSection } from '../components/FAQSection';
+import { Footer } from '../components/Footer';
 
 interface Feature {
   icon: JSX.Element;
@@ -186,7 +185,7 @@ function getFAQItems(lang: Language) {
     ],
     zh: [
       {
-        question: '什么是MACA？',
+        question: '什是MACA？',
         answer: 'MACA（Master Audio Control App）是一款macOS应用程序，可让您精细控制Mac上运行的每个应用程序的音量。无需在应用程序之间跳转即可调整音频级别！'
       },
       {
@@ -332,16 +331,41 @@ export function Home() {
     },
     copyright: currentLang === 'de' ? 'Alle Rechte vorbehalten.' :
                currentLang === 'es' ? 'Todos los derechos reservados.' :
-               currentLang === 'fr' ? 'Tous droits rservés.' :
+               currentLang === 'fr' ? 'Tous droits réservés.' :
                currentLang === 'it' ? 'Tutti i diritti riservati.' :
                currentLang === 'pt' ? 'Todos os direitos reservados.' :
                currentLang === 'ja' ? '全著作権所有。' :
                currentLang === 'zh' ? '版权所有。' :
-               'All rights reserved.'
+               'All rights reserved.',
+    statOneClick: currentLang === 'de' ? '1 Klick' :
+                  currentLang === 'es' ? '1 Clic' :
+                  currentLang === 'fr' ? '1 Clic' :
+                  currentLang === 'it' ? '1 Clic' :
+                  currentLang === 'pt' ? '1 Clique' :
+                  currentLang === 'ja' ? 'ワンクリック' :
+                  currentLang === 'zh' ? '一键' :
+                  '1 Click',
+    statOneClickLabel: currentLang === 'de' ? 'Sofortige Kontrolle' :
+                       currentLang === 'es' ? 'Control Instantáneo' :
+                       currentLang === 'fr' ? 'Contrôle Instantané' :
+                       currentLang === 'it' ? 'Controllo Istantaneo' :
+                       currentLang === 'pt' ? 'Controle Instantâneo' :
+                       currentLang === 'ja' ? '即座にコントロール' :
+                       currentLang === 'zh' ? '即时控制' :
+                       'Instant Control',
+    statApps: '∞ Apps',
+    statAppsLabel: currentLang === 'de' ? 'Keine Grenzen' :
+                   currentLang === 'es' ? 'Sin Límites' :
+                   currentLang === 'fr' ? 'Sans Limites' :
+                   currentLang === 'it' ? 'Senza Limiti' :
+                   currentLang === 'pt' ? 'Sem Limites' :
+                   currentLang === 'ja' ? '無制限' :
+                   currentLang === 'zh' ? '无限制' :
+                   'No Limits',
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 overflow-x-hidden" style={{ maxWidth: '100vw' }}>
       {/* Header */}
       <Header 
         scrolled={scrolled} 
@@ -357,8 +381,9 @@ export function Home() {
         />
       </Header>
 
+      <main id="main-content">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -399,7 +424,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="relative text-7xl md:text-9xl mb-4 leading-tight tracking-tight"
+              className="relative text-6xl sm:text-7xl md:text-9xl mb-4 leading-tight tracking-tight"
             >
               <span className="relative inline-block">
                 <span className="font-black bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-500 bg-clip-text text-transparent animate-gradient">
@@ -417,7 +442,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-8 text-slate-900 dark:text-white leading-tight px-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 text-slate-900 dark:text-white leading-tight px-2 sm:px-4"
               style={{ textWrap: 'balance' } as any}
             >
               {t.hero.title}
@@ -427,7 +452,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto px-2"
             >
               {t.hero.subtitle}
             </motion.p>
@@ -448,6 +473,10 @@ export function Home() {
         problemTitle={t.problem.title}
         solutionTitle={t.solution.title}
         solutionSubtitle={t.solution.subtitle}
+        statOneClick={additionalT.statOneClick}
+        statOneClickLabel={additionalT.statOneClickLabel}
+        statApps={additionalT.statApps}
+        statAppsLabel={additionalT.statAppsLabel}
       />
 
       {/* MacBook Audio Devices Illustration */}
@@ -704,93 +733,10 @@ export function Home() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-slate-900 text-slate-400">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Volume2 className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-semibold text-white">MACA</span>
-              </div>
-              <p className="text-slate-500">{t.footer.tagline}</p>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">{t.footer.legal}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to={`/${currentLang}/imprint`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {t.footer.imprint}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/${currentLang}/privacy`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Datenschutz' :
-                     currentLang === 'es' ? 'Privacidad' :
-                     currentLang === 'fr' ? 'Confidentialité' :
-                     currentLang === 'it' ? 'Privacy' :
-                     currentLang === 'pt' ? 'Privacidade' :
-                     currentLang === 'ja' ? 'プライバシー' :
-                     currentLang === 'zh' ? '隐私' :
-                     'Privacy Policy'}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/${currentLang}/terms`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Nutzungsbedingungen' :
-                     currentLang === 'es' ? 'Términos de uso' :
-                     currentLang === 'fr' ? 'Conditions d\'utilisation' :
-                     currentLang === 'it' ? 'Termini di utilizzo' :
-                     currentLang === 'pt' ? 'Termos de uso' :
-                     currentLang === 'ja' ? '利用規約' :
-                     currentLang === 'zh' ? '使用条款' :
-                     'Terms of Use'}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">{t.footer.support}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to={`/${currentLang}/faq`}
-                    className="hover:text-white transition-colors"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <a href="mailto:Support@getmaca.de" className="hover:text-white transition-colors">
-                    Support@getmaca.de
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
-            <p>© {currentYear} AMX Mediensysteme. {additionalT.copyright}</p>
-          </div>
-        </div>
-      </footer>
+      <Footer currentLang={currentLang} />
     </div>
   );
 }

@@ -270,6 +270,31 @@ export function DocumentHead() {
     }
     ati.href = macaAppLogo;
 
+    // ── Web App Manifest ──────────────────────────────────────────────────
+    let manifest = document.querySelector('link[rel="manifest"]') as HTMLLinkElement | null;
+    if (!manifest) {
+      manifest = document.createElement('link');
+      manifest.rel = 'manifest';
+      manifest.href = '/manifest.json';
+      document.head.appendChild(manifest);
+    }
+
+    // ── Content Security Policy (meta fallback) ───────────────────────────
+    if (!document.querySelector('meta[http-equiv="Content-Security-Policy"]')) {
+      const csp = document.createElement('meta');
+      csp.httpEquiv = 'Content-Security-Policy';
+      csp.content = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://apps.apple.com; frame-ancestors 'self' https://www.figma.com";
+      document.head.appendChild(csp);
+    }
+
+    // ── X-UA-Compatible ───────────────────────────────────────────────────
+    if (!document.querySelector('meta[http-equiv="X-UA-Compatible"]')) {
+      const xua = document.createElement('meta');
+      xua.httpEquiv = 'X-UA-Compatible';
+      xua.content = 'IE=edge';
+      document.head.appendChild(xua);
+    }
+
     // ── Open Graph ────────────────────────────────────────────────────────
     const ogTitle = titleMap ? (titleMap[currentLang] || titleMap.en) : 'MACA – Master Audio Control';
     const ogTags: Array<{ property?: string; name?: string; content: string }> = [
@@ -284,7 +309,6 @@ export function DocumentHead() {
       { property: 'og:type', content: 'website' },
       { property: 'og:locale', content: ogLocales[currentLang] || 'en_US' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@getmacaapp' },
       { name: 'twitter:title', content: ogTitle },
       { name: 'twitter:description', content: metaDescriptions[currentLang] },
       { name: 'twitter:image', content: `${BASE_URL}${macaAppLogo}` },
@@ -367,14 +391,7 @@ export function DocumentHead() {
           description: 'Pro upgrade – audio profiles, enhanced EQ, Focus Mode, and more',
         },
       ],
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.8',
-        bestRating: '5',
-        worstRating: '1',
-        ratingCount: '247',
-        reviewCount: '89',
-      },
+      // aggregateRating will be added once the app has real App Store ratings
       description: metaDescriptions['en'],
       image: `${BASE_URL}${macaAppLogo}`,
       author: {
@@ -407,7 +424,7 @@ export function DocumentHead() {
       sameAs: [APP_STORE_URL],
     };
 
-    // 3. WebSite schema with SearchAction (enables Google Sitelinks Searchbox)
+    // 3. WebSite schema
     const webSite = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
@@ -416,14 +433,6 @@ export function DocumentHead() {
       name: 'MACA – Master Audio Control',
       inLanguage: languages,
       publisher: { '@id': `${BASE_URL}/#organization` },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${BASE_URL}/en/faq?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
-      },
     };
 
     // 4. BreadcrumbList schema (all pages except home)
@@ -483,7 +492,7 @@ export function DocumentHead() {
     });
 
     // ── Performance hints ─────────────────────────────────────────────────
-    const dnsPrefetch = ['https://apps.apple.com', 'https://images.unsplash.com'];
+    const dnsPrefetch = ['https://apps.apple.com'];
     dnsPrefetch.forEach(url => {
       if (!document.querySelector(`link[rel="dns-prefetch"][href="${url}"]`)) {
         const link = document.createElement('link');

@@ -320,7 +320,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
   const currentScreenshot = screenshots[currentIndex];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -451,7 +451,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
 
 // Thin animated progress bar that fills up during autoplay interval
 function AutoplayProgressBar({
-  isPaused: _isPaused,
+  isPaused,
   duration,
 }: {
   isPaused?: React.MutableRefObject<boolean>;
@@ -468,7 +468,35 @@ function AutoplayProgressBar({
     void bar.offsetWidth;
     bar.style.transition = `width ${duration}ms linear`;
     bar.style.width = '100%';
-  }, [duration]);
+
+    // Poll isPaused to pause/resume CSS animation
+    let rafId: number;
+    const checkPaused = () => {
+      if (!bar) return;
+      if (isPaused?.current) {
+        bar.style.animationPlayState = 'paused';
+        bar.style.webkitAnimationPlayState = 'paused';
+        // Pause the CSS transition by reading current width and freezing it
+        const computedWidth = getComputedStyle(bar).width;
+        bar.style.transition = 'none';
+        bar.style.width = computedWidth;
+      } else if (bar.style.transition === 'none' || bar.style.transition === 'none 0s ease 0s') {
+        // Resume from where it left off
+        const currentWidthPercent = parseFloat(getComputedStyle(bar).width) / bar.parentElement!.offsetWidth * 100;
+        const remainingPercent = 100 - currentWidthPercent;
+        const remainingTime = (remainingPercent / 100) * duration;
+        if (remainingTime > 50) {
+          void bar.offsetWidth;
+          bar.style.transition = `width ${remainingTime}ms linear`;
+          bar.style.width = '100%';
+        }
+      }
+      rafId = requestAnimationFrame(checkPaused);
+    };
+    rafId = requestAnimationFrame(checkPaused);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [duration, isPaused]);
 
   return (
     <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-300/40 dark:bg-slate-700/40 rounded-b-2xl overflow-hidden pointer-events-none">

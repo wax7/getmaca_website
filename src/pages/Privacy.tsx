@@ -8,6 +8,7 @@ import { Language } from '../locales/translations';
 import { privacyTranslations } from '../utils/privacy-translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
+import { Footer } from '../components/Footer';
 
 export function Privacy() {
   const { lang } = useParams();
@@ -31,6 +32,50 @@ export function Privacy() {
 
   const handleLanguageChange = (newLang: Language) => {
     navigate(`/${newLang}/privacy`);
+  };
+
+  // Localized labels for Privacy detail fields
+  const labels = {
+    purpose: currentLang === 'de' ? 'Zweck' :
+             currentLang === 'es' ? 'Propósito' :
+             currentLang === 'fr' ? 'Objectif' :
+             currentLang === 'it' ? 'Scopo' :
+             currentLang === 'pt' ? 'Finalidade' :
+             currentLang === 'ja' ? '目的' :
+             currentLang === 'zh' ? '用途' :
+             'Purpose',
+    legalBasis: currentLang === 'de' ? 'Rechtsgrundlage' :
+                currentLang === 'es' ? 'Base legal' :
+                currentLang === 'fr' ? 'Base juridique' :
+                currentLang === 'it' ? 'Base giuridica' :
+                currentLang === 'pt' ? 'Base legal' :
+                currentLang === 'ja' ? '法的根拠' :
+                currentLang === 'zh' ? '法律依据' :
+                'Legal Basis',
+    duration: currentLang === 'de' ? 'Dauer' :
+              currentLang === 'es' ? 'Duración' :
+              currentLang === 'fr' ? 'Durée' :
+              currentLang === 'it' ? 'Durata' :
+              currentLang === 'pt' ? 'Duração' :
+              currentLang === 'ja' ? '期間' :
+              currentLang === 'zh' ? '持续时间' :
+              'Duration',
+    dataTransfer: currentLang === 'de' ? 'Datenübertragung' :
+                  currentLang === 'es' ? 'Transferencia de datos' :
+                  currentLang === 'fr' ? 'Transfert de données' :
+                  currentLang === 'it' ? 'Trasferimento dati' :
+                  currentLang === 'pt' ? 'Transferência de dados' :
+                  currentLang === 'ja' ? 'データ転送' :
+                  currentLang === 'zh' ? '数据传输' :
+                  'Data Transfer',
+    privacyPolicy: currentLang === 'de' ? 'Datenschutzrichtlinie' :
+                   currentLang === 'es' ? 'Política de privacidad' :
+                   currentLang === 'fr' ? 'Politique de confidentialité' :
+                   currentLang === 'it' ? 'Informativa sulla privacy' :
+                   currentLang === 'pt' ? 'Política de privacidade' :
+                   currentLang === 'ja' ? 'プライバシーポリシー' :
+                   currentLang === 'zh' ? '隐私政策' :
+                   'Privacy Policy',
   };
 
   const backToHome = currentLang === 'de' ? 'Zurück zur Startseite' :
@@ -68,6 +113,7 @@ export function Privacy() {
         />
       </Header>
 
+      <main id="main-content">
       {/* Hero Section */}
       <section className="relative pt-32 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
@@ -137,13 +183,13 @@ export function Privacy() {
                           {item.name}
                         </div>
                         <div className="text-slate-700 dark:text-slate-300 mb-1">
-                          <strong>Purpose:</strong> {item.purpose}
+                          <strong>{labels.purpose}:</strong> {item.purpose}
                         </div>
                         <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
-                          <strong>Legal Basis:</strong> {item.legal}
+                          <strong>{labels.legalBasis}:</strong> {item.legal}
                         </div>
                         <div className="text-slate-600 dark:text-slate-400 text-sm">
-                          <strong>Duration:</strong> {item.duration}
+                          <strong>{labels.duration}:</strong> {item.duration}
                         </div>
                       </div>
                     ))}
@@ -162,16 +208,16 @@ export function Privacy() {
                           {item.name}
                         </div>
                         <div className="text-slate-700 dark:text-slate-300 mb-1">
-                          <strong>Purpose:</strong> {item.purpose}
+                          <strong>{labels.purpose}:</strong> {item.purpose}
                         </div>
                         <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
-                          <strong>Data Transfer:</strong> {item.dataTransfer}
+                          <strong>{labels.dataTransfer}:</strong> {item.dataTransfer}
                         </div>
                         <div className="text-slate-600 dark:text-slate-400 text-sm mb-1">
-                          <strong>Legal Basis:</strong> {item.legal}
+                          <strong>{labels.legalBasis}:</strong> {item.legal}
                         </div>
                         <div className="text-slate-600 dark:text-slate-400 text-sm">
-                          <strong>Privacy Policy:</strong>{' '}
+                          <strong>{labels.privacyPolicy}:</strong>{' '}
                           <a 
                             href={item.privacyLink} 
                             target="_blank" 
@@ -339,114 +385,10 @@ export function Privacy() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-slate-900 text-slate-400">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Volume2 className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-semibold text-white">MACA</span>
-              </div>
-              <p className="text-slate-500">
-                {currentLang === 'de' ? 'Master Audio Control für macOS' :
-                 currentLang === 'es' ? 'Control maestro de audio para macOS' :
-                 currentLang === 'fr' ? 'Contrôle audio principal pour macOS' :
-                 currentLang === 'it' ? 'Controllo audio principale per macOS' :
-                 currentLang === 'pt' ? 'Controle de áudio principal para macOS' :
-                 currentLang === 'ja' ? 'macOS用マスターオーディオコントロール' :
-                 currentLang === 'zh' ? 'macOS音频主控制' :
-                 'Master Audio Control for macOS'}
-              </p>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">
-                {currentLang === 'de' ? 'Rechtliches' :
-                 currentLang === 'es' ? 'Legal' :
-                 currentLang === 'fr' ? 'Mentions Légales' :
-                 currentLang === 'it' ? 'Note Legali' :
-                 currentLang === 'pt' ? 'Jurídico' :
-                 currentLang === 'ja' ? '法的情報' :
-                 currentLang === 'zh' ? '法律信息' :
-                 'Legal'}
-              </h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to={`/${currentLang}/imprint`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Impressum' :
-                     currentLang === 'es' ? 'Aviso Legal' :
-                     currentLang === 'fr' ? 'Mentions Légales' :
-                     currentLang === 'it' ? 'Note Legali' :
-                     currentLang === 'pt' ? 'Aviso Legal' :
-                     currentLang === 'ja' ? '法的情報' :
-                     currentLang === 'zh' ? '法律信息' :
-                     'Imprint'}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/${currentLang}/privacy`}
-                    className="hover:text-white transition-colors"
-                  >
-                    {currentLang === 'de' ? 'Datenschutz' :
-                     currentLang === 'es' ? 'Privacidad' :
-                     currentLang === 'fr' ? 'Confidentialité' :
-                     currentLang === 'it' ? 'Privacy' :
-                     currentLang === 'pt' ? 'Privacidade' :
-                     currentLang === 'ja' ? 'プライバシー' :
-                     currentLang === 'zh' ? '隐私' :
-                     'Privacy'}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">
-                {currentLang === 'de' ? 'Support' :
-                 currentLang === 'es' ? 'Soporte' :
-                 currentLang === 'fr' ? 'Assistance' :
-                 currentLang === 'it' ? 'Supporto' :
-                 currentLang === 'pt' ? 'Suporte' :
-                 currentLang === 'ja' ? 'サポート' :
-                 currentLang === 'zh' ? '支持' :
-                 'Support'}
-              </h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="mailto:Support@getmaca.de" className="hover:text-white transition-colors">
-                    Support@getmaca.de
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
-            <p>
-              © {new Date().getFullYear()} AMX Mediensysteme.{' '}
-              {currentLang === 'de' ? 'Alle Rechte vorbehalten.' :
-               currentLang === 'es' ? 'Todos los derechos reservados.' :
-               currentLang === 'fr' ? 'Tous droits réservés.' :
-               currentLang === 'it' ? 'Tutti i diritti riservati.' :
-               currentLang === 'pt' ? 'Todos os direitos reservados.' :
-               currentLang === 'ja' ? '全著作権所有。' :
-               currentLang === 'zh' ? '版权所有。' :
-               'All rights reserved.'}
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer currentLang={currentLang} />
     </div>
   );
 }

@@ -175,6 +175,14 @@ export interface Translation {
     responsible: string;
     disclaimer: string;
   };
+  notFound: {
+    title: string;
+    description: string;
+    backHome: string;
+    goBack: string;
+    helpText: string;
+    faqLink: string;
+  };
 }
 
 export const translations: Record<Language, Translation> = {
@@ -374,6 +382,14 @@ export const translations: Record<Language, Translation> = {
       responsible: 'Responsible for content',
       disclaimer: 'Disclaimer: All product names, logos, and brands are property of their respective owners.',
     },
+    notFound: {
+      title: 'Page Not Found',
+      description: 'Oops! The page you\'re looking for doesn\'t exist or has been moved.',
+      backHome: 'Back to Home',
+      goBack: 'Go Back',
+      helpText: 'Need help?',
+      faqLink: 'Visit our FAQ',
+    },
   },
   de: {
     name: 'Deutsch',
@@ -570,6 +586,14 @@ export const translations: Record<Language, Translation> = {
       contact: 'Kontakt',
       responsible: 'Verantwortlich für den Inhalt',
       disclaimer: 'Haftungsausschluss: Alle Produktnamen, Logos und Marken sind Eigentum ihrer jeweiligen Inhaber.',
+    },
+    notFound: {
+      title: 'Seite nicht gefunden',
+      description: 'Hoppla! Die gesuchte Seite existiert nicht oder wurde verschoben.',
+      backHome: 'Zurück zur Startseite',
+      goBack: 'Zurück',
+      helpText: 'Brauchst du Hilfe?',
+      faqLink: 'Besuche unsere FAQ',
     },
   },
   es: {
@@ -768,6 +792,14 @@ export const translations: Record<Language, Translation> = {
       responsible: 'Responsable del contenido',
       disclaimer: 'Aviso: Todos los nombres de productos, logotipos y marcas son propiedad de sus respectivos dueños.',
     },
+    notFound: {
+      title: 'Página no encontrada',
+      description: '¡Vaya! La página que buscas no existe o fue movida.',
+      backHome: 'Volver al inicio',
+      goBack: 'Volver',
+      helpText: '¿Necesitas ayuda?',
+      faqLink: 'Visita nuestras FAQ',
+    },
   },
   fr_DUPLICATE_SECTION_REMOVED: {
     name: 'Français',
@@ -944,6 +976,14 @@ export const translations: Record<Language, Translation> = {
       contact: 'Contato',
       responsible: 'Responsável pelo conteúdo',
       disclaimer: 'Aviso: Todos os nomes de produtos, logotipos e marcas são propriedade de seus respectivos donos.',
+    },
+    notFound: {
+      title: 'Page non trouvée',
+      description: 'Oups ! La page que vous recherchez n\'existe pas ou a été déplacée.',
+      backHome: 'Retour à l\'accueil',
+      goBack: 'Retour',
+      helpText: 'Besoin d\'aide ?',
+      faqLink: 'Consultez notre FAQ',
     },
   }, // END OF DUPLICATE SECTION */
   fr: {
@@ -1138,6 +1178,14 @@ export const translations: Record<Language, Translation> = {
       responsible: 'Responsable du contenu',
       disclaimer: 'Avertissement : Tous les noms de produits, logos et marques sont la propriété de leurs détenteurs respectifs.',
     },
+    notFound: {
+      title: 'Page non trouvée',
+      description: 'Oups ! La page que vous recherchez n\'existe pas ou a été déplacée.',
+      backHome: 'Retour à l\'accueil',
+      goBack: 'Retour',
+      helpText: 'Besoin d\'aide ?',
+      faqLink: 'Consultez notre FAQ',
+    },
   },
   it: {
     name: 'Italiano',
@@ -1331,6 +1379,14 @@ export const translations: Record<Language, Translation> = {
       responsible: 'Responsabile del contenuto',
       disclaimer: 'Disclaimer: Tutti i nomi di prodotti, loghi e marchi sono proprietà dei rispettivi proprietari.',
     },
+    notFound: {
+      title: 'Pagina non trovata',
+      description: 'Oops! La pagina che cerchi non esiste o è stata spostata.',
+      backHome: 'Torna alla Home',
+      goBack: 'Indietro',
+      helpText: 'Hai bisogno di aiuto?',
+      faqLink: 'Visita le nostre FAQ',
+    },
   },
   pt: {
     name: 'Português',
@@ -1507,6 +1563,14 @@ export const translations: Record<Language, Translation> = {
       contact: 'Contato',
       responsible: 'Responsável pelo conteúdo',
       disclaimer: 'Aviso: Todos os nomes de produtos, logotipos e marcas são propriedade de seus respectivos donos.',
+    },
+    notFound: {
+      title: 'Página não encontrada',
+      description: 'Ops! A página que você procura não existe ou foi movida.',
+      backHome: 'Voltar ao início',
+      goBack: 'Voltar',
+      helpText: 'Precisa de ajuda?',
+      faqLink: 'Visite nosso FAQ',
     },
   },
   ja: {
@@ -1701,6 +1765,14 @@ export const translations: Record<Language, Translation> = {
       responsible: 'コンテンツ責任者',
       disclaimer: '免責事項：すべての製品名、ロゴ、ブランドはそれぞれの所有者の財産です。',
     },
+    notFound: {
+      title: 'ページが見つかりません',
+      description: 'お探しのページは存在しないか、移動されました。',
+      backHome: 'ホームに戻る',
+      goBack: '戻る',
+      helpText: 'ヘルプが必要ですか？',
+      faqLink: 'FAQをご覧ください',
+    },
   },
   zh: {
     name: '中文',
@@ -1893,6 +1965,14 @@ export const translations: Record<Language, Translation> = {
       contact: '联系方式',
       responsible: '内容负责人',
       disclaimer: '免责声明：所有产品名称、徽标和品牌均为其各自所有者的财产。',
+    },
+    notFound: {
+      title: '页面未找到',
+      description: '抱歉！您要查找的页面不存在或已被移动。',
+      backHome: '返回首页',
+      goBack: '返回',
+      helpText: '需要帮助？',
+      faqLink: '访问我们的FAQ',
     },
   },
 };

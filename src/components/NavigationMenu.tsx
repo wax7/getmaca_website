@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import type { Language } from '../locales/translations';
 import { languageNames } from '../locales/translations';
 import { motion, AnimatePresence } from 'motion/react';
+import { useEffect } from 'react';
 
 interface NavigationMenuProps {
   isOpen: boolean;
@@ -18,6 +19,18 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
   const navigate = useNavigate();
 
   const languages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   const menuItems: Record<Language, {
     home: string;

@@ -7,6 +7,7 @@ import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { Footer } from '../components/Footer';
 
 type FeedbackType = 'bug' | 'feature';
 
@@ -305,7 +306,7 @@ export function Feedback() {
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 ${isDarkMode ? 'dark' : ''}`}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
       <Header
         scrolled={scrolled}
         currentLang={currentLang}
@@ -320,6 +321,7 @@ export function Feedback() {
         />
       </Header>
 
+      <main id="main-content">
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -519,6 +521,10 @@ export function Feedback() {
           )}
         </div>
       </div>
+      </main>
+
+      {/* Footer */}
+      <Footer currentLang={currentLang} />
     </div>
   );
 }

@@ -19,10 +19,7 @@ export function History() {
 
   return (
     <>
-      <DocumentHead 
-        title="Version History - MACA"
-        description="Complete version history of MACA - Master Audio Control App for macOS. See all features, fixes, and improvements across releases."
-      />
+      <DocumentHead />
 
       {/* Header */}
       <Header
@@ -66,20 +63,272 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.0.664 */}
+            {/* Version 1.0.664 Build 064 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Version 1.0.664
+                    Version 1.0.664 Build 064
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Routing Fix & Profile Restore • February 2026
+                    Bluetooth Volume Fix • February 21, 2026
                   </p>
                 </div>
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
                   Latest
                 </span>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Volume no longer jumps to 100% when a Bluetooth speaker reconnects</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Master volume now syncs correctly when the default output device changes</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Bluetooth devices now work seamlessly with saved volume settings</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 063 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 063
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  App Store Ready • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Missing language setting for Italian (translations existed but weren't enabled)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Permissions and privacy descriptions are now correct for App Store</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 062 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 062
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Better App Detection • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> App name recognition is now case-insensitive</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Added:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Support for 40+ popular apps (Chrome, Firefox, Spotify, Discord, Zoom, VLC, Steam, and more)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Apps are now recognized and classified more reliably</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 061 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 061
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Safari and Other Apps Fix • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Safari is no longer misidentified as a system service</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Other popular Apple apps (News, Podcasts, Books, GarageBand) now work correctly</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> 50+ Apple apps are now classified correctly</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 060 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 060
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Notifications and Dock Icon • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Notifications can be turned on and off in Settings</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Dock icon now disappears correctly when all windows are closed</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Fewer unwanted notifications (off by default)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 058 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 058
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Volume and EQ Windows • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Maximum volume slider is now true original loudness with no hidden boost</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> EQ windows now reliably appear in front of other windows</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Volume is now consistent and predictable</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 057 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 057
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Permissions and Privacy • February 2026
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Clear explanation of why MACA needs each permission</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio is only processed in real time — never recorded or stored</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Setup explains all permissions in simple language</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Support:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> All 9 languages (English, German, French, Spanish, Italian, Japanese, Korean, Chinese)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 — Routing and Profiles */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Routing and Profiles • February 2026
+                </p>
               </div>
               
               <div className="space-y-3">
@@ -94,7 +343,7 @@ export function History() {
                   <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
                   <div>
                     <strong className="text-slate-900 dark:text-white">Fixed:</strong>
-                    <span className="text-slate-700 dark:text-slate-300"> Drift compensation restored for cross-device routing (AirPods, USB DAC, AirPlay)</span>
+                    <span className="text-slate-700 dark:text-slate-300"> Drift compensation restored for cross-device routing (AirPods, USB DAC)</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -130,13 +379,6 @@ export function History() {
                   <div>
                     <strong className="text-slate-900 dark:text-white">Improved:</strong>
                     <span className="text-slate-700 dark:text-slate-300"> Wall-clock based fade timeout (works at any sample rate)</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
-                  <div>
-                    <strong className="text-slate-900 dark:text-white">Added:</strong>
-                    <span className="text-slate-700 dark:text-slate-300"> KNOWN_BUGS.md documenting recurring issues with "never change" rules</span>
                   </div>
                 </div>
               </div>

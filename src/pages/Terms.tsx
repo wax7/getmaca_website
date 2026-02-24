@@ -7,6 +7,7 @@ import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { Footer } from '../components/Footer';
 
 export function Terms() {
   const { lang } = useParams();
@@ -138,15 +139,35 @@ export function Terms() {
         },
         {
           title: '3. Pas de Collecte de Données',
-          content: 'Ce site ne collecte aucune donnée personnelle. Nous utilisons uniquement le stockage local pour vos préférences. Pas d\'analytics, pas de tracking.'
+          content: 'Ce site ne collecte aucune donnée personnelle. Nous utilisons uniquement le stockage local pour vos préférences (langue, mode sombre, consentement). Pas d\'analytics, pas de tracking.'
         },
         {
           title: '4. Liens Externes',
-          content: 'Ce site contient des liens vers l\'App Store. En cliquant, vous quittez notre site et êtes soumis aux conditions d\'Apple.'
+          content: 'Ce site contient des liens vers l\'App Store. En cliquant, vous quittez notre site et êtes soumis aux conditions d\'Apple. Nous ne sommes pas responsables du contenu externe.'
         },
         {
           title: '5. Propriété Intellectuelle',
-          content: 'Tout le contenu est la propriété d\'AMX Mediensysteme et protégé par le droit d\'auteur.'
+          content: 'Tout le contenu de ce site, y compris les textes, images, logos et design, est la propriété d\'AMX Mediensysteme et protégé par le droit d\'auteur. Le nom et le logo MACA sont des marques déposées.'
+        },
+        {
+          title: '6. Clause de non-responsabilité',
+          content: 'Ce site et son contenu sont fournis « en l\'état » sans garantie. Nous ne garantissons pas une disponibilité ininterrompue ou un fonctionnement sans erreur. Les informations relatives à l\'application sont susceptibles d\'être modifiées.'
+        },
+        {
+          title: '7. Limitation de responsabilité',
+          content: 'AMX Mediensysteme n\'est pas responsable des dommages résultant de l\'utilisation de ce site, sauf en cas de faute intentionnelle ou de négligence grave.'
+        },
+        {
+          title: '8. Modifications',
+          content: 'Nous nous réservons le droit de modifier ces conditions à tout moment. La poursuite de l\'utilisation du site après les modifications vaut acceptation.'
+        },
+        {
+          title: '9. Droit applicable',
+          content: 'Ces conditions sont régies par le droit allemand. Pour les consommateurs de l\'UE, les lois impératives de protection des consommateurs de leur pays s\'appliquent.'
+        },
+        {
+          title: '10. Contact',
+          content: 'Des questions sur ces conditions ? Contactez-nous via les informations fournies dans nos mentions légales.'
         }
       ]
     },
@@ -165,15 +186,35 @@ export function Terms() {
         },
         {
           title: '3. Sin Recopilación de Datos',
-          content: 'Este sitio no recopila datos personales. Solo usamos almacenamiento local para sus preferencias. Sin analytics, sin tracking.'
+          content: 'Este sitio no recopila datos personales. Solo usamos almacenamiento local para sus preferencias (idioma, modo oscuro, consentimiento). Sin analytics, sin tracking.'
         },
         {
           title: '4. Enlaces Externos',
-          content: 'Este sitio contiene enlaces a la App Store. Al hacer clic, sale de nuestro sitio y está sujeto a las condiciones de Apple.'
+          content: 'Este sitio contiene enlaces a la App Store. Al hacer clic, sale de nuestro sitio y está sujeto a las condiciones de Apple. No somos responsables del contenido externo.'
         },
         {
           title: '5. Propiedad Intelectual',
-          content: 'Todo el contenido es propiedad de AMX Mediensysteme y está protegido por derechos de autor.'
+          content: 'Todo el contenido de este sitio, incluyendo textos, imágenes, logotipos y diseño, es propiedad de AMX Mediensysteme y está protegido por derechos de autor. El nombre y logotipo de MACA son marcas registradas.'
+        },
+        {
+          title: '6. Descargo de responsabilidad',
+          content: 'Este sitio web y su contenido se proporcionan "tal cual" sin garantías. No garantizamos disponibilidad ininterrumpida ni funcionamiento libre de errores. La información sobre la aplicación está sujeta a cambios.'
+        },
+        {
+          title: '7. Limitación de responsabilidad',
+          content: 'AMX Mediensysteme no es responsable de los daños derivados del uso de este sitio web, excepto en casos de dolo o negligencia grave.'
+        },
+        {
+          title: '8. Cambios',
+          content: 'Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuo del sitio web después de los cambios constituye aceptación.'
+        },
+        {
+          title: '9. Ley aplicable',
+          content: 'Estos términos se rigen por la ley alemana. Para los consumidores en la UE, se aplican las leyes obligatorias de protección al consumidor de su país.'
+        },
+        {
+          title: '10. Contacto',
+          content: '¿Preguntas sobre estos términos? Contáctenos a través de la información proporcionada en nuestro aviso legal.'
         }
       ]
     },
@@ -192,15 +233,35 @@ export function Terms() {
         },
         {
           title: '3. Nessuna Raccolta Dati',
-          content: 'Questo sito non raccoglie dati personali. Utilizziamo solo l\'archiviazione locale per le preferenze. Nessun analytics, nessun tracking.'
+          content: 'Questo sito non raccoglie dati personali. Utilizziamo solo l\'archiviazione locale per le preferenze (lingua, modalità scura, consenso). Nessun analytics, nessun tracking.'
         },
         {
           title: '4. Link Esterni',
-          content: 'Questo sito contiene link all\'App Store. Cliccando, lasci il nostro sito e sei soggetto alle condizioni di Apple.'
+          content: 'Questo sito contiene link all\'App Store. Cliccando, lasci il nostro sito e sei soggetto alle condizioni di Apple. Non siamo responsabili del contenuto esterno.'
         },
         {
           title: '5. Proprietà Intellettuale',
-          content: 'Tutti i contenuti sono di proprietà di AMX Mediensysteme e protetti da copyright.'
+          content: 'Tutti i contenuti di questo sito, inclusi testi, immagini, loghi e design, sono di proprietà di AMX Mediensysteme e protetti da copyright. Il nome e il logo MACA sono marchi registrati.'
+        },
+        {
+          title: '6. Esclusione di responsabilità',
+          content: 'Questo sito web e i suoi contenuti sono forniti "così come sono" senza garanzie. Non garantiamo disponibilità ininterrotta o funzionamento privo di errori. Le informazioni sull\'app sono soggette a modifiche.'
+        },
+        {
+          title: '7. Limitazione di responsabilità',
+          content: 'AMX Mediensysteme non è responsabile per eventuali danni derivanti dall\'uso di questo sito web, salvo in caso di dolo o colpa grave.'
+        },
+        {
+          title: '8. Modifiche',
+          content: 'Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. L\'uso continuo del sito dopo le modifiche costituisce accettazione.'
+        },
+        {
+          title: '9. Legge applicabile',
+          content: 'Questi termini sono disciplinati dal diritto tedesco. Per i consumatori nell\'UE si applicano le leggi obbligatorie sulla protezione dei consumatori del proprio paese.'
+        },
+        {
+          title: '10. Contatti',
+          content: 'Domande su questi termini? Contattaci tramite le informazioni fornite nelle nostre note legali.'
         }
       ]
     },
@@ -219,15 +280,35 @@ export function Terms() {
         },
         {
           title: '3. Sem Coleta de Dados',
-          content: 'Este site não coleta dados pessoais. Usamos apenas armazenamento local para preferências. Sem analytics, sem rastreamento.'
+          content: 'Este site não coleta dados pessoais. Usamos apenas armazenamento local para preferências (idioma, modo escuro, consentimento). Sem analytics, sem rastreamento.'
         },
         {
           title: '4. Links Externos',
-          content: 'Este site contém links para a App Store. Ao clicar, você sai do nosso site e está sujeito aos termos da Apple.'
+          content: 'Este site contém links para a App Store. Ao clicar, você sai do nosso site e está sujeito aos termos da Apple. Não somos responsáveis pelo conteúdo externo.'
         },
         {
           title: '5. Propriedade Intelectual',
-          content: 'Todo o conteúdo é propriedade da AMX Mediensysteme e protegido por direitos autorais.'
+          content: 'Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é propriedade da AMX Mediensysteme e protegido por direitos autorais. O nome e logotipo MACA são marcas registradas.'
+        },
+        {
+          title: '6. Isenção de responsabilidade',
+          content: 'Este site e seu conteúdo são fornecidos "como estão" sem garantias. Não garantimos disponibilidade ininterrupta ou operação livre de erros. As informações sobre o aplicativo estão sujeitas a alterações.'
+        },
+        {
+          title: '7. Limitação de responsabilidade',
+          content: 'A AMX Mediensysteme não é responsável por quaisquer danos decorrentes do uso deste site, exceto em casos de dolo ou negligência grave.'
+        },
+        {
+          title: '8. Alterações',
+          content: 'Reservamo-nos o direito de modificar estes termos a qualquer momento. O uso continuo do site após as alterações constitui aceitação.'
+        },
+        {
+          title: '9. Lei aplicável',
+          content: 'Estes termos são regidos pela lei alemã. Para consumidores na UE, aplicam-se as leis obrigatórias de proteção ao consumidor do seu país.'
+        },
+        {
+          title: '10. Contacto',
+          content: 'Perguntas sobre estes termos? Contacte-nos através das informações fornecidas na nossa informação legal.'
         }
       ]
     },
@@ -331,14 +412,21 @@ export function Terms() {
   const sections = t.sections.length > 0 ? t.sections : content.en.sections;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 ${isDarkMode ? 'dark' : ''}`}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
       <Header 
         scrolled={scrolled} 
         currentLang={currentLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
         onLanguageChange={handleLanguageChange}
-        badge="📋 Terms of Service"
+        badge={currentLang === 'de' ? '📋 Nutzungsbedingungen' :
+               currentLang === 'es' ? '📋 Términos de Uso' :
+               currentLang === 'fr' ? '📋 Conditions d\'Utilisation' :
+               currentLang === 'it' ? '📋 Termini d\'Uso' :
+               currentLang === 'pt' ? '📋 Termos de Uso' :
+               currentLang === 'ja' ? '📋 利用規約' :
+               currentLang === 'zh' ? '📋 使用条款' :
+               '📋 Terms of Service'}
       >
         <LanguageSelector 
           currentLang={currentLang} 
@@ -346,6 +434,7 @@ export function Terms() {
         />
       </Header>
 
+      <main id="main-content">
       <section className="relative pt-32 pb-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <Link
@@ -390,12 +479,24 @@ export function Terms() {
 
             <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
               <p className="text-sm text-slate-500 dark:text-slate-400 text-center">
-                © {new Date().getFullYear()} AMX Mediensysteme. All rights reserved.
+                &copy; {new Date().getFullYear()} AMX Mediensysteme.{' '}
+                {currentLang === 'de' ? 'Alle Rechte vorbehalten.' :
+                 currentLang === 'es' ? 'Todos los derechos reservados.' :
+                 currentLang === 'fr' ? 'Tous droits réservés.' :
+                 currentLang === 'it' ? 'Tutti i diritti riservati.' :
+                 currentLang === 'pt' ? 'Todos os direitos reservados.' :
+                 currentLang === 'ja' ? '全著作権所有。' :
+                 currentLang === 'zh' ? '版权所有。' :
+                 'All rights reserved.'}
               </p>
             </div>
           </motion.div>
         </div>
       </section>
+      </main>
+
+      {/* Footer */}
+      <Footer currentLang={currentLang} />
     </div>
   );
 }
