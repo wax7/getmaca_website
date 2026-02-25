@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
-import { Download, Volume2, VolumeX, Shield, Zap, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star } from 'lucide-react';
+import { Download, Volume2, VolumeX, Shield, Zap, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star, Paintbrush, Music, Code, Wifi } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -514,31 +514,35 @@ export function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <UseCaseCard
-              image="https://images.unsplash.com/photo-1542304807-c7d38f96e2d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMHdvcmtzcGFjZSUyMG1hY2Jvb2slMjBjb2ZmZWV8ZW58MXx8fHwxNzY5Nzc1NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              icon={Paintbrush}
               title={t.useCases.designerTitle}
               description={t.useCases.designer}
-              gradient="from-pink-500 to-rose-600"
+              gradient="from-pink-500 via-rose-500 to-orange-400"
+              iconGradient="from-pink-600 to-rose-600"
               delay={0.1}
             />
             <UseCaseCard
-              image="https://images.unsplash.com/photo-1687586370817-c0c31d87f11b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHByb2R1Y2VyJTIwaG9tZSUyMHN0dWRpbyUyMG1hY3xlbnwxfHx8fDE3Njk3NzU1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              icon={Music}
               title={t.useCases.producerTitle}
               description={t.useCases.producer}
-              gradient="from-purple-500 to-indigo-600"
+              gradient="from-purple-600 via-violet-500 to-indigo-500"
+              iconGradient="from-purple-600 to-indigo-600"
               delay={0.2}
             />
             <UseCaseCard
-              image="https://images.unsplash.com/photo-1660054591552-3c888d8e5319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWVyJTIwY29kaW5nJTIwbWFjYm9vayUyMGNvenl8ZW58MXx8fHwxNzY5Nzc1NTEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              icon={Code}
               title={t.useCases.developerTitle}
               description={t.useCases.developer}
-              gradient="from-blue-500 to-cyan-600"
+              gradient="from-blue-600 via-cyan-500 to-teal-400"
+              iconGradient="from-blue-600 to-cyan-600"
               delay={0.3}
             />
             <UseCaseCard
-              image="https://images.unsplash.com/photo-1696087225391-eb97abf5ba20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob21lJTIwb2ZmaWNlJTIwc2V0dXB8ZW58MXx8fHwxNzY5Nzc1NTEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+              icon={Wifi}
               title={t.useCases.remoteTitle}
               description={t.useCases.remote}
-              gradient="from-emerald-500 to-teal-600"
+              gradient="from-emerald-500 via-green-500 to-teal-400"
+              iconGradient="from-emerald-600 to-teal-600"
               delay={0.4}
             />
           </div>

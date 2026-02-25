@@ -71,7 +71,7 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: 'Mentions Légales – MACA Master Audio Control',
     es: 'Aviso Legal – MACA Master Audio Control',
     it: 'Note Legali – MACA Master Audio Control',
-    pt: 'Informação Legal – MACA Master Audio Control',
+    pt: 'Informazione Legal – MACA Master Audio Control',
     ja: '法的情報 – MACA Master Audio Control',
     zh: '法律信息 – MACA Master Audio Control',
   },
@@ -203,7 +203,7 @@ export function DocumentHead() {
       document.head.insertBefore(charset, document.head.firstChild);
     }
 
-    // ── viewport ─────────────────────────────────────────────────────────
+    // ─�� viewport ─────────────────────────────────────────────────────────
     setMeta('meta[name="viewport"]', 'name', 'viewport',
       'width=device-width, initial-scale=1.0, maximum-scale=5.0');
 
@@ -277,6 +277,17 @@ export function DocumentHead() {
       manifest.rel = 'manifest';
       manifest.href = '/manifest.json';
       document.head.appendChild(manifest);
+    }
+
+    // ── Sitemap discovery ─────────────────────────────────────────────────
+    let sitemapLink = document.querySelector('link[rel="sitemap"]') as HTMLLinkElement | null;
+    if (!sitemapLink) {
+      sitemapLink = document.createElement('link');
+      sitemapLink.rel = 'sitemap';
+      sitemapLink.type = 'application/xml';
+      sitemapLink.title = 'Sitemap';
+      sitemapLink.href = `${BASE_URL}/sitemap.xml`;
+      document.head.appendChild(sitemapLink);
     }
 
     // ── Content Security Policy (meta fallback) ───────────────────────────
