@@ -21,7 +21,7 @@ export function UseCaseCard({ icon: Icon, title, description, gradient, iconGrad
       transition={{ delay, duration: 0.6 }}
       className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500"
     >
-      <div className={`relative h-80 overflow-hidden ${!backgroundImage ? `bg-gradient-to-br ${gradient}` : ''}`}>
+      <div className={`relative h-64 sm:h-80 overflow-hidden ${!backgroundImage ? `bg-gradient-to-br ${gradient}` : ''}`}>
         {/* Background image (if provided) */}
         {backgroundImage && (
           <>
@@ -62,9 +62,9 @@ export function UseCaseCard({ icon: Icon, title, description, gradient, iconGrad
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-        <h3 className="text-3xl mb-3 font-semibold">{title}</h3>
-        <p className="text-lg text-white/90 leading-relaxed">{description}</p>
+      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 text-white">
+        <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 font-semibold">{title}</h3>
+        <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );

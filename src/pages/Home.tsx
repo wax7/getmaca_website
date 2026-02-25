@@ -373,7 +373,7 @@ export function Home() {
 
       <main id="main-content">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -414,7 +414,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="relative text-6xl sm:text-7xl md:text-9xl mb-4 leading-tight tracking-tight"
+              className="relative text-5xl sm:text-6xl md:text-7xl lg:text-9xl mb-4 leading-tight tracking-tight"
             >
               <span className="relative inline-block">
                 <span className="font-black bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-500 bg-clip-text text-transparent animate-gradient">
@@ -470,18 +470,18 @@ export function Home() {
       />
 
       {/* MacBook Audio Devices Illustration */}
-      <section className="py-6 px-6 bg-white dark:bg-slate-900 overflow-hidden">
+      <section className="py-6 px-4 sm:px-6 bg-white dark:bg-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6 sm:mb-8"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-slate-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">
               {additionalT.allDevices.title}
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto px-2">
               {additionalT.allDevices.subtitle}
             </p>
           </motion.div>
@@ -491,18 +491,18 @@ export function Home() {
       </section>
 
       {/* Use Cases with Real Images */}
-      <section className="py-20 px-6 bg-white dark:bg-slate-900/50">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white dark:bg-slate-900/50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-slate-900 dark:text-white">{t.useCases.title}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">{t.useCases.title}</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             <UseCaseCard
               icon={Paintbrush}
               title={t.useCases.designerTitle}
@@ -548,18 +548,18 @@ export function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <section id="features" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-slate-900 dark:text-white">{t.features.title}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">{t.features.title}</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <FeatureCard
               icon={<Volume2 className="w-10 h-10" />}
               title={t.features.perAppVolume.title}
@@ -644,19 +644,19 @@ export function Home() {
       />
 
       {/* Pricing Section */}
-      <section className="py-20 px-6 bg-white dark:bg-slate-900/50 overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white dark:bg-slate-900/50 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-slate-900 dark:text-white">{t.pricing.title}</h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">{t.pricing.subtitle}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">{t.pricing.title}</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-2">{t.pricing.subtitle}</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-2">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto px-2">
             <PricingCard
               title={t.pricing.free.title}
               price={t.pricing.free.price}
@@ -680,9 +680,9 @@ export function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             <BenefitBadge
               icon={<Check className="w-6 h-6" />}
               text={t.benefits.noSubscriptions}
@@ -714,22 +714,22 @@ export function Home() {
       />
 
       {/* Final CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl mb-6">{t.finalCta.title}</h2>
-            <p className="text-2xl text-blue-100 mb-10 leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">{t.finalCta.title}</h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-10 leading-relaxed px-2">
               {t.finalCta.subtitle}
             </p>
             <a
               href={appStoreUrl}
-              className="inline-flex items-center gap-3 px-12 py-6 bg-white text-blue-600 rounded-2xl hover:bg-slate-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:-translate-y-1 text-xl font-semibold"
+              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-12 py-4 sm:py-6 bg-white text-blue-600 rounded-2xl hover:bg-slate-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:-translate-y-1 text-base sm:text-lg md:text-xl font-semibold"
             >
-              <Download className="w-7 h-7" />
+              <Download className="w-5 h-5 sm:w-7 sm:h-7" />
               <span>{t.finalCta.cta}</span>
             </a>
           </motion.div>

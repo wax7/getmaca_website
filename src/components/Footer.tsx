@@ -96,9 +96,9 @@ export function Footer({ currentLang }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-16 px-6 bg-slate-900 text-slate-400">
+    <footer className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-slate-900 text-slate-400">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">

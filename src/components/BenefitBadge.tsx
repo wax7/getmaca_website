@@ -15,12 +15,12 @@ export function BenefitBadge({ icon, text, delay }: BenefitBadgeProps) {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.6 }}
       whileHover={{ scale: 1.05 }}
-      className="flex items-center gap-4 p-8 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl"
+      className="flex items-center gap-3 sm:gap-4 p-4 sm:p-6 md:p-8 bg-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl"
     >
-      <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
         {icon}
       </div>
-      <p className="text-white font-medium text-lg leading-relaxed">{text}</p>
+      <p className="text-white font-medium text-sm sm:text-base md:text-lg leading-relaxed">{text}</p>
     </motion.div>
   );
 }
