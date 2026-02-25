@@ -17,6 +17,10 @@ import { PricingCard } from '../components/PricingCard';
 import { BenefitBadge } from '../components/BenefitBadge';
 import { FAQSection } from '../components/FAQSection';
 import { Footer } from '../components/Footer';
+import designCreateBg from 'figma:asset/ef27d3d39b4c2bdf481d15f23e6b0d5982edfc5d.png';
+import producerMusicBg from 'figma:asset/767d5bccab2e861af9128623e97237d5127806b1.png';
+import developerCoderBg from 'figma:asset/51f64e556b66fd4249b648a51735a8604d871bdb.png';
+import remoteWorkerBg from 'figma:asset/693eda08fbef49e17fde694db1dfebab2cf5c87d.png';
 
 interface Feature {
   icon: JSX.Element;
@@ -186,7 +190,7 @@ function getFAQItems(lang: Language) {
     zh: [
       {
         question: '什是MACA？',
-        answer: 'MACA（Master Audio Control App）是一款macOS应用程序，可让您精细控制Mac上运行的每个应用程序的音量。无需在应用程序之间跳转即可调整音频级别！'
+        answer: 'MACA（Master Audio Control App）是一款macOS应用程序，可让您精细控制Mac上运行的每个应用程序的音量。无需应用程序之间跳转即可调整音频级别！'
       },
       {
         question: 'MACA与macOS音量控制有何不同？',
@@ -223,26 +227,12 @@ export function Home() {
   // Always use a valid language, fallback to 'en'
   const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
   
-  // Detect browser language on first visit, or redirect if invalid
+  // Redirect only if the language param is invalid (not for browser detection)
   useEffect(() => {
-    if (!lang) {
-      const browserLang = navigator.language.toLowerCase();
-      let detectedLang: Language = 'en'; // default
-      
-      // Check if browser language matches our supported languages
-      if (browserLang.startsWith('de')) detectedLang = 'de';
-      else if (browserLang.startsWith('es')) detectedLang = 'es';
-      else if (browserLang.startsWith('fr')) detectedLang = 'fr';
-      else if (browserLang.startsWith('it')) detectedLang = 'it';
-      else if (browserLang.startsWith('pt')) detectedLang = 'pt';
-      else if (browserLang.startsWith('ja')) detectedLang = 'ja';
-      else if (browserLang.startsWith('zh')) detectedLang = 'zh';
-      
-      navigate(`/${detectedLang}`, { replace: true });
-    } else if (!validLanguages.includes(requestedLang)) {
+    if (lang && !validLanguages.includes(lang as Language)) {
       navigate('/en', { replace: true });
     }
-  }, [lang, requestedLang, navigate]);
+  }, [lang]);
 
   // Get translations directly with fallback to English
   const t = useMemo(() => {
@@ -520,6 +510,8 @@ export function Home() {
               gradient="from-pink-500 via-rose-500 to-orange-400"
               iconGradient="from-pink-600 to-rose-600"
               delay={0.1}
+              backgroundImage={designCreateBg}
+              overlayColor="rgba(190, 40, 110, 0.4)"
             />
             <UseCaseCard
               icon={Music}
@@ -528,6 +520,8 @@ export function Home() {
               gradient="from-purple-600 via-violet-500 to-indigo-500"
               iconGradient="from-purple-600 to-indigo-600"
               delay={0.2}
+              backgroundImage={producerMusicBg}
+              overlayColor="rgba(102, 51, 153, 0.4)"
             />
             <UseCaseCard
               icon={Code}
@@ -536,6 +530,8 @@ export function Home() {
               gradient="from-blue-600 via-cyan-500 to-teal-400"
               iconGradient="from-blue-600 to-cyan-600"
               delay={0.3}
+              backgroundImage={developerCoderBg}
+              overlayColor="rgba(0, 123, 255, 0.4)"
             />
             <UseCaseCard
               icon={Wifi}
@@ -544,6 +540,8 @@ export function Home() {
               gradient="from-emerald-500 via-green-500 to-teal-400"
               iconGradient="from-emerald-600 to-teal-600"
               delay={0.4}
+              backgroundImage={remoteWorkerBg}
+              overlayColor="rgba(0, 150, 136, 0.4)"
             />
           </div>
         </div>

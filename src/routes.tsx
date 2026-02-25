@@ -9,6 +9,7 @@ import { Terms } from "./pages/Terms";
 import { History } from "./pages/History";
 import { NotFound } from "./pages/NotFound";
 import { RootLayout } from "./layouts/RootLayout";
+import { LanguageRedirect } from "./components/LanguageRedirect";
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to="/en" replace />,
+        element: <LanguageRedirect />,
       },
       {
         path: "/sitemap",
