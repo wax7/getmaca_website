@@ -69,11 +69,9 @@ jobs:
             cp ../figma/index.html index.html
           fi
 
-          # ── 3) public/ Ordner übernehmen (falls vorhanden) ──
-          if [ -d ../figma/public ]; then
-            rm -rf public/
-            cp -r ../figma/public/ public/
-          fi
+          # ── 3) public/ Ordner NICHT anfassen ──
+          # public/ enthaelt Produktions-Dateien wie sitemap.xml, robots.txt
+          # Diese werden von Figma Sync nicht beruehrt!
 
           # ── 4) package.json: Figma-Dependencies übernehmen, ──
           #        aber unsere Scripts + devDependencies behalten
