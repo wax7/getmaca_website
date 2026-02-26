@@ -1,5 +1,3 @@
-import { SitemapXml } from "./components/SitemapXml";
-import { RobotsTxt } from "./components/RobotsTxt";
 import { createBrowserRouter, Navigate } from "react-router";
 import { Home } from "./pages/Home";
 import { Imprint } from "./pages/Imprint";
@@ -20,14 +18,6 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <LanguageRedirect />,
-      },
-      {
-        path: "/sitemap.xml",
-        element: <SitemapXml />,
-      },
-      {
-        path: "/robots.txt",
-        element: <RobotsTxt />,
       },
       {
         path: "/sitemap",
