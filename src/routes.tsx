@@ -1,4 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router";
+import { SitemapXml } from "./components/SitemapXml";
+import { RobotsTxt } from "./components/RobotsTxt";
 import { Home } from "./pages/Home";
 import { Imprint } from "./pages/Imprint";
 import { Feedback } from "./pages/Feedback";
@@ -12,6 +14,15 @@ import { RootLayout } from "./layouts/RootLayout";
 import { LanguageRedirect } from "./components/LanguageRedirect";
 
 export const router = createBrowserRouter([
+  // Raw file routes – outside RootLayout (no Header/Footer/CookieBanner)
+  {
+    path: "/sitemap.xml",
+    Component: SitemapXml,
+  },
+  {
+    path: "/robots.txt",
+    Component: RobotsTxt,
+  },
   {
     element: <RootLayout />,
     children: [
