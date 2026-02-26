@@ -115,11 +115,11 @@ export function Privacy() {
 
       <main id="main-content">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-12 px-6">
+      <section className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <Link
             to={`/${currentLang}`}
-            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-8 transition-colors group"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-6 sm:mb-8 transition-colors group min-h-[44px]"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span>{backToHome}</span>
@@ -129,15 +129,15 @@ export function Privacy() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl mb-6 shadow-2xl">
-              <Shield className="w-10 h-10 text-white" />
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-2xl">
+              <Shield className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
             </div>
-            <h1 className="text-5xl md:text-6xl mb-4 text-slate-900 dark:text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4 text-slate-900 dark:text-white">
               {t.title}
             </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400">
               {t.lastUpdated}
             </p>
           </motion.div>
@@ -145,35 +145,35 @@ export function Privacy() {
       </section>
 
       {/* Content */}
-      <section className="py-12 px-6">
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12 mb-8 border border-slate-200 dark:border-slate-700"
+            className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 mb-8 border border-slate-200 dark:border-slate-700"
           >
-            <p className="text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-6 sm:mb-8">
               {t.intro}
             </p>
             
             {/* Website Notice */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-2xl p-6 mb-8">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
               <p className="text-base text-blue-900 dark:text-blue-100">
                 {t.websiteNotice}
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {/* Website Data */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
                   {t.sections.websiteData.title}
                 </h2>
                 
                 {/* LocalStorage */}
                 <div className="mb-6">
-                  <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">
                     {t.sections.websiteData.localStorage.title}
                   </h3>
                   <div className="space-y-4">
@@ -198,7 +198,7 @@ export function Privacy() {
 
                 {/* External Services */}
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-3 sm:mb-4">
                     {t.sections.websiteData.externalServices.title}
                   </h3>
                   <div className="space-y-4">
@@ -235,14 +235,14 @@ export function Privacy() {
 
               {/* Data Collection */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.dataCollection.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.dataCollection.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -250,14 +250,14 @@ export function Privacy() {
 
               {/* Data Storage */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.dataStorage.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.dataStorage.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -265,14 +265,14 @@ export function Privacy() {
 
               {/* Data Sharing */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.dataSharing.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.dataSharing.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-red-600 dark:text-red-400 mt-1">✗</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -280,14 +280,14 @@ export function Privacy() {
 
               {/* User Rights */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.userRights.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.userRights.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-purple-600 dark:text-purple-400 mt-1">→</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -295,14 +295,14 @@ export function Privacy() {
 
               {/* Security */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.security.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.security.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-green-600 dark:text-green-400 mt-1">🔒</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -310,14 +310,14 @@ export function Privacy() {
 
               {/* Third Party */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.thirdParty.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.thirdParty.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-orange-600 dark:text-orange-400 mt-1">⚠</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -325,14 +325,14 @@ export function Privacy() {
 
               {/* Children */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.children.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.children.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-pink-600 dark:text-pink-400 mt-1">♥</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -340,14 +340,14 @@ export function Privacy() {
 
               {/* Supervisory Authority */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.supervisoryAuthority.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.supervisoryAuthority.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-blue-600 dark:text-blue-400 mt-1">⚖</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -355,14 +355,14 @@ export function Privacy() {
 
               {/* Changes */}
               <div>
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.changes.title}
                 </h2>
                 <ul className="space-y-3">
                   {t.sections.changes.content.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="text-yellow-600 dark:text-yellow-400 mt-1">📝</span>
-                      <span className="text-lg text-slate-700 dark:text-slate-300">{item}</span>
+                      <span className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -370,7 +370,7 @@ export function Privacy() {
 
               {/* Contact */}
               <div className="border-t border-slate-200 dark:border-slate-700 pt-8">
-                <h2 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
                   {t.sections.contact.title}
                 </h2>
                 <div className="space-y-3">

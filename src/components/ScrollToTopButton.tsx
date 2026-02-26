@@ -132,10 +132,10 @@ export function ScrollToTopButton() {
       aria-label="Scroll to top"
       style={{
         position: 'fixed',
-        bottom: '32px',
-        right: '32px',
-        width: '56px',
-        height: '56px',
+        bottom: '24px',
+        right: '16px',
+        width: '48px',
+        height: '48px',
         backgroundColor: '#3B82F6',
         color: 'white',
         borderRadius: '50%',

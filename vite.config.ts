@@ -64,7 +64,6 @@
     build: {
       target: 'esnext',
       outDir: 'build',
-      publicDir: 'public',  // Explizit: kopiere public/ nach build/
     },
     server: {
       port: 3000,

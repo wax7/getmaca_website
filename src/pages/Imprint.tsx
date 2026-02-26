@@ -82,7 +82,7 @@ export function Imprint() {
       </Header>
 
       <main id="main-content">
-      <div className="pt-32 pb-20 px-6">
+      <div className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <motion.div
@@ -104,7 +104,7 @@ export function Imprint() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12 border border-slate-200 dark:border-slate-700"
+            className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 border border-slate-200 dark:border-slate-700"
           >
             <div className="space-y-8 text-slate-700 dark:text-slate-300">
               <section>

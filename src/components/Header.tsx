@@ -118,10 +118,10 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
               </div>
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="p-2 sm:p-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                className="p-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Open menu"
               >
-                <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <Menu className="w-5 h-5 text-white" />
               </button>
             </div>
           </nav>

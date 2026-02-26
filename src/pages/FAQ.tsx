@@ -85,11 +85,11 @@ export function FAQ() {
 
       <main id="main-content">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-12 px-6">
+      <section className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <Link
             to={`/${currentLang}`}
-            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors mb-6 sm:mb-8 group min-h-[44px]"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span>{backToHome}</span>
@@ -100,11 +100,11 @@ export function FAQ() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
-                <HelpCircle className="w-9 h-9 text-white" />
+            <div className="flex items-center gap-3 sm:gap-4 mb-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
+                <HelpCircle className="w-6 h-6 sm:w-9 sm:h-9 text-white" />
               </div>
-              <h1 className="text-5xl md:text-6xl text-slate-900 dark:text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 dark:text-white">
                 {content.pageTitle}
               </h1>
             </div>
@@ -114,15 +114,15 @@ export function FAQ() {
 
       {/* Table of Contents */}
       {content.categories.length > 0 && (
-        <section className="py-8 px-6">
+        <section className="py-6 sm:py-8 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg"
+              className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
+              <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
                 {content.tableOfContents}
               </h2>
               <ul className="grid md:grid-cols-2 gap-3">
@@ -144,8 +144,8 @@ export function FAQ() {
       )}
 
       {/* FAQ Categories */}
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto space-y-12">
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
           {content.categories.map((category, categoryIndex) => (
             <motion.div
               key={category.id}
@@ -156,14 +156,14 @@ export function FAQ() {
               transition={{ delay: categoryIndex * 0.1 }}
               className="scroll-mt-24"
             >
-              <h2 className="text-4xl font-semibold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-                <span className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white text-lg">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6 sm:mb-8 flex items-center gap-3">
+                <span className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-sm sm:text-lg flex-shrink-0">
                   {categoryIndex + 1}
                 </span>
                 {category.title}
               </h2>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {category.items.map((item, itemIndex) => {
                   const key = `${category.id}-${itemIndex}`;
                   const isOpen = openItems.has(key);
@@ -175,10 +175,10 @@ export function FAQ() {
                     >
                       <button
                         onClick={() => toggleItem(category.id, itemIndex)}
-                        className="w-full flex items-start justify-between gap-4 p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                        className="w-full flex items-start justify-between gap-4 p-4 sm:p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors min-h-[44px]"
                       >
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                          <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                             {item.question}
                           </h3>
                         </div>
@@ -199,7 +199,7 @@ export function FAQ() {
                           transition={{ duration: 0.3 }}
                           className="border-t border-slate-200 dark:border-slate-700"
                         >
-                          <div className="p-6 text-slate-600 dark:text-slate-300 leading-relaxed">
+                          <div className="p-4 sm:p-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                             {item.answer}
                           </div>
                         </motion.div>
@@ -220,14 +220,14 @@ export function FAQ() {
               viewport={{ once: true }}
               className="scroll-mt-24"
             >
-              <h2 className="text-4xl font-semibold text-slate-900 dark:text-white mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6 sm:mb-8">
                 {content.technicalStandards.title}
               </h2>
 
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg space-y-8">
+              <div className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg space-y-6 sm:space-y-8">
                 {/* Equalizer */}
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 dark:text-white mb-3 sm:mb-4">
                     {content.technicalStandards.sections.equalizer.title}
                   </h3>
                   <ul className="space-y-2">
@@ -242,7 +242,7 @@ export function FAQ() {
 
                 {/* Audio Analysis */}
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 dark:text-white mb-3 sm:mb-4">
                     {content.technicalStandards.sections.audioAnalysis.title}
                   </h3>
                   <ul className="space-y-2">
@@ -257,7 +257,7 @@ export function FAQ() {
 
                 {/* Normalization */}
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 dark:text-white mb-3 sm:mb-4">
                     {content.technicalStandards.sections.normalization.title}
                   </h3>
                   <ul className="space-y-2">
@@ -272,7 +272,7 @@ export function FAQ() {
 
                 {/* Audio Levels */}
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 dark:text-white mb-3 sm:mb-4">
                     {content.technicalStandards.sections.audioLevels.title}
                   </h3>
                   <ul className="space-y-2">
@@ -291,15 +291,15 @@ export function FAQ() {
       </section>
 
       {/* Contact Support Section */}
-      <section className="py-16 px-6">
+      <section className="py-10 sm:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 text-center shadow-2xl"
+            className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl"
           >
-            <h2 className="text-3xl md:text-4xl text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
               {currentLang === 'de' ? 'Noch Fragen?' :
                currentLang === 'es' ? '¿Más preguntas?' :
                currentLang === 'fr' ? 'D\'autres questions ?' :
@@ -309,7 +309,7 @@ export function FAQ() {
                currentLang === 'zh' ? '还有问题？' :
                'Still have questions?'}
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 sm:mb-8">
               {currentLang === 'de' ? 'Unser Support-Team hilft gerne weiter.' :
                currentLang === 'es' ? 'Nuestro equipo de soporte está encantado de ayudar.' :
                currentLang === 'fr' ? 'Notre équipe de support est heureuse d\'aider.' :
@@ -321,7 +321,7 @@ export function FAQ() {
             </p>
             <a
               href="mailto:support@getmaca.de"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-xl hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base min-h-[44px]"
             >
               support@getmaca.de
             </a>

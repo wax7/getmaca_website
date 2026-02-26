@@ -416,7 +416,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         </motion.div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Screenshot navigation">
+        <div className="flex justify-center gap-1 mt-6 sm:mt-8" role="tablist" aria-label="Screenshot navigation">
           {screenshots.map((screenshot, index) => (
             <button
               key={index}
@@ -424,12 +424,14 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
               role="tab"
               aria-selected={index === currentIndex}
               aria-label={screenshot.title[lang]}
-              className={`h-3 rounded-full transition-all duration-300 ${
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center"
+            >
+              <span className={`block rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-blue-600 dark:bg-blue-400 w-8'
-                  : 'bg-slate-400 dark:bg-slate-600 hover:bg-slate-500 dark:hover:bg-slate-500 w-3'
-              }`}
-            />
+                  ? 'w-8 h-3 bg-blue-600 dark:bg-blue-400'
+                  : 'w-3 h-3 bg-slate-400 dark:bg-slate-600'
+              }`} />
+            </button>
           ))}
         </div>
 

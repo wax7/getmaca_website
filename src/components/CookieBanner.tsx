@@ -48,7 +48,7 @@ const privacyNoticeTexts: Record<Language, {
   },
   ja: {
     title: 'プライバシーは保護されています',
-    description: 'このウェブサイトは、表示設定（言語、ダークモード）のみをブラウザにローカル保存します。Cookie、個人データの収集、トラッキングは一切なく、データがデバイスから外部���送信されることはありません。',
+    description: 'このウェブサイトは、表示設定（言語、ダークモード）のみをブラウザにローカル保存します。Cookie、個人データの収集、トラッキングは一切なく、データがデバイスから外部送信されることはありません。',
     learnMore: 'プライバシー',
     dismiss: '了解',
   },
@@ -115,13 +115,13 @@ export function CookieBanner() {
               <div className="flex items-center gap-3 w-full md:w-auto">
                 <Link
                   to={`/${currentLang}/privacy`}
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
+                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap py-3 px-1"
                 >
                   {texts.learnMore}
                 </Link>
                 <button
                   onClick={handleDismiss}
-                  className="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm whitespace-nowrap ml-auto md:ml-0"
+                  className="px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm whitespace-nowrap ml-auto md:ml-0 min-h-[44px]"
                 >
                   {texts.dismiss}
                 </button>
