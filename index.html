@@ -3,12 +3,186 @@
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Multilingual Marketing Website</title>
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-    <body>
-      <div id="root"></div>
+    <!-- ── Primary SEO (static fallback – JS DocumentHead overrides per language) ── -->
+    <title>MACA – Per-App Volume Control for macOS | Individual Audio Mixer</title>
+    <meta name="description" content="MACA – Per-app volume control for macOS. Individual mixer, 10-band EQ, audio profiles, Focus Mode. No data collection. One-time purchase. Free version available." />
+    <meta name="keywords" content="per app volume control macOS, individual app volume mac, macOS audio mixer, mac volume mixer, macOS sound control, MACA app, master audio control mac, mac equalizer per app" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="application-name" content="MACA" />
+    <meta name="apple-itunes-app" content="app-id=6759258773" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ── Canonical & Hreflang (static defaults) ── -->
+    <link rel="canonical" href="https://getmaca.de/en" />
+    <link rel="alternate" hreflang="en"        href="https://getmaca.de/en" />
+    <link rel="alternate" hreflang="de"        href="https://getmaca.de/de" />
+    <link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr" />
+    <link rel="alternate" hreflang="es"        href="https://getmaca.de/es" />
+    <link rel="alternate" hreflang="it"        href="https://getmaca.de/it" />
+    <link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt" />
+    <link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja" />
+    <link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh" />
+    <link rel="alternate" hreflang="x-default" href="https://getmaca.de/en" />
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:site_name" content="MACA – Master Audio Control" />
+    <meta property="og:title" content="MACA – Per-App Volume Control for macOS | Individual Audio Mixer" />
+    <meta property="og:description" content="MACA – Per-app volume control for macOS. Individual mixer, 10-band EQ, audio profiles, Focus Mode. No data collection. One-time purchase. Free version available." />
+    <meta property="og:image" content="https://getmaca.de/og-image.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="MACA – Master Audio Control App Icon" />
+    <meta property="og:url" content="https://getmaca.de/en" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MACA – Per-App Volume Control for macOS" />
+    <meta name="twitter:description" content="Control every app's volume independently. Individual mixer, 10-band EQ, audio profiles & Focus Mode for macOS." />
+    <meta name="twitter:image" content="https://getmaca.de/og-image.png" />
+    <meta name="twitter:image:alt" content="MACA – Master Audio Control App Icon" />
+
+    <!-- ── Favicon & Icons ── -->
+    <link rel="icon" type="image/png" href="/og-image.png" />
+    <link rel="apple-touch-icon" href="/og-image.png" />
+
+    <!-- ── Manifest & Sitemap ── -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://getmaca.de/sitemap.xml" />
+
+    <!-- ── Performance Hints ── -->
+    <link rel="dns-prefetch" href="https://apps.apple.com" />
+    <link rel="preconnect" href="https://apps.apple.com" crossorigin="anonymous" />
+
+    <!-- ── JSON-LD Structured Data (static fallback – JS adds more) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "@id": "https://getmaca.de/#software",
+      "name": "MACA – Master Audio Control",
+      "alternateName": ["MACA", "Master Audio Control App"],
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Audio Mixer",
+      "operatingSystem": "macOS 15 (Sequoia) or later",
+      "url": "https://getmaca.de",
+      "downloadUrl": "https://apps.apple.com/app/maca-master-audio-control/id6759258773",
+      "installUrl": "https://apps.apple.com/app/maca-master-audio-control/id6759258773",
+      "softwareVersion": "2.0",
+      "datePublished": "2024-12-01",
+      "inLanguage": ["en", "de", "fr", "es", "it", "pt", "ja", "zh"],
+      "featureList": [
+        "Per-app volume control",
+        "Individual app mute",
+        "10-band equalizer",
+        "Audio profiles",
+        "Focus Mode",
+        "Keyboard shortcuts",
+        "Output device switching per app"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "MACA Free",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "MACA Pro",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "description": "Per-app volume control for macOS. Individual mixer, 10-band EQ, audio profiles, Focus Mode.",
+      "image": "https://getmaca.de/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://getmaca.de/#organization",
+        "name": "AMX Mediensysteme",
+        "url": "https://getmaca.de"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://getmaca.de/#website",
+      "url": "https://getmaca.de",
+      "name": "MACA – Master Audio Control",
+      "inLanguage": ["en", "de", "fr", "es", "it", "pt", "ja", "zh"],
+      "publisher": { "@id": "https://getmaca.de/#organization" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://getmaca.de/#organization",
+      "name": "AMX Mediensysteme",
+      "url": "https://getmaca.de",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://getmaca.de/og-image.png",
+        "width": 1024,
+        "height": 1024
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MACA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MACA (Master Audio Control App) is a macOS application that gives you individual volume control for every app running on your Mac."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is MACA free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MACA offers a free version with core features. The Pro version unlocks audio profiles, enhanced equalizer, Focus Mode, and more — available as a one-time purchase with no subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MACA collect my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. MACA processes everything locally on your Mac. We do not collect, store, or transmit any personal data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which macOS versions does MACA support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MACA requires macOS 15 (Sequoia) or newer and is optimized for Apple Silicon (M1/M2/M3/M4)."
+          }
+        }
+      ]
+    }
+    </script>
       <script type="module" src="/src/main.tsx"></script>
     </body>
   </html>

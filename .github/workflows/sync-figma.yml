@@ -57,17 +57,31 @@ jobs:
 
           echo "Synce Figma-Dateien..."
 
-          # 1) src/ komplett uebernehmen
+          # 1) src/ komplett uebernehmen, ABER src/public/ bewahren
           if [ -d ../figma/src ]; then
+            # public/ sichern bevor src/ geloescht wird
+            if [ -d src/public ]; then
+              cp -r src/public /tmp/maca-public-backup
+            fi
+
             rm -rf src/
             cp -r ../figma/src/ src/
-            echo "src/ synced"
+
+            # public/ wiederherstellen (sitemap.xml, robots.txt, og-image.png)
+            if [ -d /tmp/maca-public-backup ]; then
+              rm -rf src/public
+              cp -r /tmp/maca-public-backup src/public
+              rm -rf /tmp/maca-public-backup
+            fi
+            echo "src/ synced (public/ bewahrt)"
           fi
 
-          # ── 2) index.html übernehmen ──
-          if [ -f ../figma/index.html ]; then
-            cp ../figma/index.html index.html
-          fi
+          # ── 2) index.html: Figma-Aenderungen uebernehmen, SEO-Head bewahren ──
+          # NICHT blind kopieren – unser index.html hat umfangreiche statische
+          # SEO-Tags (OG, Twitter, JSON-LD, hreflang) die Crawler ohne JS sehen.
+          # Figma aendert nur <div id="root"> und <script>, die sich nicht aendern.
+          # Daher: index.html wird NICHT ueberschrieben.
+          echo "index.html NICHT ueberschrieben (SEO-geschuetzt)"
 
           # ── 3) public/ Ordner NICHT anfassen ──
           # public/ enthaelt Produktions-Dateien wie sitemap.xml, robots.txt
@@ -87,7 +101,7 @@ jobs:
             mv package.json.tmp package.json
           fi
 
-          # ── 5) vite.config.ts übernehmen, aber outDir: 'build' sichern ──
+          # ── 5) vite.config.ts übernehmen, aber outDir + publicDir sichern ──
           if [ -f ../figma/vite.config.ts ]; then
             cp ../figma/vite.config.ts vite.config.ts
 
@@ -98,6 +112,17 @@ jobs:
             else
               # outDir fehlt → nach 'build: {' einfügen
               sed -i "/build: {/a\\      target: 'esnext',\n      outDir: 'build'," vite.config.ts
+            fi
+
+            # publicDir MUSS als Top-Level-Option gesetzt sein (nicht in build:!)
+            # Entferne eventuelle falsche publicDir in build: Block
+            sed -i "/build:/,/},/ { /publicDir:/d }" vite.config.ts
+
+            # Setze publicDir als Top-Level-Option vor build:
+            if ! grep -q "publicDir:" vite.config.ts; then
+              sed -i "/build: {/i\\    publicDir: 'src/public'," vite.config.ts
+            else
+              sed -i "s|publicDir:.*$|publicDir: 'src/public',|" vite.config.ts
             fi
           fi
 

@@ -4,10 +4,15 @@
 User-agent: *
 Allow: /
 
-# Disallow utility/system paths
-Disallow: /history
-Disallow: /sitemap
+# Disallow utility/system paths ($ = exact match, Google/Bing supported)
+Disallow: /sitemap$
+Disallow: /history$
 Disallow: /*/feedback
+
+# Explicitly allow SEO-critical files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
 
 # Sitemap
 Sitemap: https://getmaca.de/sitemap.xml

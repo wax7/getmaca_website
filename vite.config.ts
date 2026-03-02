@@ -61,6 +61,9 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
+    // Vite kopiert public/ (relativ zu Projektwurzel) nach outDir
+    // Dateien liegen unter src/public/ (sitemap.xml, robots.txt, manifest.json)
+    publicDir: 'src/public',
     build: {
       target: 'esnext',
       outDir: 'build',
