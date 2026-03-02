@@ -3,6 +3,7 @@ node_modules/
 
 # Build output
 dist/
+build/
 
 # Logs (Bind-Mount für Fail2ban, nicht versionieren)
 logs/*

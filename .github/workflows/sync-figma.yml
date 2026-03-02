@@ -4,9 +4,9 @@ on:
   # Manuell auslösbar in GitHub Actions UI
   workflow_dispatch:
 
-  # Alle 15 Minuten prüfen ob Testweb neue Commits hat
+  # Taeglich um 9:00 Uhr (Europe/Berlin = UTC+1, also 8:00 UTC)
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 8 * * *'
 
 jobs:
   sync:
