@@ -63,3 +63,28 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
+
+      # ── IndexNow: Bing/Yandex über Update informieren ──────────
+      - name: Submit URLs via IndexNow
+        if: success()
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "getmaca.de",
+              "key": "13417c4c8b4345269593617ce3fc3b14",
+              "keyLocation": "https://getmaca.de/13417c4c8b4345269593617ce3fc3b14.txt",
+              "urlList": [
+                "https://getmaca.de/en",
+                "https://getmaca.de/de",
+                "https://getmaca.de/fr",
+                "https://getmaca.de/es",
+                "https://getmaca.de/it",
+                "https://getmaca.de/pt",
+                "https://getmaca.de/ja",
+                "https://getmaca.de/zh",
+                "https://getmaca.de/en/faq",
+                "https://getmaca.de/de/faq"
+              ]
+            }' || true
+          echo "IndexNow submission completed"
