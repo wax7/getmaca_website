@@ -355,7 +355,6 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              touchAction: 'pan-x',
               overscrollBehaviorX: 'contain',
             }}
           >

@@ -6,9 +6,21 @@ import { useScrolled } from '../hooks/useScrolled';
 import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 
+// Read the user's preferred language from localStorage (set by LanguageSelector)
+function getPreferredLang(): string {
+  try {
+    const saved = localStorage.getItem('maca-preferred-language');
+    if (saved && ['en', 'de', 'fr', 'es', 'it', 'pt', 'ja', 'zh'].includes(saved)) {
+      return saved;
+    }
+  } catch {}
+  return 'en';
+}
+
 export function History() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
+  const preferredLang = getPreferredLang();
 
   useEffect(() => {
     // Scroll to top on mount (iframe compatible)
@@ -24,14 +36,14 @@ export function History() {
       {/* Header */}
       <Header
         scrolled={scrolled}
-        currentLang="en"
+        currentLang={preferredLang}
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
-        badge="📜 Version History"
+        badge="Version History"
       >
         <div className="flex items-center gap-3">
           <Link
-            to="/en"
+            to={`/${preferredLang}`}
             className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors text-slate-700 dark:text-slate-300 text-sm font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -63,20 +75,223 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.0.664 Build 064 */}
+            {/* Version 1.0.668 Build 073 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Version 1.0.664 Build 064
+                    Version 1.0.668 Build 073
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Bluetooth Volume Fix • February 21, 2026
+                    Memory & Energy Efficiency &bull; March 2, 2026
                   </p>
                 </div>
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
                   Latest
                 </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> MACA no longer wastes memory by accidentally creating duplicate profiles</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Menu bar doesn't work as hard anymore when you open and close it</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The app uses way less energy overall</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Icon animation now pauses when your screen is off (saves battery)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Smart timer scheduling reduces unnecessary wake-ups from sleep (better energy management)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Compatibility improvements for modern Swift code</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.667 Build 072 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.667 Build 072
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Startup Stability &bull; February 26, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio now reliably takes over on the first app launch (no restart needed)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Better startup stability with less audio device churn</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Smoother recovery when apps are silent (no unnecessary fallback rebuilds)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Cleaner logs during startup and device switching</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.667 Build 067 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.667 Build 067
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Smoother UI &bull; February 26, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> No more scrollbar flickering when expanding or collapsing the system services section</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> System services expand and collapse completely smoothly now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.666 Build 066 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.666 Build 066
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  System Services Polish &bull; February 26, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> System services are now collapsed by default — just like the output devices section</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> System services have a smooth expand/collapse animation (matches output devices)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> App icons no longer change appearance when you expand or collapse the output devices</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> No more crashing when clicking the system services button very quickly</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Cleaner interface — system services are hidden by default unless you enable them in Settings</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.665 Build 065 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.665 Build 065
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Keychain Prompt Fix &bull; February 26, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> No more Keychain password prompt when launching MACA from the App Store</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Pro purchase status is now cached locally instead of in the system Keychain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.664 Build 064 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.664 Build 064
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Bluetooth Volume Fix &bull; February 21, 2026
+                </p>
               </div>
               
               <div className="space-y-3">
