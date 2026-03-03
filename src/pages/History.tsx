@@ -75,20 +75,125 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.0.668 Build 073 */}
+            {/* Version 1.0.670 Build 075 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Version 1.0.668 Build 073
+                    Version 1.0.670 Build 075
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Memory & Energy Efficiency &bull; March 2, 2026
+                    Real-Time Level Meter &bull; March 3, 2026
                   </p>
                 </div>
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
                   Latest
                 </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Real-time stereo level meter in the menu bar — see your audio levels at a glance (L/R bars with green → yellow → red gradient)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Clipping indicator — bars flash red when audio peaks above safe levels</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> "M" branding watermark behind the meter for a clean, professional look</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Bars automatically fade out after 10 seconds of silence, leaving just the MACA logo</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Choose your preferred menu bar icon style in Settings → General (Speaker, Equalizer, Waveform, or Level Meter)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> What's New splash screen — see new features at a glance after each update</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Level Meter is now the default menu bar icon for new installations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.669 Build 074 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.669 Build 074
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  System-Wide Keyboard Shortcuts &bull; March 3, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Keyboard shortcuts now work system-wide — no need to have MACA open or focused</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Resolved App Store rejection (Guideline 2.4.5) by switching to a fully compliant shortcut system</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> New shortcut recorder in Settings — click to record your preferred key combination</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Added a "Reset to Defaults" button for shortcuts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.668 Build 073 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.668 Build 073
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Memory & Energy Efficiency &bull; March 2, 2026
+                </p>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
