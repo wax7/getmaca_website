@@ -1,7 +1,7 @@
 export function Sitemap() {
   const baseUrl = 'https://getmaca.de';
-  const languages = ['en', 'de', 'fr', 'es', 'it', 'pt', 'ja', 'zh'];
-  const pages = ['', '/imprint', '/privacy', '/faq', '/terms'];
+  const languages = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
+  const pages = ['', '/guide', '/faq', '/imprint', '/privacy', '/terms', '/troubleshooting'];
   const staticPages = ['/history'];
   
   const generateSitemap = () => {

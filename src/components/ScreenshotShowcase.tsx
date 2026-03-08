@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import type { Language } from '../locales/translations';
 
 // Import real screenshots
 import screenshot1 from 'figma:asset/31fb86d38219c922a45a6dc661131a10a1ad8e23.png';
@@ -20,26 +21,8 @@ interface ScreenshotShowcaseProps {
 
 interface Screenshot {
   image: string;
-  title: {
-    en: string;
-    de: string;
-    es: string;
-    fr: string;
-    it: string;
-    pt: string;
-    ja: string;
-    zh: string;
-  };
-  description: {
-    en: string;
-    de: string;
-    es: string;
-    fr: string;
-    it: string;
-    pt: string;
-    ja: string;
-    zh: string;
-  };
+  title: Record<string, string>;
+  description: Record<string, string>;
 }
 
 export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotShowcaseProps) {
@@ -64,9 +47,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Control de Audio Completo',
         fr: 'Contrôle Audio Complet',
         it: 'Controllo Audio Completo',
-        pt: 'Controle de Áudio Completo',
         ja: '完全なオーディオコントロール',
-        zh: '完整音频控制'
       },
       description: {
         en: 'Manage app volumes, equalizer, and output devices all in one place',
@@ -74,9 +55,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Gestiona volúmenes de aplicaciones, ecualizador y dispositivos de salida en un solo lugar',
         fr: 'Gérez les volumes des applications, l\'égaliseur et les périphériques de sortie en un seul endroit',
         it: 'Gestisci volumi delle app, equalizzatore e dispositivi di uscita in un unico posto',
-        pt: 'Gerencie volumes de aplicativos, equalizador e dispositivos de saída em um só lugar',
         ja: 'アプリの音量、イコライザー、出力デバイスを一箇所で管理',
-        zh: '在一处管理应用音量、均衡器和输出设备'
       }
     },
     {
@@ -87,9 +66,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Control Individual de Aplicaciones',
         fr: 'Contrôle Individuel des Applications',
         it: 'Controllo Individuale delle App',
-        pt: 'Controle Individual de Aplicativos',
         ja: '個別アプリコントロール',
-        zh: '独立应用控制'
       },
       description: {
         en: 'Adjust volume for each running application with precision',
@@ -97,9 +74,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Ajusta el volumen de cada aplicación en ejecución con precisión',
         fr: 'Ajustez le volume de chaque application en cours d\'exécution avec précision',
         it: 'Regola il volume di ogni applicazione in esecuzione con precisione',
-        pt: 'Ajuste o volume de cada aplicativo em execução com precisão',
         ja: '実行中の各アプリケーションの音量を精密に調整',
-        zh: '精确调整每个运行应用的音量'
       }
     },
     {
@@ -110,9 +85,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Perfiles de Juego',
         fr: 'Profils de Jeu',
         it: 'Profili Gaming',
-        pt: 'Perfis de Jogos',
         ja: 'ゲーミングプロファイル',
-        zh: '游戏配置文件'
       },
       description: {
         en: 'Create custom audio profiles for different scenarios like gaming, work, or meetings',
@@ -120,9 +93,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Crea perfiles de audio personalizados para diferentes escenarios como juegos, trabajo o reuniones',
         fr: 'Créez des profils audio personnalisés pour différents scénarios comme les jeux, le travail ou les réunions',
         it: 'Crea profili audio personalizzati per diversi scenari come gaming, lavoro o riunioni',
-        pt: 'Crie perfis de áudio personalizados para diferentes cenários como jogos, trabalho ou reuniões',
         ja: 'ゲーム、仕事、会議など、さまざまなシナリオのカスタムオーディオプロファイルを作成',
-        zh: '为游戏、工作或会议等不同场景创建自定义音频配置文件'
       }
     },
     {
@@ -133,9 +104,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Ecualizador Profesional',
         fr: 'Égaliseur Professionnel',
         it: 'Equalizzatore Professionale',
-        pt: 'Equalizador Profissional',
         ja: 'プロフェッショナルイコライザー',
-        zh: '专业均衡器'
       },
       description: {
         en: 'Fine-tune audio with a 10-band equalizer and bass boost',
@@ -143,9 +112,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Ajusta el audio con un ecualizador de 10 bandas y refuerzo de graves',
         fr: 'Ajustez l\'audio avec un égaliseur à 10 bandes et amplification des basses',
         it: 'Ottimizza l\'audio con un equalizzatore a 10 bande e amplificazione dei bassi',
-        pt: 'Ajuste o áudio com um equalizador de 10 bandas e reforço de graves',
         ja: '10バンドイコライザーとベースブーストでオーディオを微調整',
-        zh: '使用10段均衡器和低音增强微调音频'
       }
     },
     {
@@ -156,9 +123,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Cambio Rápido de Perfiles',
         fr: 'Changement Rapide de Profil',
         it: 'Cambio Rapido del Profilo',
-        pt: 'Troca Rápida de Perfis',
         ja: 'クイックプロファイル切り替え',
-        zh: '快速配置文件切换'
       },
       description: {
         en: 'Switch between Work, Gaming, Travel, and custom profiles instantly',
@@ -166,9 +131,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Cambia instantáneamente entre perfiles de Trabajo, Juegos, Viajes y personalizados',
         fr: 'Basculez instantanément entre les profils Travail, Jeu, Voyage et personnalisés',
         it: 'Passa istantaneamente tra profili Lavoro, Gaming, Viaggio e personalizzati',
-        pt: 'Alterne instantaneamente entre perfis de Trabalho, Jogos, Viagem e personalizados',
         ja: '仕事、ゲーム、旅行、カスタムプロファイルを即座に切り替え',
-        zh: '在工作、游戏、旅行和自定义配置文件之间即时切换'
       }
     },
     {
@@ -179,9 +142,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Modo de Enfoque',
         fr: 'Mode Focus',
         it: 'Modalità Focus',
-        pt: 'Modo Foco',
         ja: 'フォーカスモード',
-        zh: '专注模式'
       },
       description: {
         en: 'Mute all apps except communication tools like Teams, Discord, and Zoom',
@@ -189,9 +150,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Silencia todas las aplicaciones excepto herramientas de comunicación como Teams, Discord y Zoom',
         fr: 'Coupez le son de toutes les applications sauf les outils de communication comme Teams, Discord et Zoom',
         it: 'Silenzia tutte le app tranne gli strumenti di comunicazione come Teams, Discord e Zoom',
-        pt: 'Silencie todos os aplicativos, exceto ferramentas de comunicação como Teams, Discord e Zoom',
         ja: 'Teams、Discord、Zoomなどのコミュニケーションツール以外のすべてのアプリをミュート',
-        zh: '除Teams、Discord和Zoom等通信工具外，静音所有应用'
       }
     },
     {
@@ -202,9 +161,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Modo Silencio Total',
         fr: 'Mode Silence Total',
         it: 'Modalità Silenzio Totale',
-        pt: 'Modo Silêncio Total',
         ja: '完全サイレンスモード',
-        zh: '完全静音模式'
       },
       description: {
         en: 'Mute all applications instantly with one click for maximum focus',
@@ -212,14 +169,12 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
         es: 'Silencia todas las aplicaciones al instante con un clic para máxima concentración',
         fr: 'Coupez le son de toutes les applications instantanément en un clic pour une concentration maximale',
         it: 'Silenzia tutte le applicazioni istantaneamente con un clic per la massima concentrazione',
-        pt: 'Silencie todos os aplicativos instantaneamente com um clique para máxima concentração',
         ja: 'ワンクリックですべてのアプリケーションを即座にミュートして最大限の集中力を',
-        zh: '一键即时静音所有应用程序以获得最大专注度'
       }
     }
   ];
 
-  const lang = currentLang as keyof typeof screenshots[0]['title'];
+  const lang = currentLang as string;
 
   // Scroll to a specific slide
   const scrollToSlide = useCallback((index: number) => {
@@ -364,12 +319,12 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
                 className="w-full flex-shrink-0 snap-center px-2 sm:px-4"
                 role="group"
                 aria-roledescription="slide"
-                aria-label={`${index + 1} / ${screenshots.length}: ${screenshot.title[lang]}`}
+                aria-label={`${index + 1} / ${screenshots.length}: ${screenshot.title[lang] || screenshot.title.en}`}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex items-center justify-center" style={{ minHeight: '300px', maxHeight: '700px' }}>
                   <ImageWithFallback
                     src={screenshot.image}
-                    alt={screenshot.title[lang]}
+                    alt={screenshot.title[lang] || screenshot.title.en}
                     className="w-auto h-auto max-w-full max-h-[700px] object-contain"
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
@@ -407,10 +362,10 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
           className="mt-6 sm:mt-8 text-center max-w-5xl mx-auto px-2"
         >
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
-            {currentScreenshot.title[lang]}
+            {currentScreenshot.title[lang] || currentScreenshot.title.en}
           </h3>
           <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            {currentScreenshot.description[lang]}
+            {currentScreenshot.description[lang] || currentScreenshot.description.en}
           </p>
         </motion.div>
 
@@ -422,7 +377,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
               onClick={() => handleManualNav(() => scrollToSlide(index))}
               role="tab"
               aria-selected={index === currentIndex}
-              aria-label={screenshot.title[lang]}
+              aria-label={screenshot.title[lang] || screenshot.title.en}
               className="min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <span className={`block rounded-full transition-all duration-300 ${

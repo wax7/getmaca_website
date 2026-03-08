@@ -7,7 +7,7 @@ import { Footer } from '../components/Footer';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
 
-const SUPPORTED_LANGUAGES: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+const SUPPORTED_LANGUAGES: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
 
 function detectLanguageFromPath(pathname: string): Language {
   const parts = pathname.split('/').filter(Boolean);

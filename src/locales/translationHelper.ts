@@ -35,9 +35,17 @@ export function getLanguageNames(): Record<Language, string> {
     es: 'Español',
     fr: 'Français',
     it: 'Italiano',
-    pt: 'Português',
     ja: '日本語',
-    zh: '中文',
+    'zh-Hans': '简体中文',
+    'zh-Hant': '繁體中文',
+    ar: 'العربية',
+    ru: 'Русский',
+    nl: 'Nederlands',
+    tr: 'Türkçe',
+    sv: 'Svenska',
+    da: 'Dansk',
+    ko: '한국어',
+    nb: 'Norsk Bokmål',
   };
 }
 

@@ -1,4 +1,4 @@
-import { X, Home, FileText, Download, Shield, HelpCircle, Clock, Moon, Sun, Globe, Check, Scale } from 'lucide-react';
+import { X, Home, FileText, Download, Shield, HelpCircle, Clock, Moon, Sun, Globe, Check, Scale, Wrench, BookOpen } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 import type { Language } from '../locales/translations';
 import { languageNames } from '../locales/translations';
@@ -18,7 +18,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
   const appStoreUrl = "https://apps.apple.com/us/app/maca-master-audio-control/id6759258773";
   const navigate = useNavigate();
 
-  const languages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+  const languages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
 
   // Close on Escape key
   useEffect(() => {
@@ -34,7 +34,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
 
   const menuItems: Record<Language, {
     home: string;
+    guide: string;
     faq: string;
+    troubleshooting: string;
     imprint: string;
     terms: string;
     privacy: string;
@@ -42,7 +44,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
   }> = {
     en: {
       home: 'Home',
+      guide: 'User Guide',
       faq: 'FAQ',
+      troubleshooting: 'Troubleshooting',
       imprint: 'Imprint',
       terms: 'Terms of Use',
       privacy: 'Privacy Policy',
@@ -50,7 +54,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
     },
     de: {
       home: 'Startseite',
+      guide: 'Benutzerhandbuch',
       faq: 'Häufig gestellte Fragen',
+      troubleshooting: 'Fehlerbehebung',
       imprint: 'Impressum',
       terms: 'Nutzungsbedingungen',
       privacy: 'Datenschutz',
@@ -58,7 +64,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
     },
     es: {
       home: 'Inicio',
+      guide: 'Guía del usuario',
       faq: 'Preguntas Frecuentes',
+      troubleshooting: 'Solución de problemas',
       imprint: 'Aviso legal',
       terms: 'Términos de uso',
       privacy: 'Privacidad',
@@ -66,7 +74,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
     },
     fr: {
       home: 'Accueil',
+      guide: 'Guide utilisateur',
       faq: 'Questions Fréquentes',
+      troubleshooting: 'Dépannage',
       imprint: 'Mentions légales',
       terms: 'Conditions d\'utilisation',
       privacy: 'Confidentialité',
@@ -74,35 +84,123 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
     },
     it: {
       home: 'Home',
+      guide: 'Guida utente',
       faq: 'Domande Frequenti',
+      troubleshooting: 'Risoluzione dei problemi',
       imprint: 'Note legali',
       terms: 'Termini di utilizzo',
       privacy: 'Privacy',
       download: 'Scarica ora'
     },
-    pt: {
-      home: 'Início',
-      faq: 'Perguntas Frequentes',
-      imprint: 'Informazione legal',
-      terms: 'Termos de uso',
-      privacy: 'Privacidade',
-      download: 'Baixar agora'
-    },
     ja: {
       home: 'ホーム',
+      guide: 'ユーザーガイド',
       faq: 'よくある質問',
+      troubleshooting: 'トラブルシューティング',
       imprint: '法的情報',
       terms: '利用規約',
       privacy: 'プライバシー',
       download: '今すぐダウンロード'
     },
-    zh: {
+    'zh-Hans': {
       home: '首页',
+      guide: '用户指南',
       faq: '常见问题',
+      troubleshooting: '故障排除',
       imprint: '法律信息',
       terms: '使用条款',
       privacy: '隐私政策',
       download: '立即下载'
+    },
+    'zh-Hant': {
+      home: '首頁',
+      guide: '用戶指南',
+      faq: '常見問題',
+      troubleshooting: '故障排除',
+      imprint: '法律信息',
+      terms: '使用條款',
+      privacy: '隱私政策',
+      download: '立即下載'
+    },
+    ar: {
+      home: 'الرئيسية',
+      guide: 'دليل المستخدم',
+      faq: 'أسئلة شائعة',
+      troubleshooting: 'حل المشكلات',
+      imprint: 'البيان القانوني',
+      terms: 'شروط الاستخدام',
+      privacy: 'سياسة الخصوصية',
+      download: 'تحميل الآن'
+    },
+    ru: {
+      home: 'Главная',
+      guide: 'Руководство',
+      faq: 'Часто задаваемые вопросы',
+      troubleshooting: 'Устранение неполадок',
+      imprint: 'Юридическая информация',
+      terms: 'Условия использования',
+      privacy: 'Политика конфиденциальности',
+      download: 'Скачать сейчас'
+    },
+    nl: {
+      home: 'Home',
+      guide: 'Handleiding',
+      faq: 'Veelgestelde vragen',
+      troubleshooting: 'Problemen oplossen',
+      imprint: 'Juridische informatie',
+      terms: 'Gebruiksvoorwaarden',
+      privacy: 'Privacybeleid',
+      download: 'Nu downloaden'
+    },
+    tr: {
+      home: 'Anasayfa',
+      guide: 'Kullanım Kılavuzu',
+      faq: 'Sık Sorulan Sorular',
+      troubleshooting: 'Sorun Giderme',
+      imprint: 'Yasal Bilgi',
+      terms: 'Kullanım Şartları',
+      privacy: 'Gizlilik Politikası',
+      download: 'Şimdi İndir'
+    },
+    sv: {
+      home: 'Hem',
+      guide: 'Användarguide',
+      faq: 'Vanliga frågor',
+      troubleshooting: 'Felsökning',
+      imprint: 'Juridisk information',
+      terms: 'Användarvillkor',
+      privacy: 'Integritetspolicy',
+      download: 'Ladda ner nu'
+    },
+    da: {
+      home: 'Hjem',
+      guide: 'Brugervejledning',
+      faq: 'Ofte stillede spørgsmål',
+      troubleshooting: 'Fejlfinding',
+      imprint: 'Juridisk information',
+      terms: 'Brugervilkår',
+      privacy: 'Privatlivspolitik',
+      download: 'Download nu'
+    },
+    ko: {
+      home: '홈',
+      guide: '사용자 가이드',
+      faq: '자주 묻는 질문',
+      troubleshooting: '문제 해결',
+      imprint: '법적 정보',
+      terms: '이용 약관',
+      privacy: '개인 정보 보호 정책',
+      download: '지금 다운로드'
+    },
+    nb: {
+      home: 'Hjem',
+      guide: 'Brukerveiledning',
+      faq: 'Ofte stilt spørsmål',
+      troubleshooting: 'Feilsøking',
+      imprint: 'Juridisk informasjon',
+      terms: 'Bruksvilkår',
+      privacy: 'Personvern',
+      download: 'Last ned nå'
     }
   };
 
@@ -113,7 +211,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
     imprintDesc: string;
     privacyDesc: string;
     faqDesc: string;
+    troubleshootingDesc: string;
     termsDesc: string;
+    guideDesc: string;
     historyTitle: string;
     historyDesc: string;
     tagline: string;
@@ -126,7 +226,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       imprintDesc: 'Legal information',
       privacyDesc: 'Privacy & security',
       faqDesc: 'Frequently Asked Questions',
+      troubleshootingDesc: 'Solve common issues',
       termsDesc: 'Terms & conditions',
+      guideDesc: 'Documentation & features',
       historyTitle: 'Version History',
       historyDesc: 'All versions & updates',
       tagline: 'Individual volume control for every app',
@@ -139,7 +241,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       imprintDesc: 'Rechtliche Informationen',
       privacyDesc: 'Datenschutz & Sicherheit',
       faqDesc: 'Häufig gestellte Fragen',
+      troubleshootingDesc: 'Häufige Probleme lösen',
       termsDesc: 'Nutzungsbedingungen',
+      guideDesc: 'Dokumentation & Funktionen',
       historyTitle: 'Versionshistorie',
       historyDesc: 'Alle Versionen & Updates',
       tagline: 'Individuelle Lautstärkeregelung für jede App',
@@ -152,7 +256,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       imprintDesc: 'Información legal',
       privacyDesc: 'Privacidad y seguridad',
       faqDesc: 'Preguntas Frecuentes',
+      troubleshootingDesc: 'Resolver problemas comunes',
       termsDesc: 'Términos y condiciones',
+      guideDesc: 'Documentación y funciones',
       historyTitle: 'Historial de versiones',
       historyDesc: 'Todas las versiones',
       tagline: 'Control de volumen individual para cada aplicación',
@@ -165,7 +271,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       imprintDesc: 'Informations légales',
       privacyDesc: 'Confidentialité et sécurité',
       faqDesc: 'Questions Fréquentes',
+      troubleshootingDesc: 'Résoudre les problèmes courants',
       termsDesc: 'Conditions générales',
+      guideDesc: 'Documentation et fonctionnalités',
       historyTitle: 'Historique des versions',
       historyDesc: 'Toutes les versions',
       tagline: 'Contrôle du volume individuel pour chaque application',
@@ -178,7 +286,9 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       imprintDesc: 'Informazioni legali',
       privacyDesc: 'Privacy e sicurezza',
       faqDesc: 'Domande Frequenti',
+      troubleshootingDesc: 'Risolvere i problemi comuni',
       termsDesc: 'Termini e condizioni',
+      guideDesc: 'Documentazione e funzionalità',
       historyTitle: 'Cronologia versioni',
       historyDesc: 'Tutte le versioni',
       tagline: 'Controllo del volume individuale per ogni app',
@@ -186,25 +296,14 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       lightModeLabel: 'Modalità chiara',
       languageLabel: 'Lingua',
     },
-    pt: {
-      homeDesc: 'Voltar para a página principal',
-      imprintDesc: 'Informações legais',
-      privacyDesc: 'Privacidade e segurança',
-      faqDesc: 'Perguntas Frequentes',
-      termsDesc: 'Termos e condições',
-      historyTitle: 'Histórico de versões',
-      historyDesc: 'Todas as versões',
-      tagline: 'Controle de volume individual para cada aplicativo',
-      darkModeLabel: 'Modo escuro',
-      lightModeLabel: 'Modo claro',
-      languageLabel: 'Idioma',
-    },
     ja: {
       homeDesc: 'メインページに戻る',
       imprintDesc: '法的情報',
       privacyDesc: 'プライバシーとセキュリティ',
       faqDesc: 'よくある質問',
+      troubleshootingDesc: 'よくある問題の解決',
       termsDesc: '利用規約と条件',
+      guideDesc: 'ドキュメントと機能',
       historyTitle: 'バージョン履歴',
       historyDesc: 'すべてのバージョンとアップデート',
       tagline: 'すべてのアプリの個別音量コントロール',
@@ -212,18 +311,155 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
       lightModeLabel: 'ライトモード',
       languageLabel: '言語',
     },
-    zh: {
+    'zh-Hans': {
       homeDesc: '返回主页',
       imprintDesc: '法律信息',
       privacyDesc: '隐私与安全',
       faqDesc: '常见问题',
+      troubleshootingDesc: '解决常见问题',
       termsDesc: '条款和条件',
+      guideDesc: '文档与功能',
       historyTitle: '版本历史',
       historyDesc: '所有版本和更新',
       tagline: '每个应用程序的独立音量控制',
       darkModeLabel: '深色模式',
       lightModeLabel: '浅色模式',
       languageLabel: '语言',
+    },
+    'zh-Hant': {
+      homeDesc: '返回主頁',
+      imprintDesc: '法律信息',
+      privacyDesc: '隱私與安全',
+      faqDesc: '常見問題',
+      troubleshootingDesc: '解決常見問題',
+      termsDesc: '條款和條件',
+      guideDesc: '文件與功能',
+      historyTitle: '版本歷史',
+      historyDesc: '所有版本和更新',
+      tagline: '每個應用程序的獨立音量控制',
+      darkModeLabel: '深色模式',
+      lightModeLabel: '淺色模式',
+      languageLabel: '語言',
+    },
+    ar: {
+      homeDesc: 'العودة إلى الصفحة الرئيسية',
+      imprintDesc: 'المعلومات القانونية',
+      privacyDesc: 'خصوصية وسلامة البيانات',
+      faqDesc: 'أسئلة شائعة',
+      troubleshootingDesc: 'حل المشكلات الشائعة',
+      termsDesc: 'شروط الاستخدام',
+      guideDesc: 'التوثيق والميزات',
+      historyTitle: 'تاريخ الإصدارات',
+      historyDesc: 'جميع الإصدارات والتحديثات',
+      tagline: 'تحكم في مستوى الصوت الفردي لكل تطبيق',
+      darkModeLabel: 'الوضع الداكن',
+      lightModeLabel: 'الوضع الفاتح',
+      languageLabel: 'اللغة',
+    },
+    ru: {
+      homeDesc: 'Вернуться на главную страницу',
+      imprintDesc: 'Юридическая информация',
+      privacyDesc: 'Конфиденциальность и безопасность',
+      faqDesc: 'Часто задаваемые вопросы',
+      troubleshootingDesc: 'Решение распространенных проблем',
+      termsDesc: 'Условия использования',
+      guideDesc: 'Документация и функции',
+      historyTitle: 'История версий',
+      historyDesc: 'Все версии и обновления',
+      tagline: 'Индивидуальное управление громкостью для каждого приложения',
+      darkModeLabel: 'Темный режим',
+      lightModeLabel: 'Светлый режим',
+      languageLabel: 'Язык',
+    },
+    nl: {
+      homeDesc: 'Terug naar de hoofdpagina',
+      imprintDesc: 'Juridische informatie',
+      privacyDesc: 'Privacy en veiligheid',
+      faqDesc: 'Veelgestelde vragen',
+      troubleshootingDesc: 'Problemen oplossen',
+      termsDesc: 'Gebruiksvoorwaarden',
+      guideDesc: 'Documentatie en functies',
+      historyTitle: 'Versiegeschiedenis',
+      historyDesc: 'Alle versies en updates',
+      tagline: 'Individuele volumeregeling voor elk apparaat',
+      darkModeLabel: 'Donkere modus',
+      lightModeLabel: 'Lichte modus',
+      languageLabel: 'Taal',
+    },
+    tr: {
+      homeDesc: 'Ana sayfaya geri dön',
+      imprintDesc: 'Yasal bilgi',
+      privacyDesc: 'Gizlilik ve güvenlik',
+      faqDesc: 'Sık Sorulan Sorular',
+      troubleshootingDesc: 'Sorunları çözme',
+      termsDesc: 'Kullanım Şartları',
+      guideDesc: 'Dokümantasyon ve özellikler',
+      historyTitle: 'Sürüm Geçmişi',
+      historyDesc: 'Tüm sürümler ve güncellemeler',
+      tagline: 'Her uygulama için bireysel ses kontrolü',
+      darkModeLabel: 'Karanlık Mod',
+      lightModeLabel: 'Açık Mod',
+      languageLabel: 'Dil',
+    },
+    sv: {
+      homeDesc: 'Tillbaka till huvudsidan',
+      imprintDesc: 'Juridisk information',
+      privacyDesc: 'Sekretess och säkerhet',
+      faqDesc: 'Vanliga frågor',
+      troubleshootingDesc: 'Felsökning',
+      termsDesc: 'Användarvillkor',
+      guideDesc: 'Dokumentation och funktioner',
+      historyTitle: 'Versionshistoria',
+      historyDesc: 'Alla versioner och uppdateringar',
+      tagline: 'Individuell volymkontroll för varje app',
+      darkModeLabel: 'Mörkt läge',
+      lightModeLabel: 'Ljust läge',
+      languageLabel: 'Språk',
+    },
+    da: {
+      homeDesc: 'Tilbage til hovedsiden',
+      imprintDesc: 'Juridisk information',
+      privacyDesc: 'Privatliv og sikkerhed',
+      faqDesc: 'Ofte stillede spørgsmål',
+      troubleshootingDesc: 'Fejlfinding',
+      termsDesc: 'Brugervilkår',
+      guideDesc: 'Dokumentation og funktioner',
+      historyTitle: 'Versionshistorik',
+      historyDesc: 'Alle versioner og opdateringer',
+      tagline: 'Individuel lydstyrkekontrol for hver app',
+      darkModeLabel: 'Mørkt tilstand',
+      lightModeLabel: 'Lyst tilstand',
+      languageLabel: 'Sprog',
+    },
+    ko: {
+      homeDesc: '메인 페이지로 돌아가기',
+      imprintDesc: '법적 정보',
+      privacyDesc: '개인 정보 보호 및 보안',
+      faqDesc: '자주 묻는 질문',
+      troubleshootingDesc: '문제 해결',
+      termsDesc: '이용 약관',
+      guideDesc: '문서 및 기능',
+      historyTitle: '버전 기록',
+      historyDesc: '모든 버전 및 업데이트',
+      tagline: '각 앱의 개별 볼륨 제어',
+      darkModeLabel: '다크 모드',
+      lightModeLabel: '라이트 모드',
+      languageLabel: '언어',
+    },
+    nb: {
+      homeDesc: 'Tilbake til hovedsiden',
+      imprintDesc: 'Juridisk informasjon',
+      privacyDesc: 'Personvern og sikkerhet',
+      faqDesc: 'Ofte stilt spørsmål',
+      troubleshootingDesc: 'Feilsøking',
+      termsDesc: 'Bruksvilkår',
+      guideDesc: 'Dokumentasjon og funksjoner',
+      historyTitle: 'Versjonshistorikk',
+      historyDesc: 'Alle versjoner og oppdateringer',
+      tagline: 'Individuell volumkontroll for hver app',
+      darkModeLabel: 'Mørkt modus',
+      lightModeLabel: 'Lyst modus',
+      languageLabel: 'Språk',
     }
   };
 
@@ -331,6 +567,22 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
 
                 <motion.div custom={1} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
+                    to={`/${currentLang}/guide`}
+                    onClick={onClose}
+                    className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
+                  >
+                    <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-slate-900 dark:text-white">{t.guide}</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">{st.guideDesc}</div>
+                    </div>
+                  </Link>
+                </motion.div>
+
+                <motion.div custom={2} initial="hidden" animate="visible" variants={menuItemVariants}>
+                  <Link
                     to={`/${currentLang}/faq`}
                     onClick={onClose}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
@@ -346,6 +598,22 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                 </motion.div>
 
                 <motion.div custom={3} initial="hidden" animate="visible" variants={menuItemVariants}>
+                  <Link
+                    to={`/${currentLang}/troubleshooting`}
+                    onClick={onClose}
+                    className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
+                  >
+                    <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <Wrench className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-slate-900 dark:text-white">{t.troubleshooting}</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">{st.troubleshootingDesc}</div>
+                    </div>
+                  </Link>
+                </motion.div>
+
+                <motion.div custom={4} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
                     to="/history"
                     onClick={onClose}
@@ -367,7 +635,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                 </div>
 
                 {/* Legal Links */}
-                <motion.div custom={4} initial="hidden" animate="visible" variants={menuItemVariants}>
+                <motion.div custom={5} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
                     to={`/${currentLang}/privacy`}
                     onClick={onClose}
@@ -383,7 +651,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                   </Link>
                 </motion.div>
 
-                <motion.div custom={5} initial="hidden" animate="visible" variants={menuItemVariants}>
+                <motion.div custom={6} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
                     to={`/${currentLang}/terms`}
                     onClick={onClose}
@@ -399,7 +667,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                   </Link>
                 </motion.div>
 
-                <motion.div custom={6} initial="hidden" animate="visible" variants={menuItemVariants}>
+                <motion.div custom={7} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
                     to={`/${currentLang}/imprint`}
                     onClick={onClose}
@@ -417,7 +685,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
 
                 {/* Download CTA */}
                 <motion.div
-                  custom={7}
+                  custom={8}
                   initial="hidden"
                   animate="visible"
                   variants={menuItemVariants}

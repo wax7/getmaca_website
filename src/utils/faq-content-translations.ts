@@ -1,4 +1,5 @@
 import { Language } from '../locales/translations';
+import { arFaqContent, ruFaqContent, nlFaqContent, trFaqContent, svFaqContent } from './faq-remaining-translations';
 
 export interface FAQItem {
   question: string;
@@ -40,7 +41,7 @@ export interface FAQContent {
 
 // Helper function to create common FAQ structure
 const createFAQContent = (lang: Language): FAQContent => {
-  const translations: Record<Language, FAQContent> = {
+  const translations: Partial<Record<Language, FAQContent>> = {
     de: {
       pageTitle: 'MACA — Häufig gestellte Fragen',
       tableOfContents: 'Inhaltsverzeichnis',
@@ -1121,222 +1122,6 @@ const createFAQContent = (lang: Language): FAQContent => {
         }
       }
     },
-    pt: {
-      pageTitle: 'MACA — Perguntas Frequentes',
-      tableOfContents: 'Índice',
-      categories: [
-        {
-          id: 'primeiros-passos',
-          title: 'Primeiros Passos',
-          items: [
-            {
-              question: 'O que é MACA?',
-              answer: 'MACA (Master Audio Control App) é um utilitário da barra de menu do macOS que permite controlar o áudio por aplicativo. Em vez de apenas ajustar o volume do sistema, você pode definir volumes individuais para cada aplicativo em execução no seu Mac – perfeito para criadores, trabalhadores remotos e multitarefas.'
-            },
-            {
-              question: 'Como instalo o MACA?',
-              answer: 'Baixe o aplicativo da Mac App Store. MACA é instalado como um aplicativo da barra de menu e é executado discretamente em segundo plano. No primeiro lançamento, você será guiado através da configuração de permissões de áudio.'
-            },
-            {
-              question: 'MACA precisa de configurações especiais?',
-              answer: 'MACA requer permissão básica de acesso ao áudio (para capturar níveis de áudio por aplicativo) e opcionalmente permissão de monitoramento de entrada (para atalhos de teclado globais). Você será solicitado a conceder essas permissões durante a integração.'
-            },
-            {
-              question: 'Posso usar MACA em versões mais antigas do macOS?',
-              answer: 'MACA requer macOS 15 (Sequoia) ou mais recente. Recomendamos macOS 26+ para a melhor experiência e todos os recursos.'
-            }
-          ]
-        },
-        {
-          id: 'recursos-principais',
-          title: 'Recursos Principais',
-          items: [
-            {
-              question: 'O que posso controlar no MACA?',
-              answer: 'Você pode controlar: Volume por aplicativo (defina um nível de volume único 0–100%+ para cada aplicativo em execução), silenciamento por aplicativo (silencie instantaneamente aplicativos individuais), roteamento de áudio por aplicativo (envie áudio de qualquer aplicativo para um alto-falante ou fone de ouvido diferente), volume mestre (ajuste rapidamente o volume de todo o sistema da barra de menu) e troca de dispositivo (altere seu dispositivo de saída de áudio padrão).'
-            },
-            {
-              question: 'Com quais aplicativos o MACA funciona?',
-              answer: 'MACA funciona com qualquer aplicativo que emita áudio para o seu sistema – incluindo Music/Spotify/Apple Music/YouTube Music, Zoom/Teams/Discord/Google Meet, Safari/Chrome/Firefox, ferramentas profissionais (DAWs, edição de vídeo, software de streaming), jogos e aplicativos de entretenimento.'
-            },
-            {
-              question: 'Posso controlar o áudio para aplicativos pausados?',
-              answer: 'Sim. Você pode ajustar o volume e o estado de silenciamento para qualquer aplicativo, independentemente de estar reproduzindo ou inativo.'
-            },
-            {
-              question: 'MACA usa drivers especiais ou extensões do kernel?',
-              answer: 'Não. MACA usa apenas APIs de áudio nativas do macOS (Core Audio Taps), tornando-o totalmente compatível com a App Store e seguro. Nenhuma modificação de sistema de baixo nível necessária.'
-            }
-          ]
-        },
-        {
-          id: 'gestao-audio',
-          title: 'Gestão de Áudio',
-          items: [
-            {
-              question: 'Como roteio o áudio de um aplicativo para um dispositivo específico?',
-              answer: 'Clique no botão de dispositivo ao lado de um aplicativo no menu MACA. Um menu suspenso mostra todos os dispositivos de áudio disponíveis: alto-falantes/fones de ouvido integrados, dispositivos Bluetooth (AirPods, fones de ouvido, alto-falantes) e padrão do sistema. Selecione um dispositivo e todo o áudio desse aplicativo será roteado para lá imediatamente.'
-            },
-            {
-              question: 'Vários aplicativos podem emitir para dispositivos diferentes simultaneamente?',
-              answer: 'Absolutamente. Este é um dos recursos principais do MACA. O aplicativo A pode reproduzir através de fones de ouvido Bluetooth enquanto o aplicativo B reproduz através de seus alto-falantes ao mesmo tempo.'
-            },
-            {
-              question: 'O que acontece se um dispositivo de áudio desconectar?',
-              answer: 'MACA salva seu roteamento preferido. Se seu dispositivo Bluetooth desconectar, o áudio volta automaticamente para o seu dispositivo de saída padrão do sistema. Quando o dispositivo reconecta, MACA restaura o roteamento original para aplicativos afetados.'
-            },
-            {
-              question: 'Como funciona o controle de volume mestre?',
-              answer: 'O controle deslizante mestre na barra de menu ajusta o volume do seu sistema – assim como o controle de volume do macOS, mas no menu MACA para acesso mais fácil.'
-            }
-          ]
-        },
-        {
-          id: 'perfis-presets',
-          title: 'Perfis e Predefinições',
-          items: [
-            {
-              question: 'O que são perfis de áudio?',
-              answer: 'Os perfis de áudio permitem que você salve e recupere rapidamente configurações de áudio complexas. Exemplos: "Gaming" (volume do jogo aumentado, Spotify silencioso, Discord a 50%), "Gravação" (música, podcasts e navegador silenciados; apenas Discord ativo), "Noite Tardia" (volume reduzido; roteado para fones de ouvido). Crie perfis configurando os volumes/roteamento desejados, depois salve-os. Alterne entre perfis da barra de menu em um clique.'
-            },
-            {
-              question: 'Quantos perfis posso salvar?',
-              answer: 'Grátis: Sem perfis. Pro: Perfis ilimitados.'
-            },
-            {
-              question: 'Os perfis podem incluir configurações de áudio como predefinições do equalizador?',
-              answer: 'Sim (Pro). Quando você salva um perfil, ele pode incluir predefinições de EQ para aplicativos específicos. Quando você ativa o perfil, as configurações de EQ salvas são aplicadas automaticamente.'
-            },
-            {
-              question: 'Posso renomear ou excluir perfis?',
-              answer: 'Sim. Abra Configurações → Perfis e você pode editar, renomear ou excluir todos os perfis salvos.'
-            }
-          ]
-        },
-        {
-          id: 'equalizador',
-          title: 'Equalizador (EQ)',
-          items: [
-            {
-              question: 'MACA tem um equalizador?',
-              answer: 'Sim. MACA inclui um equalizador paramétrico de 10 bandas seguindo os padrões de frequência ISO 216. Abra a janela EQ da barra de menu ou clique duas vezes em um aplicativo.'
-            },
-            {
-              question: 'O que posso fazer com o EQ?',
-              answer: 'Você pode: ajustar EQ por aplicativo (ajuste o som de cada aplicativo individualmente, por ex., tornar Spotify mais quente, YouTube Music mais brilhante), usar predefinições (escolha entre predefinições de EQ integradas como Quente, Brilhante, Reforço de Graves, Pop Vocal), criar perfis personalizados, usar exibição de espectro em tempo real e visualizar retenção de pico.'
-            },
-            {
-              question: 'Posso ver o que o EQ está fazendo em tempo real?',
-              answer: 'Sim. O analisador de espectro na janela EQ mostra um gráfico em tempo real das frequências no áudio com bandas codificadas por cores e indicadores de pico.'
-            },
-            {
-              question: 'Quais recursos de EQ estão disponíveis em Grátis vs. Pro?',
-              answer: 'Grátis: EQ ISO de 10 bandas com predefinições e perfis básicos. Pro: Controle completo de EQ paramétrico (ganho, frequência, Q) + perfis personalizados ilimitados + normalizador mais poderoso.'
-            },
-            {
-              question: 'O que é o "Normalizador de Áudio"?',
-              answer: 'O Normalizador de Áudio (Pro) ajusta automaticamente os níveis por aplicativo para evitar picos ou quedas repentinas de volume entre aplicativos. Útil ao alternar entre podcasts silenciosos e jogos ruidosos.'
-            }
-          ]
-        },
-        {
-          id: 'gratis-vs-pro',
-          title: 'Grátis vs. Pro',
-          items: [
-            {
-              question: 'Por que existe um limite de 3 aplicativos no nível Grátis?',
-              answer: 'O nível Grátis foi projetado para apresentar a você o MACA com os casos de uso mais comuns (por ex., Zoom + Spotify + jogo). O limite de 3 aplicativos incentiva os usuários avançados a atualizar para Pro para gerenciar muitos aplicativos simultaneamente.'
-            },
-            {
-              question: 'E se eu precisar controlar mais de 3 aplicativos?',
-              answer: 'Atualize para MACA Pro, que desbloqueia controle ilimitado de aplicativos. Você pode gerenciar toda a sua configuração de áudio sem restrições.'
-            },
-            {
-              question: 'Posso sincronizar os recursos Pro em vários Macs?',
-              answer: 'Se você usar o Compartilhamento Familiar, a licença Pro é compartilhada via iCloud. Uma única compra Pro se aplica à sua conta em todos os seus Macs pessoais.'
-            },
-            {
-              question: 'Quanto custa o Pro?',
-              answer: 'O preço é definido na Mac App Store. Confira a listagem do aplicativo para o preço atual em sua região.'
-            }
-          ]
-        },
-        {
-          id: 'ajuda-solucao-problemas',
-          title: 'Ajuda e Solução de Problemas',
-          items: [
-            {
-              question: 'MACA não mostra aplicativos para controlar.',
-              answer: 'Reinicie o aplicativo. Verifique se o áudio está realmente reproduzindo em outro aplicativo. Verifique se MACA tem permissão para acessar o áudio: Configurações do Sistema → Privacidade e Segurança → Entrada de Áudio.'
-            },
-            {
-              question: 'O áudio de um aplicativo continua voltando para o dispositivo padrão.',
-              answer: 'Isso pode ocorrer se: o aplicativo acabou de iniciar (MACA pode precisar de um momento para ativar), outro aplicativo ou o sistema operacional alterou o dispositivo de áudio do sistema. Tente reselecionar manualmente o dispositivo no menu MACA.'
-            },
-            {
-              question: 'O visualizador EQ não mostra atividade.',
-              answer: 'Certifique-se de que o áudio esteja reproduzindo nesse aplicativo. O analisador é atualizado em tempo real, então o áudio silencioso não mostrará nada. Se ainda não funcionar, feche a janela EQ e reabra-a.'
-            },
-            {
-              question: 'Os atalhos de teclado para perfis não estão funcionando.',
-              answer: 'Verifique em Configurações → Atalhos de Teclado se seu atalho está habilitado e definido para uma combinação de teclas única. Verifique se a permissão de monitoramento de entrada foi concedida: Configurações do Sistema → Privacidade e Segurança.'
-            },
-            {
-              question: 'Atingi acidentalmente meu limite (3 aplicativos em Grátis). E agora?',
-              answer: 'Você tem duas opções: reinicie o aplicativo para atualizar a lista de aplicativos em execução, ou atualize para Pro para desbloquear controle ilimitado de aplicativos.'
-            },
-            {
-              question: 'Posso controlar o áudio em aplicativos em segundo plano?',
-              answer: 'Sim. MACA controla qualquer aplicativo com saída de áudio – seja em primeiro plano ou em segundo plano.'
-            },
-            {
-              question: 'MACA funciona com interfaces de áudio USB externas?',
-              answer: 'Absolutamente. Todos os dispositivos de áudio que o macOS reconhece (interfaces USB, DACs externos, etc.) aparecem na lista de dispositivos do MACA.'
-            },
-            {
-              question: 'Como dou feedback ou relato um bug?',
-              answer: 'Entre em contato conosco em support@getmaca.de. Apreciamos relatórios de bugs, solicitações de recursos e feedback de uso.'
-            }
-          ]
-        }
-      ],
-      technicalStandards: {
-        title: 'Padrões Técnicos',
-        sections: {
-          equalizer: {
-            title: 'Equalizador (EQ)',
-            items: [
-              'Bandas de Frequência ISO 216: 10 bandas de frequência de oitava seguindo o padrão internacional',
-              'Faixa de Frequência: 31 Hz a 16 kHz (cobre a faixa de áudio audível)',
-              'Controle Paramétrico (Pro): Ganho, frequência central, fator Q por IEC 60268-17'
-            ]
-          },
-          audioAnalysis: {
-            title: 'Análise de Áudio',
-            items: [
-              'FFT (Transformada Rápida de Fourier): Análise de espectro em tempo real por padrões IEC',
-              'Medição de Retenção de Pico: Padrão IEC 60268-17 VU com retenção de pico por 2-3 segundos',
-              'Detecção de Clipping: Detecção automática de sobrecarga (0 dBFS)'
-            ]
-          },
-          normalization: {
-            title: 'Normalização (Pro)',
-            items: [
-              'Normalizador de Áudio: Baseado no padrão LUFS (LKFS por ITU-R BS.1770-4)',
-              'Valor Alvo: -16 LUFS (compatível com plataformas de streaming)'
-            ]
-          },
-          audioLevels: {
-            title: 'Padrões de Nível de Áudio',
-            items: [
-              'Escala dB: Decibel (20×Log10 da relação)',
-              'Volume Mestre: 0 dB (padrão do sistema), faixa +/- para balanceamento de nível',
-              'Limite de Clipping: 0 dBFS (máximo digital)'
-            ]
-          }
-        }
-      }
-    },
     ja: {
       pageTitle: 'MACA — よくある質問',
       tableOfContents: '目次',
@@ -1553,7 +1338,7 @@ const createFAQContent = (lang: Language): FAQContent => {
         }
       }
     },
-    zh: {
+    'zh-Hans': {
       pageTitle: 'MACA — 常见问题',
       tableOfContents: '目录',
       categories: [
@@ -1771,16 +1556,33 @@ const createFAQContent = (lang: Language): FAQContent => {
     }
   };
 
-  return translations[lang];
+  // Remaining languages from separate file
+  const remainingTranslations: Partial<Record<Language, FAQContent>> = {
+    ar: arFaqContent,
+    ru: ruFaqContent,
+    nl: nlFaqContent,
+    tr: trFaqContent,
+    sv: svFaqContent,
+  };
+
+  return translations[lang] ?? remainingTranslations[lang] ?? translations.en!;
 };
 
-export const faqContentTranslations: Record<Language, FAQContent> = {
+export const faqContentTranslations: Partial<Record<Language, FAQContent>> & { en: FAQContent } = {
   de: createFAQContent('de'),
   en: createFAQContent('en'),
   es: createFAQContent('es'),
   fr: createFAQContent('fr'),
   it: createFAQContent('it'),
-  pt: createFAQContent('pt'),
   ja: createFAQContent('ja'),
-  zh: createFAQContent('zh')
+  'zh-Hans': createFAQContent('zh-Hans'),
+  'zh-Hant': createFAQContent('zh-Hant'),
+  ar: createFAQContent('ar'),
+  ru: createFAQContent('ru'),
+  nl: createFAQContent('nl'),
+  tr: createFAQContent('tr'),
+  sv: createFAQContent('sv'),
+  da: createFAQContent('da'),
+  ko: createFAQContent('ko'),
+  nb: createFAQContent('nb'),
 };

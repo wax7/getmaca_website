@@ -36,9 +36,9 @@ import { useMemo } from 'react';
  *  3. The XML text is present in the DOM (Googlebot can parse it as last resort)
  */
 
-const LANGS = ['en', 'de', 'fr', 'es', 'it', 'pt', 'ja', 'zh'] as const;
+const LANGS = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'] as const;
 const BASE = 'https://getmaca.de';
-const LASTMOD = '2026-02-26';
+const LASTMOD = '2026-03-08';
 
 interface PageDef {
   path: string;
@@ -49,10 +49,17 @@ interface PageDef {
 
 const PAGES: PageDef[] = [
   { path: '', changefreq: 'weekly', priority: '1.0', comment: 'HOME PAGES (priority 1.0)' },
+  { path: '/guide', changefreq: 'monthly', priority: '0.9', comment: 'GUIDE PAGES (priority 0.9)' },
   { path: '/faq', changefreq: 'monthly', priority: '0.8', comment: 'FAQ PAGES (priority 0.8)' },
+  { path: '/troubleshooting', changefreq: 'monthly', priority: '0.7', comment: 'TROUBLESHOOTING PAGES (priority 0.7)' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.6', comment: 'PRIVACY PAGES (priority 0.6)' },
   { path: '/terms', changefreq: 'yearly', priority: '0.5', comment: 'TERMS PAGES (priority 0.5)' },
   { path: '/imprint', changefreq: 'yearly', priority: '0.4', comment: 'IMPRINT PAGES (priority 0.4)' },
+];
+
+// Non-localized standalone pages (no :lang prefix)
+const STATIC_PAGES = [
+  { path: '/history', changefreq: 'monthly', priority: '0.3', comment: 'HISTORY PAGE (no language prefix)' },
 ];
 
 function buildHreflangLinks(path: string): string {
@@ -74,9 +81,22 @@ ${buildHreflangLinks(page.path)}
   </url>`).join('\n');
 }
 
+function buildStaticUrlEntries(page: PageDef): string {
+  return `  <url>
+    <loc>${BASE}${page.path}</loc>
+    <lastmod>${LASTMOD}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`;
+}
+
 function buildSitemapXml(): string {
   const sections = PAGES.map(
     (page) => `\n  <!-- ${page.comment} -->\n\n${buildUrlEntries(page)}`,
+  ).join('\n');
+
+  const staticSections = STATIC_PAGES.map(
+    (page) => `\n  <!-- ${page.comment} -->\n\n${buildStaticUrlEntries(page)}`,
   ).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -84,6 +104,8 @@ function buildSitemapXml(): string {
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >${sections}
+
+${staticSections}
 
 </urlset>`;
 }
@@ -198,8 +220,9 @@ export function SitemapXml() {
           }}
         >
           {LANGS.length} Sprachen &times; {PAGES.length} Seitentypen ={' '}
-          {LANGS.length * PAGES.length} URLs | Alle mit bidirektionalen hreflang +
-          x-default
+          {LANGS.length * PAGES.length} URLs + {STATIC_PAGES.length} statische ={' '}
+          {LANGS.length * PAGES.length + STATIC_PAGES.length} URLs gesamt | Alle
+          lokalisierten URLs mit bidirektionalen hreflang + x-default
         </div>
       </div>
     </div>

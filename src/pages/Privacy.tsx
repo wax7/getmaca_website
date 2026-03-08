@@ -16,7 +16,7 @@ export function Privacy() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
 
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
   const requestedLang = lang as Language;
   const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
 
@@ -40,41 +40,41 @@ export function Privacy() {
              currentLang === 'es' ? 'Propósito' :
              currentLang === 'fr' ? 'Objectif' :
              currentLang === 'it' ? 'Scopo' :
-             currentLang === 'pt' ? 'Finalidade' :
              currentLang === 'ja' ? '目的' :
-             currentLang === 'zh' ? '用途' :
+             currentLang === 'zh-Hans' ? '用途' :
+             currentLang === 'zh-Hant' ? '用途' :
              'Purpose',
     legalBasis: currentLang === 'de' ? 'Rechtsgrundlage' :
                 currentLang === 'es' ? 'Base legal' :
                 currentLang === 'fr' ? 'Base juridique' :
                 currentLang === 'it' ? 'Base giuridica' :
-                currentLang === 'pt' ? 'Base legal' :
                 currentLang === 'ja' ? '法的根拠' :
-                currentLang === 'zh' ? '法律依据' :
+                currentLang === 'zh-Hans' ? '法律依据' :
+                currentLang === 'zh-Hant' ? '法律依据' :
                 'Legal Basis',
     duration: currentLang === 'de' ? 'Dauer' :
               currentLang === 'es' ? 'Duración' :
               currentLang === 'fr' ? 'Durée' :
               currentLang === 'it' ? 'Durata' :
-              currentLang === 'pt' ? 'Duração' :
               currentLang === 'ja' ? '期間' :
-              currentLang === 'zh' ? '持续时间' :
+              currentLang === 'zh-Hans' ? '持续时间' :
+              currentLang === 'zh-Hant' ? '持续时间' :
               'Duration',
     dataTransfer: currentLang === 'de' ? 'Datenübertragung' :
                   currentLang === 'es' ? 'Transferencia de datos' :
                   currentLang === 'fr' ? 'Transfert de données' :
                   currentLang === 'it' ? 'Trasferimento dati' :
-                  currentLang === 'pt' ? 'Transferência de dados' :
                   currentLang === 'ja' ? 'データ転送' :
-                  currentLang === 'zh' ? '数据传输' :
+                  currentLang === 'zh-Hans' ? '数据传输' :
+                  currentLang === 'zh-Hant' ? '数据传输' :
                   'Data Transfer',
     privacyPolicy: currentLang === 'de' ? 'Datenschutzrichtlinie' :
                    currentLang === 'es' ? 'Política de privacidad' :
                    currentLang === 'fr' ? 'Politique de confidentialité' :
                    currentLang === 'it' ? 'Informativa sulla privacy' :
-                   currentLang === 'pt' ? 'Política de privacidade' :
                    currentLang === 'ja' ? 'プライバシーポリシー' :
-                   currentLang === 'zh' ? '隐私政策' :
+                   currentLang === 'zh-Hans' ? '隐私政策' :
+                   currentLang === 'zh-Hant' ? '隐私政策' :
                    'Privacy Policy',
   };
 
@@ -82,18 +82,18 @@ export function Privacy() {
                      currentLang === 'es' ? 'Volver a Inicio' :
                      currentLang === 'fr' ? 'Retour à l\'Accueil' :
                      currentLang === 'it' ? 'Torna alla Home' :
-                     currentLang === 'pt' ? 'Voltar ao Início' :
                      currentLang === 'ja' ? 'ホームに戻る' :
-                     currentLang === 'zh' ? '返回首页' :
+                     currentLang === 'zh-Hans' ? '返回首页' :
+                     currentLang === 'zh-Hant' ? '返回首页' :
                      'Back to Home';
 
   const headerBadge = currentLang === 'de' ? '🔒 Deine Privatsphäre ist geschützt' :
                       currentLang === 'es' ? '🔒 Tu Privacidad Está Protegida' :
                       currentLang === 'fr' ? '🔒 Votre Vie Privée Est Protégée' :
                       currentLang === 'it' ? '🔒 La Tua Privacy È Protetta' :
-                      currentLang === 'pt' ? '🔒 Sua Privacidade Está Protegida' :
                       currentLang === 'ja' ? '🔒 プライバシーは保護されています' :
-                      currentLang === 'zh' ? '🔒 您的隐私受到保护' :
+                      currentLang === 'zh-Hans' ? '🔒 您的隐私受到保护' :
+                      currentLang === 'zh-Hant' ? '🔒 您的隐私受到保护' :
                       '🔒 Your Privacy Is Protected';
 
   return (

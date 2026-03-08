@@ -17,7 +17,7 @@ export function FAQ() {
   const scrolled = useScrolled(50);
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
   const requestedLang = lang as Language;
   const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
 
@@ -52,18 +52,18 @@ export function FAQ() {
                      currentLang === 'es' ? 'Volver a Inicio' :
                      currentLang === 'fr' ? 'Retour à l\'Accueil' :
                      currentLang === 'it' ? 'Torna alla Home' :
-                     currentLang === 'pt' ? 'Voltar ao Início' :
                      currentLang === 'ja' ? 'ホームに戻る' :
-                     currentLang === 'zh' ? '返回首页' :
+                     currentLang === 'zh-Hans' ? '返回首页' :
+                     currentLang === 'zh-Hant' ? '返回首頁' :
                      'Back to Home';
 
   const headerBadge = currentLang === 'de' ? '❓ Häufig gestellte Fragen' :
                       currentLang === 'es' ? '❓ Preguntas Frecuentes' :
                       currentLang === 'fr' ? '❓ Questions Fréquentes' :
                       currentLang === 'it' ? '❓ Domande Frequenti' :
-                      currentLang === 'pt' ? '❓ Perguntas Frequentes' :
                       currentLang === 'ja' ? '❓ よくある質問' :
-                      currentLang === 'zh' ? '❓ 常见问题' :
+                      currentLang === 'zh-Hans' ? '❓ 常见问题' :
+                      currentLang === 'zh-Hant' ? '❓ 常見問題' :
                       '❓ Frequently Asked Questions';
 
   return (
@@ -304,9 +304,9 @@ export function FAQ() {
                currentLang === 'es' ? '¿Más preguntas?' :
                currentLang === 'fr' ? 'D\'autres questions ?' :
                currentLang === 'it' ? 'Altre domande?' :
-               currentLang === 'pt' ? 'Mais perguntas?' :
                currentLang === 'ja' ? 'さらに質問がありますか？' :
-               currentLang === 'zh' ? '还有问题？' :
+               currentLang === 'zh-Hans' ? '还有问题？' :
+               currentLang === 'zh-Hant' ? '還有問題？' :
                'Still have questions?'}
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 sm:mb-8">
@@ -314,9 +314,9 @@ export function FAQ() {
                currentLang === 'es' ? 'Nuestro equipo de soporte está encantado de ayudar.' :
                currentLang === 'fr' ? 'Notre équipe de support est heureuse d\'aider.' :
                currentLang === 'it' ? 'Il nostro team di supporto è felice di aiutare.' :
-               currentLang === 'pt' ? 'Nossa equipe de suporte está feliz em ajudar.' :
                currentLang === 'ja' ? 'サポートチームが喜んでお手伝いします。' :
-               currentLang === 'zh' ? '我们的支持团队很乐意提供帮助。' :
+               currentLang === 'zh-Hans' ? '我们的支持团队很乐意提供帮助。' :
+               currentLang === 'zh-Hant' ? '我們的支持團隊很樂意提供幫助。' :
                'Our support team is happy to help.'}
             </p>
             <a

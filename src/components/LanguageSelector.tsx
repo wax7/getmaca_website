@@ -48,7 +48,7 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
     }
   }, [isOpen]);
 
-  const languages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+  const languages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
 
   const handleLanguageChange = (lang: Language) => {
     // Speichere die Sprachpräferenz

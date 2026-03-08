@@ -16,9 +16,17 @@ const metaDescriptions: Record<Language, string> = {
   fr: 'MACA – Volume par application sur macOS. Mixer individuel, EQ 10 bandes, profils audio, Mode Focus. Aucune donnée. Achat unique. Version gratuite disponible.',
   es: 'MACA – Volumen por app en macOS. Mezclador individual, EQ 10 bandas, perfiles de audio, Modo Enfoque. Sin datos. Compra única. Versión gratuita disponible.',
   it: 'MACA – Volume per app su macOS. Mixer individuale, EQ 10 bande, profili audio, Modalità Focus. Nessun dato. Acquisto unico. Versione gratuita disponibile.',
-  pt: 'MACA – Volume por app no macOS. Mixer individual, EQ 10 bandas, perfis de áudio, Modo Foco. Sem dados. Compra única. Versão gratuita disponível.',
   ja: 'MACA – macOSのアプリごとの音量コントロール。個別ミキサー、10バンドEQ、オーディオプロファイル、フォーカスモード。データ収集なし。買い切り。無料版あり。',
-  zh: 'MACA – macOS每应用音量控制。独立混音器、10段EQ、音频配置文件、专注模式。无数据收集。一次性购买。提供免费版本。',
+  'zh-Hans': 'MACA – macOS每应用音量控制。独立混音器、10段EQ、音频配置文件、专注模式。无数据收集。一次性购买。提供免费版本。',
+  'zh-Hant': 'MACA – macOS每應用音量控制。獨立混音器、10段EQ、音頻配置文件、專注模式。無數據收集。一次性購買。提供免費版本。',
+  ar: 'MACA – تحكم في مستوى الصوت لكل تطبيق على macOS. خلاط فردي، معادل صوت 10 نطاقات، ملفات صوتية، وضع التركيز. بدون جمع بيانات. شراء لمرة واحدة. إصدار مجاني متاح.',
+  ru: 'MACA – Управление громкостью каждого приложения на macOS. Индивидуальный микшер, 10-полосный эквалайзер, аудиопрофили, режим фокусировки. Без сбора данных. Разовая покупка. Бесплатная версия.',
+  nl: 'MACA – Volume per app voor macOS. Individuele mixer, 10-bands EQ, audioprofielen, Focusmodus. Geen gegevensverzameling. Eenmalige aankoop. Gratis versie beschikbaar.',
+  tr: 'MACA – macOS için uygulama başına ses kontrolü. Bireysel mikser, 10 bantlı EQ, ses profilleri, Odak Modu. Veri toplama yok. Tek seferlik satın alma. Ücretsiz sürüm mevcut.',
+  sv: 'MACA – Volymkontroll per app för macOS. Individuell mixer, 10-bands EQ, ljudprofiler, Fokusläge. Ingen datainsamling. Engångsköp. Gratisversion tillgänglig.',
+  da: 'MACA – Per-app lydstyrkekontrol for macOS. Individuel mixer, 10-bands EQ, lydprofiler, Fokusmodus. Ingen datinsamling. Én gangskøb. Gratis version tilgængelig.',
+  ko: 'MACA – macOS 앱별 볼륨 컨트롤. 개별 믹서, 10대 EQ, 오디오 프로필, 포커스 모드. 데이터 수집 없음. 일회 구매. 무료 버전 제공.',
+  nb: 'MACA – Per-app volumkontroll for macOS. Individuell mixer, 10-bands EQ, lydprofiler, Fokusmodus. Ingen datainsamling. Én gangskjøp. Gratis versjon tilgjengelig.',
 };
 
 // ---------------------------------------------------------------------------
@@ -31,9 +39,17 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: 'MACA – Volume par Application macOS | Mixer Audio Individuel',
     es: 'MACA – Volumen por App en macOS | Mezclador de Audio Individual',
     it: 'MACA – Volume per App su macOS | Mixer Audio Individuale',
-    pt: 'MACA – Volume por App no macOS | Mixer de Áudio Individual',
     ja: 'MACA – macOSのアプリごとの音量コントロール | 個別オーディオミキサー',
-    zh: 'MACA – macOS每应用音量控制 | 独立音频混音器',
+    'zh-Hans': 'MACA – macOS每应用音量控制 | 独立音频混音器',
+    'zh-Hant': 'MACA – macOS每應用音量控制 | 獨立音頻混音器',
+    ar: 'MACA – تحكم في مستوى الصوت لكل تطبيق على macOS | خلاط صوت فردي',
+    ru: 'MACA – Управление громкостью каждого приложения на macOS | Индивидуальный микшер',
+    nl: 'MACA – Volume per app voor macOS | Individuele audio-mixer',
+    tr: 'MACA – macOS için uygulama başına ses kontrolü | Bireysel mikser',
+    sv: 'MACA – Volymkontroll per app för macOS | Individuell ljudmixer',
+    da: 'MACA – Per-app lydstyrkekontrol for macOS | Individuel lydmixer',
+    ko: 'MACA – macOS 앱별 볼륨 컨트롤 | 개별 믹서',
+    nb: 'MACA – Per-app volumkontroll for macOS | Individuell lydmixer',
   },
   faq: {
     en: 'FAQ – MACA Master Audio Control for macOS',
@@ -41,9 +57,17 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: 'FAQ – MACA Contrôle Audio pour macOS',
     es: 'FAQ – MACA Control de Audio para macOS',
     it: 'FAQ – MACA Controllo Audio per macOS',
-    pt: 'FAQ – MACA Controle de Áudio para macOS',
     ja: 'よくある質問 – MACA Master Audio Control',
-    zh: '常见问题 – MACA Master Audio Control',
+    'zh-Hans': '常见问题 – MACA Master Audio Control',
+    'zh-Hant': '常見問題 – MACA Master Audio Control',
+    ar: 'أسئلة متكررة – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Часто задаваемые вопросы – MACA Управление громкостью для macOS',
+    nl: 'FAQ – MACA Master Audio Control voor macOS',
+    tr: 'SSS – MACA Master Audio Control için macOS',
+    sv: 'FAQ – MACA Master Audio Control för macOS',
+    da: 'FAQ – MACA Master Audio Control for macOS',
+    ko: 'FAQ – MACA Master Audio Control for macOS',
+    nb: 'FAQ – MACA Master Audio Control for macOS',
   },
   privacy: {
     en: 'Privacy Policy – MACA Master Audio Control',
@@ -51,9 +75,17 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: 'Politique de Confidentialité – MACA Master Audio Control',
     es: 'Política de Privacidad – MACA Master Audio Control',
     it: 'Informativa sulla Privacy – MACA Master Audio Control',
-    pt: 'Política de Privacidade – MACA Master Audio Control',
     ja: 'プライバシーポリシー – MACA Master Audio Control',
-    zh: '隐私政策 – MACA Master Audio Control',
+    'zh-Hans': '隐私政策 – MACA Master Audio Control',
+    'zh-Hant': '隱私政策 – MACA Master Audio Control',
+    ar: 'سياسة الخصوصية – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Политика конфиденциальности – MACA Управление громкостью для macOS',
+    nl: 'Privacybeleid – MACA Master Audio Control voor macOS',
+    tr: 'Gizlilik Politikası – MACA Master Audio Control',
+    sv: 'Integritetspolicy – MACA Master Audio Control',
+    da: 'Privatlivspolitik – MACA Master Audio Control',
+    ko: '개인 정보 보호 정책 – MACA Master Audio Control',
+    nb: 'Personvern – MACA Master Audio Control',
   },
   terms: {
     en: 'Terms of Use – MACA Master Audio Control',
@@ -61,9 +93,17 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: "Conditions d'Utilisation – MACA Master Audio Control",
     es: 'Términos de Uso – MACA Master Audio Control',
     it: "Termini d'Uso – MACA Master Audio Control",
-    pt: 'Termos de Uso – MACA Master Audio Control',
     ja: '利用規約 – MACA Master Audio Control',
-    zh: '使用条款 – MACA Master Audio Control',
+    'zh-Hans': '使用条款 – MACA Master Audio Control',
+    'zh-Hant': '使用條款 – MACA Master Audio Control',
+    ar: 'شروط الاستخدام – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Условия использования – MACA Управление громкостью для macOS',
+    nl: 'Gebruiksvoorwaarden – MACA Master Audio Control voor macOS',
+    tr: 'Kullanım Şartları – MACA Master Audio Control',
+    sv: 'Användarvillkor – MACA Master Audio Control',
+    da: 'Brugervilkår – MACA Master Audio Control',
+    ko: '이용 약관 – MACA Master Audio Control',
+    nb: 'Vilkår for bruk – MACA Master Audio Control',
   },
   imprint: {
     en: 'Imprint – MACA Master Audio Control',
@@ -71,9 +111,17 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: 'Mentions Légales – MACA Master Audio Control',
     es: 'Aviso Legal – MACA Master Audio Control',
     it: 'Note Legali – MACA Master Audio Control',
-    pt: 'Informazione Legal – MACA Master Audio Control',
     ja: '法的情報 – MACA Master Audio Control',
-    zh: '法律信息 – MACA Master Audio Control',
+    'zh-Hans': '法律信息 – MACA Master Audio Control',
+    'zh-Hant': '法律資訊 – MACA Master Audio Control',
+    ar: 'البيان القانوني – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Юридическая информация – MACA Управление громкостью для macOS',
+    nl: 'Colofon – MACA Master Audio Control',
+    tr: 'Yasal Bilgiler – MACA Master Audio Control',
+    sv: 'Impressum – MACA Master Audio Control',
+    da: 'Impressum – MACA Master Audio Control',
+    ko: '법적 정보 – MACA Master Audio Control',
+    nb: 'Impressum – MACA Master Audio Control',
   },
   feedback: {
     en: 'Feedback – MACA Master Audio Control',
@@ -81,9 +129,53 @@ const pageTitles: Record<string, Record<Language, string>> = {
     fr: "Retour d'expérience – MACA Master Audio Control",
     es: 'Comentarios – MACA Master Audio Control',
     it: 'Feedback – MACA Master Audio Control',
-    pt: 'Feedback – MACA Master Audio Control',
     ja: 'フィードバック – MACA Master Audio Control',
-    zh: '反馈 – MACA Master Audio Control',
+    'zh-Hans': '反馈 – MACA Master Audio Control',
+    'zh-Hant': '反饋 – MACA Master Audio Control',
+    ar: 'التعليقات – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Отзывы – MACA Управление громкостью для macOS',
+    nl: 'Feedback – MACA Master Audio Control voor macOS',
+    tr: 'Geri Bildirim – MACA Master Audio Control',
+    sv: 'Feedback – MACA Master Audio Control',
+    da: 'Feedback – MACA Master Audio Control',
+    ko: '피드백 – MACA Master Audio Control',
+    nb: 'Tilbakemelding – MACA Master Audio Control',
+  },
+  guide: {
+    en: 'User Guide – MACA Master Audio Control',
+    de: 'Benutzerhandbuch – MACA Master Audio Control',
+    fr: 'Guide Utilisateur – MACA Master Audio Control',
+    es: 'Guía del Usuario – MACA Master Audio Control',
+    it: 'Guida Utente – MACA Master Audio Control',
+    ja: 'ユーザーガイド – MACA Master Audio Control',
+    'zh-Hans': '用户指南 – MACA Master Audio Control',
+    'zh-Hant': '用戶指南 – MACA Master Audio Control',
+    ar: 'دليل المستخدم – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Руководство пользователя – MACA Управление громкостью для macOS',
+    nl: 'Gebruikershandleiding – MACA Master Audio Control voor macOS',
+    tr: 'Kullanıcı Kılavuzu – MACA Master Audio Control',
+    sv: 'Användarhandledning – MACA Master Audio Control',
+    da: 'Brugermanual – MACA Master Audio Control',
+    ko: '사용자 가이드 – MACA Master Audio Control',
+    nb: 'Brukermanual – MACA Master Audio Control',
+  },
+  troubleshooting: {
+    en: 'Troubleshooting – MACA Master Audio Control',
+    de: 'Fehlerbehebung – MACA Master Audio Control',
+    fr: 'Dépannage – MACA Master Audio Control',
+    es: 'Solución de problemas – MACA Master Audio Control',
+    it: 'Risoluzione dei problemi – MACA Master Audio Control',
+    ja: 'トラブルシューティング – MACA Master Audio Control',
+    'zh-Hans': '故障排除 – MACA Master Audio Control',
+    'zh-Hant': '故障排除 – MACA Master Audio Control',
+    ar: 'حل المشكلات – MACA تحكم الصوت الرئيسي لـ macOS',
+    ru: 'Устранение неполадок – MACA Управление громкостью для macOS',
+    nl: 'Probleemoplossing – MACA Master Audio Control voor macOS',
+    tr: 'Sorun Giderme – MACA Master Audio Control',
+    sv: 'Felsökning – MACA Master Audio Control',
+    da: 'Fejlfinding – MACA Master Audio Control',
+    ko: '문제 해결 – MACA Master Audio Control',
+    nb: 'Feilsøking – MACA Master Audio Control',
   },
 };
 
@@ -96,9 +188,17 @@ const metaKeywords: Record<Language, string> = {
   fr: 'volume par application macOS, mixeur audio mac, contrôle volume individuel mac, macOS egaliseur par app, MACA app, profils audio mac, couper son application mac',
   es: 'volumen por aplicación macOS, mezclador audio mac, control volumen individual mac, macOS ecualizador por app, MACA app, perfiles audio mac, silenciar apps mac',
   it: 'volume per applicazione macOS, mixer audio mac, controllo volume individuale mac, macOS equalizzatore per app, MACA app, profili audio mac, silenziare app mac',
-  pt: 'volume por aplicativo macOS, mixer audio mac, controle volume individual mac, macOS equalizador por app, MACA app, perfis audio mac, silenciar apps mac',
   ja: 'macOS アプリごと音量 個別音量制御 mac オーディオミキサー イコライザー 音量調整 MACA アプリ',
-  zh: 'macOS每应用音量控制 独立音量 mac音频混音器 均衡器 音量调节 MACA应用',
+  'zh-Hans': 'macOS每应用音量控制 独立音量 mac音频混音器 均衡器 音量调节 MACA应用',
+  'zh-Hant': 'macOS每應用音量控制 獨立音量 mac音頻混音器 均衡器 音量調整 MACA應用',
+  ar: 'تحكم في مستوى الصوت لكل تطبيق على macOS، خلاط صوت فردي، macOS مزج صوت، مزج صوت mac، تحكم صوت mac، macOS تحكم الصوت، مستوى صوت تطبيق mac، معادل صوت mac لكل تطبيق، MACA التطبيق، تحكم الصوت الرئيسي لـ mac، ملفات صوت mac، إيقاف تطبيقات mac الفردية',
+  ru: 'управление громкостью каждого приложения на macOS, индивидуальный микшер, macOS микшер, микшер mac, громкость mac, macOS контроль звука, громкость приложения mac, эквалайзер mac для каждого приложения, MACA приложение, управление громкостью mac, аудиопрофили mac, отключение отдельных приложений mac',
+  nl: 'volume per app voor macOS, individuele app volume mac, macOS audio mixer, mac volume mixer, per app audio mac, macOS geluidskontrol, app volume macOS Sequoia, mac equalizer per app, MACA app, master audio control mac, mac audio profielen, individuele apps dempenen mac',
+  tr: 'macOS için uygulama başına ses kontrolü, bireysel uygulama sesi mac, macOS ses karıştırıcı, mac ses karıştırıcı, uygulama başına ses mac, macOS ses kontrolü, uygulama sesi macOS Sequoia, mac uygulama başına eşittirleyici, MACA uygulaması, mac ana ses kontrolü, mac ses profilleri, bireysel uygulamaları kapatma mac',
+  sv: 'volymkontroll per app för macOS, individuell appvolym mac, macOS ljudmixer, mac ljudmixer, per app ljud mac, macOS ljudkontroll, appvolym macOS Sequoia, mac equalizer per app, MACA app, master ljudkontroll mac, mac ljudprofiler, stäng individuella appar mac',
+  da: 'per-app lydstyrkekontrol for macOS, individuel app-lydstyrke mac, macOS lydmixer, mac lydmixer, per app lyd mac, macOS lydkontrol, app-lydstyrke macOS Sequoia, mac lydjustering per app, MACA app, master lydkontrol mac, mac lydprofiler, sluk individuelle apps mac',
+  ko: 'macOS 앱별 볼륨 컨트롤, 개별 앱 볼륨 mac, macOS 오디오 믹서, mac 볼륨 믹서, 앱별 오디오 mac, macOS 사운드 컨트롤, 앱 볼륨 macOS Sequoia, mac 앱별 이퀄라이저, MACA 앱, mac 마스터 오디오 컨트롤, mac 오디오 프로필, 개별 앱 음소거 mac',
+  nb: 'per-app volumkontroll for macOS, individuell app-volum mac, macOS ljudmixer, mac ljudmixer, per app ljud mac, macOS ljudkontroll, app-volum macOS Sequoia, mac ljudjustering per app, MACA app, master ljudkontroll mac, mac ljudprofiler, sluk individuelle apps mac',
 };
 
 // ---------------------------------------------------------------------------
@@ -110,9 +210,17 @@ const ogLocales: Record<Language, string> = {
   fr: 'fr_FR',
   es: 'es_ES',
   it: 'it_IT',
-  pt: 'pt_PT',
   ja: 'ja_JP',
-  zh: 'zh_CN',
+  'zh-Hans': 'zh_CN',
+  'zh-Hant': 'zh_TW',
+  ar: 'ar_SA',
+  ru: 'ru_RU',
+  nl: 'nl_NL',
+  tr: 'tr_TR',
+  sv: 'sv_SE',
+  da: 'da_DK',
+  ko: 'ko_KR',
+  nb: 'nb_NO',
 };
 
 // ---------------------------------------------------------------------------
@@ -182,7 +290,7 @@ export function DocumentHead() {
     const currentPath = location.pathname;
     const pathParts = currentPath.split('/').filter(Boolean);
     const pageName = pathParts.length > 1 ? pathParts[pathParts.length - 1] : 'home';
-    const pageKey = ['faq', 'privacy', 'terms', 'imprint', 'feedback'].includes(pageName)
+    const pageKey = ['faq', 'privacy', 'terms', 'imprint', 'feedback', 'guide', 'troubleshooting'].includes(pageName)
       ? pageName
       : 'home';
     const isHome = pageKey === 'home';
@@ -203,12 +311,15 @@ export function DocumentHead() {
       document.head.insertBefore(charset, document.head.firstChild);
     }
 
-    // ─�� viewport ─────────────────────────────────────────────────────────
+    // ─ viewport ─────────────────────────────────────────────────────────
     setMeta('meta[name="viewport"]', 'name', 'viewport',
       'width=device-width, initial-scale=1.0, maximum-scale=5.0');
 
     // ── robots ───────────────────────────────────────────────────────────
-    setMeta('meta[name="robots"]', 'name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    const robotsContent = pageKey === 'feedback'
+      ? 'noindex, nofollow'
+      : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+    setMeta('meta[name="robots"]', 'name', 'robots', robotsContent);
 
     // ── description ───────────────────────────────────────────────────────
     setMeta('meta[name="description"]', 'name', 'description', metaDescriptions[currentLang]);
@@ -237,8 +348,8 @@ export function DocumentHead() {
     canonical.href = `${BASE_URL}${currentPath}`;
 
     // ── Hreflang ──────────────────────────────────────────────────────────
-    const languages: Language[] = ['en', 'de', 'fr', 'es', 'it', 'pt', 'ja', 'zh'];
-    const pathWithoutLang = currentPath.replace(/^\/(en|de|fr|es|it|pt|ja|zh)/, '');
+    const languages: Language[] = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
+    const pathWithoutLang = currentPath.replace(/^\/(en|de|fr|es|it|ja|zh-Hans|zh-Hant|ar|ru|nl|tr|sv|da|ko|nb)/, '');
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
     languages.forEach(language => {
       const link = document.createElement('link');
@@ -294,7 +405,7 @@ export function DocumentHead() {
     if (!document.querySelector('meta[http-equiv="Content-Security-Policy"]')) {
       const csp = document.createElement('meta');
       csp.httpEquiv = 'Content-Security-Policy';
-      csp.content = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://apps.apple.com; frame-ancestors 'self' https://www.figma.com";
+      csp.content = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://apps.apple.com; frame-ancestors 'self' https://www.figma.com";
       document.head.appendChild(csp);
     }
 
@@ -455,6 +566,8 @@ export function DocumentHead() {
         terms: 'Terms of Use',
         imprint: 'Imprint',
         feedback: 'Feedback',
+        guide: 'User Guide',
+        troubleshooting: 'Troubleshooting',
       };
       breadcrumb = {
         '@context': 'https://schema.org',

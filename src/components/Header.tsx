@@ -13,9 +13,17 @@ const downloadLabels: Record<Language, string> = {
   es: 'Descargar',
   fr: 'Télécharger',
   it: 'Scarica',
-  pt: 'Baixar',
   ja: 'ダウンロード',
-  zh: '下载',
+  'zh-Hans': '下载',
+  'zh-Hant': '下載',
+  ar: 'تحميل',
+  ru: 'Скачать',
+  nl: 'Download',
+  tr: 'İndir',
+  sv: 'Ladda ner',
+  da: 'Download',
+  ko: '다운로드',
+  nb: 'Last ned',
 };
 
 interface HeaderProps {

@@ -133,7 +133,7 @@ export function ScrollToTopButton() {
       style={{
         position: 'fixed',
         bottom: '24px',
-        right: '16px',
+        insetInlineEnd: '16px',
         width: '48px',
         height: '48px',
         backgroundColor: '#3B82F6',

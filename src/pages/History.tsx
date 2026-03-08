@@ -10,7 +10,7 @@ import { ArrowLeft } from 'lucide-react';
 function getPreferredLang(): string {
   try {
     const saved = localStorage.getItem('maca-preferred-language');
-    if (saved && ['en', 'de', 'fr', 'es', 'it', 'pt', 'ja', 'zh'].includes(saved)) {
+    if (saved && ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'].includes(saved)) {
       return saved;
     }
   } catch {}

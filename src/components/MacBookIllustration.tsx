@@ -192,6 +192,7 @@ export function MacBookIllustration({ currentLang }: { currentLang: Language }) 
       <svg 
         viewBox="-400 -280 800 460" 
         className="w-full h-auto max-w-6xl mx-auto"
+        style={{ minHeight: '280px' }}
         preserveAspectRatio="xMidYMid meet"
       >
         {/* Gradient definitions */}
@@ -313,8 +314,8 @@ export function MacBookIllustration({ currentLang }: { currentLang: Language }) 
                 y={endY - 55}
                 textAnchor="middle"
                 fill={device.color}
-                fontSize="13"
-                fontWeight="700"
+                fontSize="16"
+                fontWeight="800"
                 animate={{
                   opacity: [0, 0, 0, 0, 1, 1, 0.5, 0, 0]
                 }}
@@ -602,9 +603,9 @@ export function MacBookIllustration({ currentLang }: { currentLang: Language }) 
                 x="0"
                 y="60"
                 textAnchor="middle"
-                fill="#64748b"
-                fontSize="15"
-                fontWeight="600"
+                fill="#94a3b8"
+                fontSize="18"
+                fontWeight="700"
               >
                 {device.label}
               </text>

@@ -100,26 +100,6 @@ export const pricingUpdates = {
       'Pagamento unico • Nessun abbonamento'
     ]
   },
-  pt: {
-    free: [
-      'Controle até 3 aplicativos',
-      'Controle de volume por aplicativo',
-      'Silenciamento por aplicativo',
-      'Roteamento de áudio por aplicativo',
-      'Controle de volume mestre',
-      'EQ de 10 bandas com predefinições',
-      'Atalhos de teclado'
-    ],
-    pro: [
-      'Aplicativos ilimitados',
-      'Todos os recursos Gratuitos',
-      'Perfis de áudio ilimitados',
-      'Controle de EQ paramétrico completo',
-      'Normalizador de Áudio',
-      'Predefinições de EQ personalizadas ilimitadas',
-      'Pagamento único • Sem assinatura'
-    ]
-  },
   ja: {
     free: [
       '最大3つのアプリを制御',
@@ -138,26 +118,6 @@ export const pricingUpdates = {
       'オーディオノーマライザー',
       '無制限のカスタムEQプリセット',
       '1回限りの支払い • サブスクリプションなし'
-    ]
-  },
-  zh: {
-    free: [
-      '控制最多3个应用',
-      '每个应用的音量控制',
-      '每个应用的静音',
-      '每个应用的音频路由',
-      '主音量控制',
-      '带预设的10频段EQ',
-      '键盘快捷键'
-    ],
-    pro: [
-      '无限应用',
-      '所有免费功能',
-      '无限音频配置文件',
-      '完整的参数EQ控制',
-      '音频规范化器',
-      '无限自定义EQ预设',
-      '一次性付款 • 无订阅'
     ]
   }
 };

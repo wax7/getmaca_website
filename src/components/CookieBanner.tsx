@@ -4,12 +4,12 @@ import { useParams, Link } from 'react-router';
 import { Shield } from 'lucide-react';
 import { type Language } from '../locales/translations';
 
-const privacyNoticeTexts: Record<Language, {
+const privacyNoticeTexts: Partial<Record<Language, {
   title: string;
   description: string;
   learnMore: string;
   dismiss: string;
-}> = {
+}>> & { en: { title: string; description: string; learnMore: string; dismiss: string } } = {
   en: {
     title: 'Your privacy is protected',
     description: 'This website stores only your display preferences (language, dark mode) locally in your browser. No cookies, no personal data collection, no tracking — nothing leaves your device.',
@@ -40,23 +40,54 @@ const privacyNoticeTexts: Record<Language, {
     learnMore: 'Privacy',
     dismiss: 'Ho capito',
   },
-  pt: {
-    title: 'A sua privacidade está protegida',
-    description: 'Este site armazena apenas as suas preferências de exibição (idioma, modo escuro) localmente no seu navegador. Sem cookies, sem coleta de dados pessoais, sem rastreamento — nada sai do seu dispositivo.',
-    learnMore: 'Privacidade',
-    dismiss: 'Entendido',
-  },
+
   ja: {
     title: 'プライバシーは保護されています',
     description: 'このウェブサイトは、表示設定（言語、ダークモード）のみをブラウザにローカル保存します。Cookie、個人データの収集、トラッキングは一切なく、データがデバイスから外部送信されることはありません。',
     learnMore: 'プライバシー',
     dismiss: '了解',
   },
-  zh: {
+  'zh-Hans': {
     title: '您的隐私受到保护',
     description: '本网站仅在您的浏览器中本地保存显示偏好设置（语言、深色模式）。没有Cookie，不收集个人数据，不进行跟踪——没有任何数据离开您的设备。',
     learnMore: '隐私政策',
     dismiss: '知道了',
+  },
+  'zh-Hant': {
+    title: '您的隱私受到保護',
+    description: '本網站僅在您的瀏覽器中本地保存顯示偏好設置（語言、深色模式）。沒有Cookie，不收集個人數據，不進行追蹤——沒有任何數據離開您的設備。',
+    learnMore: '隱私政策',
+    dismiss: '知道了',
+  },
+  ar: {
+    title: 'خصوصيتك محمية',
+    description: 'يخزّن هذا الموقع فقط إعدادات العرض (اللغة، الوضع الداكن) محليًا في متصفحك. لا ملفات تعريف ارتباط، لا جمع بيانات شخصية، لا تتبع — لا شيء يغادر جهازك.',
+    learnMore: 'سياسة الخصوصية',
+    dismiss: 'فهمت',
+  },
+  ru: {
+    title: 'Ваша конфиденциальность защищена',
+    description: 'Этот сайт сохраняет только настройки отображения (язык, тёмная тема) локально в вашем браузере. Никаких cookies, никакого сбора персональных данных, никакого отслеживания — ничего не покидает ваше устройство.',
+    learnMore: 'Конфиденциальность',
+    dismiss: 'Понятно',
+  },
+  nl: {
+    title: 'Je privacy is beschermd',
+    description: 'Deze website slaat alleen je weergavevoorkeuren (taal, donkere modus) lokaal op in je browser. Geen cookies, geen verzameling van persoonlijke gegevens, geen tracking — niets verlaat je apparaat.',
+    learnMore: 'Privacybeleid',
+    dismiss: 'Begrepen',
+  },
+  tr: {
+    title: 'Gizliliğiniz korunuyor',
+    description: 'Bu web sitesi yalnızca görüntüleme tercihlerinizi (dil, karanlık mod) tarayıcınızda yerel olarak saklar. Çerez yok, kişisel veri toplama yok, izleme yok — hiçbir şey cihazınızdan ayrılmaz.',
+    learnMore: 'Gizlilik Politikası',
+    dismiss: 'Anladım',
+  },
+  sv: {
+    title: 'Din integritet är skyddad',
+    description: 'Denna webbplats lagrar bara dina visningsinställningar (språk, mörkt läge) lokalt i din webbläsare. Inga cookies, ingen insamling av personuppgifter, ingen spårning — ingenting lämnar din enhet.',
+    learnMore: 'Integritetspolicy',
+    dismiss: 'Förstått',
   },
 };
 

@@ -8,15 +8,17 @@ interface FooterProps {
   currentLang: Language;
 }
 
-const footerTranslations: Record<Language, {
+const footerTranslations: Partial<Record<Language, {
   tagline: string;
   legal: string;
   imprint: string;
   privacy: string;
   terms: string;
   support: string;
+  guide: string;
+  troubleshooting: string;
   copyright: string;
-}> = {
+}>> & { en: { tagline: string; legal: string; imprint: string; privacy: string; terms: string; support: string; guide: string; troubleshooting: string; copyright: string } } = {
   en: {
     tagline: 'Individual volume control for every app',
     legal: 'Legal',
@@ -24,6 +26,8 @@ const footerTranslations: Record<Language, {
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
     support: 'Support',
+    guide: 'User Guide',
+    troubleshooting: 'Troubleshooting',
     copyright: 'All rights reserved.',
   },
   de: {
@@ -33,6 +37,8 @@ const footerTranslations: Record<Language, {
     privacy: 'Datenschutz',
     terms: 'Nutzungsbedingungen',
     support: 'Support',
+    guide: 'Benutzerhandbuch',
+    troubleshooting: 'Fehlerbehebung',
     copyright: 'Alle Rechte vorbehalten.',
   },
   es: {
@@ -42,6 +48,8 @@ const footerTranslations: Record<Language, {
     privacy: 'Privacidad',
     terms: 'Términos de uso',
     support: 'Soporte',
+    guide: 'Guía del usuario',
+    troubleshooting: 'Solución de problemas',
     copyright: 'Todos los derechos reservados.',
   },
   fr: {
@@ -51,6 +59,8 @@ const footerTranslations: Record<Language, {
     privacy: 'Confidentialité',
     terms: 'Conditions d\'utilisation',
     support: 'Assistance',
+    guide: 'Guide utilisateur',
+    troubleshooting: 'Dépannage',
     copyright: 'Tous droits réservés.',
   },
   it: {
@@ -60,17 +70,11 @@ const footerTranslations: Record<Language, {
     privacy: 'Privacy',
     terms: 'Termini di utilizzo',
     support: 'Supporto',
+    guide: 'Guida utente',
+    troubleshooting: 'Risoluzione dei problemi',
     copyright: 'Tutti i diritti riservati.',
   },
-  pt: {
-    tagline: 'Controle de volume individual para cada aplicativo',
-    legal: 'Legal',
-    imprint: 'Aviso Legal',
-    privacy: 'Privacidade',
-    terms: 'Termos de uso',
-    support: 'Suporte',
-    copyright: 'Todos os direitos reservados.',
-  },
+
   ja: {
     tagline: 'すべてのアプリの個別音量コントロール',
     legal: '法的情報',
@@ -78,16 +82,86 @@ const footerTranslations: Record<Language, {
     privacy: 'プライバシー',
     terms: '利用規約',
     support: 'サポート',
+    guide: 'ユーザーガイド',
+    troubleshooting: 'トラブルシューティング',
     copyright: '全著作権所有。',
   },
-  zh: {
+  'zh-Hans': {
     tagline: '每个应用程序的独立音量控制',
     legal: '法律',
     imprint: '法律信息',
     privacy: '隐私政策',
     terms: '使用条款',
     support: '支持',
+    guide: '用户指南',
+    troubleshooting: '故障排除',
     copyright: '版权所有。',
+  },
+  'zh-Hant': {
+    tagline: '每個應用程序的獨立音量控制',
+    legal: '法律',
+    imprint: '法律信息',
+    privacy: '隱私政策',
+    terms: '使用條款',
+    support: '支持',
+    guide: '用戶指南',
+    troubleshooting: '故障排除',
+    copyright: '版權所有。',
+  },
+  ar: {
+    tagline: 'تحكم في مستوى الصوت الفردي لكل تطبيق',
+    legal: 'قانوني',
+    imprint: 'البيانات القانونية',
+    privacy: 'سياسة الخصوصية',
+    terms: 'شروط الاستخدام',
+    support: 'الدعم',
+    guide: 'دليل المستخدم',
+    troubleshooting: 'حل المشكلات',
+    copyright: 'جميع الحقوق محفوظة.',
+  },
+  ru: {
+    tagline: 'Индивидуальное управление громкостью для каждого приложения',
+    legal: 'Правовая информация',
+    imprint: 'Импрессум',
+    privacy: 'Политика конфиденциальности',
+    terms: 'Условия использования',
+    support: 'Поддержка',
+    guide: 'Руководство',
+    troubleshooting: 'Устранение неполадок',
+    copyright: 'Все права защищены.',
+  },
+  nl: {
+    tagline: 'Individuele volumeregeling voor elke app',
+    legal: 'Juridisch',
+    imprint: 'Colofon',
+    privacy: 'Privacybeleid',
+    terms: 'Gebruiksvoorwaarden',
+    support: 'Ondersteuning',
+    guide: 'Handleiding',
+    troubleshooting: 'Problemen oplossen',
+    copyright: 'Alle rechten voorbehouden.',
+  },
+  tr: {
+    tagline: 'Her uygulama için bireysel ses kontrolü',
+    legal: 'Yasal',
+    imprint: 'Yasal bilgiler',
+    privacy: 'Gizlilik politikası',
+    terms: 'Kullanım koşulları',
+    support: 'Destek',
+    guide: 'Kullanım Kılavuzu',
+    troubleshooting: 'Sorun Giderme',
+    copyright: 'Tüm hakları saklıdır.',
+  },
+  sv: {
+    tagline: 'Individuell volymkontroll för varje app',
+    legal: 'Juridiskt',
+    imprint: 'Impressum',
+    privacy: 'Integritetspolicy',
+    terms: 'Användarvillkor',
+    support: 'Support',
+    guide: 'Användarguide',
+    troubleshooting: 'Felsökning',
+    copyright: 'Alla rättigheter förbehållna.',
   },
 };
 
@@ -161,6 +235,22 @@ export function Footer({ currentLang }: FooterProps) {
                 <a href="mailto:support@getmaca.de" className="hover:text-white transition-colors">
                   support@getmaca.de
                 </a>
+              </li>
+              <li>
+                <Link
+                  to={`/${currentLang}/troubleshooting`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t.troubleshooting}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={`/${currentLang}/guide`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t.guide}
+                </Link>
               </li>
             </ul>
           </div>

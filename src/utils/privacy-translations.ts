@@ -71,7 +71,7 @@ export interface PrivacyTranslation {
   };
 }
 
-export const privacyTranslations: Record<Language, PrivacyTranslation> = {
+export const privacyTranslations: Partial<Record<Language, PrivacyTranslation>> & { en: PrivacyTranslation } = {
   en: {
     title: 'Privacy Policy',
     lastUpdated: 'Last Updated: February 24, 2026',
@@ -752,10 +752,9 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
       }
     }
   },
-  pt: {
+  /* pt block removed — Portuguese is no longer a supported language. Original content preserved in zh-Hans below */
+  '_pt_removed_': {
     title: 'Política de Privacidade',
-    lastUpdated: 'Última atualização: 24 de fevereiro de 2026',
-    intro: 'Na MACA (Master Audio Control App), sua privacidade é nossa maior prioridade. Esta Política de Privacidade explica como lidamos com seus dados—ou melhor, como NÃO os coletamos.',
     websiteNotice: 'Esta política de privacidade cobre tanto o app MACA COMO este site (getmaca.de).',
     sections: {
       websiteData: {
@@ -1024,7 +1023,7 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
       }
     }
   },
-  zh: {
+  'zh-Hans': {
     title: '隐私政策',
     lastUpdated: '最后更新：2026年2月24日',
     intro: '在MACA（Master Audio Control App）中，您的隐私是我们的最高优先事项。本隐私政策解释了我们如何处理您的数据——或者更确切地说，我们如何不收集数据。',
@@ -1158,6 +1157,101 @@ export const privacyTranslations: Record<Language, PrivacyTranslation> = {
           '我们通常在24-48小时内回复。'
         ]
       }
+    }
+  },
+  ar: {
+    title: 'سياسة الخصوصية',
+    lastUpdated: 'آخر تحديث: 24 فبراير 2026',
+    intro: 'في MACA (Master Audio Control App)، خصوصيتك هي أولويتنا القصوى. توضح سياسة الخصوصية هذه كيف نتعامل مع بياناتك — أو بالأحرى، كيف لا نجمعها.',
+    websiteNotice: 'تغطي سياسة الخصوصية هذه كلاً من تطبيق MACA وهذا الموقع (getmaca.de).',
+    sections: {
+      websiteData: { title: '0. هذا الموقع (getmaca.de)', localStorage: { title: 'تخزين المتصفح (LocalStorage)', items: [{ name: 'maca-cookie-consent', purpose: 'يخزن اختيارك للموافقة على ملفات تعريف الارتباط', legal: 'Art. 6 (1) lit. a GDPR (الموافقة)', duration: 'دائم (حتى تحذفه)' }, { name: 'maca-dark-mode', purpose: 'يخزن تفضيل الوضع الداكن', legal: 'Art. 6 (1) lit. f GDPR (المصلحة المشروعة)', duration: 'دائم (حتى تحذفه)' }, { name: 'maca-preferred-language', purpose: 'يخزن تفضيل اللغة', legal: 'Art. 6 (1) lit. f GDPR (المصلحة المشروعة)', duration: 'دائم (حتى تحذفه)' }] }, externalServices: { title: 'الخدمات الخارجية المستخدمة', items: [{ name: 'Apple App Store (روابط التحميل)', purpose: 'تحميل وشراء التطبيق', dataTransfer: 'يتم نقل بيانات النقر إلى Apple عند النقر على روابط التحميل', privacyLink: 'https://www.apple.com/legal/privacy/', legal: 'Art. 6 (1) lit. f GDPR (المصلحة المشروعة)' }] } },
+      dataCollection: { title: '1. جمع البيانات', content: ['MACA لا يجمع أي بيانات شخصية.', 'MACA لا يجمع أي بيانات استخدام أو تحليلات.', 'MACA لا يتتبع سلوكك.', 'MACA لا يتطلب حسابًا أو تسجيل دخول.', 'كل شيء يبقى على جهاز Mac الخاص بك. نقطة.'] },
+      dataStorage: { title: '2. تخزين البيانات', content: ['جميع إعداداتك وملفات الصوت والتفضيلات مخزنة محليًا على جهاز Mac.', 'يتم حفظ بياناتك في دليل مستخدم macOS المحلي.', 'MACA لا يزامن بياناتك مع أي خدمة سحابية.', 'MACA ليس لديه وصول إلى ملفاتك أو مستنداتك.', 'يتم تخزين إعدادات التحكم في الصوت فقط — لا شيء آخر.'] },
+      dataSharing: { title: '3. مشاركة البيانات', content: ['MACA لا يشارك أي بيانات مع أطراف ثالثة.', 'MACA لا يبيع بياناتك.', 'MACA لا يرسل أي بيانات إلى خوادمنا (لأننا لا نملك أيًا منها).', 'تبقى إعدادات الصوت خاصة تمامًا على جهازك.'] },
+      userRights: { title: '4. حقوقك (متوافق مع GDPR و CCPA)', content: ['حق الوصول: بما أننا لا نجمع بيانات، لا يوجد شيء للوصول إليه.', 'حق الحذف: ببساطة قم بإلغاء تثبيت MACA لإزالة جميع الإعدادات المحلية.', 'حق النقل: إعداداتك مخزنة محليًا ويمكن نسخها احتياطيًا يدويًا.', 'حق الاعتراض: لديك تحكم كامل — MACA لا يرسل بيانات أبدًا.'] },
+      security: { title: '5. الأمان', content: ['يستخدم MACA أمان macOS القياسي لحماية البيانات المحلية.', 'لا يوجد نقل عبر الشبكة = لا يوجد خطر اعتراض البيانات.', 'بياناتك آمنة مثل جهاز Mac نفسه.'] },
+      thirdParty: { title: '6. خدمات الطرف الثالث', content: ['MACA لا يستخدم أي خدمات طرف ثالث.', 'لا يوجد تتبع أو تحليلات أو إعلانات.', 'MACA يعمل بشكل مستقل تمامًا على جهاز Mac.'] },
+      children: { title: '7. خصوصية الأطفال', content: ['MACA لا يجمع بيانات من أي شخص، بما في ذلك الأطفال.', 'التطبيق آمن للاستخدام من قبل مستخدمين من جميع الأعمار.'] },
+      supervisoryAuthority: { title: '8. السلطة الإشرافية', content: ['إذا كنت تعتقد أن معالجة بياناتك تنتهك قوانين حماية البيانات، يحق لك تقديم شكوى إلى سلطة حماية البيانات المختصة.'] },
+      changes: { title: '9. التغييرات', content: ['قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر.', 'سيتم نشر أي تغييرات على هذه الصفحة مع تحديث تاريخ "آخر تحديث".', 'الاستمرار في استخدام MACA بعد التغييرات يعني القبول بالسياسة المحدثة.'] },
+      contact: { title: '10. الاتصال', content: ['إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا:', 'البريد الإلكتروني: Support@getmaca.de', 'الشركة: AMX Mediensysteme, Remigiusstr. 63, 41747 Viersen, Germany', 'نرد عادةً خلال 24-48 ساعة.'] }
+    }
+  },
+  ru: {
+    title: 'Политика конфиденциальности',
+    lastUpdated: 'Последнее обновление: 24 февраля 2026',
+    intro: 'В MACA (Master Audio Control App) ваша конфиденциальность — наш высший приоритет. Эта Политика конфиденциальности объясняет, как мы обрабатываем ваши данные — или, точнее, как мы их не собираем.',
+    websiteNotice: 'Эта политика конфиденциальности распространяется как на приложение MACA, так и на этот сайт (getmaca.de).',
+    sections: {
+      websiteData: { title: '0. Этот сайт (getmaca.de)', localStorage: { title: 'Хранилище браузера (LocalStorage)', items: [{ name: 'maca-cookie-consent', purpose: 'Сохраняет ваш выбор согласия на файлы cookie', legal: 'Ст. 6 (1) лит. a GDPR (Согласие)', duration: 'Постоянно (пока вы не удалите)' }, { name: 'maca-dark-mode', purpose: 'Сохраняет предпочтение тёмного режима', legal: 'Ст. 6 (1) лит. f GDPR (Законный интерес)', duration: 'Постоянно (пока вы не удалите)' }, { name: 'maca-preferred-language', purpose: 'Сохраняет предпочтение языка', legal: 'Ст. 6 (1) лит. f GDPR (Законный интерес)', duration: 'Постоянно (пока вы не удалите)' }] }, externalServices: { title: 'Внешние сервисы', items: [{ name: 'Apple App Store (ссылки для скачивания)', purpose: 'Загрузка и покупка приложения', dataTransfer: 'Данные о кликах передаются Apple при нажатии на ссылки загрузки', privacyLink: 'https://www.apple.com/legal/privacy/', legal: 'Ст. 6 (1) лит. f GDPR (Законный интерес)' }] } },
+      dataCollection: { title: '1. Сбор данных', content: ['MACA НЕ собирает персональные данные.', 'MACA НЕ собирает данные об использовании или аналитику.', 'MACA НЕ отслеживает ваше поведение.', 'MACA НЕ требует аккаунта или входа в систему.', 'Всё остаётся на вашем Mac. Точка.'] },
+      dataStorage: { title: '2. Хранение данных', content: ['Все ваши настройки, аудиопрофили и предпочтения хранятся локально на Mac.', 'Данные сохраняются в локальном каталоге пользователя macOS.', 'MACA НЕ синхронизирует данные с облачными сервисами.', 'MACA НЕ имеет доступа к файлам или документам.', 'Хранятся только настройки аудио — ничего больше.'] },
+      dataSharing: { title: '3. Передача данных', content: ['MACA НЕ передаёт данные третьим лицам.', 'MACA НЕ продаёт ваши данные.', 'MACA НЕ отправляет данные на серверы (у нас их нет).', 'Ваши аудионастройки полностью приватны.'] },
+      userRights: { title: '4. Ваши права (GDPR и CCPA)', content: ['Право на доступ: мы не собираем данные, поэтому нечего запрашивать.', 'Право на удаление: просто удалите MACA для удаления всех настроек.', 'Право на переносимость: настройки хранятся локально.', 'Право на возражение: вы полностью контролируете — MACA не отправляет данные.'] },
+      security: { title: '5. Безопасность', content: ['MACA использует стандартную безопасность macOS.', 'Нет сетевой передачи = нет риска перехвата.', 'Ваши данные так же безопасны, как и сам Mac.'] },
+      thirdParty: { title: '6. Сторонние сервисы', content: ['MACA не использует сторонних сервисов.', 'Нет отслеживания, аналитики или рекламы.', 'MACA работает полностью автономно.'] },
+      children: { title: '7. Конфиденциальность детей', content: ['MACA не собирает данные ни у кого, включая детей.', 'Приложение безопасно для пользователей любого возраста.'] },
+      supervisoryAuthority: { title: '8. Надзорный орган', content: ['Если вы считаете, что обработка данных нарушает законы, вы можете подать жалобу в компетентный орган.'] },
+      changes: { title: '9. Изменения', content: ['Мы можем обновлять эту политику время от времени.', 'Изменения публикуются на этой странице.', 'Продолжение использования MACA означает принятие обновлённой политики.'] },
+      contact: { title: '10. Контакт', content: ['Вопросы о политике конфиденциальности:', 'Email: Support@getmaca.de', 'Компания: AMX Mediensysteme, Remigiusstr. 63, 41747 Viersen, Germany', 'Мы отвечаем в течение 24-48 часов.'] }
+    }
+  },
+  nl: {
+    title: 'Privacybeleid',
+    lastUpdated: 'Laatst bijgewerkt: 24 februari 2026',
+    intro: 'Bij MACA (Master Audio Control App) is uw privacy onze hoogste prioriteit. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan — of beter gezegd, hoe wij ze niet verzamelen.',
+    websiteNotice: 'Dit privacybeleid geldt voor zowel de MACA-app ALS deze website (getmaca.de).',
+    sections: {
+      websiteData: { title: '0. Deze website (getmaca.de)', localStorage: { title: 'Browseropslag (LocalStorage)', items: [{ name: 'maca-cookie-consent', purpose: 'Slaat uw cookiekeuze op', legal: 'Art. 6 (1) lit. a AVG (Toestemming)', duration: 'Permanent (tot u het verwijdert)' }, { name: 'maca-dark-mode', purpose: 'Slaat uw voorkeur voor donkere modus op', legal: 'Art. 6 (1) lit. f AVG (Gerechtvaardigd belang)', duration: 'Permanent (tot u het verwijdert)' }, { name: 'maca-preferred-language', purpose: 'Slaat uw taalvoorkeur op', legal: 'Art. 6 (1) lit. f AVG (Gerechtvaardigd belang)', duration: 'Permanent (tot u het verwijdert)' }] }, externalServices: { title: 'Externe diensten', items: [{ name: 'Apple App Store (downloadlinks)', purpose: 'App-download en -aankoop', dataTransfer: 'Klikgegevens worden naar Apple verzonden wanneer u op downloadlinks klikt', privacyLink: 'https://www.apple.com/legal/privacy/', legal: 'Art. 6 (1) lit. f AVG (Gerechtvaardigd belang)' }] } },
+      dataCollection: { title: '1. Gegevensverzameling', content: ['MACA verzamelt GEEN persoonlijke gegevens.', 'MACA verzamelt GEEN gebruiksgegevens of analytics.', 'MACA volgt uw gedrag NIET.', 'MACA vereist GEEN account of login.', 'Alles blijft op uw Mac. Punt.'] },
+      dataStorage: { title: '2. Gegevensopslag', content: ['Al uw instellingen en profielen worden lokaal op uw Mac opgeslagen.', 'Uw gegevens worden opgeslagen in uw lokale macOS-gebruikersmap.', 'MACA synchroniseert GEEN gegevens met clouddiensten.', 'MACA heeft GEEN toegang tot uw bestanden of documenten.', 'Alleen audiobesturingsinstellingen worden opgeslagen — niets anders.'] },
+      dataSharing: { title: '3. Gegevens delen', content: ['MACA deelt GEEN gegevens met derden.', 'MACA verkoopt uw gegevens NIET.', 'MACA stuurt GEEN gegevens naar onze servers (want die hebben we niet).', 'Uw audio-instellingen blijven volledig privé op uw apparaat.'] },
+      userRights: { title: '4. Uw rechten (AVG & CCPA)', content: ['Recht op inzage: wij verzamelen geen gegevens, dus er is niets in te zien.', 'Recht op verwijdering: verwijder MACA om alle lokale instellingen te wissen.', 'Recht op overdraagbaarheid: uw instellingen zijn lokaal opgeslagen.', 'Recht op bezwaar: u heeft volledige controle — MACA stuurt nooit gegevens.'] },
+      security: { title: '5. Beveiliging', content: ['MACA gebruikt standaard macOS-beveiliging.', 'Geen netwerkverkeer = geen risico op gegevensonderschepping.', 'Uw gegevens zijn zo veilig als uw Mac zelf.'] },
+      thirdParty: { title: '6. Derden', content: ['MACA gebruikt geen diensten van derden.', 'Geen tracking, analytics of advertenties.', 'MACA werkt volledig onafhankelijk.'] },
+      children: { title: '7. Privacy van kinderen', content: ['MACA verzamelt geen gegevens van wie dan ook, inclusief kinderen.', 'De app is veilig voor gebruikers van alle leeftijden.'] },
+      supervisoryAuthority: { title: '8. Toezichthoudende autoriteit', content: ['Als u van mening bent dat de verwerking van uw gegevens de wetgeving schendt, heeft u het recht een klacht in te dienen bij de bevoegde autoriteit.'] },
+      changes: { title: '9. Wijzigingen', content: ['Wij kunnen dit privacybeleid van tijd tot tijd bijwerken.', 'Wijzigingen worden op deze pagina gepubliceerd.', 'Voortgezet gebruik van MACA na wijzigingen betekent acceptatie.'] },
+      contact: { title: '10. Contact', content: ['Vragen over dit privacybeleid:', 'E-mail: Support@getmaca.de', 'Bedrijf: AMX Mediensysteme, Remigiusstr. 63, 41747 Viersen, Germany', 'We reageren doorgaans binnen 24-48 uur.'] }
+    }
+  },
+  tr: {
+    title: 'Gizlilik Politikası',
+    lastUpdated: 'Son güncelleme: 24 Şubat 2026',
+    intro: 'MACA\'da (Master Audio Control App) gizliliğiniz en yüksek önceliğimizdir. Bu Gizlilik Politikası verilerinizi nasıl işlediğimizi — daha doğrusu nasıl toplamadığımızı — açıklar.',
+    websiteNotice: 'Bu gizlilik politikası hem MACA uygulamasını hem de bu web sitesini (getmaca.de) kapsar.',
+    sections: {
+      websiteData: { title: '0. Bu web sitesi (getmaca.de)', localStorage: { title: 'Tarayıcı depolaması (LocalStorage)', items: [{ name: 'maca-cookie-consent', purpose: 'Çerez onayı tercihinizi saklar', legal: 'Art. 6 (1) lit. a GDPR (Onay)', duration: 'Kalıcı (siz silene kadar)' }, { name: 'maca-dark-mode', purpose: 'Karanlık mod tercihinizi saklar', legal: 'Art. 6 (1) lit. f GDPR (Meşru Menfaat)', duration: 'Kalıcı (siz silene kadar)' }, { name: 'maca-preferred-language', purpose: 'Dil tercihinizi saklar', legal: 'Art. 6 (1) lit. f GDPR (Meşru Menfaat)', duration: 'Kalıcı (siz silene kadar)' }] }, externalServices: { title: 'Harici hizmetler', items: [{ name: 'Apple App Store (indirme bağlantıları)', purpose: 'Uygulama indirme ve satın alma', dataTransfer: 'İndirme bağlantılarına tıkladığınızda tıklama verileri Apple\'a iletilir', privacyLink: 'https://www.apple.com/legal/privacy/', legal: 'Art. 6 (1) lit. f GDPR (Meşru Menfaat)' }] } },
+      dataCollection: { title: '1. Veri Toplama', content: ['MACA kişisel veri TOPLAMAZ.', 'MACA kullanım verisi veya analitik TOPLAMAZ.', 'MACA davranışınızı İZLEMEZ.', 'MACA hesap veya giriş GEREKTIRMEZ.', 'Her şey Mac\'inizde kalır. Nokta.'] },
+      dataStorage: { title: '2. Veri Depolama', content: ['Tüm ayarlarınız ve profilleriniz Mac\'inizde yerel olarak saklanır.', 'Verileriniz yerel macOS kullanıcı dizininize kaydedilir.', 'MACA verilerinizi bulut hizmetlerine SENKRONIZE ETMEZ.', 'MACA dosyalarınıza veya belgelerinize ERİŞMEZ.', 'Yalnızca ses kontrol ayarları saklanır — başka hiçbir şey.'] },
+      dataSharing: { title: '3. Veri Paylaşımı', content: ['MACA üçüncü taraflarla veri PAYLAŞMAZ.', 'MACA verilerinizi SATMAZ.', 'MACA sunucularımıza veri GÖNDERMEZ (çünkü sunucumuz yok).', 'Ses ayarlarınız cihazınızda tamamen gizli kalır.'] },
+      userRights: { title: '4. Haklarınız (GDPR & CCPA)', content: ['Erişim hakkı: veri toplamıyoruz, dolayısıyla erişilecek bir şey yok.', 'Silme hakkı: tüm yerel ayarları kaldırmak için MACA\'yı kaldırmanız yeterli.', 'Taşınabilirlik hakkı: ayarlarınız yerel olarak saklanır.', 'İtiraz hakkı: tam kontrole sahipsiniz — MACA asla veri göndermez.'] },
+      security: { title: '5. Güvenlik', content: ['MACA standart macOS güvenliğini kullanır.', 'Ağ iletişimi yok = veri yakalama riski yok.', 'Verileriniz Mac\'iniz kadar güvendedir.'] },
+      thirdParty: { title: '6. Üçüncü Taraf Hizmetler', content: ['MACA üçüncü taraf hizmet kullanmaz.', 'İzleme, analitik veya reklam yoktur.', 'MACA tamamen bağımsız çalışır.'] },
+      children: { title: '7. Çocukların Gizliliği', content: ['MACA çocuklar dahil hiç kimseden veri toplamaz.', 'Uygulama her yaştan kullanıcı için güvenlidir.'] },
+      supervisoryAuthority: { title: '8. Denetim Makamı', content: ['Veri işlemenin yasaları ihlal ettiğine inanıyorsanız, yetkili veri koruma makamına şikayette bulunma hakkınız vardır.'] },
+      changes: { title: '9. Değişiklikler', content: ['Bu gizlilik politikasını zaman zaman güncelleyebiliriz.', 'Değişiklikler bu sayfada yayınlanacaktır.', 'Değişikliklerden sonra MACA\'yı kullanmaya devam etmek, güncellenen politikayı kabul etmek anlamına gelir.'] },
+      contact: { title: '10. İletişim', content: ['Bu gizlilik politikası hakkında sorularınız varsa:', 'E-posta: Support@getmaca.de', 'Şirket: AMX Mediensysteme, Remigiusstr. 63, 41747 Viersen, Germany', 'Genellikle 24-48 saat içinde yanıt veriyoruz.'] }
+    }
+  },
+  sv: {
+    title: 'Integritetspolicy',
+    lastUpdated: 'Senast uppdaterad: 24 februari 2026',
+    intro: 'Hos MACA (Master Audio Control App) är din integritet vår högsta prioritet. Denna Integritetspolicy förklarar hur vi hanterar dina data — eller snarare, hur vi inte samlar in dem.',
+    websiteNotice: 'Denna integritetspolicy gäller för både MACA-appen OCH denna webbplats (getmaca.de).',
+    sections: {
+      websiteData: { title: '0. Denna webbplats (getmaca.de)', localStorage: { title: 'Webbläsarlagring (LocalStorage)', items: [{ name: 'maca-cookie-consent', purpose: 'Lagrar ditt val av cookiegodkännande', legal: 'Art. 6 (1) lit. a GDPR (Samtycke)', duration: 'Permanent (tills du tar bort det)' }, { name: 'maca-dark-mode', purpose: 'Lagrar din preferens för mörkt läge', legal: 'Art. 6 (1) lit. f GDPR (Berättigat intresse)', duration: 'Permanent (tills du tar bort det)' }, { name: 'maca-preferred-language', purpose: 'Lagrar din språkpreferens', legal: 'Art. 6 (1) lit. f GDPR (Berättigat intresse)', duration: 'Permanent (tills du tar bort det)' }] }, externalServices: { title: 'Externa tjänster', items: [{ name: 'Apple App Store (nedladdningslänkar)', purpose: 'Nedladdning och köp av app', dataTransfer: 'Klickdata överförs till Apple när du klickar på nedladdningslänkar', privacyLink: 'https://www.apple.com/legal/privacy/', legal: 'Art. 6 (1) lit. f GDPR (Berättigat intresse)' }] } },
+      dataCollection: { title: '1. Datainsamling', content: ['MACA samlar INTE in personuppgifter.', 'MACA samlar INTE in användningsdata eller analyser.', 'MACA spårar INTE ditt beteende.', 'MACA kräver INTE konto eller inloggning.', 'Allt stannar på din Mac. Punkt.'] },
+      dataStorage: { title: '2. Datalagring', content: ['Alla dina inställningar och profiler lagras lokalt på din Mac.', 'Data sparas i din lokala macOS-användarkatalog.', 'MACA synkroniserar INTE data till molntjänster.', 'MACA har INTE åtkomst till dina filer eller dokument.', 'Bara ljudkontrollinställningar lagras — inget annat.'] },
+      dataSharing: { title: '3. Datadelning', content: ['MACA delar INTE data med tredje part.', 'MACA säljer INTE dina data.', 'MACA skickar INTE data till våra servrar (för vi har inga).', 'Dina ljudinställningar förblir helt privata.'] },
+      userRights: { title: '4. Dina rättigheter (GDPR & CCPA)', content: ['Rätt till åtkomst: vi samlar inte in data, så det finns inget att begära.', 'Rätt till radering: avinstallera MACA för att ta bort alla inställningar.', 'Rätt till dataportabilitet: dina inställningar lagras lokalt.', 'Rätt att invända: du har full kontroll — MACA skickar aldrig data.'] },
+      security: { title: '5. Säkerhet', content: ['MACA använder standard macOS-säkerhet.', 'Ingen nätverkstrafik = ingen risk för dataavlyssning.', 'Dina data är lika säkra som din Mac själv.'] },
+      thirdParty: { title: '6. Tredjepartstjänster', content: ['MACA använder inga tredjepartstjänster.', 'Ingen spårning, analys eller reklam.', 'MACA fungerar helt oberoende.'] },
+      children: { title: '7. Barns integritet', content: ['MACA samlar inte in data från någon, inklusive barn.', 'Appen är säker för användare i alla åldrar.'] },
+      supervisoryAuthority: { title: '8. Tillsynsmyndighet', content: ['Om du anser att databehandlingen bryter mot lagar har du rätt att klaga till behörig dataskyddsmyndighet.'] },
+      changes: { title: '9. Ändringar', content: ['Vi kan uppdatera denna policy från tid till annan.', 'Ändringar publiceras på denna sida.', 'Fortsatt användning av MACA efter ändringar innebär godkännande.'] },
+      contact: { title: '10. Kontakt', content: ['Frågor om integritetspolicyn:', 'E-post: Support@getmaca.de', 'Företag: AMX Mediensysteme, Remigiusstr. 63, 41747 Viersen, Germany', 'Vi svarar vanligtvis inom 24-48 timmar.'] }
     }
   }
 };

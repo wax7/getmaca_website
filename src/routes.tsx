@@ -9,6 +9,8 @@ import { FAQ } from "./pages/FAQ";
 import { Sitemap } from "./pages/Sitemap";
 import { Terms } from "./pages/Terms";
 import { History } from "./pages/History";
+import { Troubleshooting } from "./pages/Troubleshooting";
+import { Guide } from "./pages/Guide";
 import { NotFound } from "./pages/NotFound";
 import { RootLayout } from "./layouts/RootLayout";
 import { LanguageRedirect } from "./components/LanguageRedirect";
@@ -61,6 +63,14 @@ export const router = createBrowserRouter([
       {
         path: "/:lang/faq",
         element: <FAQ />,
+      },
+      {
+        path: "/:lang/troubleshooting",
+        element: <Troubleshooting />,
+      },
+      {
+        path: "/:lang/guide",
+        element: <Guide />,
       },
       {
         path: "*",

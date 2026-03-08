@@ -1,12 +1,15 @@
-import { Outlet } from 'react-router';
+import { Outlet, useParams } from 'react-router';
 import { ScrollToTop } from '../components/ScrollToTop';
 import { ScrollToTopButton } from '../components/ScrollToTopButton';
 import { DocumentHead } from '../components/DocumentHead';
 import { CookieBanner } from '../components/CookieBanner';
 
 export function RootLayout() {
+  const { lang } = useParams();
+  const isRtl = lang === 'ar';
+
   return (
-    <>
+    <div dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Skip to main content link for accessibility */}
       <a
         href="#main-content"
@@ -21,6 +24,6 @@ export function RootLayout() {
       <ScrollToTopButton />
       <CookieBanner />
       <Outlet />
-    </>
+    </div>
   );
 }

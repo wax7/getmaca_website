@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router';
 import { type Language } from '../locales/translations';
 
-const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'zh'];
+const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
 
 function detectBrowserLanguage(): Language {
   try {
@@ -13,7 +13,22 @@ function detectBrowserLanguage(): Language {
 
   const browserLang = navigator.language.toLowerCase();
   
-  for (const lang of validLanguages) {
+  // Handle Chinese variants specifically
+  if (browserLang.startsWith('zh')) {
+    if (browserLang.includes('hant') || browserLang.includes('tw') || browserLang.includes('hk') || browserLang.includes('mo')) {
+      return 'zh-Hant';
+    }
+    return 'zh-Hans';
+  }
+
+  // Handle Norwegian variants
+  if (browserLang.startsWith('nb') || browserLang === 'no' || browserLang.startsWith('no-')) {
+    return 'nb';
+  }
+
+  // Standard matching for other languages
+  const simpleLangs: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko'];
+  for (const lang of simpleLangs) {
     if (browserLang.startsWith(lang)) {
       return lang;
     }
