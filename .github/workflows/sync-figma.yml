@@ -138,66 +138,66 @@ jobs:
           
           echo "Regeneriere sitemap.xml basierend auf aktuellen Sprachen..."
           
-          # Extrahiere Sprachcodes aus translations.ts (nach: export const translations...)
+          # Extrahiere Sprachcodes aus translations.ts
           LANGS=$(grep -oP "^\s+['\"]?\K[a-z-]+" src/locales/translations.ts | \
-            grep -E "^[a-z]{2}(-[A-Z][a-z]+)?$" | sort -u)
+            grep -E "^[a-z]{2}(-[A-Z][a-z]+)?$" | sort -u | tr '\n' ' ')
           
-          echo "Gefundene Sprachen: $(echo $LANGS | tr '\n' ' ')"
+          echo "Gefundene Sprachen: $LANGS"
           
-          # Generiere neue sitemap.xml
-          LASTMOD=$(date +%Y-%m-%d)
-          BASE_URL="https://getmaca.de"
+          # Generiere sitemap.xml mit Python (robuster als Bash/Heredoc)
+          python3 << PYTHON_EOF
+          import datetime
+          import os
+          from pathlib import Path
           
-          cat > src/public/sitemap.xml << 'SITEMAP_EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-SITEMAP_EOF
+          # Konfiguration aus Umgebung
+          langs = "$LANGS".split()
+          base_url = "https://getmaca.de"
+          lastmod = datetime.date.today().isoformat()
+          pages = ["/", "/guide", "/faq", "/imprint", "/privacy", "/terms", "/troubleshooting", "/history"]
           
-          PAGES="/ /guide /faq /imprint /privacy /terms /troubleshooting /history"
+          # XML Header
+          xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+          xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+          xml_content += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
           
-          for LANG in $LANGS; do
-            for PAGE in $PAGES; do
-              # Entferne führenden Slash falls vorhanden
-              PAGE_PATH="${PAGE%/}"
-              [ "$PAGE_PATH" = "" ] && PAGE_PATH="" || PAGE_PATH="$PAGE_PATH"
+          # Generiere URLs für jede Sprache und Seite
+          for lang in langs:
+            if not lang.strip():
+              continue
+            for page in pages:
+              page_path = page if page != "/" else ""
+              priority = "1.0" if page == "/" else "0.7"
               
-              # Priority: home=1.0, rest=0.7
-              if [ "$PAGE_PATH" = "" ]; then
-                PRIORITY="1.0"
-              else
-                PRIORITY="0.7"
-              fi
+              xml_content += f'\n  <url>\n'
+              xml_content += f'    <loc>{base_url}/{lang}{page_path}</loc>\n'
+              xml_content += f'    <lastmod>{lastmod}</lastmod>\n'
+              xml_content += f'    <changefreq>weekly</changefreq>\n'
+              xml_content += f'    <priority>{priority}</priority>\n'
               
-              cat >> src/public/sitemap.xml << SITEMAP_EOF
-  <url>
-    <loc>$BASE_URL/$LANG$PAGE_PATH</loc>
-    <lastmod>$LASTMOD</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>$PRIORITY</priority>
-SITEMAP_EOF
-              
-              # xhtml:link für alle Sprachvarianten (hreflang)
-              for ALT_LANG in $LANGS; do
-                ALT_PATH="/$ALT_LANG$PAGE_PATH"
-                echo "    <xhtml:link rel=\"alternate\" hreflang=\"$ALT_LANG\" href=\"$BASE_URL$ALT_PATH\"/>" >> src/public/sitemap.xml
-              done
+              # hreflang für alle Sprachen
+              for alt_lang in langs:
+                if not alt_lang.strip():
+                  continue
+                alt_path = page if page != "/" else ""
+                xml_content += f'    <xhtml:link rel="alternate" hreflang="{alt_lang}" href="{base_url}/{alt_lang}{alt_path}"/>\n'
               
               # x-default nur für home
-              if [ "$PAGE_PATH" = "" ]; then
-                echo "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"$BASE_URL/en\"/>" >> src/public/sitemap.xml
-              fi
+              if page == "/":
+                xml_content += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{base_url}/en"/>\n'
               
-              echo "  </url>" >> src/public/sitemap.xml
-            done
-          done
+              xml_content += '  </url>\n'
           
-          cat >> src/public/sitemap.xml << 'SITEMAP_EOF'
-</urlset>
-SITEMAP_EOF
+          # XML Footer
+          xml_content += '</urlset>\n'
           
-          LANG_COUNT=$(echo "$LANGS" | wc -w)
-          echo "✅ sitemap.xml regeneriert mit $LANG_COUNT Sprachen"
+          # Schreibe Datei
+          sitemap_path = Path("src/public/sitemap.xml")
+          sitemap_path.write_text(xml_content)
+          
+          print(f"✅ sitemap.xml regeneriert mit {len(langs)} Sprachen")
+          PYTHON_EOF
+          
 
       - name: Validate Sitemap Languages
         if: steps.check.outputs.changed == 'true'
