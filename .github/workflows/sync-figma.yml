@@ -17,13 +17,13 @@ jobs:
 
     steps:
       - name: Checkout getmaca_website (Produktion)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.0
         with:
           path: production
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Testweb (Figma Source, public)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.0
         with:
           repository: wax7/Testweb
           path: figma
