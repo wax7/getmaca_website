@@ -131,6 +131,107 @@ jobs:
 
           echo "Sync abgeschlossen!"
 
+      - name: Regenerate sitemap.xml from current translations
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd production
+          
+          echo "Regeneriere sitemap.xml basierend auf aktuellen Sprachen..."
+          
+          # Extrahiere Sprachcodes aus translations.ts (nach: export const translations...)
+          LANGS=$(grep -oP "^\s+['\"]?\K[a-z-]+" src/locales/translations.ts | \
+            grep -E "^[a-z]{2}(-[A-Z][a-z]+)?$" | sort -u)
+          
+          echo "Gefundene Sprachen: $(echo $LANGS | tr '\n' ' ')"
+          
+          # Generiere neue sitemap.xml
+          LASTMOD=$(date +%Y-%m-%d)
+          BASE_URL="https://getmaca.de"
+          
+          cat > src/public/sitemap.xml << 'SITEMAP_EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+SITEMAP_EOF
+          
+          PAGES="/ /guide /faq /imprint /privacy /terms /troubleshooting /history"
+          
+          for LANG in $LANGS; do
+            for PAGE in $PAGES; do
+              # Entferne führenden Slash falls vorhanden
+              PAGE_PATH="${PAGE%/}"
+              [ "$PAGE_PATH" = "" ] && PAGE_PATH="" || PAGE_PATH="$PAGE_PATH"
+              
+              # Priority: home=1.0, rest=0.7
+              if [ "$PAGE_PATH" = "" ]; then
+                PRIORITY="1.0"
+              else
+                PRIORITY="0.7"
+              fi
+              
+              cat >> src/public/sitemap.xml << SITEMAP_EOF
+  <url>
+    <loc>$BASE_URL/$LANG$PAGE_PATH</loc>
+    <lastmod>$LASTMOD</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>$PRIORITY</priority>
+SITEMAP_EOF
+              
+              # xhtml:link für alle Sprachvarianten (hreflang)
+              for ALT_LANG in $LANGS; do
+                ALT_PATH="/$ALT_LANG$PAGE_PATH"
+                echo "    <xhtml:link rel=\"alternate\" hreflang=\"$ALT_LANG\" href=\"$BASE_URL$ALT_PATH\"/>" >> src/public/sitemap.xml
+              done
+              
+              # x-default nur für home
+              if [ "$PAGE_PATH" = "" ]; then
+                echo "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"$BASE_URL/en\"/>" >> src/public/sitemap.xml
+              fi
+              
+              echo "  </url>" >> src/public/sitemap.xml
+            done
+          done
+          
+          cat >> src/public/sitemap.xml << 'SITEMAP_EOF'
+</urlset>
+SITEMAP_EOF
+          
+          LANG_COUNT=$(echo "$LANGS" | wc -w)
+          echo "✅ sitemap.xml regeneriert mit $LANG_COUNT Sprachen"
+
+      - name: Validate Sitemap Languages
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd production
+          
+          echo "Validiere sitemap.xml Sprachen..."
+          
+          # Extrahiere Sprachcodes aus translations.ts
+          CURRENT_LANGS=$(grep -oP "^\s+['\"]?\K[a-z-]+" src/locales/translations.ts | \
+            grep -E "^[a-z]{2}(-[A-Z][a-z]+)?$" | sort -u)
+          
+          # Extrahiere Sprachcodes aus sitemap.xml
+          SITEMAP_LANGS=$(grep -oP "$BASE_URL/\K[a-z-]+" src/public/sitemap.xml | sort -u)
+          
+          echo "Sprachen in translations.ts: $(echo $CURRENT_LANGS | tr '\n' ' ')"
+          echo "Sprachen in sitemap.xml: $(echo $SITEMAP_LANGS | tr '\n' ' ')"
+          
+          # Vergleiche
+          MISSING=$(comm -23 <(echo "$CURRENT_LANGS") <(echo "$SITEMAP_LANGS"))
+          EXTRA=$(comm -13 <(echo "$CURRENT_LANGS") <(echo "$SITEMAP_LANGS"))
+          
+          if [ -n "$MISSING" ]; then
+            echo "⚠️  FEHLEN in sitemap.xml: $MISSING"
+          fi
+          
+          if [ -n "$EXTRA" ]; then
+            echo "⚠️  ÜBERSCHUSS in sitemap.xml: $EXTRA"
+          fi
+          
+          if [ -z "$MISSING" ] && [ -z "$EXTRA" ]; then
+            echo "✅ Sitemap-Sprachen konsistent!"
+          fi
+
       - name: Commit & Push
         if: steps.check.outputs.changed == 'true'
         run: |
