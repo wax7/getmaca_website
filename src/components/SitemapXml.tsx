@@ -38,7 +38,7 @@ import { useMemo } from 'react';
 
 const LANGS = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'] as const;
 const BASE = 'https://getmaca.de';
-const LASTMOD = '2026-03-08';
+const LASTMOD = '2026-03-11';
 
 interface PageDef {
   path: string;
@@ -53,14 +53,12 @@ const PAGES: PageDef[] = [
   { path: '/faq', changefreq: 'monthly', priority: '0.8', comment: 'FAQ PAGES (priority 0.8)' },
   { path: '/troubleshooting', changefreq: 'monthly', priority: '0.7', comment: 'TROUBLESHOOTING PAGES (priority 0.7)' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.6', comment: 'PRIVACY PAGES (priority 0.6)' },
-  { path: '/terms', changefreq: 'yearly', priority: '0.5', comment: 'TERMS PAGES (priority 0.5)' },
-  { path: '/imprint', changefreq: 'yearly', priority: '0.4', comment: 'IMPRINT PAGES (priority 0.4)' },
+  { path: '/terms', changefreq: 'yearly', priority: '0.6', comment: 'TERMS PAGES (priority 0.6)' },
+  { path: '/imprint', changefreq: 'yearly', priority: '0.5', comment: 'IMPRINT PAGES (priority 0.5)' },
 ];
 
-// Non-localized standalone pages (no :lang prefix)
-const STATIC_PAGES = [
-  { path: '/history', changefreq: 'monthly', priority: '0.3', comment: 'HISTORY PAGE (no language prefix)' },
-];
+// History is disallowed in robots.txt, so it's excluded from the sitemap
+const STATIC_PAGES: PageDef[] = [];
 
 function buildHreflangLinks(path: string): string {
   return (

@@ -9,19 +9,79 @@
 const ROBOTS_CONTENT = `# MACA – Master Audio Control
 # https://getmaca.de
 
+# ── Default rules for all bots ────────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# Disallow utility/system paths
 Disallow: /history
 Disallow: /sitemap
 Disallow: /*/feedback
+Disallow: /robots.txt
 
-# Sitemap
+# ── Googlebot – no crawl-delay needed (uses Search Console settings) ──────
+User-agent: Googlebot
+Allow: /
+Disallow: /history
+Disallow: /sitemap
+Disallow: /*/feedback
+Disallow: /robots.txt
+
+# ── Bingbot ───────────────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /history
+Disallow: /sitemap
+Disallow: /*/feedback
+Disallow: /robots.txt
+Crawl-delay: 1
+
+# ── Apple Applebot (Siri, Spotlight) ──────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+# ── Social media crawlers (full access for rich previews) ─────────────────
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ── Block known AI scrapers that don't respect content licensing ──────────
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# ── Block aggressive/undesirable bots ────────────────────────────────────
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# ── Sitemap location ─────────────────────────────────────────────────────
 Sitemap: https://getmaca.de/sitemap.xml
 
-# Polite crawl-delay for bots that respect it
-Crawl-delay: 1`;
+# ── Host directive (Yandex) ──────────────────────────────────────────────
+Host: https://getmaca.de`;
 
 export function RobotsTxt() {
   const handleDownload = () => {
