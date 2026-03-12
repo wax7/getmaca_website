@@ -34,6 +34,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate SEO artifacts
+        run: |
+          python3 scripts/validate_seo_artifacts.py
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
