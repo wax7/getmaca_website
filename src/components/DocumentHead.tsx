@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useParams, useLocation } from 'react-router';
 import { type Language } from '../locales/translations';
 import { faqContentTranslations } from '../utils/faq-content-translations';
@@ -11,6 +11,7 @@ import {
   resolveLanguage,
 } from '../utils/language-config';
 import macaAppLogo from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.png';
+import { setHreflangTags } from '../utils/set-hreflang-tags';
 
 const APP_STORE_ID = '6759258773';
 const APP_STORE_URL = `https://apps.apple.com/app/maca-master-audio-control/id${APP_STORE_ID}`;
@@ -180,7 +181,7 @@ const pageTitles: Record<string, Record<Language, string>> = {
     'zh-Hans': 'MACA – macOS每应用音量控制 | 混音器、EQ与音频配置',
     'zh-Hant': 'MACA – macOS每應用音量控制 | 混音器、EQ與音頻配置',
     ar: 'MACA – تحكم صوت لكل تطبيق على macOS | خلاط ومعادل وملفات صوتية',
-    ru: 'MACA – Громкость каждого приложения на macOS | Микшер, EQ и профили',
+    ru: 'MACA – Гро��кость каждого приложения на macOS | Микшер, EQ и профили',
     nl: 'MACA – Volume per app voor macOS | Mixer, EQ & Profielen',
     tr: 'MACA – macOS uygulama başına ses | Mikser, EQ ve Profiller',
     sv: 'MACA – Volym per app för macOS | Mixer, EQ & Ljudprofiler',
@@ -330,7 +331,7 @@ const pageKeywords: Record<string, Record<Language, string>> = {
     'zh-Hans': 'mac 音量混音器, 应用 音量 单独控制, 每个应用 音量, 菜单栏 音量, zoom 音量, discord 音量, spotify 音量, mac 音频混音器, mac 均衡器, 应用 静音, MACA, macOS',
     'zh-Hant': 'mac 音量混音器, 應用 音量 單獨控制, 每個應用 音量, 選單列 音量, zoom 音量, discord 音量, spotify 音量, mac 音頻混音器, mac 均衡器, 應用 靜音, MACA, macOS',
     ar: 'mac خلاط صوت, تحكم صوت لكل تطبيق, صوت كل تطبيق, صوت شريط القوائم, صوت zoom, صوت discord, صوت spotify, خلاط صوت mac, معادل صوت mac, كتم تطبيق, MACA, macOS',
-    ru: 'микшер громкости mac, громкость по приложениям, управление громкостью приложений, громкость строка меню, громкость zoom, громкость discord, громкость spotify, аудиомикшер mac, эквалайзер mac, выключить звук приложения, MACA, macOS',
+    ru: 'микшер громкости mac, гром��ость по приложениям, управление громкостью приложений, громкость строка меню, громкость zoom, громкость discord, громкость spotify, аудиомикшер mac, эквалайзер mac, выключить звук приложения, MACA, macOS',
     nl: 'volume mixer mac, volume per app, app volume regelen, volume menubalk, volume zoom, volume discord, volume spotify, audio mixer mac, equalizer mac, app dempen, MACA, macOS',
     tr: 'mac ses mikseri, uygulama bazlı ses, app volume control, ses menü çubuğu, zoom sesi, discord sesi, spotify sesi, mac audio mixer, mac equalizer, uygulama sessize al, MACA, macOS',
     sv: 'volymmixer mac, volym per app, app volymkontroll, volym menyrad, volym zoom, volym discord, volym spotify, ljudmixer mac, equalizer mac, tysta app, MACA, macOS',
@@ -629,7 +630,7 @@ export function DocumentHead() {
   const location = useLocation();
   const currentLang = resolveLanguage(lang);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // ── Determine current page ────────────────────────────────────────────
     const currentPath = location.pathname;
     const pathParts = currentPath.split('/').filter(Boolean);
@@ -703,37 +704,30 @@ export function DocumentHead() {
     const normPath = currentPath.replace(/\/+$/, '') || '/';
     canonical.href = `${BASE_URL}${normPath}`;
 
-    // ── Hreflang ──────────────────────────────────────────────────────────
+    // ── Hreflang (delegated to set-hreflang-tags.ts for cache-safety) ────
     const languages = SUPPORTED_LANGUAGES;
-    const langPattern = languages.map(l => l.replace('-', '\\-')).join('|');
+    setHreflangTags(currentPath);
+    // old hreflang code removed (was double-escape-buggy, see set-hreflang-tags.ts)
+    void 0; /*void_removed languages.map(l => l.replace('-', '\\-')).join('|');
     const pathWithoutLang = currentPath.replace(new RegExp(`^\\/(${langPattern})`), '');
-    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-    languages.forEach(language => {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = language;
-      link.href = `${BASE_URL}/${language}${pathWithoutLang}`;
-      document.head.appendChild(link);
-    });
-    const xDefault = document.createElement('link');
-    xDefault.rel = 'alternate';
-    xDefault.hreflang = 'x-default';
-    xDefault.href = `${BASE_URL}/en${pathWithoutLang}`;
-    document.head.appendChild(xDefault);
+    end of removed block */ // (hreflang DOM logic is now in set-hreflang-tags.ts)
 
     // ── Favicon & Apple Touch Icon ────────────────────────────────────────
     let favIcon = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
     if (!favIcon) {
       favIcon = document.createElement('link');
       favIcon.rel = 'icon';
+      favIcon.type = 'image/png';
       document.head.appendChild(favIcon);
     }
+    favIcon.type = 'image/png';
     favIcon.href = macaAppLogo;
 
     let ati = document.querySelector("link[rel='apple-touch-icon']") as HTMLLinkElement | null;
     if (!ati) {
       ati = document.createElement('link');
       ati.rel = 'apple-touch-icon';
+      ati.setAttribute('sizes', '180x180');
       document.head.appendChild(ati);
     }
     ati.href = macaAppLogo;
@@ -991,7 +985,7 @@ export function DocumentHead() {
         terms: {
           en: 'Terms of Use', de: 'Nutzungsbedingungen', fr: "Conditions d'utilisation", es: 'Términos de uso',
           it: 'Termini di utilizzo', ja: '利用規約', 'zh-Hans': '使用条款', 'zh-Hant': '使用條款',
-          ar: 'شروط الاستخدام', ru: 'Условия использования', nl: 'Gebruiksvoorwaarden', tr: 'Kullanım Şartları',
+          ar: 'ش��وط الاستخدام', ru: 'Условия использования', nl: 'Gebruiksvoorwaarden', tr: 'Kullanım Şartları',
           sv: 'Användarvillkor', da: 'Brugsvilkår', ko: '이용약관', nb: 'Bruksvilkår',
         },
         imprint: {

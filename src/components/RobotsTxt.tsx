@@ -12,6 +12,7 @@ const ROBOTS_CONTENT = `# MACA – Master Audio Control
 # ── Default rules for all bots ────────────────────────────────────────────
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
 Disallow: /history
 Disallow: /sitemap
 Disallow: /*/feedback
@@ -20,6 +21,7 @@ Disallow: /robots.txt
 # ── Googlebot – no crawl-delay needed (uses Search Console settings) ──────
 User-agent: Googlebot
 Allow: /
+Allow: /sitemap.xml
 Disallow: /history
 Disallow: /sitemap
 Disallow: /*/feedback
@@ -28,13 +30,14 @@ Disallow: /robots.txt
 # ── Bingbot ───────────────────────────────────────────────────────────────
 User-agent: Bingbot
 Allow: /
+Allow: /sitemap.xml
 Disallow: /history
 Disallow: /sitemap
 Disallow: /*/feedback
 Disallow: /robots.txt
 Crawl-delay: 1
 
-# ── Apple Applebot (Siri, Spotlight) ──────────────────────────────────────
+# ── Apple Applebot (Siri, Spotlight) ─────────────────────────────��────────
 User-agent: Applebot
 Allow: /
 
@@ -76,6 +79,11 @@ Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
+
+# ── Polite crawl-delay for all other bots ────────────────────────────────
+# (Already defined in the default User-agent: * section above)
+# Bots that respect Crawl-delay will use the value from their specific section,
+# or fall back to the default section.
 
 # ── Sitemap location ─────────────────────────────────────────────────────
 Sitemap: https://getmaca.de/sitemap.xml
