@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import { MessageSquare, Bug, Lightbulb, Upload, X, Check, Send } from 'lucide-react';
 import { translations, Language } from '../locales/translations';
+import { feedbackTranslations } from '../utils/feedback-translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Footer } from '../components/Footer';
 
 type FeedbackType = 'bug' | 'feature';
@@ -19,10 +21,10 @@ interface CompressedImage {
 }
 
 export function Feedback() {
-  const { lang = 'en' } = useParams<{ lang: Language }>();
+  const currentLang = useValidatedLang('feedback');
   const navigate = useNavigate();
-  const currentLang = (lang in translations ? lang : 'en') as Language;
   const t = translations[currentLang];
+  const txt = feedbackTranslations[currentLang] || feedbackTranslations.en;
 
   const [feedbackType, setFeedbackType] = useState<FeedbackType>('bug');
   const [title, setTitle] = useState('');
@@ -111,19 +113,7 @@ export function Feedback() {
     
     // Limit to 5 images
     if (images.length + files.length > 5) {
-      alert(currentLang === 'de' ? 'Maximal 5 Bilder erlaubt' : 
-            currentLang === 'es' ? 'Máximo 5 imágenes permitidas' :
-            currentLang === 'fr' ? '5 images maximum autorisées' :
-            currentLang === 'it' ? 'Massimo 5 immagini consentite' :
-            currentLang === 'ja' ? '��像は最大5枚までです' :
-            currentLang === 'zh-Hans' ? '最多允许 5 张图片' :
-            currentLang === 'zh-Hant' ? '最多允許 5 張圖片' :
-            currentLang === 'ar' ? 'يُسمح بـ 5 صور كحد أقصى' :
-            currentLang === 'ru' ? 'Максимум 5 изображений' :
-            currentLang === 'nl' ? 'Maximaal 5 afbeeldingen toegestaan' :
-            currentLang === 'tr' ? 'En fazla 5 resme izin verilir' :
-            currentLang === 'sv' ? 'Maximalt 5 bilder tillåtna' :
-            'Maximum 5 images allowed');
+      alert(txt.maxImagesAlert);
       return;
     }
 
@@ -154,227 +144,6 @@ export function Feedback() {
       setSubmitted(false);
     }, 3000);
   };
-
-  const feedbackTexts = {
-    de: {
-      title: 'Feedback & Bug Reports',
-      subtitle: 'Helfen Sie uns, MACA zu verbessern',
-      bugReport: 'Bug melden',
-      featureRequest: 'Feature vorschlagen',
-      titleLabel: 'Titel',
-      titlePlaceholder: 'Kurze Zusammenfassung',
-      descriptionLabel: 'Beschreibung',
-      descriptionPlaceholder: 'Beschreiben Sie das Problem oder Ihre Idee im Detail...',
-      emailLabel: 'E-Mail (optional)',
-      emailPlaceholder: 'ihre@email.de',
-      uploadImages: 'Bilder hochladen',
-      uploadHint: 'Bis zu 5 Bilder, automatisch komprimiert',
-      submit: 'Absenden',
-      submitting: 'Wird gesendet...',
-      success: 'Vielen Dank für Ihr Feedback!',
-      successMessage: 'Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich darum kümmern.',
-    },
-    es: {
-      title: 'Comentarios e informes de errores',
-      subtitle: 'Ayúdanos a mejorar MACA',
-      bugReport: 'Informar error',
-      featureRequest: 'Sugerir función',
-      titleLabel: 'Título',
-      titlePlaceholder: 'Resumen breve',
-      descriptionLabel: 'Descripción',
-      descriptionPlaceholder: 'Describe el problema o tu idea en detalle...',
-      emailLabel: 'Correo electrónico (opcional)',
-      emailPlaceholder: 'tu@correo.es',
-      uploadImages: 'Subir imágenes',
-      uploadHint: 'Hasta 5 imágenes, comprimidas automáticamente',
-      submit: 'Enviar',
-      submitting: 'Enviando...',
-      success: '¡Gracias por tu comentario!',
-      successMessage: 'Hemos recibido tu mensaje y nos ocuparemos de él lo antes posible.',
-    },
-    fr: {
-      title: 'Commentaires et rapports de bugs',
-      subtitle: 'Aidez-nous à améliorer MACA',
-      bugReport: 'Signaler un bug',
-      featureRequest: 'Suggérer une fonctionnalité',
-      titleLabel: 'Titre',
-      titlePlaceholder: 'Résumé court',
-      descriptionLabel: 'Description',
-      descriptionPlaceholder: 'Décrivez le problème ou votre idée en détail...',
-      emailLabel: 'E-mail (optionnel)',
-      emailPlaceholder: 'votre@email.fr',
-      uploadImages: 'Télécharger des images',
-      uploadHint: 'Jusqu\'à 5 images, compressées automatiquement',
-      submit: 'Envoyer',
-      submitting: 'Envoi en cours...',
-      success: 'Merci pour vos commentaires !',
-      successMessage: 'Nous avons reçu votre message et nous nous en occuperons dès que possible.',
-    },
-    it: {
-      title: 'Feedback e segnalazioni bug',
-      subtitle: 'Aiutaci a migliorare MACA',
-      bugReport: 'Segnala bug',
-      featureRequest: 'Suggerisci funzionalità',
-      titleLabel: 'Titolo',
-      titlePlaceholder: 'Riepilogo breve',
-      descriptionLabel: 'Descrizione',
-      descriptionPlaceholder: 'Descrivi il problema o la tua idea in dettaglio...',
-      emailLabel: 'Email (opzionale)',
-      emailPlaceholder: 'tua@email.it',
-      uploadImages: 'Carica immagini',
-      uploadHint: 'Fino a 5 immagini, compresse automaticamente',
-      submit: 'Invia',
-      submitting: 'Invio in corso...',
-      success: 'Grazie per il tuo feedback!',
-      successMessage: 'Abbiamo ricevuto il tuo messaggio e ce ne occuperemo il prima possibile.',
-    },
-    ja: {
-      title: 'フィードバックとバグレポート',
-      subtitle: 'MACAの改善にご協力ください',
-      bugReport: 'バグを報告',
-      featureRequest: '機能を提案',
-      titleLabel: 'タイトル',
-      titlePlaceholder: '簡単な要約',
-      descriptionLabel: '説明',
-      descriptionPlaceholder: '問題やアイデアを詳しく説明してください...',
-      emailLabel: 'メール（オプション）',
-      emailPlaceholder: 'your@email.jp',
-      uploadImages: '画像をアップロード',
-      uploadHint: '最大5枚、自動的に圧縮されます',
-      submit: '送信',
-      submitting: '送信中...',
-      success: 'フィードバックありがとうございます！',
-      successMessage: 'メッセージを受け取りました。できるだけ早く対応いたします。',
-    },
-    zh: {
-      title: '反馈和错误报告',
-      subtitle: '帮助我们改进 MACA',
-      bugReport: '报告错误',
-      featureRequest: '建议功能',
-      titleLabel: '标题',
-      titlePlaceholder: '简短摘要',
-      descriptionLabel: '描述',
-      descriptionPlaceholder: '详细描述问题或您的想法...',
-      emailLabel: '电子邮件（可选）',
-      emailPlaceholder: 'your@email.cn',
-      uploadImages: '上传图片',
-      uploadHint: '最多5张图片，自动压缩',
-      submit: '提交',
-      submitting: '提交中...',
-      success: '感谢您的反馈！',
-      successMessage: '我们已收到您的消息，将尽快处理。',
-    },
-    en: {
-      title: 'Feedback & Bug Reports',
-      subtitle: 'Help us improve MACA',
-      bugReport: 'Report Bug',
-      featureRequest: 'Request Feature',
-      titleLabel: 'Title',
-      titlePlaceholder: 'Brief summary',
-      descriptionLabel: 'Description',
-      descriptionPlaceholder: 'Describe the issue or your idea in detail...',
-      emailLabel: 'Email (optional)',
-      emailPlaceholder: 'your@email.com',
-      uploadImages: 'Upload Images',
-      uploadHint: 'Up to 5 images, automatically compressed',
-      submit: 'Submit',
-      submitting: 'Submitting...',
-      success: 'Thank you for your feedback!',
-      successMessage: 'We have received your message and will take care of it as soon as possible.',
-    },
-    ar: {
-      title: 'الملاحظات وتقارير الأخطاء',
-      subtitle: 'ساعدنا في تحسين MACA',
-      bugReport: 'الإبلاغ عن خطأ',
-      featureRequest: 'اقتراح ميزة',
-      titleLabel: 'العنوان',
-      titlePlaceholder: 'ملخص موجز',
-      descriptionLabel: 'الوصف',
-      descriptionPlaceholder: 'صف المشكلة أو فكرتك بالتفصيل...',
-      emailLabel: 'البريد الإلكتروني (اختياري)',
-      emailPlaceholder: 'your@email.com',
-      uploadImages: 'تحميل الصور',
-      uploadHint: 'حتى 5 صور، يتم ضغطها تلقائيًا',
-      submit: 'إرسال',
-      submitting: 'جارٍ الإرسال...',
-      success: 'شكرًا لملاحظاتك!',
-      successMessage: 'لقد تلقينا رسالتك وسنعتني بها في أقرب وقت ممكن.',
-    },
-    ru: {
-      title: 'Обратная связь и баг-репорты',
-      subtitle: 'Помогите нам улучшить MACA',
-      bugReport: 'Сообщить об ошибке',
-      featureRequest: 'Предложить функцию',
-      titleLabel: 'Заголовок',
-      titlePlaceholder: 'Краткое описание',
-      descriptionLabel: 'Описание',
-      descriptionPlaceholder: 'Подробно опишите проблему или вашу идею...',
-      emailLabel: 'Email (необязательно)',
-      emailPlaceholder: 'your@email.ru',
-      uploadImages: 'Загрузить изображения',
-      uploadHint: 'До 5 изображений, автоматическое сжатие',
-      submit: 'Отправить',
-      submitting: 'Отправка...',
-      success: 'Спасибо за ваш отзыв!',
-      successMessage: 'Мы получили ваше сообщение и займёмся им в ближайшее время.',
-    },
-    nl: {
-      title: 'Feedback & Bugrapporten',
-      subtitle: 'Help ons MACA te verbeteren',
-      bugReport: 'Bug melden',
-      featureRequest: 'Functie voorstellen',
-      titleLabel: 'Titel',
-      titlePlaceholder: 'Korte samenvatting',
-      descriptionLabel: 'Beschrijving',
-      descriptionPlaceholder: 'Beschrijf het probleem of je idee in detail...',
-      emailLabel: 'E-mail (optioneel)',
-      emailPlaceholder: 'your@email.nl',
-      uploadImages: 'Afbeeldingen uploaden',
-      uploadHint: 'Maximaal 5 afbeeldingen, automatisch gecomprimeerd',
-      submit: 'Verzenden',
-      submitting: 'Wordt verzonden...',
-      success: 'Bedankt voor je feedback!',
-      successMessage: 'We hebben je bericht ontvangen en zullen het zo snel mogelijk behandelen.',
-    },
-    tr: {
-      title: 'Geri Bildirim & Hata Raporları',
-      subtitle: "MACA'yı geliştirmemize yardımcı olun",
-      bugReport: 'Hata bildir',
-      featureRequest: 'Özellik öner',
-      titleLabel: 'Başlık',
-      titlePlaceholder: 'Kısa özet',
-      descriptionLabel: 'Açıklama',
-      descriptionPlaceholder: 'Sorunu veya fikrinizi ayrıntılı olarak açıklayın...',
-      emailLabel: 'E-posta (isteğe bağlı)',
-      emailPlaceholder: 'your@email.com.tr',
-      uploadImages: 'Resim yükle',
-      uploadHint: 'En fazla 5 resim, otomatik sıkıştırılır',
-      submit: 'Gönder',
-      submitting: 'Gönderiliyor...',
-      success: 'Geri bildiriminiz için teşekkürler!',
-      successMessage: 'Mesajınızı aldık ve en kısa sürede ilgileneceğiz.',
-    },
-    sv: {
-      title: 'Feedback & Felrapporter',
-      subtitle: 'Hjälp oss att förbättra MACA',
-      bugReport: 'Rapportera bugg',
-      featureRequest: 'Föreslå funktion',
-      titleLabel: 'Titel',
-      titlePlaceholder: 'Kort sammanfattning',
-      descriptionLabel: 'Beskrivning',
-      descriptionPlaceholder: 'Beskriv problemet eller din idé i detalj...',
-      emailLabel: 'E-post (valfritt)',
-      emailPlaceholder: 'your@email.se',
-      uploadImages: 'Ladda upp bilder',
-      uploadHint: 'Max 5 bilder, komprimeras automatiskt',
-      submit: 'Skicka',
-      submitting: 'Skickar...',
-      success: 'Tack för din feedback!',
-      successMessage: 'Vi har tagit emot ditt meddelande och kommer att ta hand om det så snart som möjligt.',
-    },
-  };
-
-  const txt = feedbackTexts[currentLang];
 
   const formatFileSize = (bytes: number) => {
     if (bytes < 1024) return bytes + ' B';

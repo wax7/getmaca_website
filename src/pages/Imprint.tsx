@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { FileText } from 'lucide-react';
@@ -7,51 +7,20 @@ import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Footer } from '../components/Footer';
 
 export function Imprint() {
-  const { lang } = useParams();
+  const currentLang = useValidatedLang('imprint');
   const navigate = useNavigate();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
-  
-  // Validate language and default to 'en' if invalid
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
-  const requestedLang = lang as Language;
-  
-  // Always use a valid language, fallback to 'en'
-  const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
-  
-  // If no lang parameter at all, redirect immediately
-  useEffect(() => {
-    if (!lang) {
-      navigate('/en/imprint', { replace: true });
-    } else if (!validLanguages.includes(requestedLang)) {
-      navigate('/en/imprint', { replace: true });
-    }
-  }, [lang, requestedLang, navigate]);
 
+  const t = translations[currentLang] || translations.en;
+  
   const handleLanguageChange = (newLang: Language) => {
     navigate(`/${newLang}/imprint`);
   };
-  
-  // Get translations directly with fallback to English
-  const t = useMemo(() => {
-    // Always have a fallback
-    if (!translations) {
-      console.error('Translations object is undefined');
-      return null;
-    }
-    
-    // Try to get the current language
-    const translation = translations[currentLang];
-    if (!translation) {
-      console.warn(`Translation for ${currentLang} not found, falling back to English`);
-      return translations.en;
-    }
-    
-    return translation;
-  }, [currentLang]);
   
   // Safety check: if translations haven't loaded yet, show loading state
   if (!t || !t.imprint || !t.imprint.title) {

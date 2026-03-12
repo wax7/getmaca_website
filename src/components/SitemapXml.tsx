@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { SUPPORTED_LANGUAGES } from '../utils/language-config';
 
 /**
  * SitemapXml – SPA fallback for /sitemap.xml
@@ -36,9 +37,9 @@ import { useMemo } from 'react';
  *  3. The XML text is present in the DOM (Googlebot can parse it as last resort)
  */
 
-const LANGS = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'] as const;
+const LANGS = SUPPORTED_LANGUAGES;
 const BASE = 'https://getmaca.de';
-const LASTMOD = '2026-03-11';
+const LASTMOD = '2026-03-12';
 
 interface PageDef {
   path: string;

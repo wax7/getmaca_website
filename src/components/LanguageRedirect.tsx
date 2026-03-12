@@ -1,13 +1,12 @@
 import { Navigate } from 'react-router';
 import { type Language } from '../locales/translations';
-
-const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
+import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isValidLanguage } from '../utils/language-config';
 
 function detectBrowserLanguage(): Language {
   try {
     const saved = localStorage.getItem('maca-preferred-language');
-    if (saved && validLanguages.includes(saved as Language)) {
-      return saved as Language;
+    if (saved && isValidLanguage(saved)) {
+      return saved;
     }
   } catch {}
 
@@ -34,7 +33,7 @@ function detectBrowserLanguage(): Language {
     }
   }
   
-  return 'en';
+  return DEFAULT_LANGUAGE;
 }
 
 export function LanguageRedirect() {

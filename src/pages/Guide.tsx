@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import {
   BookOpen, X,
@@ -14,6 +14,7 @@ import { LanguageSelector } from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { useValidatedLang } from '../hooks/useValidatedLang';
 
 const sectionIcons = [
   <Rocket className="w-5 h-5" />, <Monitor className="w-5 h-5" />, <Layout className="w-5 h-5" />,
@@ -118,22 +119,13 @@ function BoldItem({ bold, text }: { bold: string; text: string }) {
 // --- Main Component ---
 
 export function Guide() {
-  const { lang } = useParams();
+  const currentLang = useValidatedLang('guide');
   const navigate = useNavigate();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
   const [tocOpen, setTocOpen] = useState(false);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
-
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
-  const currentLang: Language = (lang && validLanguages.includes(lang as Language)) ? lang as Language : 'en';
-
-  useEffect(() => {
-    if (lang && !validLanguages.includes(lang as Language)) {
-      navigate('/en/guide', { replace: true });
-    }
-  }, [lang]);
 
   const t = translations[currentLang] || translations.en;
   const g = getGuideTranslation(currentLang);

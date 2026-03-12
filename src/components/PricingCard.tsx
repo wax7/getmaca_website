@@ -13,6 +13,7 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ title, price, features, cta, ctaLink, badge, isPro = false, delay }: PricingCardProps) {
+  const featureList = Array.isArray(features) ? features : [];
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -41,7 +42,7 @@ export function PricingCard({ title, price, features, cta, ctaLink, badge, isPro
       </div>
 
       <ul className="space-y-4 sm:space-y-5 mb-10">
-        {features.map((feature, index) => (
+        {featureList.map((feature, index) => (
           <li key={index} className="flex items-start gap-3 sm:gap-4">
             <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
               isPro ? 'bg-white/20' : 'bg-blue-100 dark:bg-blue-950/50'

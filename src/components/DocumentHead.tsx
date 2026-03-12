@@ -4,6 +4,12 @@ import { type Language } from '../locales/translations';
 import { faqContentTranslations } from '../utils/faq-content-translations';
 import { getGuideTranslation } from '../locales/guide';
 import { troubleshootingTranslations } from '../utils/troubleshooting-translations';
+import {
+  SUPPORTED_LANGUAGES,
+  RTL_LANGUAGES,
+  OG_LOCALE_MAP,
+  resolveLanguage,
+} from '../utils/language-config';
 import macaAppLogo from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.png';
 
 const APP_STORE_ID = '6759258773';
@@ -128,7 +134,7 @@ const metaDescriptions: Record<string, Record<Language, string>> = {
     fr: 'Mentions légales – MACA Master Audio Control. Informations éditeur, coordonnées et mentions légales pour l\'app MACA macOS.',
     es: 'Aviso legal – MACA Master Audio Control. Información del editor, datos de contacto y avisos legales de la app MACA para macOS.',
     it: 'Note legali – MACA Master Audio Control. Informazioni editore, contatti e informative legali per l\'app MACA macOS.',
-    ja: '法的情報 – MACA Master Audio Control。発行者情報、連絡先、MACA macOSアプリの法的開示。',
+    ja: '法的情報 – MACA Master Audio Control。発行者情報、��絡先、MACA macOSアプリの法的開示。',
     'zh-Hans': '法律信息 – MACA Master Audio Control。出版者信息、联系方式和MACA macOS应用的法律声明。',
     'zh-Hant': '法律資訊 – MACA Master Audio Control。出版者資訊、聯絡方式和MACA macOS應用的法律聲明。',
     ar: 'البيان القانوني – MACA Master Audio Control. معلومات الناشر وتفاصيل الاتصال والإفصاحات القانونية لتطبيق MACA لـ macOS.',
@@ -140,6 +146,24 @@ const metaDescriptions: Record<string, Record<Language, string>> = {
     ko: '법적 정보 – MACA Master Audio Control. 퍼블리셔 정보, 연락처 및 MACA macOS 앱에 대한 법적 공개.',
     nb: 'Impressum – MACA Master Audio Control. Utgiverinfo, kontaktdetaljer og juridiske opplysninger for MACA macOS-appen.',
   },
+  feedback: {
+    en: 'Send feedback or report bugs for MACA – Master Audio Control for macOS. Help us improve per-app volume control, EQ, profiles and Focus Mode.',
+    de: 'Feedback senden oder Bugs melden für MACA – Master Audio Control für macOS. Helfen Sie uns, Lautstärke pro App, EQ, Profile und Fokus-Modus zu verbessern.',
+    fr: 'Envoyez vos commentaires ou signalez des bugs pour MACA – Master Audio Control pour macOS. Aidez-nous à améliorer le volume par app, l\'EQ et le Mode Focus.',
+    es: 'Envía comentarios o reporta errores de MACA – Master Audio Control para macOS. Ayúdanos a mejorar el volumen por app, EQ, perfiles y Modo Enfoque.',
+    it: 'Invia feedback o segnala bug per MACA – Master Audio Control per macOS. Aiutaci a migliorare volume per app, EQ, profili e Modalità Focus.',
+    ja: 'MACAへのフィードバックやバグ報告。macOS用Master Audio Controlのアプリ別音量、EQ、プロファイル、フォーカスモードの改善にご協力ください。',
+    'zh-Hans': '为MACA发送反馈或报告错误 – macOS Master Audio Control。帮助我们改进每应用音量、EQ、配置文件和专注模式。',
+    'zh-Hant': '為MACA發送回饋或報告錯誤 – macOS Master Audio Control。幫助我們改進每應用音量、EQ、設定檔和專注模式。',
+    ar: 'أرسل ملاحظاتك أو أبلغ عن أخطاء في MACA – Master Audio Control لـ macOS. ساعدنا في تحسين التحكم بالصوت والمعادل ووضع التركيز.',
+    ru: 'Отправьте отзыв или сообщите об ошибке в MACA – Master Audio Control для macOS. Помогите улучшить управление громкостью, EQ, профили и режим фокусировки.',
+    nl: 'Stuur feedback of meld bugs voor MACA – Master Audio Control voor macOS. Help ons volume per app, EQ, profielen en Focusmodus te verbeteren.',
+    tr: 'MACA için geri bildirim gönderin veya hata bildirin – macOS için Master Audio Control. Uygulama sesi, EQ, profiller ve Odak Modunu iyileştirmemize yardımcı olun.',
+    sv: 'Skicka feedback eller rapportera buggar för MACA – Master Audio Control för macOS. Hjälp oss förbättra volym per app, EQ, profiler och Fokusläge.',
+    da: 'Send feedback eller rapportér fejl for MACA – Master Audio Control for macOS. Hjælp os med at forbedre lydstyrke per app, EQ, profiler og Fokusmodus.',
+    ko: 'MACA에 피드백을 보내거나 버그를 신고하세요 – macOS용 Master Audio Control. 앱별 볼륨, EQ, 프로필 및 포커스 모드 개선에 도움을 주세요.',
+    nb: 'Send tilbakemelding eller rapporter feil for MACA – Master Audio Control for macOS. Hjelp oss å forbedre volum per app, EQ, profiler og Fokusmodus.',
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -147,22 +171,22 @@ const metaDescriptions: Record<string, Record<Language, string>> = {
 // ---------------------------------------------------------------------------
 const pageTitles: Record<string, Record<Language, string>> = {
   home: {
-    en: 'MACA – Per-App Volume Control for macOS | Individual Audio Mixer',
-    de: 'MACA – Lautstärke pro App für macOS | Individueller Audio-Mixer',
-    fr: 'MACA – Volume par Application macOS | Mixer Audio Individuel',
-    es: 'MACA – Volumen por App en macOS | Mezclador de Audio Individual',
-    it: 'MACA – Volume per App su macOS | Mixer Audio Individuale',
-    ja: 'MACA – macOSのアプリごとの音量コントロール | 個別オーディオミキサー',
-    'zh-Hans': 'MACA – macOS每应用音量控制 | 独立音频混音器',
-    'zh-Hant': 'MACA – macOS每應用音��控制 | 獨立音頻混音器',
-    ar: 'MACA – تحكم في مستوى الصوت لكل تطبيق على macOS | خلاط صوت فردي',
-    ru: 'MACA – Управление громкостью каждого приложения на macOS | Индивидуальный микшер',
-    nl: 'MACA – Volume per app voor macOS | Individuele audio-mixer',
-    tr: 'MACA – macOS için uygulama başına ses kontrolü | Bireysel mikser',
-    sv: 'MACA – Volymkontroll per app för macOS | Individuell ljudmixer',
-    da: 'MACA – Per-app lydstyrkekontrol for macOS | Individuel lydmixer',
-    ko: 'MACA – macOS 앱별 볼륨 컨트롤 | 개별 믹서',
-    nb: 'MACA – Per-app volumkontroll for macOS | Individuell lydmixer',
+    en: 'MACA – Per-App Volume Control for macOS | Mixer, EQ & Profiles',
+    de: 'MACA – Lautstärke pro App für macOS | Mixer, EQ & Profile',
+    fr: 'MACA – Volume par Application macOS | Mixer, EQ & Profils Audio',
+    es: 'MACA – Volumen por App en macOS | Mezclador, EQ y Perfiles',
+    it: 'MACA – Volume per App su macOS | Mixer, EQ e Profili Audio',
+    ja: 'MACA – macOSアプリ別音量コントロール | ミキサー・EQ・プロファイル',
+    'zh-Hans': 'MACA – macOS每应用音量控制 | 混音器、EQ与音频配置',
+    'zh-Hant': 'MACA – macOS每應用音量控制 | 混音器、EQ與音頻配置',
+    ar: 'MACA – تحكم صوت لكل تطبيق على macOS | خلاط ومعادل وملفات صوتية',
+    ru: 'MACA – Громкость каждого приложения на macOS | Микшер, EQ и профили',
+    nl: 'MACA – Volume per app voor macOS | Mixer, EQ & Profielen',
+    tr: 'MACA – macOS uygulama başına ses | Mikser, EQ ve Profiller',
+    sv: 'MACA – Volym per app för macOS | Mixer, EQ & Ljudprofiler',
+    da: 'MACA – Lydstyrke per app for macOS | Mixer, EQ & Lydprofiler',
+    ko: 'MACA – macOS 앱별 볼륨 컨트롤 | 믹서, EQ & 프로필',
+    nb: 'MACA – Volum per app for macOS | Mikser, EQ & Lydprofiler',
   },
   faq: {
     en: 'FAQ – MACA Master Audio Control for macOS',
@@ -255,40 +279,40 @@ const pageTitles: Record<string, Record<Language, string>> = {
     nb: 'Tilbakemelding – MACA Master Audio Control',
   },
   guide: {
-    en: 'User Guide – MACA Master Audio Control',
-    de: 'Benutzerhandbuch – MACA Master Audio Control',
-    fr: 'Guide Utilisateur – MACA Master Audio Control',
-    es: 'Guía del Usuario – MACA Master Audio Control',
-    it: 'Guida Utente – MACA Master Audio Control',
-    ja: 'ユーザーガイド – MACA Master Audio Control',
-    'zh-Hans': '用户指南 – MACA Master Audio Control',
-    'zh-Hant': '用戶指南 – MACA Master Audio Control',
-    ar: 'دليل المستخدم – MACA تحكم الصوت الرئيسي لـ macOS',
-    ru: 'Руководство пользователя – MACA Управление громкостью для macOS',
-    nl: 'Gebruikershandleiding – MACA Master Audio Control voor macOS',
-    tr: 'Kullanıcı Kılavuzu – MACA Master Audio Control',
-    sv: 'Användarhandledning – MACA Master Audio Control',
-    da: 'Brugermanual – MACA Master Audio Control',
-    ko: '사용자 가이드 – MACA Master Audio Control',
-    nb: 'Brukermanual – MACA Master Audio Control',
+    en: 'Setup Guide – MACA Per-App Volume, EQ & Profiles for macOS',
+    de: 'Einrichtung – MACA Lautstärke pro App, EQ & Profile für macOS',
+    fr: 'Guide de Configuration – MACA Volume par App, EQ & Profils macOS',
+    es: 'Guía de Configuración – MACA Volumen por App, EQ y Perfiles macOS',
+    it: 'Guida alla Configurazione – MACA Volume per App, EQ e Profili macOS',
+    ja: 'セットアップガイド – MACA アプリ別音量・EQ・プロファイル設定',
+    'zh-Hans': '设置指南 – MACA 每应用音量、EQ与配置文件设置',
+    'zh-Hant': '設定指南 – MACA 每應用音量、EQ與配置文件設定',
+    ar: 'دليل الإعداد – MACA صوت كل تطبيق والمعادل والملفات الصوتية',
+    ru: 'Руководство по настройке – MACA Громкость, EQ и профили для macOS',
+    nl: 'Installatiegids – MACA Volume per App, EQ & Profielen voor macOS',
+    tr: 'Kurulum Rehberi – MACA Uygulama Sesi, EQ ve Profiller macOS',
+    sv: 'Installationsguide – MACA Volym per App, EQ & Profiler för macOS',
+    da: 'Opsætningsguide – MACA Lydstyrke per App, EQ & Profiler for macOS',
+    ko: '설정 가이드 – MACA 앱별 볼륨, EQ & 프로필 macOS',
+    nb: 'Oppsettguide – MACA Volum per App, EQ & Profiler for macOS',
   },
   troubleshooting: {
-    en: 'Troubleshooting – MACA Master Audio Control',
-    de: 'Fehlerbehebung – MACA Master Audio Control',
-    fr: 'Dépannage – MACA Master Audio Control',
-    es: 'Solución de problemas – MACA Master Audio Control',
-    it: 'Risoluzione dei problemi – MACA Master Audio Control',
-    ja: 'トラブルシューティング – MACA Master Audio Control',
-    'zh-Hans': '故障排除 – MACA Master Audio Control',
-    'zh-Hant': '故障排除 – MACA Master Audio Control',
-    ar: 'حل المشكلات – MACA تحكم الصوت الرئيسي لـ macOS',
-    ru: 'Устранение неполадок – MACA Управление громкостью для macOS',
-    nl: 'Probleemoplossing – MACA Master Audio Control voor macOS',
-    tr: 'Sorun Giderme – MACA Master Audio Control',
-    sv: 'Felsökning – MACA Master Audio Control',
-    da: 'Fejlfinding – MACA Master Audio Control',
-    ko: '문제 해결 – MACA Master Audio Control',
-    nb: 'Feilsøking – MACA Master Audio Control',
+    en: 'Troubleshooting – Fix MACA Audio Issues on macOS',
+    de: 'Fehlerbehebung – MACA Audio-Probleme auf macOS lösen',
+    fr: 'Dépannage – Résoudre les Problèmes Audio MACA sur macOS',
+    es: 'Solución de Problemas – Resolver Problemas de Audio MACA en macOS',
+    it: 'Risoluzione Problemi – Risolvere Problemi Audio MACA su macOS',
+    ja: 'トラブルシューティング – MACA macOS音声問題の解決',
+    'zh-Hans': '故障排除 – 解决MACA macOS音频问题',
+    'zh-Hant': '故障排除 – 解決MACA macOS音頻問題',
+    ar: 'استكشاف الأخطاء – حل مشاكل صوت MACA على macOS',
+    ru: 'Устранение неполадок – Решение проблем со звуком MACA на macOS',
+    nl: 'Probleemoplossing – MACA Audioproblemen Oplossen op macOS',
+    tr: 'Sorun Giderme – MACA macOS Ses Sorunlarını Çözme',
+    sv: 'Felsökning – Lös MACA Ljudproblem på macOS',
+    da: 'Fejlfinding – Løs MACA Lydproblemer på macOS',
+    ko: '문제 해결 – MACA macOS 오디오 문제 수정',
+    nb: 'Feilsøking – Løs MACA Lydproblemer på macOS',
   },
 };
 
@@ -396,7 +420,7 @@ const pageKeywords: Record<string, Record<Language, string>> = {
     'zh-Hans': 'MACA 使用条款, 许可协议, 软件许可, macOS 应用 条款, 使用条件, MACA EULA, App Store 条款, 最终用户协议, MACA 法律',
     'zh-Hant': 'MACA 使用條款, 許可協議, 軟體許可, macOS 應用 條款, 使用條件, MACA EULA, App Store 條款, 最終用戶協議, MACA 法律',
     ar: 'MACA شروط الاستخدام, اتفاقية الترخيص, ترخيص البرنامج, شروط تطبيق macOS, شروط الاستخدام, MACA EULA, شروط App Store, اتفاقية المستخدم النهائي, MACA قانوني',
-    ru: 'MACA условия использования, лицензионное соглашение, лицензия на ПО, условия приложения macOS, условия использования, MACA EULA, условия App Store, пользовательское соглашение, MACA юридическая информация',
+    ru: 'MACA условия испол��зования, лицензионное соглашение, лицензия на ПО, условия приложения macOS, условия использования, MACA EULA, условия App Store, пользовательское соглашение, MACA юридическая информация',
     nl: 'MACA gebruiksvoorwaarden, licentieovereenkomst, softwarelicentie, macOS app voorwaarden, gebruiksvoorwaarden, MACA EULA, App Store voorwaarden, eindgebruikersovereenkomst, MACA juridisch',
     tr: 'MACA kullanım şartları, lisans sözleşmesi, yazılım lisansı, macOS uygulama şartları, kullanım koşulları, MACA EULA, App Store şartları, son kullanıcı sözleşmesi, MACA yasal',
     sv: 'MACA användarvillkor, licensavtal, programvarulicens, macOS app villkor, användningsvillkor, MACA EULA, App Store villkor, slutanvändaravtal, MACA juridiskt',
@@ -442,27 +466,8 @@ const pageKeywords: Record<string, Record<Language, string>> = {
   },
 };
 
-// ---------------------------------------------------------------------------
-// og:locale mapping
-// ---------------------------------------------------------------------------
-const ogLocales: Record<Language, string> = {
-  en: 'en_US',
-  de: 'de_DE',
-  fr: 'fr_FR',
-  es: 'es_ES',
-  it: 'it_IT',
-  ja: 'ja_JP',
-  'zh-Hans': 'zh_CN',
-  'zh-Hant': 'zh_TW',
-  ar: 'ar_SA',
-  ru: 'ru_RU',
-  nl: 'nl_NL',
-  tr: 'tr_TR',
-  sv: 'sv_SE',
-  da: 'da_DK',
-  ko: 'ko_KR',
-  nb: 'nb_NO',
-};
+// og:locale mapping – now imported from language-config.ts as OG_LOCALE_MAP
+const ogLocales = OG_LOCALE_MAP;
 
 // ---------------------------------------------------------------------------
 // FAQ data for FAQPage JSON-LD schema (home page – all 16 languages)
@@ -521,7 +526,7 @@ const homeFAQ: Record<Language, Array<{ question: string; answer: string }>> = {
     { question: 'MACA与macOS音量控制有什么不同？', answer: 'macOS只控制整体系统音量。MACA允许您单独控制每个应用、静音特定应用、创建音频配置文件、使用10段均衡器等。' },
     { question: 'MACA免费吗？', answer: 'MACA提供具有核心功能的免费版本。Pro版解锁音频配置文件、增强均衡器、专注模式等——一次性购买，无需订阅。' },
     { question: 'MACA会收集我的数据吗？', answer: '不会。MACA在您的Mac上本地处理一切。我们不收集、存储或传输任何个人数据。' },
-    { question: 'MACA支持哪些macOS版本？', answer: 'MACA需要macOS 15（Sequoia）或更新版本，并针对Apple Silicon（M1/M2/M3/M4）进行了优化。' },
+    { question: 'MACA支持哪些macOS版本？', answer: 'MACA需要macOS 15（Sequoia���或更新版本，并针对Apple Silicon（M1/M2/M3/M4）进行了优化。' },
     { question: '我可以一次静音所有应用吗？', answer: '可以。MACA的完全静音模式一键即可静音所有应用。专注模式仅保留您选择的通信应用（如Zoom、Teams、Discord）。' },
   ],
   'zh-Hant': [
@@ -530,7 +535,7 @@ const homeFAQ: Record<Language, Array<{ question: string; answer: string }>> = {
     { question: 'MACA免費嗎？', answer: 'MACA提供具有核心功能的免費版本。Pro版解鎖音訊設定檔、增強均衡器、專注模式等——一次性購買，無需訂閱。' },
     { question: 'MACA會收集我的資料嗎？', answer: '不會。MACA在您的Mac上本地處理一切。我們不收集、儲存或傳輸任何個人資料。' },
     { question: 'MACA支援哪些macOS版本？', answer: 'MACA需要macOS 15（Sequoia）或更新版本，並針對Apple Silicon（M1/M2/M3/M4）進行了最佳化。' },
-    { question: '我可以一次靜音所有應用嗎？', answer: '可以。MACA的完全靜音模式一鍵即可靜音所有應用。專注模式僅保留您選擇的通訊應用（如Zoom、Teams、Discord）。' },
+    { question: '我可以一次靜音所有應用嗎？', answer: '可以。MACA的完全靜音模式一鍵即可靜音所有應用。專注模���僅保留您選擇的通訊應用（如Zoom、Teams、Discord）。' },
   ],
   ar: [
     { question: 'ما هو MACA؟', answer: 'MACA (Master Audio Control App) هو تطبيق macOS يمنحك تحكمًا فرديًا في مستوى الصوت لكل تطبيق يعمل على جهاز Mac الخاص بك.' },
@@ -622,7 +627,7 @@ function setMeta(
 export function DocumentHead() {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
-  const currentLang = (lang || 'en') as Language;
+  const currentLang = resolveLanguage(lang);
 
   useEffect(() => {
     // ── Determine current page ────────────────────────────────────────────
@@ -640,8 +645,17 @@ export function DocumentHead() {
       ? titleMap[currentLang] || titleMap.en
       : 'MACA – Master Audio Control';
 
-    // ── <html lang=""> ────────────────────────────────────────────────────
-    document.documentElement.lang = currentLang;
+    // ── <html lang=""> + dir ─────────────────────────────────────────────
+    // BCP-47 compliant mapping (zh-Hans/zh-Hant use script subtag)
+    const bcp47Map: Record<string, string> = {
+      'zh-Hans': 'zh-Hans', 'zh-Hant': 'zh-Hant',
+    };
+    const htmlLang = bcp47Map[currentLang] || currentLang;
+    document.documentElement.lang = htmlLang;
+    document.documentElement.dir = (RTL_LANGUAGES as readonly string[]).includes(currentLang) ? 'rtl' : 'ltr';
+
+    // ── Content-Language (HTTP-equiv fallback) ────────────────────────────
+    setMeta('meta[http-equiv="Content-Language"]', 'http-equiv', 'Content-Language', htmlLang);
 
     // ── charset ──────────────────────────────────────────────────────────
     if (!document.querySelector('meta[charset]')) {
@@ -678,18 +692,21 @@ export function DocumentHead() {
     const isDark = document.documentElement.classList.contains('dark');
     setMeta('meta[name="theme-color"]', 'name', 'theme-color', isDark ? '#0f172a' : '#ffffff');
 
-    // ── Canonical URL ─────────────────────────────────────────────────────
+    // ── Canonical URL (trailing-slash normalised, self-referencing) ───────
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = `${BASE_URL}${currentPath}`;
+    // Strip trailing slash (except root) for consistency with sitemap
+    const normPath = currentPath.replace(/\/+$/, '') || '/';
+    canonical.href = `${BASE_URL}${normPath}`;
 
     // ── Hreflang ──────────────────────────────────────────────────────────
-    const languages: Language[] = ['en', 'de', 'fr', 'es', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
-    const pathWithoutLang = currentPath.replace(/^\/(en|de|fr|es|it|ja|zh-Hans|zh-Hant|ar|ru|nl|tr|sv|da|ko|nb)/, '');
+    const languages = SUPPORTED_LANGUAGES;
+    const langPattern = languages.map(l => l.replace('-', '\\-')).join('|');
+    const pathWithoutLang = currentPath.replace(new RegExp(`^\\/(${langPattern})`), '');
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
     languages.forEach(language => {
       const link = document.createElement('link');
@@ -767,8 +784,8 @@ export function DocumentHead() {
       { property: 'og:image:width', content: '1024' },
       { property: 'og:image:height', content: '1024' },
       { property: 'og:image:alt', content: 'MACA – Master Audio Control App Icon' },
-      { property: 'og:url', content: `${BASE_URL}${currentPath}` },
-      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: `${BASE_URL}${normPath}` },
+      { property: 'og:type', content: ['guide', 'faq', 'troubleshooting'].includes(pageKey) ? 'article' : 'website' },
       { property: 'og:locale', content: ogLocales[currentLang] || 'en_US' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: ogTitle },
@@ -807,13 +824,10 @@ export function DocumentHead() {
     document.querySelectorAll('meta[property^="article:"]').forEach(el => el.remove());
     const contentPages = ['guide', 'faq', 'troubleshooting'];
     if (contentPages.includes(pageKey)) {
-      // Override og:type to 'article' for content pages
-      const ogTypeMeta = document.querySelector('meta[property="og:type"]') as HTMLMetaElement | null;
-      if (ogTypeMeta) ogTypeMeta.content = 'article';
       const articleMeta: Array<{ property: string; content: string }> = [
         { property: 'article:author', content: BASE_URL },
         { property: 'article:published_time', content: '2024-12-01T00:00:00+00:00' },
-        { property: 'article:modified_time', content: '2026-03-11T00:00:00+00:00' },
+        { property: 'article:modified_time', content: '2026-03-12T00:00:00+00:00' },
         { property: 'article:section', content: pageKey === 'guide' ? 'User Guide' : pageKey === 'faq' ? 'FAQ' : 'Troubleshooting' },
         { property: 'article:tag', content: 'MACA' },
         { property: 'article:tag', content: 'macOS' },
@@ -846,10 +860,16 @@ export function DocumentHead() {
       releaseNotes: `${BASE_URL}/${currentLang}/history`,
       softwareVersion: '2.0',
       datePublished: '2024-12-01',
-      inLanguage: languages,
+      inLanguage: [...languages],
       url: BASE_URL,
       downloadUrl: APP_STORE_URL,
       installUrl: APP_STORE_URL,
+      softwareHelp: {
+        '@type': 'CreativeWork',
+        url: `${BASE_URL}/${currentLang}/guide`,
+        name: 'MACA User Guide',
+        inLanguage: [...languages],
+      },
       screenshot: [
         `${BASE_URL}/screenshots/complete-audio-control.png`,
         `${BASE_URL}/screenshots/individual-app-control.png`,
@@ -875,8 +895,10 @@ export function DocumentHead() {
           name: 'MACA Free',
           price: '0',
           priceCurrency: 'USD',
+          priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
           url: APP_STORE_URL,
+          seller: { '@id': `${BASE_URL}/#organization` },
           description: 'Free version with core per-app volume control features',
         },
         {
@@ -884,14 +906,18 @@ export function DocumentHead() {
           name: 'MACA Pro',
           price: '4.99',
           priceCurrency: 'USD',
+          priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
           url: APP_STORE_URL,
+          seller: { '@id': `${BASE_URL}/#organization` },
           description: 'Pro upgrade – audio profiles, enhanced EQ, Focus Mode, and more',
         },
       ],
       // aggregateRating will be added once the app has real App Store ratings
-      description: metaDescriptions.home['en'],
+      description: metaDescriptions.home[currentLang] || metaDescriptions.home['en'],
       image: `${BASE_URL}${macaAppLogo}`,
+      availableOnDevice: 'Mac',
+      countriesSupported: 'Worldwide',
       author: {
         '@type': 'Organization',
         '@id': `${BASE_URL}/#organization`,
@@ -920,6 +946,12 @@ export function DocumentHead() {
         height: 1024,
       },
       sameAs: [APP_STORE_URL],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        url: `${BASE_URL}/${currentLang}/feedback`,
+        availableLanguage: [...languages],
+      },
     };
 
     // 3. WebSite schema
@@ -999,6 +1031,7 @@ export function DocumentHead() {
       breadcrumb = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
+        '@id': `${BASE_URL}${normPath}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -1010,7 +1043,7 @@ export function DocumentHead() {
             '@type': 'ListItem',
             position: 2,
             name: bcNameMap ? (bcNameMap[currentLang] || bcNameMap.en) : pageKey,
-            item: `${BASE_URL}${currentPath}`,
+            item: `${BASE_URL}${normPath}`,
           },
         ],
       };
@@ -1204,29 +1237,41 @@ export function DocumentHead() {
       }
     }
 
-    // 9. WebPage schema for static pages (privacy, terms, imprint)
-    let webPageSchema = null;
-    const staticPageTypes: Record<string, string> = {
+    // 9. WebPage schema – every page gets one (type varies by page)
+    const webPageTypeMap: Record<string, string> = {
+      home: 'WebPage',
+      faq: 'FAQPage',
+      guide: 'WebPage',
+      troubleshooting: 'FAQPage',
       privacy: 'WebPage',
       terms: 'WebPage',
       imprint: 'AboutPage',
+      feedback: 'ContactPage',
     };
-    if (staticPageTypes[pageKey]) {
-      const bcMap = breadcrumbNames[pageKey];
-      webPageSchema = {
-        '@context': 'https://schema.org',
-        '@type': staticPageTypes[pageKey],
-        '@id': `${BASE_URL}${currentPath}#webpage`,
-        url: `${BASE_URL}${currentPath}`,
-        name: bcMap ? (bcMap[currentLang] || bcMap.en) : pageKey,
-        description: metaDescriptions[pageKey]?.[currentLang] || metaDescriptions[pageKey]?.en,
-        inLanguage: currentLang,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-        publisher: { '@id': `${BASE_URL}/#organization` },
-        datePublished: '2024-12-01',
-        dateModified: '2026-03-11',
-      };
-    }
+    const wpType = webPageTypeMap[pageKey] || 'WebPage';
+    const bcMap = breadcrumbNames[pageKey];
+    const wpName = isHome
+      ? (pageTitles.home[currentLang] || pageTitles.home.en)
+      : bcMap ? (bcMap[currentLang] || bcMap.en) : pageKey;
+    const webPageSchema = {
+      '@context': 'https://schema.org',
+      '@type': wpType,
+      '@id': `${BASE_URL}${normPath}#webpage`,
+      url: `${BASE_URL}${normPath}`,
+      name: wpName,
+      description: metaDescriptions[pageKey]?.[currentLang] || metaDescriptions[pageKey]?.en || '',
+      inLanguage: currentLang,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      about: { '@id': `${BASE_URL}/#software` },
+      publisher: { '@id': `${BASE_URL}/#organization` },
+      datePublished: '2024-12-01',
+      dateModified: '2026-03-12',
+      ...(breadcrumb ? { breadcrumb: { '@id': `${BASE_URL}${normPath}#breadcrumb` } } : {}),
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '.hero-subtitle', '[data-speakable]'],
+      },
+    };
 
     // Inject all schemas
     const schemas = [softwareApp, organization, webSite, breadcrumb, faqSchema, faqPageSchema, howToSchema, troubleshootingFaqSchema, webPageSchema].filter(Boolean);

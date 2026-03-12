@@ -17,6 +17,15 @@ export function RootLayout() {
       >
         Skip to main content
       </a>
+      {/* Noscript fallback for crawlers / prerender: locale-aware message */}
+      <noscript>
+        <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>MACA – Master Audio Control</h1>
+          <p>Per-app volume control for macOS. Individual mixer, 10-band EQ, audio profiles, Focus Mode.</p>
+          <p>This website requires JavaScript. Please enable JavaScript to view the full experience.</p>
+          <a href="https://apps.apple.com/app/maca-master-audio-control/id6759258773">Download on the App Store</a>
+        </div>
+      </noscript>
       {/* Sentinel element for IntersectionObserver-based scroll detection. */}
       <div id="top-sentinel" aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, width: '1px', height: '1px', pointerEvents: 'none' }} />
       <DocumentHead />

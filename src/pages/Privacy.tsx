@@ -1,30 +1,21 @@
-import { useDarkMode } from '../hooks/useDarkMode';
-import { useScrolled } from '../hooks/useScrolled';
-import { useEffect, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router';
+import { useMemo } from 'react';
+import { useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Shield, ArrowLeft, Volume2 } from 'lucide-react';
 import { Language } from '../locales/translations';
 import { privacyTranslations } from '../utils/privacy-translations';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
+import { useDarkMode } from '../hooks/useDarkMode';
+import { useScrolled } from '../hooks/useScrolled';
+import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Footer } from '../components/Footer';
 
 export function Privacy() {
-  const { lang } = useParams();
+  const currentLang = useValidatedLang('privacy');
   const navigate = useNavigate();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
-
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
-  const requestedLang = lang as Language;
-  const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
-
-  useEffect(() => {
-    if (!lang || !validLanguages.includes(requestedLang)) {
-      navigate('/en/privacy', { replace: true });
-    }
-  }, [lang, requestedLang, navigate]);
 
   const t = useMemo(() => {
     return privacyTranslations[currentLang] || privacyTranslations.en;
@@ -66,7 +57,7 @@ export function Privacy() {
                   currentLang === 'it' ? 'Trasferimento dati' :
                   currentLang === 'ja' ? 'データ転送' :
                   currentLang === 'zh-Hans' ? '数据传输' :
-                  currentLang === 'zh-Hant' ? '数据传输' :
+                  currentLang === 'zh-Hant' ? '数据���输' :
                   'Data Transfer',
     privacyPolicy: currentLang === 'de' ? 'Datenschutzrichtlinie' :
                    currentLang === 'es' ? 'Política de privacidad' :

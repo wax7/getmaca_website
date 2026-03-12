@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router';
+import { useState, useMemo } from 'react';
+import { useNavigate, Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Wrench, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { Language } from '../locales/translations';
@@ -8,24 +8,15 @@ import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
+import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Footer } from '../components/Footer';
 
 export function Troubleshooting() {
-  const { lang } = useParams();
+  const currentLang = useValidatedLang('troubleshooting');
   const navigate = useNavigate();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const scrolled = useScrolled(50);
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
-
-  const validLanguages: Language[] = ['en', 'de', 'es', 'fr', 'it', 'ja', 'zh-Hans', 'zh-Hant', 'ar', 'ru', 'nl', 'tr', 'sv', 'da', 'ko', 'nb'];
-  const requestedLang = lang as Language;
-  const currentLang: Language = (lang && validLanguages.includes(requestedLang)) ? requestedLang : 'en';
-
-  useEffect(() => {
-    if (!lang || !validLanguages.includes(requestedLang)) {
-      navigate('/en/troubleshooting', { replace: true });
-    }
-  }, [lang, requestedLang, navigate]);
 
   const content = useMemo(() => {
     return troubleshootingTranslations[currentLang] || troubleshootingTranslations.en;
