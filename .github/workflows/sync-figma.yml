@@ -131,20 +131,11 @@ jobs:
 
           echo "Sync abgeschlossen!"
 
-      - name: Regenerate sitemap.xml from current translations
+      - name: Prepare SEO artifacts
         if: steps.check.outputs.changed == 'true'
         run: |
           cd production
-          echo "Regeneriere sitemap.xml basierend auf src/utils/language-config.ts..."
-          python3 scripts/regenerate_sitemap.py
-          
-
-      - name: Validate Sitemap Languages
-        if: steps.check.outputs.changed == 'true'
-        run: |
-          cd production
-          echo "Validiere SEO-Artefakte..."
-          python3 scripts/validate_seo_artifacts.py
+          bash scripts/prepare_seo_artifacts.sh
 
       - name: Commit & Push
         if: steps.check.outputs.changed == 'true'
