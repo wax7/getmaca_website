@@ -1,10 +1,11 @@
 
   import { defineConfig } from 'vite';
-  import react from '@vitejs/plugin-react-swc';
+  import react from '@vitejs/plugin-react';
+  import vike from 'vike/plugin';
   import path from 'path';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [react(), vike()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
