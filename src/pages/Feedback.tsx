@@ -171,12 +171,7 @@ export function Feedback() {
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
               <MessageSquare className="w-12 h-12 text-blue-600 dark:text-blue-400" />
             </div>
@@ -186,12 +181,12 @@ export function Feedback() {
             <p className="text-lg text-slate-600 dark:text-slate-300">
               {txt.subtitle}
             </p>
-          </motion.div>
+          </div>
 
           {submitted ? (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={false}
+              animate={{ opacity: 1 }}
               className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-12 text-center"
             >
               <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
@@ -205,12 +200,7 @@ export function Feedback() {
               </p>
             </motion.div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12"
-            >
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Feedback Type Selection */}
                 <div>
@@ -363,7 +353,7 @@ export function Feedback() {
                   )}
                 </button>
               </form>
-            </motion.div>
+            </div>
           )}
         </div>
       </div>

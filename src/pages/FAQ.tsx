@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router';
+import { motion } from 'motion/react';
 import { HelpCircle, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { Language } from '../locales/translations';
 import { faqContentTranslations } from '../utils/faq-content-translations';
@@ -9,6 +10,7 @@ import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
+import { accordionMotionProps } from '../utils/motion';
 
 export function FAQ() {
   const currentLang = useValidatedLang('faq');
@@ -169,11 +171,14 @@ export function FAQ() {
                       </button>
 
                       {isOpen && (
-                        <div className="border-t border-slate-200 dark:border-slate-700">
+                        <motion.div
+                          {...accordionMotionProps}
+                          className="border-t border-slate-200 dark:border-slate-700"
+                        >
                           <div className="p-4 sm:p-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                             {item.answer}
                           </div>
-                        </div>
+                        </motion.div>
                       )}
                     </div>
                   );

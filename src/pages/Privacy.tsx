@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useNavigate, Link } from 'react-router';
-import { motion } from 'motion/react';
 import { Shield, ArrowLeft, Volume2 } from 'lucide-react';
 import { Language } from '../locales/translations';
 import { privacyTranslations } from '../utils/privacy-translations';
@@ -116,12 +115,7 @@ export function Privacy() {
             <span>{backToHome}</span>
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8 sm:mb-12"
-          >
+          <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-2xl">
               <Shield className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
             </div>
@@ -131,19 +125,14 @@ export function Privacy() {
             <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400">
               {t.lastUpdated}
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Content */}
       <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 mb-8 border border-slate-200 dark:border-slate-700"
-          >
+          <div className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 mb-8 border border-slate-200 dark:border-slate-700">
             <p className="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-6 sm:mb-8">
               {t.intro}
             </p>
@@ -373,7 +362,7 @@ export function Privacy() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       </main>

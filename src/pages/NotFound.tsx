@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router';
-import { motion } from 'motion/react';
 import { Home, ArrowLeft } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';
 import { Header } from '../components/Header';
@@ -38,19 +37,10 @@ export function NotFound() {
       </Header>
 
       <main id="main-content" className="flex-1 flex items-center justify-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-2xl"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: 'spring' }}
-            className="text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-8"
-          >
+        <div className="text-center max-w-2xl">
+          <div className="text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-8">
             404
-          </motion.div>
+          </div>
           
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {t.title}
@@ -86,7 +76,7 @@ export function NotFound() {
               </Link>
             </p>
           </div>
-        </motion.div>
+        </div>
       </main>
 
       <Footer currentLang={lang} />

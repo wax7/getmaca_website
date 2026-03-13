@@ -4,6 +4,7 @@ import type { Language } from '../locales/translations';
 import { languageNames } from '../locales/translations';
 import { motion, AnimatePresence } from 'motion/react';
 import { useEffect } from 'react';
+import { drawerMotionProps, overlayFadeProps } from '../utils/motion';
 
 interface NavigationMenuProps {
   isOpen: boolean;
@@ -487,25 +488,19 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {isOpen && (
         <>
           {/* Backdrop */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            {...overlayFadeProps}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
             onClick={onClose}
           />
 
           {/* Menu Panel */}
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            {...drawerMotionProps}
             className="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white dark:bg-slate-900 shadow-2xl z-50 overflow-y-auto"
             role="dialog"
             aria-modal="true"
