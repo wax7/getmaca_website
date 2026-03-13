@@ -5,6 +5,7 @@
  * Terms is imported from /components/TermsView to bypass cached /pages/Terms
  */
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import { MotionConfig } from 'motion/react';
 import { SitemapXml } from "./components/SitemapXml";
 import { RobotsTxt } from "./components/RobotsTxt";
 import { FaviconRedirect } from "./components/FaviconRedirect";
@@ -210,7 +211,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <MotionConfig reducedMotion="always">
+      <RouterProvider router={router} />
+    </MotionConfig>
+  );
 }
 
 export default App;
