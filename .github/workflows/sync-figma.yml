@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '0 8 * * *'
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -17,13 +20,13 @@ jobs:
 
     steps:
       - name: Checkout getmaca_website (Produktion)
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v6.0.2
         with:
           path: production
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Testweb (Figma Source, public)
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v6.0.2
         with:
           repository: wax7/Testweb
           path: figma
