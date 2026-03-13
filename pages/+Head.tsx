@@ -30,8 +30,6 @@ export function Head() {
       <meta httpEquiv="Content-Language" content={seo.lang} />
       <meta name="direction" content={seo.direction} />
       <meta name="robots" content={seo.robots} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.canonicalUrl} />
       <meta property="og:locale" content={seo.ogLocale} />
       <meta name="twitter:title" content={seo.title} />
