@@ -2,7 +2,7 @@ import { usePageContext } from 'vike-react/usePageContext';
 import {
   DEFAULT_LANGUAGE,
 } from '../src/utils/language-config';
-import { BASE_URL, getAlternateLinks, getRouteSeo } from '../src/seo/route-seo';
+import { BASE_URL, getAlternateLinks, getRouteSeo } from './_seo/route-seo';
 
 export function Head() {
   const pageContext = usePageContext();

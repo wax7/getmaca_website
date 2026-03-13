@@ -1,5 +1,5 @@
 import { SUPPORTED_LANGUAGES } from '../src/utils/language-config';
-import { SEO_PAGE_SLUGS } from '../src/seo/route-seo';
+import { SEO_PAGE_SLUGS } from './_seo/route-seo';
 
 export function onBeforePrerenderStart() {
   const localeRoutes = SUPPORTED_LANGUAGES.map((lang) => `/${lang}`);

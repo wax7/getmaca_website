@@ -1,5 +1,5 @@
 import type { PageContext } from 'vike/types';
-import { getRouteSeo } from '../src/seo/route-seo';
+import { getRouteSeo } from './_seo/route-seo';
 
 export function description(pageContext: PageContext): string {
   const pathname = pageContext.urlPathname || '/';
