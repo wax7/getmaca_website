@@ -30,6 +30,13 @@ export function Head() {
 
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "(() => { try { const stored = localStorage.getItem('darkMode'); const isDark = stored === null ? window.matchMedia('(prefers-color-scheme: dark)').matches : stored === 'true'; document.documentElement.classList.toggle('dark', isDark); } catch {} })();",
+        }}
+      />
+
       <link rel="canonical" href={canonical} />
 
       {SUPPORTED_LANGUAGES.map((locale) => (
