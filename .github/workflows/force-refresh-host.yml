@@ -1,0 +1,52 @@
+name: Force Refresh Host Container
+
+on:
+  workflow_dispatch:
+
+jobs:
+  refresh-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate required secrets
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          PATH_ON_HOST: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          missing=0
+          for v in HOST USER KEY PATH_ON_HOST; do
+            if [ -z "${!v}" ]; then
+              echo "Missing required secret: $v"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "Please set DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY, DEPLOY_PATH in repository secrets."
+            exit 1
+          fi
+
+      - name: Pull and recreate website container on host
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          port: ${{ secrets.DEPLOY_PORT || 22 }}
+          script_stop: true
+          script: |
+            set -e
+            cd "${{ secrets.DEPLOY_PATH }}"
+
+            if command -v docker-compose >/dev/null 2>&1; then
+              docker-compose pull website
+              docker-compose up -d --force-recreate website
+              docker-compose ps
+            else
+              docker compose pull website
+              docker compose up -d --force-recreate website
+              docker compose ps
+            fi
+
+            curl -fsS http://127.0.0.1:4000/health
+            curl -fsS http://127.0.0.1:4000/de | sed -n '1,12p'
