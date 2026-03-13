@@ -87,8 +87,8 @@ jobs:
           # public/ enthaelt Produktions-Dateien wie sitemap.xml, robots.txt
           # Diese werden von Figma Sync nicht beruehrt!
 
-          # ── 4) package.json: Figma-Dependencies übernehmen, ──
-          #        aber unsere Scripts + devDependencies behalten
+          # ── 4) package.json: Figma-Dependencies mergen, ──
+          #        aber build-kritische Dependencies und Scripts bewahren
           if [ -f ../figma/package.json ]; then
             # Installiere jq für JSON-Merge
             sudo apt-get -qq install -y jq > /dev/null 2>&1
@@ -96,8 +96,23 @@ jobs:
             # Figma-Dependencies extrahieren
             FIGMA_DEPS=$(jq '.dependencies // {}' ../figma/package.json)
 
-            # In unser package.json mergen (überschreibt nur dependencies)
-            jq --argjson deps "$FIGMA_DEPS" '.dependencies = $deps' package.json > package.json.tmp
+            # Build-kritische Pakete aus Production-Repo bewahren
+            CORE_DEPS=$(jq '.dependencies | {
+              vike,
+              "vike-react",
+              react,
+              "react-dom",
+              "react-router",
+              motion
+            } | with_entries(select(.value != null))' package.json)
+
+            # Merge-Strategie:
+            # 1) bestehende Dependencies behalten
+            # 2) Figma-Dependencies darüberlegen
+            # 3) Core-Dependencies final erzwingen (dürfen nie fehlen)
+            jq --argjson figma "$FIGMA_DEPS" --argjson core "$CORE_DEPS" \
+              '.dependencies = ((.dependencies // {}) + $figma + $core)' \
+              package.json > package.json.tmp
             mv package.json.tmp package.json
           fi
 
