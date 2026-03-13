@@ -10,7 +10,6 @@ import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
 import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Footer } from '../components/Footer';
-import { accordionMotionProps } from '../utils/motion';
 
 export function Troubleshooting() {
   const currentLang = useValidatedLang('troubleshooting');
@@ -68,7 +67,11 @@ export function Troubleshooting() {
               <span>{content.backToHome}</span>
             </Link>
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="flex items-center gap-3 sm:gap-4 mb-6">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
                   <Wrench className="w-6 h-6 sm:w-9 sm:h-9 text-white" />
@@ -77,7 +80,7 @@ export function Troubleshooting() {
                   {content.pageTitle}
                 </h1>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -88,8 +91,12 @@ export function Troubleshooting() {
               const isOpen = openItems.has(index);
 
               return (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
                   className="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden"
                 >
                   <button
@@ -115,7 +122,10 @@ export function Troubleshooting() {
 
                   {isOpen && (
                     <motion.div
-                      {...accordionMotionProps}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                       className="border-t border-slate-200 dark:border-slate-700"
                     >
                       <div className="p-4 sm:p-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -123,7 +133,7 @@ export function Troubleshooting() {
                       </div>
                     </motion.div>
                   )}
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -132,7 +142,12 @@ export function Troubleshooting() {
         {/* Contact Support Section */}
         <section className="py-10 sm:py-16 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl"
+            >
               <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
                 {content.stillNeedHelp}
               </h2>
@@ -145,7 +160,7 @@ export function Troubleshooting() {
               >
                 support@getmaca.de
               </a>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

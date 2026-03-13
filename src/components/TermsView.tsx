@@ -337,7 +337,11 @@ export function TermsView() {
               <span>{content.backToHome}</span>
             </button>
 
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-12 border border-slate-200 dark:border-slate-700">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-12 border border-slate-200 dark:border-slate-700"
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
                   <FileText className="w-7 h-7 text-white" />
@@ -370,7 +374,7 @@ export function TermsView() {
                   &copy; {new Date().getFullYear()} AMX Mediensysteme.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>

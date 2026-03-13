@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Moon, Sun, Menu, Download } from 'lucide-react';
 import { ReactNode, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
@@ -61,12 +62,15 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
 
   return (
     <>
-      <header
+      <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
             ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:border-slate-700/50' 
             : 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-sm border-b border-slate-200/30 dark:border-slate-700/30'
         }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
@@ -130,7 +134,7 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
             </div>
           </nav>
         </div>
-      </header>
+      </motion.header>
 
       <NavigationMenu
         isOpen={isMenuOpen}

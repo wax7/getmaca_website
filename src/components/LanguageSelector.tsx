@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { Globe, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { type Language, languageNames } from '../locales/translations';
-import { dropdownMotionProps } from '../utils/motion';
 
 interface LanguageSelectorProps {
   currentLang: Language;
@@ -73,10 +72,13 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
       </button>
 
       {isOpen && createPortal(
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           <motion.div
             ref={dropdownRef}
-            {...dropdownMotionProps}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
             style={{
               position: 'fixed',
               top: `${dropdownPosition.top}px`,

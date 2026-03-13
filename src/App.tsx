@@ -5,7 +5,6 @@
  * Terms is imported from /components/TermsView to bypass cached /pages/Terms
  */
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import { MotionConfig } from 'motion/react';
 import { SitemapXml } from "./components/SitemapXml";
 import { RobotsTxt } from "./components/RobotsTxt";
 import { FaviconRedirect } from "./components/FaviconRedirect";
@@ -22,7 +21,6 @@ import { NotFound } from "./pages/NotFound";
 import { RootLayout } from "./layouts/RootLayout";
 import { LanguageRedirect } from "./components/LanguageRedirect";
 import { TermsView } from "./components/TermsView";
-import { smoothTransition } from "./utils/motion";
 
 // ---------------------------------------------------------------------------
 // IMMEDIATE SEO BOOTSTRAP – runs at module-parse time, before React renders.
@@ -212,11 +210,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <MotionConfig reducedMotion="user" transition={smoothTransition}>
-      <RouterProvider router={router} />
-    </MotionConfig>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

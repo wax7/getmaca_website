@@ -492,7 +492,6 @@
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
     width: 100%;
     max-width: 100vw;
     position: relative;
@@ -500,15 +499,9 @@
   }
 
   html {
-    background-color: var(--background);
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
-    scrollbar-gutter: stable both-edges;
-  }
-
-  #root {
-    min-height: 100vh;
   }
 
   img, video, svg, canvas, iframe {

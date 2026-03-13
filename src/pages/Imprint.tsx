@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router';
+import { useEffect, useMemo, useState } from 'react';
+import { motion } from 'motion/react';
 import { FileText } from 'lucide-react';
 import { type Language, translations } from '../locales/translations';
 import { Header } from '../components/Header';
@@ -52,17 +54,27 @@ export function Imprint() {
       <div className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
             <div className="inline-flex items-center gap-3 mb-4">
               <FileText className="w-12 h-12 text-blue-600 dark:text-blue-400" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {t.imprint.title}
             </h1>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 border border-slate-200 dark:border-slate-700">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 border border-slate-200 dark:border-slate-700"
+          >
             <div className="space-y-8 text-slate-700 dark:text-slate-300">
               <section>
                 <h2 className="text-2xl mb-4 text-slate-900 dark:text-slate-100">{t.imprint.owner}</h2>
@@ -177,7 +189,7 @@ export function Imprint() {
                 </p>
               </section>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       </main>

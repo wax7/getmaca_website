@@ -10,7 +10,6 @@ import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
-import { accordionMotionProps } from '../utils/motion';
 
 export function FAQ() {
   const currentLang = useValidatedLang('faq');
@@ -87,7 +86,11 @@ export function FAQ() {
             <span>{backToHome}</span>
           </Link>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex items-center gap-3 sm:gap-4 mb-6">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
                 <HelpCircle className="w-6 h-6 sm:w-9 sm:h-9 text-white" />
@@ -96,7 +99,7 @@ export function FAQ() {
                 {content.pageTitle}
               </h1>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -104,7 +107,12 @@ export function FAQ() {
       {content.categories.length > 0 && (
         <section className="py-6 sm:py-8 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg"
+            >
               <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
                 {content.tableOfContents}
               </h2>
@@ -121,7 +129,7 @@ export function FAQ() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </section>
       )}
@@ -130,9 +138,13 @@ export function FAQ() {
       <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
           {content.categories.map((category, categoryIndex) => (
-            <div
+            <motion.div
               key={category.id}
               id={category.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: categoryIndex * 0.1 }}
               className="scroll-mt-24"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6 sm:mb-8 flex items-center gap-3">
@@ -172,7 +184,10 @@ export function FAQ() {
 
                       {isOpen && (
                         <motion.div
-                          {...accordionMotionProps}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
                           className="border-t border-slate-200 dark:border-slate-700"
                         >
                           <div className="p-4 sm:p-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -184,13 +199,16 @@ export function FAQ() {
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           ))}
 
           {/* Technical Standards */}
           {content.technicalStandards.sections.equalizer.items.length > 0 && (
-            <div
+            <motion.div
               id="technical-standards"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="scroll-mt-24"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6 sm:mb-8">
@@ -258,7 +276,7 @@ export function FAQ() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </section>
@@ -266,7 +284,12 @@ export function FAQ() {
       {/* Contact Support Section */}
       <section className="py-10 sm:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl"
+          >
             <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
               {currentLang === 'de' ? 'Noch Fragen?' :
                currentLang === 'es' ? '¿Más preguntas?' :
@@ -293,7 +316,7 @@ export function FAQ() {
             >
               support@getmaca.de
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
       </main>
