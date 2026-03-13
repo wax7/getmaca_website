@@ -1,32 +1,15 @@
 import { usePageContext } from 'vike-react/usePageContext';
 import {
   DEFAULT_LANGUAGE,
-  OG_LOCALE_MAP,
-  SUPPORTED_LANGUAGES,
-  isRtl,
-  resolveLanguage,
 } from '../src/utils/language-config';
-
-const BASE_URL = 'https://getmaca.de';
-
-function toCanonicalPath(pathname: string, lang: string): string {
-  const normalized = pathname.replace(/\/+$/, '') || '/';
-  if (normalized === '/') return `/${DEFAULT_LANGUAGE}`;
-
-  // Keep locale root paths canonical, rewrite everything else to locale root.
-  if (SUPPORTED_LANGUAGES.some((candidate) => normalized === `/${candidate}`)) {
-    return normalized;
-  }
-
-  return `/${lang}`;
-}
+import { BASE_URL, getAlternateLinks, getRouteSeo } from '../src/seo/route-seo';
 
 export function Head() {
   const pageContext = usePageContext();
   const pathname = pageContext.urlPathname || '/';
-  const lang = resolveLanguage(pathname.split('/').filter(Boolean)[0]);
-  const canonicalPath = toCanonicalPath(pathname, lang);
-  const canonical = `${BASE_URL}${canonicalPath}`;
+  const seo = getRouteSeo(pathname);
+  const alternates = getAlternateLinks(pathname);
+  const xDefaultHref = `${BASE_URL}/${DEFAULT_LANGUAGE}${seo.pageKey === 'home' ? '' : `/${seo.pageKey}`}`;
 
   return (
     <>
@@ -37,17 +20,22 @@ export function Head() {
         }}
       />
 
-      <link rel="canonical" href={canonical} />
+      <link rel="canonical" href={seo.canonicalUrl} />
 
-      {SUPPORTED_LANGUAGES.map((locale) => (
-        <link key={locale} rel="alternate" hrefLang={locale} href={`${BASE_URL}/${locale}`} />
+      {alternates.map((alternate) => (
+        <link key={alternate.lang} rel="alternate" hrefLang={alternate.lang} href={alternate.href} />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/${DEFAULT_LANGUAGE}`} />
+      <link rel="alternate" hrefLang="x-default" href={xDefaultHref} />
 
-      <meta httpEquiv="Content-Language" content={lang} />
-      <meta name="direction" content={isRtl(lang) ? 'rtl' : 'ltr'} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:locale" content={OG_LOCALE_MAP[lang]} />
+      <meta httpEquiv="Content-Language" content={seo.lang} />
+      <meta name="direction" content={seo.direction} />
+      <meta name="robots" content={seo.robots} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:url" content={seo.canonicalUrl} />
+      <meta property="og:locale" content={seo.ogLocale} />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
     </>
   );
 }
