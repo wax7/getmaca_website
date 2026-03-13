@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { motion } from 'motion/react';
 import {
   BookOpen, X,
   Rocket, Monitor, Layout, Volume2, Router, Sliders, Phone,
@@ -78,21 +77,21 @@ function Kbd({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ number, title, icon, sectionLabel }: { number: number; title: string; icon: React.ReactNode; sectionLabel: string }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-6">
       <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg flex-shrink-0">{icon}</div>
       <div>
         <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{sectionLabel} {number}</span>
         <h2 className="text-2xl sm:text-3xl text-slate-900 dark:text-white">{title}</h2>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 function GuideCard({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 shadow-sm backdrop-blur-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+    <div className="bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 shadow-sm backdrop-blur-sm text-slate-600 dark:text-slate-400 leading-relaxed">
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -184,14 +183,14 @@ export function Guide() {
           <div className="absolute top-20 -left-40 w-96 h-96 bg-purple-400/15 dark:bg-purple-600/10 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
               <BookOpen className="w-4 h-4" />
               <span>{g.versionLabel} v1.0.671</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl mb-4 text-slate-900 dark:text-white">{g.pageTitle}</h1>
             <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">{g.pageSubtitle}</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -226,7 +225,7 @@ export function Guide() {
           {tocOpen && (
             <>
               <div className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30" onClick={() => setTocOpen(false)} />
-              <motion.div initial={{ y: '100%' }} animate={{ y: 0 }} className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl max-h-[70vh] overflow-y-auto p-6">
+              <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl max-h-[70vh] overflow-y-auto p-6">
                 <div className="w-12 h-1.5 bg-slate-300 dark:bg-slate-600 rounded-full mx-auto mb-4" />
                 <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">{g.tocTitle}</h3>
                 <ul className="space-y-0.5">
@@ -239,7 +238,7 @@ export function Guide() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             </>
           )}
 
