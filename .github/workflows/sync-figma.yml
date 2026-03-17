@@ -98,6 +98,7 @@ jobs:
 
             # Figma-Dependencies extrahieren
             FIGMA_DEPS=$(jq '.dependencies // {}' ../figma/package.json)
+            FIGMA_DEV_DEPS=$(jq '.devDependencies // {}' ../figma/package.json)
 
             # Build-kritische Pakete aus Production-Repo bewahren
             CORE_DEPS=$(jq '.dependencies | {
@@ -109,14 +110,30 @@ jobs:
               motion
             } | with_entries(select(.value != null))' package.json)
 
+            CORE_DEV_DEPS=$(jq '.devDependencies | {
+              vite,
+              "@types/node",
+              "@vitejs/plugin-react",
+              "@vitejs/plugin-react-swc",
+              "@tailwindcss/vite",
+              tailwindcss
+            } | with_entries(select(.value != null))' package.json)
+
             # Merge-Strategie:
             # 1) bestehende Dependencies behalten
             # 2) Figma-Dependencies darüberlegen
             # 3) Core-Dependencies final erzwingen (dürfen nie fehlen)
-            jq --argjson figma "$FIGMA_DEPS" --argjson core "$CORE_DEPS" \
-              '.dependencies = ((.dependencies // {}) + $figma + $core)' \
+            jq --argjson figma "$FIGMA_DEPS" \
+              --argjson core "$CORE_DEPS" \
+              --argjson figmaDev "$FIGMA_DEV_DEPS" \
+              --argjson coreDev "$CORE_DEV_DEPS" \
+              '.dependencies = ((.dependencies // {}) + $figma + $core)
+              | .devDependencies = ((.devDependencies // {}) + $figmaDev + $coreDev)' \
               package.json > package.json.tmp
             mv package.json.tmp package.json
+
+            # Lockfile nach dem Merge aktualisieren, damit Docker bevorzugt npm ci nutzen kann.
+            npm install --package-lock-only --legacy-peer-deps > /dev/null 2>&1
           fi
 
           # ── 5) vite.config.ts übernehmen, aber outDir + publicDir sichern ──
