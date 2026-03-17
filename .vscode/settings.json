@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/logs": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true
+  },
+  "npm.enableScriptExplorer": true,
+  "typescript.tsserver.maxTsServerMemory": 4096
+}

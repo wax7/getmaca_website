@@ -16,7 +16,11 @@ logs/*
 .env.*.local
 
 # IDE
-.vscode/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo

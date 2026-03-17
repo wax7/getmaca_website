@@ -1,24 +1,7 @@
-name: Build & Push Docker Image
+name: Manual Docker Build & Push
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'pages/**'
-      - 'src/public/**'
-      - 'scripts/**'
-      - 'nginx/**'
-      - 'Dockerfile'
-      - 'docker-compose.yml'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
-      - 'tsconfig.node.json'
-      - 'vite.config.ts'
-      - 'index.html'
-      - '.github/workflows/deploy.yml'
-  workflow_dispatch: # manueller Trigger
+  workflow_dispatch: # manueller Fallback, startet nicht automatisch
 
 env:
   REGISTRY: ghcr.io
@@ -55,7 +38,6 @@ jobs:
         uses: docker/metadata-action@v6.0.0
         with:
           images: |
-            ${{ env.REGISTRY }}/wax7/getmaca
             ${{ env.REGISTRY }}/wax7/getmaca_website
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
