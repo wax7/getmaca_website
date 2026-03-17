@@ -69,9 +69,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     exit 1
   fi
 
-  if ! docker info | grep -q "Username:"; then
-    echo -e "${YELLOW}▶ Not logged in to GHCR${NC}"
-    docker login "$REGISTRY"
+  if [ -n "${GHCR_TOKEN:-}" ]; then
+    echo -e "${BLUE}  → Logging in to GHCR with GHCR_TOKEN${NC}"
+    printf '%s' "$GHCR_TOKEN" | docker login "$REGISTRY" -u "${GHCR_USERNAME:-$REPO_OWNER}" --password-stdin
+  else
+    echo -e "${YELLOW}▶ Using existing Docker credentials for GHCR if available${NC}"
+    echo -e "${YELLOW}  If push fails with authorization, run: docker login $REGISTRY -u $REPO_OWNER${NC}"
   fi
 
   if ! docker buildx inspect multiarch-builder >/dev/null 2>&1; then
