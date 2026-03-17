@@ -26,7 +26,7 @@ export function NotFound() {
   const scrolled = useScrolled(50);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 flex flex-col">
+    <div className="min-h-screen mac-bg flex flex-col">
       <Header
         scrolled={scrolled}
         currentLang={lang}
@@ -47,7 +47,7 @@ export function NotFound() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: 'spring' }}
-            className="text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-8"
+            className="text-9xl font-bold text-[#007AFF] dark:text-[#0A84FF] mb-8"
           >
             404
           </motion.div>
@@ -71,7 +71,7 @@ export function NotFound() {
             
             <button
               onClick={() => window.history.back()}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#007AFF] hover:bg-[#0071E3] text-white rounded-full transition-colors font-medium"
             >
               <ArrowLeft className="w-5 h-5" />
               <span>{t.goBack}</span>

@@ -10,7 +10,7 @@ export const guidePT: GuideTranslation = {
     'Primeiros passos', 'Ícone da barra de menus', 'Janela principal', 'Controle de volume por app',
     'Roteamento de áudio por app', 'Equalizador por app', 'Modo foco', 'Normalizador de áudio',
     'Perfis', 'Dispositivos secundários', 'Atalhos de teclado', 'Siri e o app Atalhos',
-    'Configurações', 'Monitor de saúde de áudio', 'Free vs Pro', 'Solução de problemas',
+    'Configurações', 'Monitor de saúde de áudio', 'Free vs Pro', 'Solução de problemas', 'API Local',
   ],
   s1: {
     title: 'Primeiros passos',
@@ -317,5 +317,23 @@ export const guidePT: GuideTranslation = {
       'Software de áudio concorrente',
       'Otimização de desempenho',
     ],
+  },
+
+  s17: {
+    title: 'API Local',
+    intro: 'O MACA fornece uma API REST local que permite controlar todos os apps de áudio programaticamente. Perfeito para fluxos de automação, integrações com Stream Deck, configurações de casa inteligente e scripts personalizados.',
+    placeholderTitle: 'Documentação em breve',
+    placeholderText: 'A documentação completa da API está sendo preparada e estará disponível aqui em breve. Cobrirá todos os endpoints disponíveis, autenticação, formatos de requisição/resposta e exemplos de uso.',
+    endpointsTitle: 'Endpoints planejados',
+    endpointsList: [
+      'GET /apps — Listar todos os apps de áudio e seu estado atual de volume/mudo',
+      'PUT /apps/{id}/volume — Definir o volume de um app específico',
+      'PUT /apps/{id}/mute — Mutar ou desmutar um app específico',
+      'GET /devices — Listar todos os dispositivos de saída de áudio',
+      'PUT /apps/{id}/device — Rotear um app para um dispositivo de saída específico',
+      'GET /profiles — Listar todos os perfis de áudio salvos',
+      'PUT /profiles/{id}/activate — Ativar um perfil específico',
+    ],
+    callout: 'A API roda localmente no seu Mac e não requer conexão com a internet. Toda a comunicação permanece na sua máquina — nenhum dado é enviado a servidores externos.',
   },
 };

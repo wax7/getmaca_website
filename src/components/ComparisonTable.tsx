@@ -29,7 +29,7 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800">
+    <section className="py-20 px-4 sm:px-6 mac-bg">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +37,8 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl mb-6 text-slate-900 dark:text-white">{title}</h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300">{subtitle}</p>
+          <h2 className="font-bold mb-3 text-[#1d1d1f] dark:text-[#f5f5f7]" style={{ fontSize: 'var(--text-3xl)' }}>{title}</h2>
+          <p className="text-[#86868b]" style={{ fontSize: 'var(--text-base)' }}>{subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -46,29 +46,36 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+          className="mac-window overflow-hidden"
         >
-          {/* Horizontal scroll wrapper — allows scroll on tiny screens instead of clipping */}
+          {/* macOS title bar */}
+          <div className="mac-titlebar">
+            <div className="mac-dot mac-dot-red" />
+            <div className="mac-dot mac-dot-yellow" />
+            <span className="text-xs text-[#86868b] ml-2">{title}</span>
+          </div>
+
+          {/* Horizontal scroll wrapper */}
           <div className="overflow-x-auto">
             <div style={{ minWidth: '420px' }}>
 
               {/* Table Header */}
-              <div className="grid grid-cols-3 gap-3 p-5 sm:p-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 border-b border-slate-200 dark:border-slate-600">
+              <div className="grid grid-cols-3 gap-3 p-5 sm:p-8 bg-[#f5f5f7]/60 dark:bg-[#2a2a2c]/40 border-b border-black/[0.04] dark:border-white/[0.06]">
                 <div />
                 <div className="text-center">
-                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm sm:text-base font-semibold shadow-lg whitespace-nowrap">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#007AFF] text-white rounded-full font-semibold shadow-[0_2px_8px_rgba(0,122,255,0.25)] whitespace-nowrap" style={{ fontSize: 'var(--text-sm)' }}>
                     {maca}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-200 rounded-full text-sm sm:text-base font-semibold whitespace-nowrap">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/[0.05] dark:bg-white/[0.08] text-[#86868b] rounded-full font-semibold whitespace-nowrap" style={{ fontSize: 'var(--text-sm)' }}>
                     {others}
                   </div>
                 </div>
               </div>
 
               {/* Table Rows */}
-              <div className="bg-white dark:bg-slate-800">
+              <div className="bg-white/85 dark:bg-[#2c2c2e]/65">
                 {comparisonData.map((item, index) => (
                   <motion.div
                     key={index}
@@ -76,26 +83,26 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.08 }}
-                    className={`grid grid-cols-3 gap-3 px-5 sm:px-8 py-4 sm:py-6 items-center ${
+                    className={`grid grid-cols-3 gap-3 px-5 sm:px-8 py-4 sm:py-5 items-center ${
                       index !== comparisonData.length - 1
-                        ? 'border-b border-slate-100 dark:border-slate-700'
+                        ? 'border-b border-black/[0.04] dark:border-white/[0.06]'
                         : ''
                     }`}
                   >
                     {/* Feature name */}
-                    <div className="text-slate-700 dark:text-slate-200 font-medium text-sm sm:text-base leading-snug pr-2">
+                    <div className="text-[#1d1d1f] dark:text-[#f5f5f7] font-medium leading-snug pr-2" style={{ fontSize: 'var(--text-base)' }}>
                       {item.feature}
                     </div>
 
                     {/* MACA column */}
                     <div className="flex justify-center">
                       {item.maca ? (
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#007AFF] rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(0,122,255,0.3)] flex-shrink-0">
                           <Check className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                       ) : (
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center flex-shrink-0">
-                          <X className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-black/[0.05] dark:bg-white/[0.08] rounded-full flex items-center justify-center flex-shrink-0">
+                          <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#86868b]" />
                         </div>
                       )}
                     </div>
@@ -103,12 +110,12 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
                     {/* Others column */}
                     <div className="flex justify-center">
                       {item.others ? (
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#007AFF] rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(0,122,255,0.3)] flex-shrink-0">
                           <Check className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                       ) : (
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center flex-shrink-0">
-                          <X className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 dark:text-slate-500" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-black/[0.05] dark:bg-white/[0.08] rounded-full flex items-center justify-center flex-shrink-0">
+                          <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#86868b]" />
                         </div>
                       )}
                     </div>

@@ -259,15 +259,15 @@ export function Home() {
                 <h3 className="mb-2 text-blue-600 dark:text-blue-400">MACA Pro</h3>
                 <p className="text-slate-900 dark:text-white mb-4">{t.whyNotOthers.macaPrice}</p>
                 <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                  <div className="flex items-center gap-2 text-[#007AFF] dark:text-[#0A84FF]">
                     <Check className="w-4 h-4 flex-shrink-0" />
                     <span className="text-sm">One-time purchase</span>
                   </div>
-                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                  <div className="flex items-center gap-2 text-[#007AFF] dark:text-[#0A84FF]">
                     <Check className="w-4 h-4 flex-shrink-0" />
                     <span className="text-sm">Native macOS</span>
                   </div>
-                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                  <div className="flex items-center gap-2 text-[#007AFF] dark:text-[#0A84FF]">
                     <Check className="w-4 h-4 flex-shrink-0" />
                     <span className="text-sm">No drivers needed</span>
                   </div>

@@ -138,7 +138,7 @@ const termsData: Record<string, TermsContent> = {
       { title: '6. 免责声明', content: '该网站按"现状"提供，不附带任何保证。' },
       { title: '7. 责任限制', content: '除故意或重大过失外不承担责任。' },
       { title: '8. 修改', content: '我们保留随时修改这些条款的权利。' },
-      { title: '9. 适用法律', content: '这些条款受德国法律管辖。' },
+      { title: '9. 适用法律', content: '这些条款受德法律管辖。' },
       { title: '10. 联系我们', content: '请通过印鉴中的信息联系我们。' }
     ]
   },
@@ -311,7 +311,7 @@ export function TermsView() {
   const sections = content.sections;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
+    <div className="min-h-screen mac-bg transition-colors duration-300">
       <Header
         scrolled={scrolled}
         currentLang={currentLang}
@@ -343,7 +343,7 @@ export function TermsView() {
               className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-12 border border-slate-200 dark:border-slate-700"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#0c1222] dark:bg-white/10 rounded-2xl flex items-center justify-center">
                   <FileText className="w-7 h-7 text-white" />
                 </div>
                 <div>

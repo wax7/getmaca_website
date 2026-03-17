@@ -37,6 +37,7 @@ export interface GuideTranslation {
   s14: GuideS14;
   s15: GuideS15;
   s16: GuideS16;
+  s17: GuideS17;
 }
 
 // Section 1: Getting Started
@@ -226,4 +227,15 @@ export interface GuideS16 {
   buttonText: string;
   topicsIntro: string;
   topics: string[];
+}
+
+// Section 17: Local API
+export interface GuideS17 {
+  title: string;
+  intro: string;
+  placeholderTitle: string;
+  placeholderText: string;
+  endpointsTitle: string;
+  endpointsList: string[];
+  callout: string;
 }

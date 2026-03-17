@@ -275,7 +275,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
   const currentScreenshot = screenshots[currentIndex];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden">
+    <section className="relative pt-4 sm:pt-6 pb-10 sm:pb-14 px-4 sm:px-6 overflow-hidden" style={{ zIndex: 2 }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -321,7 +321,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
                 aria-roledescription="slide"
                 aria-label={`${index + 1} / ${screenshots.length}: ${screenshot.title[lang] || screenshot.title.en}`}
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 flex items-center justify-center" style={{ minHeight: '300px', maxHeight: '700px' }}>
+                <div className="relative rounded-xl overflow-hidden mac-window flex items-center justify-center" style={{ minHeight: '300px', maxHeight: '700px' }}>
                   <ImageWithFallback
                     src={screenshot.image}
                     alt={screenshot.title[lang] || screenshot.title.en}

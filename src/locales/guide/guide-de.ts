@@ -10,7 +10,7 @@ export const guideDE: GuideTranslation = {
     'Erste Schritte', 'Menüleisten-Symbol', 'Hauptfenster', 'App-Lautstärkeregelung',
     'App-Audio-Routing', 'App-Equalizer', 'Fokusmodus', 'Audio-Normalizer',
     'Profile', 'Sekundäre Geräte', 'Tastenkürzel', 'Siri & Kurzbefehle',
-    'Einstellungen', 'Audio-Gesundheitsmonitor', 'Free vs Pro', 'Fehlerbehebung',
+    'Einstellungen', 'Audio-Gesundheitsmonitor', 'Free vs Pro', 'Fehlerbehebung', 'Lokale API',
   ],
 
   s1: {
@@ -333,5 +333,23 @@ export const guideDE: GuideTranslation = {
       'Konfliktierende Audio-Software',
       'Leistungsoptimierung',
     ],
+  },
+
+  s17: {
+    title: 'Lokale API',
+    intro: 'MACA bietet eine lokale REST-API, mit der du alle audioerzeugenden Apps programmatisch steuern kannst. Perfekt für Automatisierungs-Workflows, Stream Deck-Integrationen, Smart-Home-Setups und eigene Skripte.',
+    placeholderTitle: 'Dokumentation in Kürze verfügbar',
+    placeholderText: 'Die vollständige API-Dokumentation wird derzeit erstellt und wird in Kürze hier verfügbar sein. Sie wird alle verfügbaren Endpunkte, Authentifizierung, Request/Response-Formate und Anwendungsbeispiele abdecken.',
+    endpointsTitle: 'Geplante Endpunkte',
+    endpointsList: [
+      'GET /apps — Alle audioerzeugenden Apps und deren aktuellen Lautstärke-/Stummschaltungsstatus auflisten',
+      'PUT /apps/{id}/volume — Lautstärke einer bestimmten App setzen',
+      'PUT /apps/{id}/mute — Eine bestimmte App stumm- oder lautschalten',
+      'GET /devices — Alle Audio-Ausgabegeräte auflisten',
+      'PUT /apps/{id}/device — Eine App an ein bestimmtes Ausgabegerät routen',
+      'GET /profiles — Alle gespeicherten Audio-Profile auflisten',
+      'PUT /profiles/{id}/activate — Ein bestimmtes Profil aktivieren',
+    ],
+    callout: 'Die API läuft lokal auf deinem Mac und benötigt keine Internetverbindung. Die gesamte Kommunikation bleibt auf deinem Gerät — keine Daten werden an externe Server gesendet.',
   },
 };

@@ -10,7 +10,7 @@ export const guideFR: GuideTranslation = {
     'Premiers pas', 'Icône de la barre des menus', 'Fenêtre principale', 'Contrôle du volume par app',
     'Routage audio par app', 'Égaliseur par app', 'Mode concentration', 'Normaliseur audio',
     'Profils', 'Appareils secondaires', 'Raccourcis clavier', 'Siri et l\'app Raccourcis',
-    'Réglages', 'Moniteur de santé audio', 'Free vs Pro', 'Dépannage',
+    'Réglages', 'Moniteur de santé audio', 'Free vs Pro', 'Dépannage', 'API Locale',
   ],
 
   s1: {
@@ -20,7 +20,7 @@ export const guideFR: GuideTranslation = {
     firstLaunchIntro: 'Au premier lancement, un assistant de configuration vous guide à travers :',
     firstLaunchSteps: [
       ['Bienvenue', 'Aperçu des autorisations dont MACA a besoin.'],
-      ['Autorisation audio', 'MACA utilise les Core Audio Taps pour contrôler l\'audio par app. Un bouton ouvre les Réglages Système pour que vous puissiez accorder l\'accès si demandé.'],
+      ['Autorisation audio', 'MACA utilise les Core Audio Taps pour contrôler l\'audio par app. Un bouton ouvre les Réglages Système pour que vous puissiez accorder l\'acc��s si demandé.'],
       ['Notifications', 'Optionnel. Active les alertes lorsque des problèmes audio sont détectés ou réparés automatiquement.'],
       ['Terminer', 'Résumé de vos choix. Vous pouvez revenir en arrière et modifier n\'importe quelle étape.'],
     ],
@@ -333,5 +333,23 @@ export const guideFR: GuideTranslation = {
       'Logiciels audio concurrents',
       'Optimisation des performances',
     ],
+  },
+
+  s17: {
+    title: 'API Locale',
+    intro: 'MACA fournit une API REST locale qui vous permet de contrôler programmatiquement toutes les apps produisant de l\'audio. Parfait pour les flux d\'automatisation, les intégrations Stream Deck, les configurations domotiques et les scripts personnalisés.',
+    placeholderTitle: 'Documentation à venir',
+    placeholderText: 'La documentation complète de l\'API est en cours de préparation et sera disponible ici prochainement. Elle couvrira tous les endpoints disponibles, l\'authentification, les formats de requête/réponse et des exemples d\'utilisation.',
+    endpointsTitle: 'Endpoints prévus',
+    endpointsList: [
+      'GET /apps — Lister toutes les apps produisant de l\'audio et leur état actuel de volume/coupure',
+      'PUT /apps/{id}/volume — Définir le volume d\'une app spécifique',
+      'PUT /apps/{id}/mute — Couper ou rétablir le son d\'une app spécifique',
+      'GET /devices — Lister tous les appareils de sortie audio',
+      'PUT /apps/{id}/device — Router une app vers un appareil de sortie spécifique',
+      'GET /profiles — Lister tous les profils audio enregistrés',
+      'PUT /profiles/{id}/activate — Activer un profil spécifique',
+    ],
+    callout: 'L\'API fonctionne localement sur votre Mac et ne nécessite pas de connexion internet. Toute la communication reste sur votre machine — aucune donnée n\'est envoyée à un serveur externe.',
   },
 };

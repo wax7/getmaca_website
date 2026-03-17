@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 interface FAQItem {
   question: string;
@@ -16,54 +16,66 @@ export function FAQSection({ title, items }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white dark:bg-slate-900/50">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">{title}</h2>
-        </motion.div>
+    <div>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-10"
+      >
+        <h2 className="font-bold text-[#1d1d1f] dark:text-[#f5f5f7]" style={{ fontSize: 'var(--text-3xl)' }}>{title}</h2>
+      </motion.div>
 
-        <div className="space-y-3 sm:space-y-4">
+      <div className="mac-window overflow-hidden">
+        <div className="mac-titlebar">
+          <div className="mac-dot mac-dot-red" />
+          <div className="mac-dot mac-dot-yellow" />
+          <span className="text-xs text-[#86868b] ml-2">FAQ</span>
+        </div>
+
+        <div className="divide-y divide-black/[0.04] dark:divide-white/[0.06]">
           {items.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 dark:bg-slate-800/50 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 overflow-hidden"
+              transition={{ delay: index * 0.03 }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors"
               >
-                <span className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 dark:text-white pr-4">
+                <span className="text-sm sm:text-base font-medium text-[#1d1d1f] dark:text-[#f5f5f7] pr-4">
                   {item.question}
                 </span>
-                <ChevronDown
-                  className={`w-6 h-6 text-slate-600 dark:text-slate-400 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
+                <span className="w-6 h-6 rounded-full bg-[#f5f5f7] dark:bg-[#2d2d2d] flex items-center justify-center flex-shrink-0">
+                  {openIndex === index
+                    ? <Minus className="w-3.5 h-3.5 text-[#86868b]" />
+                    : <Plus className="w-3.5 h-3.5 text-[#86868b]" />
+                  }
+                </span>
               </button>
-              
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {item.answer}
-                </div>
-              </div>
+
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-5 pb-4 text-sm sm:text-base text-[#86868b] leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

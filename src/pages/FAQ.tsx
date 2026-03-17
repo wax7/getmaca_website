@@ -10,6 +10,7 @@ import { useValidatedLang } from '../hooks/useValidatedLang';
 import { Header } from '../components/Header';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { Footer } from '../components/Footer';
+import { DiscordIcon } from '../components/DiscordIcon';
 
 export function FAQ() {
   const currentLang = useValidatedLang('faq');
@@ -58,7 +59,7 @@ export function FAQ() {
                       '❓ Frequently Asked Questions';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
+    <div className="min-h-screen mac-bg text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors duration-300">
       {/* Header */}
       <Header
         scrolled={scrolled}
@@ -92,8 +93,8 @@ export function FAQ() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 sm:gap-4 mb-6">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
-                <HelpCircle className="w-6 h-6 sm:w-9 sm:h-9 text-white" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-teal-50 dark:bg-teal-500/10 rounded-xl sm:rounded-2xl flex items-center justify-center border border-teal-100 dark:border-teal-500/10">
+                <HelpCircle className="w-6 h-6 sm:w-9 sm:h-9 text-teal-600 dark:text-teal-400" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 dark:text-white">
                 {content.pageTitle}
@@ -148,7 +149,7 @@ export function FAQ() {
               className="scroll-mt-24"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6 sm:mb-8 flex items-center gap-3">
-                <span className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-sm sm:text-lg flex-shrink-0">
+                <span className="w-8 h-8 sm:w-10 sm:h-10 bg-[#0c1222] dark:bg-white/10 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-sm sm:text-lg flex-shrink-0">
                   {categoryIndex + 1}
                 </span>
                 {category.title}
@@ -288,7 +289,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center shadow-2xl"
+            className="bg-[#0c1222] dark:bg-white/[0.04] rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 text-center border border-slate-800 dark:border-white/[0.06]"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
               {currentLang === 'de' ? 'Noch Fragen?' :
@@ -310,12 +311,23 @@ export function FAQ() {
                currentLang === 'zh-Hant' ? '我們的支持團隊很樂意提供幫助。' :
                'Our support team is happy to help.'}
             </p>
-            <a
-              href="mailto:support@getmaca.de"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-xl hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base min-h-[44px]"
-            >
-              support@getmaca.de
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <a
+                href="mailto:support@getmaca.de"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-xl hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base min-h-[44px]"
+              >
+                support@getmaca.de
+              </a>
+              <a
+                href="https://discord.gg/hztjqAweUz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#5865F2] text-white rounded-xl hover:bg-[#4752C4] transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm sm:text-base min-h-[44px]"
+              >
+                <DiscordIcon className="w-5 h-5" />
+                Discord
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

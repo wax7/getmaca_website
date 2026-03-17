@@ -131,13 +131,13 @@ export function CookieBanner() {
           role="status"
           aria-label={texts.title}
         >
-          <div className="max-w-4xl mx-auto bg-card border border-border rounded-2xl shadow-2xl p-5 md:p-6">
+          <div className="max-w-4xl mx-auto rounded-2xl p-5 md:p-6 bg-[#f5f5f7] dark:bg-[#2c2c2e] border border-black/[0.08] dark:border-white/[0.1] shadow-[0_8px_40px_rgba(0,0,0,0.18)]">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex items-start gap-3 flex-1">
-                <Shield className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                <Shield className="w-5 h-5 text-[#007AFF] dark:text-[#0A84FF] mt-0.5 shrink-0" />
                 <div>
-                  <h3 className="font-semibold mb-1">{texts.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="font-semibold mb-1 text-[#1d1d1f] dark:text-[#f5f5f7]">{texts.title}</h3>
+                  <p className="text-sm text-[#86868b] leading-relaxed">
                     {texts.description}
                   </p>
                 </div>
@@ -146,13 +146,13 @@ export function CookieBanner() {
               <div className="flex items-center gap-3 w-full md:w-auto">
                 <Link
                   to={`/${currentLang}/privacy`}
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap py-3 px-1"
+                  className="text-sm text-[#007AFF] dark:text-[#0A84FF] hover:underline whitespace-nowrap py-3 px-1"
                 >
                   {texts.learnMore}
                 </Link>
                 <button
                   onClick={handleDismiss}
-                  className="px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm whitespace-nowrap ml-auto md:ml-0 min-h-[44px]"
+                  className="px-5 py-3 bg-[#007AFF] hover:bg-[#0071E3] text-white rounded-full transition-all text-sm whitespace-nowrap ml-auto md:ml-0 min-h-[44px] font-medium"
                 >
                   {texts.dismiss}
                 </button>

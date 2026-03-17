@@ -10,7 +10,7 @@ export const guideIT: GuideTranslation = {
     'Primi passi', 'Icona della barra dei menu', 'Finestra principale', 'Controllo volume per app',
     'Routing audio per app', 'Equalizzatore per app', 'Modalità focus', 'Normalizzatore audio',
     'Profili', 'Dispositivi secondari', 'Scorciatoie da tastiera', 'Siri e l\'app Comandi Rapidi',
-    'Impostazioni', 'Monitor della salute audio', 'Free vs Pro', 'Risoluzione dei problemi',
+    'Impostazioni', 'Monitor salute audio', 'Free vs Pro', 'Risoluzione dei problemi', 'API Locale',
   ],
   s1: {
     title: 'Primi passi',
@@ -277,7 +277,7 @@ export const guideIT: GuideTranslation = {
     ],
   },
   s14: {
-    title: 'Monitor della salute audio',
+    title: 'Monitor salute audio',
     intro: 'MACA esegue un controllo automatico della salute ogni 30 secondi in background. Cerca:',
     checkItems: [
       ['Dispositivi aggregati orfani', 'da crash precedenti o terminazioni anomale.'],
@@ -317,5 +317,23 @@ export const guideIT: GuideTranslation = {
       'Software audio concorrente',
       'Ottimizzazione delle prestazioni',
     ],
+  },
+
+  s17: {
+    title: 'API Locale',
+    intro: 'MACA fornisce un\'API REST locale che permette di controllare programmaticamente tutte le app che producono audio. Perfetta per flussi di automazione, integrazioni Stream Deck, configurazioni smart home e script personalizzati.',
+    placeholderTitle: 'Documentazione in arrivo',
+    placeholderText: 'La documentazione completa dell\'API è in fase di preparazione e sarà disponibile qui a breve. Coprirà tutti gli endpoint disponibili, autenticazione, formati di richiesta/risposta e esempi di utilizzo.',
+    endpointsTitle: 'Endpoint pianificati',
+    endpointsList: [
+      'GET /apps — Elencare tutte le app che producono audio e il loro stato attuale di volume/silenziamento',
+      'PUT /apps/{id}/volume — Impostare il volume di un\'app specifica',
+      'PUT /apps/{id}/mute — Silenziare o riattivare un\'app specifica',
+      'GET /devices — Elencare tutti i dispositivi di output audio',
+      'PUT /apps/{id}/device — Instradare un\'app verso un dispositivo di output specifico',
+      'GET /profiles — Elencare tutti i profili audio salvati',
+      'PUT /profiles/{id}/activate — Attivare un profilo specifico',
+    ],
+    callout: 'L\'API funziona localmente sul tuo Mac e non richiede una connessione internet. Tutta la comunicazione rimane sulla tua macchina — nessun dato viene inviato a server esterni.',
   },
 };

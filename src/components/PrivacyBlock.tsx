@@ -11,17 +11,17 @@ interface PrivacyCardProps {
 function PrivacyCard({ icon, cardTitle, cardDescription, animDelay }: PrivacyCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: animDelay }}
-      className="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border-2 border-emerald-200 dark:border-emerald-800 hover:border-emerald-400 dark:hover:border-emerald-600 transition-all"
+      transition={{ delay: animDelay, duration: 0.4 }}
+      className="mac-surface rounded-2xl p-4 sm:p-5 md:p-6 text-center"
     >
-      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 text-white">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#28c840]/10 dark:bg-[#32d74b]/10 flex items-center justify-center mx-auto mb-3 text-[#28c840] dark:text-[#32d74b]">
         {icon}
       </div>
-      <h3 className="text-sm sm:text-base md:text-xl font-semibold text-slate-900 dark:text-white mb-2 sm:mb-3">{cardTitle}</h3>
-      <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">{cardDescription}</p>
+      <h3 className="text-sm sm:text-base font-semibold text-[#1d1d1f] dark:text-[#f5f5f7] mb-1.5">{cardTitle}</h3>
+      <p className="text-xs sm:text-sm text-[#86868b] leading-relaxed">{cardDescription}</p>
     </motion.div>
   );
 }
@@ -42,71 +42,50 @@ interface PrivacyBlockProps {
 }
 
 export function PrivacyBlock({
-  sectionTitle,
-  sectionSubtitle,
-  guaranteeHeading,
-  guaranteeText,
-  noDataTitle,
-  noDataDesc,
-  localTitle,
-  localDesc,
-  noCloudTitle,
-  noCloudDesc,
-  noTrackTitle,
-  noTrackDesc,
+  sectionTitle, sectionSubtitle, guaranteeHeading, guaranteeText,
+  noDataTitle, noDataDesc, localTitle, localDesc,
+  noCloudTitle, noCloudDesc, noTrackTitle, noTrackDesc,
 }: PrivacyBlockProps) {
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-slate-900 dark:to-slate-800">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-14 sm:py-20 px-4 sm:px-6 mac-bg">
+      <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-10"
         >
-          <Shield className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-emerald-600 dark:text-emerald-400 mx-auto mb-4 sm:mb-6" />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white">{sectionTitle}</h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-2">{sectionSubtitle}</p>
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#28c840]/10 dark:bg-[#32d74b]/10 mb-4">
+            <Shield className="w-6 h-6 text-[#28c840] dark:text-[#32d74b]" />
+          </div>
+          <h2 className="font-bold mb-3 text-[#1d1d1f] dark:text-[#f5f5f7]" style={{ fontSize: 'var(--text-3xl)' }}>{sectionTitle}</h2>
+          <p className="text-[#86868b] max-w-2xl mx-auto" style={{ fontSize: 'var(--text-base)' }}>{sectionSubtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
-          <PrivacyCard
-            icon={<Server className="w-6 h-6 sm:w-8 sm:h-8" />}
-            cardTitle={noDataTitle || ''}
-            cardDescription={noDataDesc || ''}
-            animDelay={0}
-          />
-          <PrivacyCard
-            icon={<Lock className="w-6 h-6 sm:w-8 sm:h-8" />}
-            cardTitle={localTitle || ''}
-            cardDescription={localDesc || ''}
-            animDelay={0.1}
-          />
-          <PrivacyCard
-            icon={<Shield className="w-6 h-6 sm:w-8 sm:h-8" />}
-            cardTitle={noCloudTitle || ''}
-            cardDescription={noCloudDesc || ''}
-            animDelay={0.2}
-          />
-          <PrivacyCard
-            icon={<Eye className="w-6 h-6 sm:w-8 sm:h-8" />}
-            cardTitle={noTrackTitle || ''}
-            cardDescription={noTrackDesc || ''}
-            animDelay={0.3}
-          />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <PrivacyCard icon={<Server className="w-5 h-5" />} cardTitle={noDataTitle || ''} cardDescription={noDataDesc || ''} animDelay={0} />
+          <PrivacyCard icon={<Lock className="w-5 h-5" />} cardTitle={localTitle || ''} cardDescription={localDesc || ''} animDelay={0.05} />
+          <PrivacyCard icon={<Shield className="w-5 h-5" />} cardTitle={noCloudTitle || ''} cardDescription={noCloudDesc || ''} animDelay={0.1} />
+          <PrivacyCard icon={<Eye className="w-5 h-5" />} cardTitle={noTrackTitle || ''} cardDescription={noTrackDesc || ''} animDelay={0.15} />
         </div>
 
+        {/* Guarantee banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-10 sm:mt-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center text-white shadow-2xl"
+          transition={{ delay: 0.2 }}
+          className="mt-8 mac-window overflow-hidden"
         >
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">{guaranteeHeading}</h3>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
-            {guaranteeText}
-          </p>
+          <div className="mac-titlebar">
+            <div className="mac-dot mac-dot-red" />
+            <div className="mac-dot mac-dot-yellow" />
+            <span className="text-xs text-[#86868b] ml-2">Privacy Guarantee</span>
+          </div>
+          <div className="p-6 sm:p-8 text-center bg-gradient-to-b from-[#28c840]/[0.03] to-transparent dark:from-[#32d74b]/[0.03]">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-[#1d1d1f] dark:text-[#f5f5f7]">{guaranteeHeading}</h3>
+            <p className="text-sm text-[#86868b] max-w-2xl mx-auto leading-relaxed">{guaranteeText}</p>
+          </div>
         </motion.div>
       </div>
     </section>

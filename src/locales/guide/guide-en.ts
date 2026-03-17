@@ -10,7 +10,7 @@ export const guideEN: GuideTranslation = {
     'Getting Started', 'Menu Bar Icon', 'Main Popup Window', 'Per-App Volume Control',
     'Per-App Audio Routing', 'Per-App Equalizer', 'Focus Mode', 'Audio Normalizer',
     'Profiles', 'Secondary Devices', 'Keyboard Shortcuts', 'Siri & Shortcuts App',
-    'Settings', 'Audio Health Monitor', 'Free vs Pro', 'Troubleshooting',
+    'Settings', 'Audio Health Monitor', 'Free vs Pro', 'Troubleshooting', 'Local API',
   ],
 
   s1: {
@@ -333,5 +333,23 @@ export const guideEN: GuideTranslation = {
       'Competing audio software',
       'Performance optimization',
     ],
+  },
+
+  s17: {
+    title: 'Local API',
+    intro: 'MACA provides a local REST API that lets you control all audio-producing apps programmatically. This is perfect for automation workflows, Stream Deck integrations, smart home setups, and custom scripts.',
+    placeholderTitle: 'Documentation Coming Soon',
+    placeholderText: 'The full API documentation is currently being prepared and will be available here shortly. It will cover all available endpoints, authentication, request/response formats, and usage examples.',
+    endpointsTitle: 'Planned Endpoints',
+    endpointsList: [
+      'GET /apps — List all audio-producing apps and their current volume/mute state',
+      'PUT /apps/{id}/volume — Set the volume of a specific app',
+      'PUT /apps/{id}/mute — Mute or unmute a specific app',
+      'GET /devices — List all audio output devices',
+      'PUT /apps/{id}/device — Route an app to a specific output device',
+      'GET /profiles — List all saved audio profiles',
+      'PUT /profiles/{id}/activate — Activate a specific profile',
+    ],
+    callout: 'The API runs locally on your Mac and does not require an internet connection. All communication stays on your machine — no data is sent to any external server.',
   },
 };

@@ -152,7 +152,7 @@ export function Feedback() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
+    <div className="min-h-screen mac-bg text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors duration-300">
       <Header
         scrolled={scrolled}
         currentLang={currentLang}
@@ -180,7 +180,7 @@ export function Feedback() {
             <div className="inline-flex items-center gap-3 mb-4">
               <MessageSquare className="w-12 h-12 text-blue-600 dark:text-blue-400" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
               {txt.title}
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300">
@@ -194,8 +194,8 @@ export function Feedback() {
               animate={{ opacity: 1, scale: 1 }}
               className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-12 text-center"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
-                <Check className="w-10 h-10 text-green-600 dark:text-green-400" />
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#007AFF]/10 dark:bg-[#0A84FF]/20 rounded-full mb-6">
+                <Check className="w-10 h-10 text-[#007AFF] dark:text-[#0A84FF]" />
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">
                 {txt.success}
@@ -348,7 +348,7 @@ export function Feedback() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                  className="w-full px-8 py-4 bg-[#007AFF] hover:bg-[#0071E3] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                 >
                   {isSubmitting ? (
                     <>

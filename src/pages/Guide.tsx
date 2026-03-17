@@ -5,7 +5,7 @@ import {
   BookOpen, X,
   Rocket, Monitor, Layout, Volume2, Router, Sliders, Phone,
   Gauge, FolderOpen, Speaker, Keyboard, Mic, Settings,
-  HeartPulse, Crown, Wrench, ExternalLink
+  HeartPulse, Crown, Wrench, ExternalLink, Code
 } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';
 import { getGuideTranslation } from '../locales/guide';
@@ -15,6 +15,7 @@ import { Footer } from '../components/Footer';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
 import { useValidatedLang } from '../hooks/useValidatedLang';
+import { ApiDocumentation } from '../components/ApiDocumentation';
 
 const sectionIcons = [
   <Rocket className="w-5 h-5" />, <Monitor className="w-5 h-5" />, <Layout className="w-5 h-5" />,
@@ -23,6 +24,7 @@ const sectionIcons = [
   <Speaker className="w-5 h-5" />, <Keyboard className="w-5 h-5" />, <Mic className="w-5 h-5" />,
   <Settings className="w-5 h-5" />, <HeartPulse className="w-5 h-5" />, <Crown className="w-5 h-5" />,
   <Wrench className="w-5 h-5" />,
+  <Code className="w-5 h-5" />,
 ];
 
 const sectionIconsLg = [
@@ -32,6 +34,7 @@ const sectionIconsLg = [
   <Speaker className="w-6 h-6" />, <Keyboard className="w-6 h-6" />, <Mic className="w-6 h-6" />,
   <Settings className="w-6 h-6" />, <HeartPulse className="w-6 h-6" />, <Crown className="w-6 h-6" />,
   <Wrench className="w-6 h-6" />,
+  <Code className="w-6 h-6" />,
 ];
 
 const sectionIds = [
@@ -39,24 +42,25 @@ const sectionIds = [
   'per-app-audio-routing', 'per-app-equalizer', 'focus-mode', 'audio-normalizer',
   'profiles', 'secondary-devices', 'keyboard-shortcuts', 'siri-and-shortcuts',
   'settings', 'audio-health-monitor', 'free-vs-pro', 'troubleshooting',
+  'local-api',
 ];
 
 // --- Helper Components ---
 
 function GuideTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
   return (
-    <div className="overflow-x-auto my-6 rounded-xl border border-slate-200 dark:border-slate-700">
+    <div className="overflow-x-auto my-6 rounded-xl border border-slate-200/80 dark:border-white/[0.06]">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-slate-100 dark:bg-slate-800">
+          <tr className="bg-slate-50 dark:bg-white/[0.03]">
             {headers.map((h, i) => (
-              <th key={i} className="px-4 py-3 text-left text-slate-700 dark:text-slate-300 font-semibold first:rounded-tl-xl last:rounded-tr-xl">{h}</th>
+              <th key={i} className="px-4 py-3 text-left text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500 font-medium">{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} className="border-t border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <tr key={i} className="border-t border-slate-200/60 dark:border-white/[0.04] hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors">
               {row.map((cell, j) => (
                 <td key={j} className="px-4 py-3 text-slate-600 dark:text-slate-400">{cell}</td>
               ))}
@@ -79,10 +83,10 @@ function Kbd({ children }: { children: React.ReactNode }) {
 function SectionHeading({ number, title, icon, sectionLabel }: { number: number; title: string; icon: React.ReactNode; sectionLabel: string }) {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex items-center gap-3 mb-6">
-      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg flex-shrink-0">{icon}</div>
+      <div className="w-11 h-11 bg-teal-50 dark:bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-600 dark:text-teal-400 border border-teal-100 dark:border-teal-500/10 flex-shrink-0">{icon}</div>
       <div>
-        <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{sectionLabel} {number}</span>
-        <h2 className="text-2xl sm:text-3xl text-slate-900 dark:text-white">{title}</h2>
+        <span className="text-xs text-teal-600 dark:text-teal-400 font-medium uppercase tracking-wider">{sectionLabel} {number}</span>
+        <h2 className="text-2xl sm:text-3xl text-slate-900 dark:text-white font-bold tracking-tight">{title}</h2>
       </div>
     </motion.div>
   );
@@ -90,7 +94,7 @@ function SectionHeading({ number, title, icon, sectionLabel }: { number: number;
 
 function GuideCard({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 sm:p-8 shadow-sm backdrop-blur-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+    <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white dark:bg-white/[0.03] rounded-2xl border border-slate-200/80 dark:border-white/[0.06] p-6 sm:p-8 text-slate-600 dark:text-slate-400 leading-relaxed">
       {children}
     </motion.div>
   );
@@ -98,14 +102,14 @@ function GuideCard({ children }: { children: React.ReactNode }) {
 
 function Callout({ children, variant = 'info' }: { children: React.ReactNode; variant?: 'info' | 'warning' }) {
   const colors = variant === 'warning'
-    ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-700 text-amber-800 dark:text-amber-200'
-    : 'bg-blue-50 dark:bg-blue-900/20 border-blue-300 dark:border-blue-700 text-blue-800 dark:text-blue-200';
+    ? 'bg-amber-50 dark:bg-amber-500/5 border-amber-200/60 dark:border-amber-500/10 text-amber-800 dark:text-amber-300'
+    : 'bg-teal-50 dark:bg-teal-500/5 border-teal-200/60 dark:border-teal-500/10 text-teal-800 dark:text-teal-300';
   return <div className={`mt-6 p-4 rounded-xl border ${colors} text-sm`}>{children}</div>;
 }
 
 function IconStyleCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+    <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.06]">
       <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-1">{title}</h4>
       <p className="text-xs text-slate-500 dark:text-slate-400">{description}</p>
     </div>
@@ -164,33 +168,40 @@ export function Guide() {
   }, []);
 
   useEffect(() => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    try { window.scrollTo({ top: 0 }); } catch {}
+    const hash = window.location.hash.replace('#', '');
+    if (hash && sectionIds.includes(hash)) {
+      // Delay to let the page render, then scroll to the anchor
+      const timer = setTimeout(() => {
+        scrollToSection(hash);
+      }, 300);
+      return () => clearTimeout(timer);
+    } else {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      try { window.scrollTo({ top: 0 }); } catch {}
+    }
   }, []);
 
   const setRef = (id: string) => (el: HTMLElement | null) => { sectionRefs.current[id] = el; };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300 overflow-x-hidden" style={{ maxWidth: '100vw' }}>
+    <div className="min-h-screen mac-bg transition-colors duration-300 overflow-x-hidden" style={{ maxWidth: '100vw' }}>
       <Header scrolled={scrolled} currentLang={currentLang} isDarkMode={isDarkMode} onToggleDarkMode={toggleDarkMode} onLanguageChange={handleLanguageChange} badge={t.headerBadge}>
         <LanguageSelector currentLang={currentLang} onLanguageChange={handleLanguageChange} />
       </Header>
 
       {/* Hero */}
       <section className="relative pt-28 sm:pt-36 pb-10 sm:pb-14 px-4 sm:px-6">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-400/15 dark:bg-blue-600/10 rounded-full blur-3xl" />
-          <div className="absolute top-20 -left-40 w-96 h-96 bg-purple-400/15 dark:bg-purple-600/10 rounded-full blur-3xl" />
-        </div>
+        <div className="absolute inset-0 maca-dots pointer-events-none" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-teal-400/8 dark:bg-teal-500/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 text-sm font-medium mb-6 border border-teal-100 dark:border-teal-500/10">
               <BookOpen className="w-4 h-4" />
               <span>{g.versionLabel} v1.0.671</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-4 text-slate-900 dark:text-white">{g.pageTitle}</h1>
-            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">{g.pageSubtitle}</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-4 text-slate-900 dark:text-white font-bold tracking-tight">{g.pageTitle}</h1>
+            <p className="text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">{g.pageSubtitle}</p>
           </motion.div>
         </div>
       </section>
@@ -201,13 +212,13 @@ export function Guide() {
           {/* Desktop Sidebar TOC */}
           <aside className="hidden lg:block w-72 flex-shrink-0">
             <div className="sticky top-24">
-              <nav className="bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm backdrop-blur-sm max-h-[calc(100vh-120px)] overflow-y-auto">
-                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-3 mb-3">{g.tocTitle}</h3>
+              <nav className="bg-white dark:bg-white/[0.03] rounded-2xl border border-slate-200/80 dark:border-white/[0.06] p-4 max-h-[calc(100vh-120px)] overflow-y-auto">
+                <h3 className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider px-3 mb-3">{g.tocTitle}</h3>
                 <ul className="space-y-0.5">
                   {sectionIds.map((id, i) => (
                     <li key={id}>
-                      <button onClick={() => scrollToSection(id)} className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all text-left ${activeSection === id ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-slate-900 dark:hover:text-white'}`}>
-                        <span className={`flex-shrink-0 ${activeSection === id ? 'text-blue-500' : 'text-slate-400 dark:text-slate-500'}`}>{sectionIcons[i]}</span>
+                      <button onClick={() => scrollToSection(id)} className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all text-left ${activeSection === id ? 'bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 font-medium' : 'text-slate-500 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-white/[0.03] hover:text-slate-800 dark:hover:text-slate-300'}`}>
+                        <span className={`flex-shrink-0 ${activeSection === id ? 'text-teal-500 dark:text-teal-400' : 'text-slate-400 dark:text-slate-600'}`}>{sectionIcons[i]}</span>
                         <span className="truncate">{i + 1}. {g.sectionTitles[i]}</span>
                       </button>
                     </li>
@@ -219,21 +230,21 @@ export function Guide() {
 
           {/* Mobile TOC */}
           <div className="lg:hidden fixed bottom-6 right-6 z-30">
-            <button onClick={() => setTocOpen(!tocOpen)} className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform" aria-label={g.tocTitle}>
+            <button onClick={() => setTocOpen(!tocOpen)} className="w-14 h-14 bg-teal-600 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-teal-500 transition-colors" aria-label={g.tocTitle}>
               {tocOpen ? <X className="w-6 h-6" /> : <BookOpen className="w-6 h-6" />}
             </button>
           </div>
           {tocOpen && (
             <>
               <div className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30" onClick={() => setTocOpen(false)} />
-              <motion.div initial={{ y: '100%' }} animate={{ y: 0 }} className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl max-h-[70vh] overflow-y-auto p-6">
+              <motion.div initial={{ y: '100%' }} animate={{ y: 0 }} className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-[#0d1424] rounded-t-3xl shadow-2xl max-h-[70vh] overflow-y-auto p-6 border-t border-slate-200 dark:border-white/[0.06]">
                 <div className="w-12 h-1.5 bg-slate-300 dark:bg-slate-600 rounded-full mx-auto mb-4" />
-                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">{g.tocTitle}</h3>
+                <h3 className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3">{g.tocTitle}</h3>
                 <ul className="space-y-0.5">
                   {sectionIds.map((id, i) => (
                     <li key={id}>
-                      <button onClick={() => scrollToSection(id)} className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm transition-all text-left min-h-[44px] ${activeSection === id ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`}>
-                        <span className={activeSection === id ? 'text-blue-500' : 'text-slate-400'}>{sectionIcons[i]}</span>
+                      <button onClick={() => scrollToSection(id)} className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm transition-all text-left min-h-[44px] ${activeSection === id ? 'bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 font-medium' : 'text-slate-500 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-white/[0.03]'}`}>
+                        <span className={activeSection === id ? 'text-teal-500' : 'text-slate-400'}>{sectionIcons[i]}</span>
                         <span>{i + 1}. {g.sectionTitles[i]}</span>
                       </button>
                     </li>
@@ -495,7 +506,7 @@ export function Guide() {
                 <SectionHeading number={16} title={g.s16.title} icon={sectionIconsLg[15]} sectionLabel={g.sectionLabel} />
                 <GuideCard>
                   <p className="mb-4">{g.s16.intro}</p>
-                  <a href={`/${currentLang}/troubleshooting`} className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg hover:scale-105 text-sm font-medium">
+                  <a href={`/${currentLang}/troubleshooting`} className="inline-flex items-center gap-2 px-5 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-full transition-all shadow-md hover:shadow-lg text-sm font-medium">
                     <ExternalLink className="w-4 h-4" />
                     <span>{g.s16.buttonText}</span>
                   </a>
@@ -505,6 +516,16 @@ export function Guide() {
                       {g.s16.topics.map((topic, i) => <li key={i}>{topic}</li>)}
                     </ul>
                   </div>
+                </GuideCard>
+              </section>
+
+              {/* S17: Local API */}
+              <section ref={setRef('local-api')} id="local-api">
+                <SectionHeading number={17} title={g.s17.title} icon={sectionIconsLg[16]} sectionLabel={g.sectionLabel} />
+                <GuideCard>
+                  <p className="mb-6">{g.s17.intro}</p>
+                  <ApiDocumentation />
+                  <Callout>{g.s17.callout}</Callout>
                 </GuideCard>
               </section>
 

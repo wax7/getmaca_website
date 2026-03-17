@@ -48,6 +48,10 @@ export interface Translation {
       title: string;
       description: string;
     };
+    localApi: {
+      title: string;
+      description: string;
+    };
   };
   useCases: {
     title: string;
@@ -238,6 +242,10 @@ export const translations: Record<Language, Translation> = {
       magicBoost: {
         title: 'Magic Boost',
         description: 'Boost quiet audio up to +12dB without distortion. No more straining to hear quiet videos or podcasts.',
+      },
+      localApi: {
+        title: 'Local API',
+        description: 'Control every audio app programmatically via a local REST API. Automate volume, mute, and routing — perfect for Stream Deck, smart home, and custom integrations.',
       },
     },
     useCases: {
@@ -444,6 +452,10 @@ export const translations: Record<Language, Translation> = {
         title: 'Magic Boost',
         description: 'Verstärke leise Audios bis zu +12dB ohne Verzerrung. Nie wieder anstrengen, um leise Videos oder Podcasts zu hören.',
       },
+      localApi: {
+        title: 'Lokale API',
+        description: 'Steuere jede Audio-App programmatisch über eine lokale REST-API. Automatisiere Lautstärke, Stummschaltung und Routing — ideal für Stream Deck, Smart Home und eigene Integrationen.',
+      },
     },
     useCases: {
       title: 'Perfekt für deinen Workflow',
@@ -648,6 +660,10 @@ export const translations: Record<Language, Translation> = {
       magicBoost: {
         title: 'Magic Boost',
         description: 'Amplifica audio silencioso hasta +12dB sin distorsión. No más esfuerzo para escuchar videos o podcasts silenciosos.',
+      },
+      localApi: {
+        title: 'API Local',
+        description: 'Controla cada app de audio programáticamente mediante una API REST local. Automatiza volumen, silencio y enrutamiento — perfecto para Stream Deck, hogar inteligente e integraciones personalizadas.',
       },
     },
     useCases: {
@@ -854,6 +870,10 @@ export const translations: Record<Language, Translation> = {
         title: 'Magic Boost',
         description: 'Amplifiez l\'audio faible jusqu\'à +12dB sans distorsion. Plus besoin de forcer pour entendre les vidéos ou podcasts silencieux.',
       },
+      localApi: {
+        title: 'API Locale',
+        description: 'Contrôlez chaque application audio par programmation via une API REST locale. Automatisez le volume, la sourdine et le routage — parfait pour Stream Deck, maison connectée et intégrations personnalisées.',
+      },
     },
     useCases: {
       title: 'Conçu pour Votre Flux de Travail',
@@ -1054,6 +1074,10 @@ export const translations: Record<Language, Translation> = {
       magicBoost: {
         title: 'Magic Boost',
         description: 'Amplifica l\'audio silenzioso fino a +12dB senza distorsione. Mai più sforzarsi per sentire video o podcast bassi.',
+      },
+      localApi: {
+        title: 'API Locale',
+        description: 'Controlla ogni app audio in modo programmatico tramite un\'API REST locale. Automatizza volume, silenziamento e routing — perfetto per Stream Deck, domotica e integrazioni personalizzate.',
       },
     },
     useCases: {
@@ -1256,6 +1280,10 @@ export const translations: Record<Language, Translation> = {
         title: 'Magic Boost',
         description: '静かなオーディオを歪みなく最大+12dBブースト。もう小さな動画やポッドキャストを聞くのに苦労しません。',
       },
+      localApi: {
+        title: 'ローカルAPI',
+        description: 'ローカルREST APIを介してすべてのオーディオアプリをプログラムで制御。音量、ミュート、ルーティングを自動化 — Stream Deck、スマートホーム、カスタム統合に最適。',
+      },
     },
     useCases: {
       title: 'ワークフロー向けに構築',
@@ -1457,6 +1485,10 @@ export const translations: Record<Language, Translation> = {
         title: 'Magic Boost',
         description: '将安静的音频提升至 +12dB 而无失真。再也不用费力听低声视频或播客。',
       },
+      localApi: {
+        title: '本地 API',
+        description: '通过本地 REST API 以编程方式控制每个音频应用。自动化音量、静音和路由 — 适用于 Stream Deck、智能家居和自定义集成。',
+      },
     },
     useCases: {
       title: '为您的工作流程而构建',
@@ -1637,6 +1669,7 @@ export const translations: Record<Language, Translation> = {
       keyboardShortcuts: { title: 'قوة لوحة المفاتيح', description: 'تحكم في كل شيء دون رفع يديك. اختصارات مخصصة للكتم والصوت وتبديل الملفات.' },
       nativeDesign: { title: 'تصميم macOS أصلي', description: 'مصمم حصريًا لنظام Mac. بدون واجهات قبيحة أو انتفاخ في النظام أو ملحقات نواة.' },
       magicBoost: { title: 'Magic Boost', description: 'عزز الصوت المنخفض حتى +12dB بدون تشويه.' },
+      localApi: { title: 'API محلي', description: 'تحكم في كل تطبيق صوتي برمجيًا عبر API REST محلي. أتمتة الصوت والكتم والتوجيه — مثالي لـ Stream Deck والمنزل الذكي والتكاملات المخصصة.' },
     },
     useCases: {
       title: 'من يستخدم MACA؟',
@@ -1717,6 +1750,7 @@ export const translations: Record<Language, Translation> = {
       keyboardShortcuts: { title: 'Сила клавиатуры', description: 'Управляйте всем, не поднимая рук. Горячие клавиши для отключения, громкости и профилей.' },
       nativeDesign: { title: 'Нативный дизайн macOS', description: 'Создан исключительно для Mac. Никаких уродливых интерфейсов, системного мусора или расширений ядра.' },
       magicBoost: { title: 'Magic Boost', description: 'Усильте тихий звук до +12дБ без искажений.' },
+      localApi: { title: 'Локальный API', description: 'Управляйте каждым аудиоприложением программно через локальный REST API. Автоматизируйте громкость, отключение звука и маршрутизацию — идеально для Stream Deck, умного дома и пользовательских интеграций.' },
     },
     useCases: {
       title: 'Кто использует MACA?',
@@ -1796,6 +1830,7 @@ export const translations: Record<Language, Translation> = {
       keyboardShortcuts: { title: 'Toetsenbordkracht', description: 'Bedien alles zonder je handen op te tillen. Aangepaste sneltoetsen voor dempen, volume en profielwisseling.' },
       nativeDesign: { title: 'Native macOS-ontwerp', description: 'Exclusief gebouwd voor Mac. Geen lelijke interfaces, geen systeembloat, geen kernelextensies.' },
       magicBoost: { title: 'Magic Boost', description: 'Versterk stil geluid tot +12dB zonder vervorming.' },
+      localApi: { title: 'Lokale API', description: 'Bedien elke audio-app programmatisch via een lokale REST API. Automatiseer volume, dempen en routing — perfect voor Stream Deck, smart home en eigen integraties.' },
     },
     useCases: {
       title: 'Wie gebruikt MACA?',
@@ -1875,6 +1910,7 @@ export const translations: Record<Language, Translation> = {
       keyboardShortcuts: { title: 'Klavye gücü', description: 'Ellerinizi kaldırmadan her şeyi kontrol edin. Sessize alma, ses ve profil değiştirme için özel kısayollar.' },
       nativeDesign: { title: 'Yerel macOS tasarımı', description: 'Yalnızca Mac için geliştirilmiş. Çirkin arayüzler, sistem şişkinliği veya çekirdek uzantıları yok.' },
       magicBoost: { title: 'Magic Boost', description: 'Sessiz sesi bozulmadan +12dB\'ye kadar artırın.' },
+      localApi: { title: 'Yerel API', description: 'Her ses uygulamasını yerel REST API aracılığıyla programatik olarak kontrol edin. Ses, sessiz ve yönlendirmeyi otomatikleştirin — Stream Deck, akıllı ev ve özel entegrasyonlar için ideal.' },
     },
     useCases: {
       title: 'MACA\'yı kim kullanır?',
@@ -1954,6 +1990,7 @@ export const translations: Record<Language, Translation> = {
       keyboardShortcuts: { title: 'Tangentbordskraft', description: 'Styr allt utan att lyfta händerna. Anpassade kortkommandon för tystning, volym och profilbyte.' },
       nativeDesign: { title: 'Inbyggd macOS-design', description: 'Byggd exklusivt för Mac. Inga fula gränssnitt, ingen systembloat, inga kärnextensioner.' },
       magicBoost: { title: 'Magic Boost', description: 'Förstärk tyst ljud upp till +12dB utan distorsion.' },
+      localApi: { title: 'Lokalt API', description: 'Styr varje ljudapp programmatiskt via ett lokalt REST API. Automatisera volym, tystning och routing — perfekt för Stream Deck, smart hem och egna integrationer.' },
     },
     useCases: {
       title: 'Vem använder MACA?',
@@ -2005,9 +2042,9 @@ export const translations: Record<Language, Translation> = {
     name: '繁體中文',
     headerBadge: '⚡ 即時音訊控制。零學習曲線。',
     hero: { badge: '⚡ 即時音訊控制。零學習曲線。', title: '終於，你的 Mac 音訊有意義了', subtitle: '獨立控制每個應用程式的音量。選單列一個圖示。無需麻煩。3秒實現完美音訊平衡，而非30分鐘。', cta: '免費取得 MACA', secondaryCta: '觀看實際操作' },
-    problem: { title: '聽起來很熟悉？', items: ['Spotify 蓋過你的 Zoom 通話', '遊戲音效在直播時炸裂', 'YouTube 廣告吵醒全家', '沒有簡單的方法分別控制各應用程式音量'] },
+    problem: { title: '聽起來很熟悉？', items: ['Spotify 蓋過你的 Zoom 通話', '遊戲音效在直播時炸裂', 'YouTube 廣告吵醒全家', '沒有簡單的方法分別控制���應用程式音量'] },
     solution: { title: 'MACA 一鍵解決', subtitle: '為每個應用程式提供獨立音量控制。直接從選單列操作。原生、快速且簡潔優雅。' },
-    features: { title: '為什麼選擇 MACA', perAppVolume: { title: '逐應用程式音量控制', description: '即時控制每個應用程式。音樂30%、通話100%、瀏覽器50%。設定一次，永遠忘記。' }, quickMute: { title: '一鍵靜音', description: '無需調整音量即可立即靜音任何應用程式。適合中斷、廣告或突發通話。' }, focusMode: { title: '專注模式', description: '預設支援100多個通訊應用程式（Teams、Discord、Zoom、FaceTime等）。一鍵或鍵盤快捷鍵靜音所有其他應用程式。會議中不再有干擾音樂。' }, audioProfiles: { title: '智慧設定檔', description: '工作、遊戲、音樂製作。建立自訂音訊設定並即時切換。完美音效，永遠只需一鍵。' }, keyboardShortcuts: { title: '鍵盤快捷鍵', description: '無需離開鍵盤即可控制一切。自訂靜音、音量和設定檔切換的快捷鍵。最大效率。' }, nativeDesign: { title: '真正 macOS 原生', description: '專為 Mac 打造。無醜陋介面、無系統臃腫、無核心擴展。只有原生 macOS 的完美、乾淨和快速。' }, magicBoost: { title: 'Magic Boost', description: '將安靜的音訊放大至 +12dB 而不失真。再也不用費力聆聽低音量的影片或播客。' } },
+    features: { title: '為什麼選擇 MACA', perAppVolume: { title: '逐應用程式音量控制', description: '即時控制每個應用程式。音樂30%、通話100%、瀏覽器50%。設定一次，永遠忘記。' }, quickMute: { title: '一鍵靜音', description: '無需調整音量即可立即靜音任何應用程式。適合中斷、廣告或突發通話。' }, focusMode: { title: '專注模式', description: '預設支援100多個通訊應用程式（Teams、Discord、Zoom、FaceTime等）。一鍵或鍵盤快捷鍵靜音所有其他應用程式。會議中不再有干擾音樂。' }, audioProfiles: { title: '智慧設定檔', description: '工作、遊戲、音樂製作。建立自訂音訊設定並即時切換。完美音效，永遠只需一鍵。' }, keyboardShortcuts: { title: '鍵盤快捷鍵', description: '無需離開鍵盤即可控制一切。自訂靜音、音量和設定檔切換的快捷鍵。最大效率。' }, nativeDesign: { title: '真正 macOS 原生', description: '專為 Mac 打造。無醜陋介面、無系統臃腫、無核心擴展。只有原生 macOS 的完美、乾淨和快速。' }, magicBoost: { title: 'Magic Boost', description: '將安靜的音訊放大至 +12dB 而不失真。再也不用費力聆聽低音量的影片或播客。' }, localApi: { title: '本地 API', description: '透過本地 REST API 以程式化方式控制每個音訊應用程式。自動化音量、靜音和路由 — 適用於 Stream Deck、智慧家居和自訂整合。' } },
     useCases: { title: '為你的工作流程設計', designer: '適合需要在視訊通話時聽音樂的設計師', producer: '混音多個音源的製作人必備', developer: '適合同時處理音樂、文件和站會的開發者', remote: '遠端工作者處理多重通話和內容的必備工具' },
     devices: { headphones: '耳機', speaker: '揚聲器', display: '顯示器', bluetooth: '藍牙', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. 其他音訊工具', subtitle: '看看為什麼數千人選擇了 MACA', maca: 'MACA', others: '其他工具', features: { easySetup: '即時運作', noDrivers: '無需驅動程式/擴展', oneTimePurchase: '一次購買，永久擁有', profiles: '包含音訊設定檔', nativeUI: 'macOS 原生設計', lightweight: '超輕量' } },
@@ -2027,7 +2064,7 @@ export const translations: Record<Language, Translation> = {
     hero: { badge: '⚡ Din lyd. Perfekt kontrolleret. Øjeblikkeligt.', title: 'Endelig har du total lydkontrol', subtitle: 'Styr hver apps lydstyrke uafhængigt. Skift profil på sekunder—lynhurtig til enhver situation.', cta: 'Hent MACA gratis', secondaryCta: 'Se i aktion' },
     problem: { title: 'Lyder det bekendt?', items: ['Spotify overdøver dine Zoom-opkald', 'Spillyde eksploderer mens du streamer', 'YouTube-reklamer vækker hele huset', 'Ingen nem måde at styre app-lydstyrker separat'] },
     solution: { title: 'MACA løser det med ét klik', subtitle: 'Individuel lydstyrkekontrol for hver app. Direkte fra menulinjen. Nativt, hurtigt og smukt enkelt.' },
-    features: { title: 'Hvorfor MACA vinder', perAppVolume: { title: 'Lydstyrke per app', description: 'Øjeblikkelig kontrol over hver app. Musik på 30%, opkald på 100%, browser på 50%. Indstil én gang, glem for altid.' }, quickMute: { title: 'Lydløs med ét klik', description: 'Slå enhver app lydløs øjeblikkeligt uden at røre lydstyrken. Perfekt til afbrydelser, reklamer eller uventede opkald.' }, focusMode: { title: 'Fokustilstand', description: 'Forudkonfigureret til over 100 kommunikationsapps (Teams, Discord, Zoom, FaceTime og mere). Slå alle andre apps lydløse med ét klik eller tastaturkommando. Ingen forstyrrende musik under møder.' }, audioProfiles: { title: 'Smarte profiler', description: 'Arbejde. Gaming. Musikproduktion. Opret brugerdefinerede lydopsætninger og skift mellem dem øjeblikkeligt. Din perfekte lyd, altid kun ét klik væk.' }, keyboardShortcuts: { title: 'Tastaturgenveje', description: 'Styr alt uden at løfte hænderne. Tilpassede genveje til lydløs, lydstyrke og profilskift. Maksimal effektivitet.' }, nativeDesign: { title: 'Ægte macOS-nativt', description: 'Bygget udelukkende til Mac. Ingen grimme interfaces, ingen system-bloat, ingen kerneudvidelser. Kun ren, hurtig macOS-perfektion.' }, magicBoost: { title: 'Magic Boost', description: 'Forstærk stille lyd op til +12dB uden forvrængning. Kæmp aldrig igen med at høre stille videoer eller podcasts.' } },
+    features: { title: 'Hvorfor MACA vinder', perAppVolume: { title: 'Lydstyrke per app', description: 'Øjeblikkelig kontrol over hver app. Musik på 30%, opkald på 100%, browser på 50%. Indstil én gang, glem for altid.' }, quickMute: { title: 'Lydløs med ét klik', description: 'Slå enhver app lydløs øjeblikkeligt uden at røre lydstyrken. Perfekt til afbrydelser, reklamer eller uventede opkald.' }, focusMode: { title: 'Fokustilstand', description: 'Forudkonfigureret til over 100 kommunikationsapps (Teams, Discord, Zoom, FaceTime og mere). Slå alle andre apps lydløse med ét klik eller tastaturkommando. Ingen forstyrrende musik under møder.' }, audioProfiles: { title: 'Smarte profiler', description: 'Arbejde. Gaming. Musikproduktion. Opret brugerdefinerede lydopsætninger og skift mellem dem øjeblikkeligt. Din perfekte lyd, altid kun ét klik væk.' }, keyboardShortcuts: { title: 'Tastaturgenveje', description: 'Styr alt uden at løfte hænderne. Tilpassede genveje til lydløs, lydstyrke og profilskift. Maksimal effektivitet.' }, nativeDesign: { title: 'Ægte macOS-nativt', description: 'Bygget udelukkende til Mac. Ingen grimme interfaces, ingen system-bloat, ingen kerneudvidelser. Kun ren, hurtig macOS-perfektion.' }, magicBoost: { title: 'Magic Boost', description: 'Forstærk stille lyd op til +12dB uden forvrængning. Kæmp aldrig igen med at høre stille videoer eller podcasts.' }, localApi: { title: 'Lokal API', description: 'Styr enhver lydapp programmatisk via en lokal REST API. Automatiser lydstyrke, lydløs og routing — perfekt til Stream Deck, smart home og brugerdefinerede integrationer.' } },
     useCases: { title: 'Designet til din arbejdsgang', designer: 'Perfekt til designere der har brug for musik under videoopkald', producer: 'Essentielt for producenter der mikser flere lydkilder', developer: 'Ideelt for udviklere med musik, docs og standups kørende', remote: 'Uundværligt for fjernarbejdere der jonglerer opkald og indhold' },
     devices: { headphones: 'Hovedtelefoner', speaker: 'Højttaler', display: 'Skærm', bluetooth: 'Bluetooth', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. andre lydværktøjer', subtitle: 'Se hvorfor tusinder har skiftet til MACA', maca: 'MACA', others: 'Andre værktøjer', features: { easySetup: 'Virker øjeblikkeligt', noDrivers: 'Ingen drivere/udvidelser', oneTimePurchase: 'Betal én gang, ej for altid', profiles: 'Lydprofiler inkluderet', nativeUI: 'macOS-nativt design', lightweight: 'Ultralet' } },
@@ -2047,7 +2084,7 @@ export const translations: Record<Language, Translation> = {
     hero: { badge: '⚡ 당신의 오디오. 완벽하게 제어. 즉시.', title: '드디어, 완전한 오디오 제어', subtitle: '각 앱의 볼륨을 독립적으로 제어하세요. 프로필을 몇 초 만에 전환—모든 상황에 맞는 빠른 제어.', cta: 'MACA 무료 다운로드', secondaryCta: '실제 동작 보기' },
     problem: { title: '익숙하게 들리나요?', items: ['Spotify가 Zoom 통화를 덮어버림', '게임 소리가 스트리밍 중 폭발함', 'YouTube 광고가 온 집을 깨움', '앱 볼륨을 개별적으로 제어할 간단한 방법 없음'] },
     solution: { title: 'MACA가 클릭 한 번으로 해결', subtitle: '각 앱을 위한 개별 볼륨 제어. 메뉴 바에서 바로. 네이티브, 빠르고 아름답게 심플.' },
-    features: { title: 'MACA를 선택해야 하는 이유', perAppVolume: { title: '앱별 볼륨 제어', description: '각 앱에 대한 즉각적인 제어. 음악 30%, 통화 100%, 브라우저 50%. 한 번 설정하면 영원히 잊으세요.' }, quickMute: { title: '원클릭 음소거', description: '볼륨을 건드리지 않고 어떤 앱이든 즉시 음소거. 중단, 광고 또는 예기치 않은 통화에 완벽.' }, focusMode: { title: '집중 모드', description: '100개 이상의 커뮤니케이션 앱(Teams, Discord, Zoom, FaceTime 등)에 미리 구성. 한 번의 클릭이나 키보드 단축키로 다른 모든 앱 음소거. 회의 중 방해 음악 없음.' }, audioProfiles: { title: '스마트 프로필', description: '작업. 게임. 음악 제작. 맞춤 오디오 설정을 만들고 즉시 전환. 완벽한 사운드, 항상 클릭 한 번.' }, keyboardShortcuts: { title: '키보드 단축키', description: '손을 떼지 않고 모든 것을 제어. 음소거, 볼륨 및 프로필 전환을 위한 맞춤 단축키. 최대 효율성.' }, nativeDesign: { title: '진정한 macOS 네이티브', description: 'Mac 전용으로 제작. 보기 흉한 인터페이스 없음, 시스템 부풀림 없음, 커널 확장 없음. 깨끗하고 빠른 macOS 완벽함만.' }, magicBoost: { title: 'Magic Boost', description: '왜곡 없이 조용한 오디오를 +12dB까지 증폭. 조용한 비디오나 팟캐스트를 듣느라 애쓸 필요 없음.' } },
+    features: { title: 'MACA를 선택해야 하는 이유', perAppVolume: { title: '앱별 볼륨 제어', description: '각 앱에 대한 즉각적인 제어. 음악 30%, 통화 100%, 브라우저 50%. 한 번 설정하면 영원히 잊으세요.' }, quickMute: { title: '원클릭 음소거', description: '볼륨을 건드리지 않고 어떤 앱이든 즉시 음소거. 중단, 광고 또는 예기치 않은 통화에 완벽.' }, focusMode: { title: '집중 모드', description: '100개 이상의 커뮤니케이션 앱(Teams, Discord, Zoom, FaceTime 등)에 미리 구성. 한 번의 클릭이나 키보드 단축키로 다른 모든 앱 음소거. 회의 중 방해 음악 없음.' }, audioProfiles: { title: '스마트 프로필', description: '작업. 게임. 음악 제작. 맞춤 오디오 설정을 만들고 즉시 전환. 완벽한 사운드, 항상 클릭 한 번.' }, keyboardShortcuts: { title: '키보드 단축키', description: '손을 떼지 않고 모든 것을 제어. 음소거, 볼륨 및 프로필 전환을 위한 맞춤 단축키. 최대 효율성.' }, nativeDesign: { title: '진정한 macOS 네이티브', description: 'Mac 전용으로 제작. 보기 흉한 인터페이스 없음, 시스템 부풀림 없음, 커널 확장 없음. 깨끗하고 빠른 macOS 완벽함만.' }, magicBoost: { title: 'Magic Boost', description: '왜곡 없이 조용한 오디오를 +12dB까지 증폭. 조용한 비디오나 팟캐스트를 듣느라 애쓸 필요 없음.' }, localApi: { title: '로컬 API', description: '로컬 REST API를 통해 모든 오디오 앱을 프로그래밍 방식으로 제어. 볼륨, 음소거, 라우팅 자동화 — Stream Deck, 스마트홈 및 맞춤 통합에 완벽.' } },
     useCases: { title: '워크플로를 위한 설계', designer: '화상 통화 중 음악이 필요한 디자이너에 완벽', producer: '여러 오디오 소스를 믹싱하는 프로듀서에 필수', developer: '음악, 문서, 스탠드업이 동시에 실행되는 개발자에 이상적', remote: '통화와 콘텐츠를 저글링하는 원격 근무자에 필수불가결' },
     devices: { headphones: '헤드폰', speaker: '스피커', display: '디스플레이', bluetooth: '블루투스', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. 다른 오디오 도구', subtitle: '수천 명이 MACA로 전환한 이유를 확인하세요', maca: 'MACA', others: '다른 도구', features: { easySetup: '즉시 작동', noDrivers: '드라이버/확장 없음', oneTimePurchase: '한 번 구매, 영원히 소유', profiles: '오디오 프로필 포함', nativeUI: 'macOS 네이티브 디자인', lightweight: '초경량' } },
@@ -2067,7 +2104,7 @@ export const translations: Record<Language, Translation> = {
     hero: { badge: '⚡ Din lyd. Perfekt kontrollert. Umiddelbart.', title: 'Endelig har du total lydkontroll', subtitle: 'Kontroller volumet til hver app uavhengig. Bytt profiler på sekunder—lynrask for enhver situasjon.', cta: 'Last ned MACA gratis', secondaryCta: 'Se i aksjon' },
     problem: { title: 'Høres det kjent ut?', items: ['Spotify overdøver Zoom-samtalene dine', 'Spillyder eksploderer mens du strømmer', 'YouTube-reklamer vekker hele huset', 'Ingen enkel måte å styre app-volumer separat'] },
     solution: { title: 'MACA løser det med ett klikk', subtitle: 'Individuell volumkontroll for hver app. Direkte fra menylinjen. Nativt, raskt og vakkert enkelt.' },
-    features: { title: 'Hvorfor MACA vinner', perAppVolume: { title: 'Volum per app', description: 'Øyeblikkelig kontroll over hver app. Musikk på 30%, samtaler på 100%, nettleser på 50%. Still inn én gang, glem for alltid.' }, quickMute: { title: 'Demp med ett klikk', description: 'Demp enhver app øyeblikkelig uten å røre volumet. Perfekt for avbrytelser, reklamer eller uventede samtaler.' }, focusMode: { title: 'Fokusmodus', description: 'Forhåndskonfigurert for over 100 kommunikasjonsapper (Teams, Discord, Zoom, FaceTime og mer). Demp alle andre apper med ett klikk eller hurtigtast. Ingen forstyrrende musikk under møter.' }, audioProfiles: { title: 'Smarte profiler', description: 'Jobb. Gaming. Musikkproduksjon. Lag egendefinerte lydoppsett og bytt mellom dem øyeblikkelig. Din perfekte lyd, alltid bare ett klikk unna.' }, keyboardShortcuts: { title: 'Hurtigtaster', description: 'Kontroller alt uten å løfte hendene. Tilpassede hurtigtaster for demping, volum og profilbytte. Maksimal effektivitet.' }, nativeDesign: { title: 'Ekte macOS-nativt', description: 'Bygget utelukkende for Mac. Ingen stygge grensesnitt, ingen systembloat, ingen kjerneutvidelser. Bare ren, rask macOS-perfeksjon.' }, magicBoost: { title: 'Magic Boost', description: 'Forsterke stille lyd opp til +12dB uten forvrengning. Sliter aldri igjen med å høre stille videoer eller podcaster.' } },
+    features: { title: 'Hvorfor MACA vinner', perAppVolume: { title: 'Volum per app', description: 'Øyeblikkelig kontroll over hver app. Musikk på 30%, samtaler på 100%, nettleser på 50%. Still inn én gang, glem for alltid.' }, quickMute: { title: 'Demp med ett klikk', description: 'Demp enhver app øyeblikkelig uten å røre volumet. Perfekt for avbrytelser, reklamer eller uventede samtaler.' }, focusMode: { title: 'Fokusmodus', description: 'Forhåndskonfigurert for over 100 kommunikasjonsapper (Teams, Discord, Zoom, FaceTime og mer). Demp alle andre apper med ett klikk eller hurtigtast. Ingen forstyrrende musikk under møter.' }, audioProfiles: { title: 'Smarte profiler', description: 'Jobb. Gaming. Musikkproduksjon. Lag egendefinerte lydoppsett og bytt mellom dem øyeblikkelig. Din perfekte lyd, alltid bare ett klikk unna.' }, keyboardShortcuts: { title: 'Hurtigtaster', description: 'Kontroller alt uten å løfte hendene. Tilpassede hurtigtaster for demping, volum og profilbytte. Maksimal effektivitet.' }, nativeDesign: { title: 'Ekte macOS-nativt', description: 'Bygget utelukkende for Mac. Ingen stygge grensesnitt, ingen systembloat, ingen kjerneutvidelser. Bare ren, rask macOS-perfeksjon.' }, magicBoost: { title: 'Magic Boost', description: 'Forsterke stille lyd opp til +12dB uten forvrengning. Sliter aldri igjen med å høre stille videoer eller podcaster.' }, localApi: { title: 'Lokalt API', description: 'Kontroller enhver lydapp programmatisk via et lokalt REST API. Automatiser volum, demping og routing — perfekt for Stream Deck, smarthjem og egne integrasjoner.' } },
     useCases: { title: 'Designet for arbeidsflyten din', designer: 'Perfekt for designere som trenger musikk under videosamtaler', producer: 'Essensielt for produsenter som mikser flere lydkilder', developer: 'Ideelt for utviklere med musikk, docs og standups kjørende', remote: 'Uunnværlig for fjernarbeidere som sjonglerer samtaler og innhold' },
     devices: { headphones: 'Hodetelefoner', speaker: 'Høyttaler', display: 'Skjerm', bluetooth: 'Bluetooth', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. andre lydverktøy', subtitle: 'Se hvorfor tusenvis har byttet til MACA', maca: 'MACA', others: 'Andre verktøy', features: { easySetup: 'Fungerer øyeblikkelig', noDrivers: 'Ingen drivere/utvidelser', oneTimePurchase: 'Betal én gang, eie for alltid', profiles: 'Lydprofiler inkludert', nativeUI: 'macOS-nativt design', lightweight: 'Ultralett' } },

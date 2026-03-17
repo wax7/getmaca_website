@@ -10,7 +10,7 @@ export const guideES: GuideTranslation = {
     'Primeros pasos', 'Icono de barra de menú', 'Ventana principal', 'Control de volumen por app',
     'Enrutamiento de audio por app', 'Ecualizador por app', 'Modo enfoque', 'Normalizador de audio',
     'Perfiles', 'Dispositivos secundarios', 'Atajos de teclado', 'Siri y la app Atajos',
-    'Ajustes', 'Monitor de salud de audio', 'Free vs Pro', 'Solución de problemas',
+    'Ajustes', 'Monitor de salud de audio', 'Free vs Pro', 'Solución de problemas', 'API Local',
   ],
 
   s1: {
@@ -333,5 +333,23 @@ export const guideES: GuideTranslation = {
       'Software de audio conflictivo',
       'Optimización de rendimiento',
     ],
+  },
+
+  s17: {
+    title: 'API Local',
+    intro: 'MACA proporciona una API REST local que te permite controlar todas las apps que producen audio de forma programática. Perfecto para flujos de automatización, integraciones con Stream Deck, configuraciones de hogar inteligente y scripts personalizados.',
+    placeholderTitle: 'Documentación próximamente',
+    placeholderText: 'La documentación completa de la API está siendo preparada y estará disponible aquí en breve. Cubrirá todos los endpoints disponibles, autenticación, formatos de solicitud/respuesta y ejemplos de uso.',
+    endpointsTitle: 'Endpoints planificados',
+    endpointsList: [
+      'GET /apps — Listar todas las apps que producen audio y su estado actual de volumen/silencio',
+      'PUT /apps/{id}/volume — Establecer el volumen de una app específica',
+      'PUT /apps/{id}/mute — Silenciar o reactivar una app específica',
+      'GET /devices — Listar todos los dispositivos de salida de audio',
+      'PUT /apps/{id}/device — Enrutar una app a un dispositivo de salida específico',
+      'GET /profiles — Listar todos los perfiles de audio guardados',
+      'PUT /profiles/{id}/activate — Activar un perfil específico',
+    ],
+    callout: 'La API se ejecuta localmente en tu Mac y no requiere conexión a internet. Toda la comunicación permanece en tu máquina — no se envían datos a ningún servidor externo.',
   },
 };

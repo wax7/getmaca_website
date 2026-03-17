@@ -515,10 +515,10 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#1d1d1f] dark:bg-[#f5f5f7]/10 rounded-xl flex items-center justify-center">
                     <span className="text-white font-bold text-lg">M</span>
                   </div>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-2xl font-bold text-[#1d1d1f] dark:text-[#f5f5f7] tracking-tight">
                     MACA
                   </span>
                 </div>
@@ -641,7 +641,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                     onClick={onClose}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
                   >
-                    <div className="w-11 h-11 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-11 h-11 bg-gradient-to-br from-[#007AFF] to-[#0071E3] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <Shield className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
@@ -657,7 +657,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                     onClick={onClose}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
                   >
-                    <div className="w-11 h-11 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-11 h-11 bg-gradient-to-br from-[#5856D6] to-[#007AFF] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <Scale className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
@@ -696,7 +696,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={onClose}
-                    className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl hover:scale-105 font-semibold"
+                    className="flex items-center justify-center gap-3 px-6 py-4 bg-[#007AFF] text-white rounded-full hover:bg-[#0071E3] transition-colors shadow-lg font-medium"
                   >
                     <Download className="w-5 h-5" />
                     <span>{t.download}</span>

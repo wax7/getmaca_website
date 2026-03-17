@@ -57,7 +57,7 @@ export function Privacy() {
                   currentLang === 'it' ? 'Trasferimento dati' :
                   currentLang === 'ja' ? 'データ転送' :
                   currentLang === 'zh-Hans' ? '数据传输' :
-                  currentLang === 'zh-Hant' ? '数据���输' :
+                  currentLang === 'zh-Hant' ? '数据输' :
                   'Data Transfer',
     privacyPolicy: currentLang === 'de' ? 'Datenschutzrichtlinie' :
                    currentLang === 'es' ? 'Política de privacidad' :
@@ -88,7 +88,7 @@ export function Privacy() {
                       '🔒 Your Privacy Is Protected';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-950 transition-colors duration-300">
+    <div className="min-h-screen mac-bg text-[#1d1d1f] dark:text-[#f5f5f7] transition-colors duration-300">
       {/* Header */}
       <Header
         scrolled={scrolled}
@@ -122,8 +122,8 @@ export function Privacy() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8 sm:mb-12"
           >
-            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-2xl">
-              <Shield className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-teal-50 dark:bg-teal-500/10 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 border border-teal-100 dark:border-teal-500/10">
+              <Shield className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-teal-600 dark:text-teal-400" />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4 text-slate-900 dark:text-white">
               {t.title}

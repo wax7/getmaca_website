@@ -52,7 +52,7 @@ export function History() {
         </div>
       </Header>
       
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 pt-32 pb-20">
+      <div className="min-h-screen mac-bg pt-32 pb-20">
         <div className="container mx-auto px-6 max-w-5xl">
           {/* Header */}
           <div className="text-center mb-16">
@@ -75,20 +75,296 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.0.670 Build 075 */}
+            {/* Version 1.0.675 Build 083 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Version 1.0.670 Build 075
+                    Version 1.0.675 Build 083
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Real-Time Level Meter &bull; March 3, 2026
+                    Easier Local API Access &bull; March 13, 2026
                   </p>
                 </div>
                 <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
                   Latest
                 </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The current General Access Token is now shown directly in Settings → System → API</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The API settings now also show when that token expires</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Local API access is easier to understand for early integrations: one shared token can be used for all write actions for now</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The shared token keeps a fixed expiry date that can be extended in a future MACA update</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Local API documentation was updated to reflect the current simple rollout model</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.675 Build 082 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.675 Build 082
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Smarter, More Energy-Efficient Level Meter &bull; March 12, 2026
+                </p>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm italic">
+                This update makes the level meter in your menu bar significantly smarter about when and how often it updates — without any change to how it looks or feels.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The level meter now uses less energy while audio is playing. When your audio levels hold steady, the meter updates less frequently on its own — and instantly speeds back up the moment anything changes.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> When no audio has been playing for a while and the meter has faded out, the app now drops into a very deep low-power state — reducing background activity even further.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The meter always wakes up immediately when audio starts again. There's no delay, no need to click anything.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The menu bar icon no longer asks macOS to redraw the screen unless something actually changed — pointless screen compositing work has been eliminated entirely.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-slate-500 dark:text-slate-500 font-bold mt-1">⚙</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Under the hood:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Four separate energy-saving techniques now work together: smart timer coalescing with macOS, adaptive polling intervals based on visual change detection, a deep-idle 1fps mode when the meter is fully faded, and a compositor-skip guard that prevents unnecessary GPU work on static frames.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.674 Build 081 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.674 Build 081
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Pro Toggle Fix &amp; Log Optimization &bull; March 8, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Pro/Free test toggle in developer settings now correctly switches back to Free mode in Xcode environment</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> StoreKit sandbox transactions no longer override the test toggle state</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Shortcuts settings now properly respect Pro/Free toggle state</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Health monitor log output reduced from ~70 lines/min to ~2 lines/min in idle</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Zombie recovery for silent system apps (Siri, Kontrollzentrum) no longer loops endlessly</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.673 Build 079 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.673 Build 079
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Standby Recovery &amp; Audio Safety &bull; March 8, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio control now reliably recovers after standby/sleep — no more unresponsive taps or silent apps</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio returns smoothly after waking up — no sudden volume blast or level jumps</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Apps that were muted or volume-adjusted in MACA stay that way through sleep/wake cycles</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Device reconnection events no longer conflict with standby recovery</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Wake recovery — all audio taps are rebuilt cleanly after standby with a 5-second CoreAudio stabilization window</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Smooth 600ms fade-in when audio returns after standby (smoothstep curve)</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> System output is temporarily muted during recovery to prevent audio leaks</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Crash safety — if MACA quits unexpectedly during recovery, system audio is automatically unmuted</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.672 Build 078 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.672 Build 078
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Security &amp; Reliability &bull; March 5, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Free-tier slot management — first 3 apps that play audio get permanent slots, uninstalled apps are automatically freed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.671 Build 077 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.0.671 Build 077
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Stability &amp; Localization &bull; March 5, 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Now available in 16 languages! Added Arabic, Russian, Dutch, Turkish, Swedish, Norwegian, and Danish</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Level meter in the menu bar no longer flickers after waking from sleep or standby</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Profile settings buttons (Cancel, Delete, Done, Search, Create) are now properly translated in all 16 languages</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.670 Build 075 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Version 1.0.670 Build 075
+                  </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                    Real-Time Level Meter &bull; March 3, 2026
+                  </p>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">

@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
-import { Volume2 } from 'lucide-react';
 import type { Language } from '../locales/translations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { DiscordIcon } from './DiscordIcon';
 import macaAppLogo from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.png';
 
 interface FooterProps {
@@ -17,8 +17,9 @@ const footerTranslations: Partial<Record<Language, {
   support: string;
   guide: string;
   troubleshooting: string;
+  discord: string;
   copyright: string;
-}>> & { en: { tagline: string; legal: string; imprint: string; privacy: string; terms: string; support: string; guide: string; troubleshooting: string; copyright: string } } = {
+}>> & { en: { tagline: string; legal: string; imprint: string; privacy: string; terms: string; support: string; guide: string; troubleshooting: string; discord: string; copyright: string } } = {
   en: {
     tagline: 'Individual volume control for every app',
     legal: 'Legal',
@@ -28,6 +29,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Support',
     guide: 'User Guide',
     troubleshooting: 'Troubleshooting',
+    discord: 'Discord Community',
     copyright: 'All rights reserved.',
   },
   de: {
@@ -39,6 +41,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Support',
     guide: 'Benutzerhandbuch',
     troubleshooting: 'Fehlerbehebung',
+    discord: 'Discord Community',
     copyright: 'Alle Rechte vorbehalten.',
   },
   es: {
@@ -50,6 +53,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Soporte',
     guide: 'Guía del usuario',
     troubleshooting: 'Solución de problemas',
+    discord: 'Comunidad Discord',
     copyright: 'Todos los derechos reservados.',
   },
   fr: {
@@ -61,6 +65,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Assistance',
     guide: 'Guide utilisateur',
     troubleshooting: 'Dépannage',
+    discord: 'Communauté Discord',
     copyright: 'Tous droits réservés.',
   },
   it: {
@@ -72,6 +77,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Supporto',
     guide: 'Guida utente',
     troubleshooting: 'Risoluzione dei problemi',
+    discord: 'Comunità Discord',
     copyright: 'Tutti i diritti riservati.',
   },
 
@@ -84,6 +90,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'サポート',
     guide: 'ユーザーガイド',
     troubleshooting: 'トラブルシューティング',
+    discord: 'Discordコミュニティ',
     copyright: '全著作権所有。',
   },
   'zh-Hans': {
@@ -95,6 +102,7 @@ const footerTranslations: Partial<Record<Language, {
     support: '支持',
     guide: '用户指南',
     troubleshooting: '故障排除',
+    discord: 'Discord社区',
     copyright: '版权所有。',
   },
   'zh-Hant': {
@@ -106,6 +114,7 @@ const footerTranslations: Partial<Record<Language, {
     support: '支持',
     guide: '用戶指南',
     troubleshooting: '故障排除',
+    discord: 'Discord社群',
     copyright: '版權所有。',
   },
   ar: {
@@ -117,6 +126,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'الدعم',
     guide: 'دليل المستخدم',
     troubleshooting: 'حل المشكلات',
+    discord: 'مجتمع Discord',
     copyright: 'جميع الحقوق محفوظة.',
   },
   ru: {
@@ -128,6 +138,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Поддержка',
     guide: 'Руководство',
     troubleshooting: 'Устранение неполадок',
+    discord: 'Сообщество Discord',
     copyright: 'Все права защищены.',
   },
   nl: {
@@ -139,6 +150,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Ondersteuning',
     guide: 'Handleiding',
     troubleshooting: 'Problemen oplossen',
+    discord: 'Discord Community',
     copyright: 'Alle rechten voorbehouden.',
   },
   tr: {
@@ -150,6 +162,7 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Destek',
     guide: 'Kullanım Kılavuzu',
     troubleshooting: 'Sorun Giderme',
+    discord: 'Discord Topluluğu',
     copyright: 'Tüm hakları saklıdır.',
   },
   sv: {
@@ -161,7 +174,44 @@ const footerTranslations: Partial<Record<Language, {
     support: 'Support',
     guide: 'Användarguide',
     troubleshooting: 'Felsökning',
+    discord: 'Discord Community',
     copyright: 'Alla rättigheter förbehållna.',
+  },
+  da: {
+    tagline: 'Individuel lydstyrke for hver app',
+    legal: 'Juridisk',
+    imprint: 'Kolofon',
+    privacy: 'Privatlivspolitik',
+    terms: 'Brugsvilkår',
+    support: 'Support',
+    guide: 'Brugervejledning',
+    troubleshooting: 'Fejlfinding',
+    discord: 'Discord Fællesskab',
+    copyright: 'Alle rettigheder forbeholdes.',
+  },
+  ko: {
+    tagline: '모든 앱의 개별 볼륨 컨트롤',
+    legal: '법적 정보',
+    imprint: '법적 고지',
+    privacy: '개인정보 보호정책',
+    terms: '이용 약관',
+    support: '지원',
+    guide: '사용자 가이드',
+    troubleshooting: '문제 해결',
+    discord: 'Discord 커뮤니티',
+    copyright: '모든 권리 보유.',
+  },
+  nb: {
+    tagline: 'Individuell volumkontroll for hver app',
+    legal: 'Juridisk',
+    imprint: 'Kolofon',
+    privacy: 'Personvernerklæring',
+    terms: 'Brukervilkår',
+    support: 'Support',
+    guide: 'Brukerveiledning',
+    troubleshooting: 'Feilsøking',
+    discord: 'Discord Fellesskap',
+    copyright: 'Alle rettigheter reservert.',
   },
 };
 
@@ -170,93 +220,54 @@ export function Footer({ currentLang }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-slate-900 text-slate-400">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
+    <footer className="py-10 sm:py-12 px-4 sm:px-6 bg-[#1d1d1f] text-[#86868b]">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-2.5 mb-3">
               <ImageWithFallback
                 src={macaAppLogo}
                 alt="MACA App Icon"
-                className="w-10 h-10 rounded-[22%] shadow-lg"
-                width={40}
-                height={40}
+                className="w-8 h-8 rounded-[22%]"
+                width={32}
+                height={32}
+                style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
               />
-              <span className="text-xl font-semibold text-white">MACA</span>
+              <span className="text-base font-semibold text-[#f5f5f7] tracking-tight">MACA</span>
             </div>
-            <p className="text-slate-500">{t.tagline}</p>
+            <p className="text-[13px] text-[#86868b]/70">{t.tagline}</p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t.legal}</h3>
+            <h3 className="text-[#f5f5f7]/40 font-medium mb-3 text-xs uppercase tracking-widest">{t.legal}</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to={`/${currentLang}/imprint`}
-                  className="hover:text-white transition-colors"
-                >
-                  {t.imprint}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`/${currentLang}/privacy`}
-                  className="hover:text-white transition-colors"
-                >
-                  {t.privacy}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`/${currentLang}/terms`}
-                  className="hover:text-white transition-colors"
-                >
-                  {t.terms}
-                </Link>
-              </li>
+              <li><Link to={`/${currentLang}/imprint`} className="text-sm hover:text-[#f5f5f7] transition-colors">{t.imprint}</Link></li>
+              <li><Link to={`/${currentLang}/privacy`} className="text-sm hover:text-[#f5f5f7] transition-colors">{t.privacy}</Link></li>
+              <li><Link to={`/${currentLang}/terms`} className="text-sm hover:text-[#f5f5f7] transition-colors">{t.terms}</Link></li>
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h3 className="text-white font-semibold mb-4">{t.support}</h3>
+            <h3 className="text-[#f5f5f7]/40 font-medium mb-3 text-xs uppercase tracking-widest">{t.support}</h3>
             <ul className="space-y-2">
+              <li><Link to={`/${currentLang}/faq`} className="text-sm hover:text-[#f5f5f7] transition-colors">FAQ</Link></li>
+              <li><a href="mailto:support@getmaca.de" className="text-sm hover:text-[#f5f5f7] transition-colors">support@getmaca.de</a></li>
+              <li><Link to={`/${currentLang}/troubleshooting`} className="text-sm hover:text-[#f5f5f7] transition-colors">{t.troubleshooting}</Link></li>
+              <li><Link to={`/${currentLang}/guide`} className="text-sm hover:text-[#f5f5f7] transition-colors">{t.guide}</Link></li>
               <li>
-                <Link
-                  to={`/${currentLang}/faq`}
-                  className="hover:text-white transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <a href="mailto:support@getmaca.de" className="hover:text-white transition-colors">
-                  support@getmaca.de
+                <a href="https://discord.gg/hztjqAweUz" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:text-[#f5f5f7] transition-colors">
+                  <DiscordIcon className="w-3.5 h-3.5" />
+                  {t.discord}
                 </a>
-              </li>
-              <li>
-                <Link
-                  to={`/${currentLang}/troubleshooting`}
-                  className="hover:text-white transition-colors"
-                >
-                  {t.troubleshooting}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`/${currentLang}/guide`}
-                  className="hover:text-white transition-colors"
-                >
-                  {t.guide}
-                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <div className="pt-6 border-t border-white/[0.06] text-center text-xs text-[#86868b]/50">
           <p>&copy; {currentYear} AMX Mediensysteme. {t.copyright}</p>
         </div>
       </div>
