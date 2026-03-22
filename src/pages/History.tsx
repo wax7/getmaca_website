@@ -75,9 +75,70 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.0.675 Build 083 */}
+            {/* Version 1.1.12 Build 084 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Version 1.1.12 Build 084
+                  </h2>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    MultiRoom, Volume Fix &amp; Better Startup Performance &bull; March 22, 2026
+                  </p>
+                </div>
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
+                  Latest
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New (Beta):</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Multi-room audio routing — route different apps to multiple speakers simultaneously. Requires setup in Audio settings. This is an early version, so we'd love your feedback.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Local Control API for automation — control MACA from other apps or scripts on your Mac</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Better app detection during startup — no need to move a slider to get the level meter working</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Various bugfixes and stability improvements</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio routed through MACA was quieter than direct system audio — system volume was being applied twice, causing your audio to lose 6dB at 50% volume. Now fixed.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Level meter and playback detection not working on startup for apps at 100% volume — they now activate instantly when you open MACA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.0.675 Build 083 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
                     Version 1.0.675 Build 083
@@ -86,9 +147,6 @@ export function History() {
                     Easier Local API Access &bull; March 13, 2026
                   </p>
                 </div>
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
-                  Latest
-                </span>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
