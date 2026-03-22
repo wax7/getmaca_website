@@ -66,6 +66,10 @@ export function HomeView() {
 
   const appStoreUrl = 'https://apps.apple.com/app/maca-master-audio-control/id6759258773';
 
+  const multiRoomDescription = currentLang === 'de'
+    ? 'Eine App gleichzeitig auf mehreren Ausgabegeräten abspielen – endlich möglich mit MACA. Leite den Sound parallel auf bis zu vier Geräte gleichzeitig weiter.'
+    : 'Play one app across multiple output devices at the same time – now finally possible with MACA. Route audio in parallel to up to four devices simultaneously.';
+
   return (
     <div className="min-h-screen mac-bg text-[#1d1d1f] dark:text-[#f5f5f7]">
       <Header
@@ -227,6 +231,9 @@ export function HomeView() {
               <FeatureCard icon={<Target className="w-5 h-5" />} title={t.features.focusMode.title} description={t.features.focusMode.description} gradient="from-amber-500 to-orange-500" delay={0.1} link={`/${currentLang}/guide#focus-mode`} />
               <FeatureCard icon={<Layers className="w-5 h-5" />} title={t.features.audioProfiles.title} description={t.features.audioProfiles.description} gradient="from-emerald-500 to-teal-500" delay={0.15} link={`/${currentLang}/guide#profiles`} />
               <FeatureCard icon={<Keyboard className="w-5 h-5" />} title={t.features.keyboardShortcuts.title} description={t.features.keyboardShortcuts.description} gradient="from-violet-500 to-purple-500" delay={0.2} link={`/${currentLang}/guide#keyboard-shortcuts`} />
+
+              {/* Row 2b: Multi-room */}
+              <FeatureCard icon={<Users className="w-5 h-5" />} title={t.comparison.features.multiRoom} description={multiRoomDescription} gradient="from-indigo-500 to-blue-500" delay={0.225} link={`/${currentLang}/guide#multi-room`} />
 
               {/* Row 3: one regular + one large spanning 2 cols */}
               <FeatureCard icon={<Palette className="w-5 h-5" />} title={t.features.nativeDesign.title} description={t.features.nativeDesign.description} gradient="from-pink-500 to-rose-500" delay={0.25} link={`/${currentLang}/guide#settings`} />
