@@ -8,6 +8,7 @@ interface ComparisonFeature {
   profiles: string;
   nativeUI: string;
   lightweight: string;
+  multiRoom: string;
 }
 
 interface ComparisonTableProps {
@@ -26,6 +27,7 @@ export function ComparisonTable({ title, subtitle, maca, others, features }: Com
     { feature: features.profiles,        maca: true,  others: false },
     { feature: features.nativeUI,        maca: true,  others: false },
     { feature: features.lightweight,     maca: true,  others: false },
+    { feature: features.multiRoom,       maca: true,  others: false },
   ];
 
   return (
