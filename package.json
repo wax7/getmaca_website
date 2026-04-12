@@ -61,7 +61,7 @@
   },
   "scripts": {
     "dev": "vike dev",
-    "build": "vike build",
+    "build": "vike build && node scripts/inject-gtag.js",
     "preview": "vike preview"
   }
 }
