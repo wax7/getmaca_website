@@ -221,15 +221,17 @@ export function ApiDocumentation() {
             <CodeBlock code="curl http://127.0.0.1:59622/v1/status" />
             <CodeBlock code={`{
   "app": "MACA",
-  "version": "1.0.675",
-  "build": "083",
+  "version": "1.1.12",
+  "build": "084",
   "apiVersion": "1",
   "features": {
     "perAppVolume": true,
     "perAppMute": true,
     "perAppRouting": true,
     "focusMode": true,
-    "volumePreview": true
+    "volumePreview": true,
+    "masterVolume": true,
+    "masterMute": true
   }
 }`} language="json" />
           </div>
@@ -328,14 +330,14 @@ WWW-Authenticate: Bearer error="invalid_token"
 {
   "error": {
     "code": "UNAUTHORIZED",
-    "message": "The provided token is invalid or does not grant access."
+    "message": "The provided token is invalid or does not grant access to this endpoint."
   }
 }`} language="http" />
         </div>
       </CollapsibleSection>
 
       {/* ─── Endpoints ─── */}
-      <CollapsibleSection title="Endpoints" icon={<Terminal className="w-5 h-5 text-cyan-500" />} badge="11 endpoints" defaultOpen={true} accentColor="from-cyan-500 to-blue-500">
+      <CollapsibleSection title="Endpoints" icon={<Terminal className="w-5 h-5 text-cyan-500" />} badge="18 endpoints" defaultOpen={true} accentColor="from-cyan-500 to-blue-500">
         <div className="space-y-3">
 
           <h4 className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-2 text-sm">
@@ -349,15 +351,17 @@ WWW-Authenticate: Bearer error="invalid_token"
             <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
             <CodeBlock code={`{
   "app": "MACA",
-  "version": "1.0.675",
-  "build": "083",
+  "version": "1.1.12",
+  "build": "084",
   "apiVersion": "1",
   "features": {
     "perAppVolume": true,
     "perAppMute": true,
     "perAppRouting": true,
     "focusMode": true,
-    "volumePreview": true
+    "volumePreview": true,
+    "masterVolume": true,
+    "masterMute": true
   }
 }`} language="json" />
           </EndpointCard>
@@ -421,6 +425,7 @@ WWW-Authenticate: Bearer error="invalid_token"
 
           <EndpointCard method="GET" path="/v1/output-devices" description="List output devices" auth={false}>
             <p>Returns all available audio output devices.</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">AirPlay devices may appear for discovery and diagnostics, but per-app routing to AirPlay is currently not supported.</p>
             <CodeBlock code="curl http://127.0.0.1:59622/v1/output-devices" />
             <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
             <CodeBlock code={`[
@@ -433,7 +438,12 @@ WWW-Authenticate: Bearer error="invalid_token"
     "isAirPlay": false,
     "isVirtual": false,
     "isBluetooth": false,
-    "channelCount": 2
+    "channelCount": 2,
+    "supportsPerAppRouting": true,
+    "speakerAlignment": {
+      "listeningDistanceMeters": 3.5,
+      "manualDelayMilliseconds": 12.0
+    }
   },
   {
     "id": 82,
@@ -444,7 +454,9 @@ WWW-Authenticate: Bearer error="invalid_token"
     "isAirPlay": false,
     "isVirtual": false,
     "isBluetooth": true,
-    "channelCount": 2
+    "channelCount": 2,
+    "supportsPerAppRouting": true,
+    "speakerAlignment": null
   }
 ]`} language="json" />
           </EndpointCard>
@@ -471,6 +483,30 @@ WWW-Authenticate: Bearer error="invalid_token"
             <CodeBlock code="curl http://127.0.0.1:59622/v1/focus-mode" />
             <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
             <CodeBlock code={`{ "active": false }`} language="json" />
+          </EndpointCard>
+
+          <EndpointCard method="GET" path="/v1/master-volume" description="Get system master volume" auth={false}>
+            <p>Returns the current system master volume.</p>
+            <CodeBlock code="curl http://127.0.0.1:59622/v1/master-volume" />
+            <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
+            <CodeBlock code={`{ "volume": 0.72 }`} language="json" />
+          </EndpointCard>
+
+          <EndpointCard method="GET" path="/v1/master-mute" description="Get system master mute" auth={false}>
+            <p>Returns the current system master mute state.</p>
+            <CodeBlock code="curl http://127.0.0.1:59622/v1/master-mute" />
+            <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
+            <CodeBlock code={`{ "muted": false }`} language="json" />
+          </EndpointCard>
+
+          <EndpointCard method="GET" path="/v1/apps/{bundleID}/output-devices" description="Get per-app multi-output" auth={false}>
+            <p>Returns assigned output devices for the selected app in multi-room mode.</p>
+            <CodeBlock code="curl http://127.0.0.1:59622/v1/apps/com.spotify.client/output-devices" />
+            <p className="font-medium text-slate-700 dark:text-slate-300 mt-3">Response (200):</p>
+            <CodeBlock code={`{
+  "bundleID": "com.spotify.client",
+  "outputDeviceUIDs": ["BuiltInSpeakerDevice", "F8-FF-C2-01-99-00:output"]
+}`} language="json" />
           </EndpointCard>
 
           {/* ── Write Endpoints ── */}
@@ -540,6 +576,46 @@ WWW-Authenticate: Bearer error="invalid_token"
             <FieldTable fields={[['active', 'Boolean', true, 'true to enable, false to disable']]} />
             <p className="mt-3"><strong className="text-slate-700 dark:text-slate-300">Response (200):</strong></p>
             <CodeBlock code='{"active": true}' language="json" />
+          </EndpointCard>
+
+          <EndpointCard method="PUT" path="/v1/master-volume" description="Set system master volume" auth={true}>
+            <p>Set the system master volume.</p>
+            <CodeBlock code={`curl -X PUT http://127.0.0.1:59622/v1/master-volume \\
+  -H "Authorization: Bearer YOUR_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{"volume": 0.4}'`} />
+            <FieldTable fields={[['volume', 'Double', true, '0.0 (silent) to 1.0 (full)']]} />
+            <p className="mt-3"><strong className="text-slate-700 dark:text-slate-300">Response (200):</strong> <code className="text-xs font-mono">{"{\"volume\":0.4}"}</code></p>
+          </EndpointCard>
+
+          <EndpointCard method="PUT" path="/v1/master-mute" description="Set system master mute" auth={true}>
+            <p>Mute or unmute system output globally.</p>
+            <CodeBlock code={`curl -X PUT http://127.0.0.1:59622/v1/master-mute \\
+  -H "Authorization: Bearer YOUR_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{"muted": true}'`} />
+            <FieldTable fields={[['muted', 'Boolean', true, 'true to mute, false to unmute']]} />
+            <p className="mt-3"><strong className="text-slate-700 dark:text-slate-300">Response (200):</strong> <code className="text-xs font-mono">{"{\"muted\":true}"}</code></p>
+          </EndpointCard>
+
+          <EndpointCard method="PUT" path="/v1/apps/mute-all" description="Mute all app outputs" auth={true}>
+            <p>Mute or unmute all currently active apps in one request.</p>
+            <CodeBlock code={`curl -X PUT http://127.0.0.1:59622/v1/apps/mute-all \\
+  -H "Authorization: Bearer YOUR_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{"muted": true}'`} />
+            <FieldTable fields={[['muted', 'Boolean', true, 'true to mute all, false to unmute all']]} />
+            <p className="mt-3"><strong className="text-slate-700 dark:text-slate-300">Response (200):</strong> Updated app list.</p>
+          </EndpointCard>
+
+          <EndpointCard method="PUT" path="/v1/apps/{bundleID}/output-devices" description="Set multi-room outputs for app" auth={true}>
+            <p>Assign multiple output devices to one app (multi-room). Supports up to four target devices.</p>
+            <CodeBlock code={`curl -X PUT http://127.0.0.1:59622/v1/apps/com.spotify.client/output-devices \\
+  -H "Authorization: Bearer YOUR_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{"deviceUIDs": ["BuiltInSpeakerDevice", "F8-FF-C2-01-99-00:output"]}'`} />
+            <FieldTable fields={[['deviceUIDs', 'String[]', true, 'List of output device UIDs (up to 4)']]} />
+            <p className="mt-3"><strong className="text-slate-700 dark:text-slate-300">Response (200):</strong> Updated app DTO with routing.</p>
           </EndpointCard>
         </div>
       </CollapsibleSection>
@@ -629,6 +705,7 @@ WWW-Authenticate: Bearer error="invalid_token"
                   ['404', 'NOT_FOUND', 'Unknown endpoint'],
                   ['404', 'APP_NOT_FOUND', 'No audio app with this bundle ID'],
                   ['404', 'DEVICE_NOT_FOUND', 'No device with this UID'],
+                  ['409', 'OUTPUT_DEVICE_CONFLICT', 'Requested multi-room assignment cannot be applied'],
                   ['413', 'REQUEST_TOO_LARGE', 'Request body > 64 KB'],
                   ['500', 'INTERNAL_ERROR', 'Unexpected server error'],
                   ['503', 'SERVICE_UNAVAILABLE', 'MACA is still starting up'],
@@ -935,6 +1012,8 @@ const MACA = {
             ['API must be enabled', 'Enable in Settings → System → API.'],
             ['Max request size', '64 KB body, 16 KB headers.'],
             ['Default port', '59622, configurable in Settings.'],
+            ['CORS support', 'Browser-based local integrations are supported when API access is enabled.'],
+            ['LAN Mode', 'Optional LAN mode can expose the API to your local network. Keep it disabled unless required.'],
             ['Connection model', 'Server closes after each response (Connection: close).'],
           ].map(([title, desc], i) => (
             <li key={i} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-800/20 border border-slate-200/40 dark:border-slate-700/30">

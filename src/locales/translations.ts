@@ -83,6 +83,7 @@ export interface Translation {
       profiles: string;
       nativeUI: string;
       lightweight: string;
+      multiRoom: string;
     };
   };
   whyNotOthers: {

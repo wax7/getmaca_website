@@ -191,6 +191,7 @@ export function Home() {
               <FeatureCard icon={<Target className="w-6 h-6" />} title={t.features.focusMode.title} description={t.features.focusMode.description} gradient="from-amber-500 to-orange-500" delay={0.2} />
               <FeatureCard icon={<Layers className="w-6 h-6" />} title={t.features.audioProfiles.title} description={t.features.audioProfiles.description} gradient="from-emerald-500 to-teal-500" delay={0.3} />
               <FeatureCard icon={<Keyboard className="w-6 h-6" />} title={t.features.keyboardShortcuts.title} description={t.features.keyboardShortcuts.description} gradient="from-violet-500 to-purple-500" delay={0.4} />
+              <FeatureCard icon={<Users className="w-6 h-6" />} title={t.comparison.features.multiRoom} description={t.comparison.features.multiRoom} gradient="from-indigo-500 to-blue-500" delay={0.45} />
               <FeatureCard icon={<Palette className="w-6 h-6" />} title={t.features.nativeDesign.title} description={t.features.nativeDesign.description} gradient="from-pink-500 to-rose-500" delay={0.5} />
               <FeatureCard icon={<Zap className="w-6 h-6" />} title={t.features.magicBoost.title} description={t.features.magicBoost.description} gradient="from-yellow-500 to-amber-500" delay={0.6} />
             </div>
