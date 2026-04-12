@@ -38,5 +38,7 @@ function detectBrowserLanguage(): Language {
 
 export function LanguageRedirect() {
   const detectedLang = detectBrowserLanguage();
-  return <Navigate to={`/${detectedLang}`} replace />;
+  // Preserve query params (critical for Google Tag Assistant debug connection)
+  const search = typeof window !== 'undefined' ? window.location.search : '';
+  return <Navigate to={`/${detectedLang}${search}`} replace />;
 }
