@@ -5,11 +5,88 @@
       <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-    <!-- ── Google Ads / Remarketing (AW-1012572629) ── -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1012572629"></script>
+    <!-- ── Google Consent Mode v2 (Advanced) ── -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
+      // 1. Gespeicherte Einwilligung aus localStorage lesen
+      var storedConsent = null;
+      try { storedConsent = JSON.parse(localStorage.getItem('maca-consent-v2')); } catch(e) {}
+
+      if (storedConsent) {
+        // Nutzer hat bereits entschieden → direkt seine Wahl anwenden
+        gtag('consent', 'default', {
+          'ad_storage': storedConsent.ad_storage || 'denied',
+          'ad_user_data': storedConsent.ad_user_data || 'denied',
+          'ad_personalization': storedConsent.ad_personalization || 'denied',
+          'analytics_storage': storedConsent.analytics_storage || 'denied'
+        });
+      } else {
+        // 2. Regionsspezifische Defaults gemäß Consent Mode v2
+        // EU/EWR + UK + CH: Alle denied (DSGVO/ePrivacy/nDSG)
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'region': [
+            'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR',
+            'DE','GR','HU','IE','IT','LV','LT','LU','MT','NL',
+            'PL','PT','RO','SK','SI','ES','SE',
+            'IS','LI','NO',
+            'GB','CH'
+          ]
+        });
+        // US-California (CCPA/CPRA): ad_storage + ad_personalization denied
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'granted',
+          'region': ['US-CA']
+        });
+        // Brasilien (LGPD): Alle denied
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'region': ['BR']
+        });
+        // Japan (APPI), Südkorea (PIPA): ad_user_data denied
+        gtag('consent', 'default', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'granted',
+          'region': ['JP', 'KR']
+        });
+        // Türkei (KVKK): Alle denied
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'region': ['TR']
+        });
+        // Rest der Welt: Granted (kein Consent-Banner nötig)
+        gtag('consent', 'default', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+
+      // 3. Datenschutz-Extras: URL-Passthrough + Ads Data Redaction
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+    </script>
+
+    <!-- ── Google Ads Tag (gtag.js) – NACH consent default ── -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1012572629"></script>
+    <script>
       gtag('js', new Date());
       gtag('config', 'AW-1012572629');
     </script>
