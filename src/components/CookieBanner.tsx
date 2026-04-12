@@ -363,12 +363,24 @@ export function CookieBanner() {
   const texts = consentTexts[currentLang] || consentTexts.en;
 
   useEffect(() => {
-    // Bereits entschieden? → Banner nicht zeigen
+    // Bereits entschieden? → Banner nicht zeigen + Consent wiederherstellen
     const stored = localStorage.getItem(CONSENT_KEY);
     if (stored) {
       // Altes Privacy-Notice-Flag migrieren
       localStorage.removeItem('maca-privacy-notice-dismissed');
       localStorage.removeItem('maca-cookie-consent');
+      // Gespeicherten Consent an gtag senden (defaults sind 'denied', hier updaten)
+      try {
+        const sc = JSON.parse(stored) as ConsentState;
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', {
+            ad_storage: sc.ad_storage || 'denied',
+            ad_user_data: sc.ad_user_data || 'denied',
+            ad_personalization: sc.ad_personalization || 'denied',
+            analytics_storage: sc.analytics_storage || 'denied',
+          });
+        }
+      } catch { /* ignore parse errors */ }
       return;
     }
     // Alte Keys migrieren: Nutzer hat altes Banner bereits bestätigt → als "all denied" speichern

@@ -28,23 +28,27 @@ const htmlFiles = findHtml(join(__dirname, '..', 'build', 'client'));
 
 const TAG_ID = 'AW-1012572629';
 
-// ── The snippet in Google's EXACT recommended order ──
+// ── Google's EXACT recommended snippet format ──
+// Consent defaults are kept minimal here (Google's standard pattern).
+// Returning visitors get consent restored via CookieBanner on React mount.
+// Regional consent variants are handled by CookieBanner.
 const GTAG_SNIPPET = `
-<!-- Google Consent Mode v2 (Advanced) — consent defaults FIRST -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-(function(){
-var sc=null;try{sc=JSON.parse(localStorage.getItem('maca-consent-v2'));}catch(e){}
-if(sc){gtag('consent','default',{'ad_storage':sc.ad_storage||'denied','ad_user_data':sc.ad_user_data||'denied','ad_personalization':sc.ad_personalization||'denied','analytics_storage':sc.analytics_storage||'denied','wait_for_update':500});}
-else{gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']});gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'granted','wait_for_update':500,'region':['US-CA']});gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['BR']});gtag('consent','default',{'ad_storage':'granted','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'granted','wait_for_update':500,'region':['JP','KR']});gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['TR']});gtag('consent','default',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}
-gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
-})();
-</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=${TAG_ID}"></script>
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','${TAG_ID}');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});
+gtag('set', 'url_passthrough', true);
+gtag('set', 'ads_data_redaction', true);
+gtag('js', new Date());
+gtag('config', '${TAG_ID}');
 </script>`;
 
 let count = 0;
