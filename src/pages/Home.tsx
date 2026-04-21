@@ -18,6 +18,7 @@ import { PrivacyBlock } from '../components/PrivacyBlock';
 import { PricingCard } from '../components/PricingCard';
 import { BenefitBadge } from '../components/BenefitBadge';
 import { FAQSection } from '../components/FAQSection';
+import { trackAppStoreClick } from '../utils/trackConversion';
 import { ComparisonTable } from '../components/ComparisonTable';
 import { Footer } from '../components/Footer';
 import designCreateBg from 'figma:asset/ef27d3d39b4c2bdf481d15f23e6b0d5982edfc5d.png';
@@ -132,6 +133,7 @@ export function Home() {
                 href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackAppStoreClick}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 <Download className="w-5 h-5" />
@@ -464,6 +466,7 @@ export function Home() {
                 features={t.pricing.free.features}
                 cta={t.pricing.free.cta}
                 ctaLink={appStoreUrl}
+                onCtaClick={trackAppStoreClick}
                 delay={0}
               />
               <PricingCard
@@ -474,6 +477,7 @@ export function Home() {
                 ctaLink={appStoreUrl}
                 badge={t.pricing.pro.badge}
                 isPro
+                onCtaClick={trackAppStoreClick}
                 delay={0.1}
               />
             </div>
@@ -516,6 +520,7 @@ export function Home() {
                 href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackAppStoreClick}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 <Download className="w-5 h-5" />

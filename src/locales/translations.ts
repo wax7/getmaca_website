@@ -285,7 +285,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Why Not Other Tools?',
       subtitle: 'Compare MACA with popular alternatives',
-      macaPrice: 'In-App Purchase',
+      macaPrice: '$14.99',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -349,7 +349,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'In-App Purchase',
+        price: '$14.99',
         features: [
           'Unlimited apps',
           'All Free features',
@@ -495,7 +495,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Warum nicht andere Tools?',
       subtitle: 'MACA mit beliebten Alternativen vergleichen',
-      macaPrice: 'In-App-Kauf',
+      macaPrice: '17,99 €',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -559,7 +559,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'In-App-Kauf',
+        price: '17,99 €',
         features: [
           'Unbegrenzte Apps',
           'Alle Funktionen von Kostenlos',
@@ -705,7 +705,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: '¿Por Qué No Otras Herramientas?',
       subtitle: 'Compara MACA con alternativas populares',
-      macaPrice: 'Compra in-app',
+      macaPrice: '17,99 €',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -769,7 +769,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'Compra in-app',
+        price: '17,99 €',
         features: [
           'Apps ilimitadas',
           'Todas las funciones gratuitas',
@@ -911,7 +911,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Pourquoi pas d\'autres outils ?',
       subtitle: 'Comparez MACA avec des alternatives populaires',
-      macaPrice: 'Achat in-app',
+      macaPrice: '17,99 €',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -975,7 +975,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'Achat intégré',
+        price: '17,99 €',
         features: [
           'Applications illimitées',
           'Toutes les fonctionnalités Gratuites',
@@ -1117,7 +1117,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'Perché non altri strumenti?',
       subtitle: 'Confronta MACA con alternative popolari',
-      macaPrice: 'Acquisto in-app',
+      macaPrice: '17,99 €',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1181,7 +1181,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'Compra in-app',
+        price: '17,99 €',
         features: [
           'App illimitate',
           'Tutte le funzionalità Gratuite',
@@ -1323,7 +1323,7 @@ export const translations: Record<Language, Translation> = {
     whyNotOthers: {
       title: 'なぜ他のツールは？',
       subtitle: 'MACAと人気のある代替品を比較',
-      macaPrice: 'アプリ内購入',
+      macaPrice: '¥2,500',
       competitors: {
         soundSource: {
           name: 'SoundSource',
@@ -1387,7 +1387,7 @@ export const translations: Record<Language, Translation> = {
       },
       pro: {
         title: 'Pro',
-        price: 'アプリ内課金',
+        price: '¥2,500',
         features: [
           '無制限のアプリ',
           'すべての無料機能',
@@ -1858,7 +1858,7 @@ export const translations: Record<Language, Translation> = {
       features: { easySetup: 'Werkt direct', noDrivers: 'Geen drivers/extensies', oneTimePurchase: 'Eenmaal betalen, voor altijd eigenaar', profiles: 'Audioprofielen inbegrepen', nativeUI: 'Native macOS-design', lightweight: 'Ultra lichtgewicht', multiRoom: 'Multi-room audio routing' },
     },
     whyNotOthers: {
-      title: 'Waarom niet andere tools?', subtitle: 'Vergelijk MACA met populaire alternatieven', macaPrice: 'In-app aankoop',
+      title: 'Waarom niet andere tools?', subtitle: 'Vergelijk MACA met populaire alternatieven', macaPrice: '17,99 €',
       competitors: {
         soundSource: { name: 'SoundSource', price: '$39', issues: ['Duur abonnementsmodel', 'Complexe interface', 'Vereist systeemaudiodriver'] },
         audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Zeer duur', 'Overweldigende functies', 'Steile leercurve'] },
@@ -1878,7 +1878,7 @@ export const translations: Record<Language, Translation> = {
     pricing: {
       title: 'Prijzen', subtitle: 'Kies het plan dat bij je past',
       free: { title: 'Gratis', price: '$0', features: ['Beheer tot 3 apps', 'Volume per app', 'Dempen per app', 'Audioroutering per app', 'Mastervolume', '10-bands equalizer', 'Sneltoetsen'], cta: 'Gratis downloaden' },
-      pro: { title: 'Pro', price: 'In-app aankoop', features: ['Onbeperkte apps', 'Alle gratis functies', 'Onbeperkte audioprofielen', 'Volledige parametrische EQ', 'Audionormalisator', 'Onbeperkte EQ-presets', 'Eenmalige betaling • Geen abonnement'], cta: 'Download in App Store', badge: 'Meest populair' },
+      pro: { title: 'Pro', price: '17,99 €', features: ['Onbeperkte apps', 'Alle gratis functies', 'Onbeperkte audioprofielen', 'Volledige parametrische EQ', 'Audionormalisator', 'Onbeperkte EQ-presets', 'Eenmalige betaling • Geen abonnement'], cta: 'Download in App Store', badge: 'Meest populair' },
     },
     benefits: { noSubscriptions: 'Geen abonnementen', noTracking: 'Geen tracking', noAds: 'Geen advertenties', nativeSupport: 'Native ondersteuning' },
     finalCta: { title: 'Begin vandaag', subtitle: 'Sluit je aan bij duizenden Mac-gebruikers', cta: 'Download in de App Store' },
@@ -2018,7 +2018,7 @@ export const translations: Record<Language, Translation> = {
       features: { easySetup: 'Fungerar direkt', noDrivers: 'Inga drivrutiner/tillägg', oneTimePurchase: 'Betala en gång, äg för alltid', profiles: 'Ljudprofiler inkluderade', nativeUI: 'Inbyggd macOS-design', lightweight: 'Ultralätt', multiRoom: 'Multi-room audiokontroll' },
     },
     whyNotOthers: {
-      title: 'Varför inte andra verktyg?', subtitle: 'Jämför MACA med populära alternativ', macaPrice: 'Köp i appen',
+      title: 'Varför inte andra verktyg?', subtitle: 'Jämför MACA med populära alternativ', macaPrice: '199 kr',
       competitors: {
         soundSource: { name: 'SoundSource', price: '$39', issues: ['Dyr prenumerationsmodell', 'Komplext gränssnitt', 'Kräver systemljuddrivrutin'] },
         audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Mycket dyrt', 'Överväldigande funktioner', 'Brant inlärningskurva'] },
@@ -2038,7 +2038,7 @@ export const translations: Record<Language, Translation> = {
     pricing: {
       title: 'Prissättning', subtitle: 'Välj planen som passar dig',
       free: { title: 'Gratis', price: '$0', features: ['Styr upp till 3 appar', 'Volym per app', 'Tysta per app', 'Ljuddirigering per app', 'Mastervolym', '10-bands equalizer', 'Kortkommandon'], cta: 'Ladda ner gratis' },
-      pro: { title: 'Pro', price: 'Köp i appen', features: ['Obegränsade appar', 'Alla gratisfunktioner', 'Obegränsade ljudprofiler', 'Full parametrisk EQ', 'Ljudnormaliserare', 'Obegränsade EQ-förinställningar', 'Engångsbetalning • Inget abonnemang'], cta: 'Ladda ner i App Store', badge: 'Mest populär' },
+      pro: { title: 'Pro', price: '199 kr', features: ['Obegränsade appar', 'Alla gratisfunktioner', 'Obegränsade ljudprofiler', 'Full parametrisk EQ', 'Ljudnormaliserare', 'Obegränsade EQ-förinställningar', 'Engångsbetalning • Inget abonnemang'], cta: 'Ladda ner i App Store', badge: 'Mest populär' },
     },
     benefits: { noSubscriptions: 'Inga prenumerationer', noTracking: 'Ingen spårning', noAds: 'Inga annonser', nativeSupport: 'Inbyggd support' },
     finalCta: { title: 'Kom igång idag', subtitle: 'Gå med tusentals Mac-användare som älskar MACA', cta: 'Ladda ner i App Store' },
@@ -2076,10 +2076,10 @@ export const translations: Record<Language, Translation> = {
     useCases: { title: 'Designet til din arbejdsgang', designer: 'Perfekt til designere der har brug for musik under videoopkald', producer: 'Essentielt for producenter der mikser flere lydkilder', developer: 'Ideelt for udviklere med musik, docs og standups kørende', remote: 'Uundværligt for fjernarbejdere der jonglerer opkald og indhold' },
     devices: { headphones: 'Hovedtelefoner', speaker: 'Højttaler', display: 'Skærm', bluetooth: 'Bluetooth', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. andre lydværktøjer', subtitle: 'Se hvorfor tusinder har skiftet til MACA', maca: 'MACA', others: 'Andre værktøjer', features: { easySetup: 'Virker øjeblikkeligt', noDrivers: 'Ingen drivere/udvidelser', oneTimePurchase: 'Betal én gang, ej for altid', profiles: 'Lydprofiler inkluderet', nativeUI: 'macOS-nativt design', lightweight: 'Ultralet', multiRoom: 'Multi-room audiorouting' } },
-    whyNotOthers: { title: 'Hvorfor ikke andre værktøjer?', subtitle: 'Sammenlign MACA med populære alternativer', macaPrice: 'Køb i appen', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['Dyr abonnementsmodel', 'Kompleks grænseflade', 'Kræver system-lyddriver'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Meget dyrt', 'Overvældende funktioner', 'Stejl indlæringskurve'] } } },
+    whyNotOthers: { title: 'Hvorfor ikke andre værktøjer?', subtitle: 'Sammenlign MACA med populære alternativer', macaPrice: '129 kr', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['Dyr abonnementsmodel', 'Kompleks grænseflade', 'Kræver system-lyddriver'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Meget dyrt', 'Overvældende funktioner', 'Stejl indlæringskurve'] } } },
     privacy: { title: 'Privatlivet først', subtitle: 'Dine data er sikre med MACA', guaranteeTitle: 'Privatlivsgaranti', guaranteeDescription: 'Vi er forpligtet til at beskytte dit privatliv og datasikkerhed.', features: { noData: { title: 'Ingen data sendes til skyen', description: 'Ingen data sendes til skyen' }, localProcessing: { title: 'Al behandling sker lokalt på din Mac', description: 'Al behandling sker lokalt på din Mac' }, noCloud: { title: 'Ingen skylagring eller synkronisering', description: 'Ingen skylagring eller synkronisering' }, noTracking: { title: 'Nul sporing', description: 'Nul sporing—dit privatliv betyder noget' } }, guarantee: 'Vi garanterer dit privatliv og datasikkerhed.' },
     testimonials: { title: 'Hvad vores brugere siger', subtitle: 'Hør fra tilfredse kunder', comingSoon: 'Kommer snart', joinUsers: 'Slut dig til tusinder af Mac-brugere der elsker MACA' },
-    pricing: { title: 'Priser', subtitle: 'Vælg den plan der passer dig', free: { title: 'Gratis', price: '$0', features: ['Styr op til 3 apps', 'Lydstyrke per app', 'Lydløs per app', 'Lydrouting per app', 'Masterlydstyrke', '10-bånds equalizer', 'Tastaturgenveje'], cta: 'Download gratis' }, pro: { title: 'Pro', price: 'Køb i appen', features: ['Ubegrænsede apps', 'Alle gratis-funktioner', 'Ubegrænsede lydprofiler', 'Fuld parametrisk EQ', 'Lydnormalisering', 'Ubegrænsede EQ-forudindstillinger', 'Engangsbetaling • Intet abonnement'], cta: 'Download i App Store', badge: 'Mest populær' } },
+    pricing: { title: 'Priser', subtitle: 'Vælg den plan der passer dig', free: { title: 'Gratis', price: '$0', features: ['Styr op til 3 apps', 'Lydstyrke per app', 'Lydløs per app', 'Lydrouting per app', 'Masterlydstyrke', '10-bånds equalizer', 'Tastaturgenveje'], cta: 'Download gratis' }, pro: { title: 'Pro', price: '129 kr', features: ['Ubegrænsede apps', 'Alle gratis-funktioner', 'Ubegrænsede lydprofiler', 'Fuld parametrisk EQ', 'Lydnormalisering', 'Ubegrænsede EQ-forudindstillinger', 'Engangsbetaling • Intet abonnement'], cta: 'Download i App Store', badge: 'Mest populær' } },
     benefits: { noSubscriptions: 'Ingen abonnementer', noTracking: 'Ingen sporing', noAds: 'Ingen reklamer', nativeSupport: 'Nativ support' },
     finalCta: { title: 'Kom i gang i dag', subtitle: 'Slut dig til tusinder af Mac-brugere der elsker MACA', cta: 'Download i App Store' },
     footer: { product: 'Produkt', legal: 'Juridisk', imprint: 'Kolofon', privacy: 'Privatlivspolitik', terms: 'Vilkår for brug', support: 'Support', tagline: 'Professionel lydkontrol for alle', copyright: '© 2026 AMX Mediensystem. Alle rettigheder forbeholdes.' },
@@ -2096,10 +2096,10 @@ export const translations: Record<Language, Translation> = {
     useCases: { title: '워크플로를 위한 설계', designer: '화상 통화 중 음악이 필요한 디자이너에 완벽', producer: '여러 오디오 소스를 믹싱하는 프로듀서에 필수', developer: '음악, 문서, 스탠드업이 동시에 실행되는 개발자에 이상적', remote: '통화와 콘텐츠를 저글링하는 원격 근무자에 필수불가결' },
     devices: { headphones: '헤드폰', speaker: '스피커', display: '디스플레이', bluetooth: '블루투스', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. 다른 오디오 도구', subtitle: '수천 명이 MACA로 전환한 이유를 확인하세요', maca: 'MACA', others: '다른 도구', features: { easySetup: '즉시 작동', noDrivers: '드라이버/확장 없음', oneTimePurchase: '한 번 구매, 영원히 소유', profiles: '오디오 프로필 포함', nativeUI: 'macOS 네이티브 디자인', lightweight: '초경량', multiRoom: '멀티룸 오디오 라우팅' } },
-    whyNotOthers: { title: '왜 다른 도구가 아닌가요?', subtitle: 'MACA를 인기 대안과 비교하세요', macaPrice: '인앱 구매', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['비싼 구독 모델', '복잡한 인터페이스', '시스템 오디오 드라이버 필요'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['매우 비쌈', '압도적인 기능', '가파른 학습 곡선'] } } },
+    whyNotOthers: { title: '왜 다른 도구가 아닌가요?', subtitle: 'MACA를 인기 대안과 비교하세요', macaPrice: '₩22,000', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['비싼 구독 모델', '복잡한 인터페이스', '시스템 오디오 드라이버 필요'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['매우 비쌈', '압도적인 기능', '가파른 학습 곡선'] } } },
     privacy: { title: '개인정보 보호 최우선', subtitle: 'MACA에서 당신의 데이터는 안전합니다', guaranteeTitle: '개인정보 보장', guaranteeDescription: '우리는 당신의 개인정보와 데이터 보안을 보호하기 위해 최선을 다합니다.', features: { noData: { title: '클라우드로 데이터 전송 없음', description: '클라우드로 데이터 전송 없음' }, localProcessing: { title: '모든 처리는 Mac에서 로컬로 수행', description: '모든 처리는 Mac에서 로컬로 수행' }, noCloud: { title: '클라우드 저장 또는 동기화 없음', description: '클라우드 저장 또는 동기화 없음' }, noTracking: { title: '제로 추적', description: '제로 추적—당신의 개인정보가 중요합니다' } }, guarantee: '우리는 당신의 개인정보와 데이터 보안을 보장합니다.' },
     testimonials: { title: '사용자들의 평가', subtitle: '만족한 고객들의 목소리', comingSoon: '곧 출시', joinUsers: 'MACA를 사랑하는 수천 명의 Mac 사용자와 함께하세요' },
-    pricing: { title: '가격', subtitle: '당신에게 맞는 플랜을 선택하세요', free: { title: '무료', price: '$0', features: ['최대 3개 앱 제어', '앱별 볼륨', '앱별 음소거', '앱별 오디오 라우팅', '마스터 볼륨', '10밴드 이퀄라이저', '키보드 단축키'], cta: '무료 다운로드' }, pro: { title: 'Pro', price: '인앱 구매', features: ['무제한 앱', '모든 무료 기능', '무제한 오디오 프로필', '완전한 파라메트릭 EQ', '오디오 노멀라이저', '무제한 EQ 프리셋', '일회 결제 • 구독 없음'], cta: 'App Store에서 다운로드', badge: '가장 인기' } },
+    pricing: { title: '가격', subtitle: '당신에게 맞는 플랜을 선택하세요', free: { title: '무료', price: '$0', features: ['최대 3개 앱 제어', '앱별 볼륨', '앱별 음소거', '앱별 오디오 라우팅', '마스터 볼륨', '10밴드 이퀄라이저', '키보드 단축키'], cta: '무료 다운로드' }, pro: { title: 'Pro', price: '₩22,000', features: ['무제한 앱', '모든 무료 기능', '무제한 오디오 프로필', '완전한 파라메트릭 EQ', '오디오 노멀라이저', '무제한 EQ 프리셋', '일회 결제 • 구독 없음'], cta: 'App Store에서 다운로드', badge: '가장 인기' } },
     benefits: { noSubscriptions: '구독 없음', noTracking: '추적 없음', noAds: '광고 없음', nativeSupport: '네이티브 지원' },
     finalCta: { title: '오늘 시작하세요', subtitle: 'MACA를 사랑하는 수천 명의 Mac 사용자와 함께하세요', cta: 'App Store에서 다운로드' },
     footer: { product: '제품', legal: '법적 사항', imprint: '법적 정보', privacy: '개인정보 처리방침', terms: '이용약관', support: '지원', tagline: '모두를 위한 전문 오디오 제어', copyright: '© 2026 AMX Mediensystem. 모든 권리 보유.' },
@@ -2116,10 +2116,10 @@ export const translations: Record<Language, Translation> = {
     useCases: { title: 'Designet for arbeidsflyten din', designer: 'Perfekt for designere som trenger musikk under videosamtaler', producer: 'Essensielt for produsenter som mikser flere lydkilder', developer: 'Ideelt for utviklere med musikk, docs og standups kjørende', remote: 'Uunnværlig for fjernarbeidere som sjonglerer samtaler og innhold' },
     devices: { headphones: 'Hodetelefoner', speaker: 'Høyttaler', display: 'Skjerm', bluetooth: 'Bluetooth', airpods: 'AirPods' },
     comparison: { title: 'MACA vs. andre lydverktøy', subtitle: 'Se hvorfor tusenvis har byttet til MACA', maca: 'MACA', others: 'Andre verktøy', features: { easySetup: 'Fungerer øyeblikkelig', noDrivers: 'Ingen drivere/utvidelser', oneTimePurchase: 'Betal én gang, eie for alltid', profiles: 'Lydprofiler inkludert', nativeUI: 'macOS-nativt design', lightweight: 'Ultralett', multiRoom: 'Multi-room audioverking' } },
-    whyNotOthers: { title: 'Hvorfor ikke andre verktøy?', subtitle: 'Sammenlign MACA med populære alternativer', macaPrice: 'Kjøp i appen', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['Dyr abonnementsmodell', 'Komplekst grensesnitt', 'Krever system-lyddriver'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Veldig dyrt', 'Overveldende funksjoner', 'Bratt læringskurve'] } } },
+    whyNotOthers: { title: 'Hvorfor ikke andre verktøy?', subtitle: 'Sammenlign MACA med populære alternativer', macaPrice: '199 kr', competitors: { soundSource: { name: 'SoundSource', price: '$39', issues: ['Dyr abonnementsmodell', 'Komplekst grensesnitt', 'Krever system-lyddriver'] }, audioHijack: { name: 'Audio Hijack', price: '$64+', issues: ['Veldig dyrt', 'Overveldende funksjoner', 'Bratt læringskurve'] } } },
     privacy: { title: 'Personvern først', subtitle: 'Dine data er trygge med MACA', guaranteeTitle: 'Personverngaranti', guaranteeDescription: 'Vi er forpliktet til å beskytte ditt personvern og datasikkerhet.', features: { noData: { title: 'Ingen data sendes til skyen', description: 'Ingen data sendes til skyen' }, localProcessing: { title: 'All behandling skjer lokalt på din Mac', description: 'All behandling skjer lokalt på din Mac' }, noCloud: { title: 'Ingen skylagring eller synkronisering', description: 'Ingen skylagring eller synkronisering' }, noTracking: { title: 'Null sporing', description: 'Null sporing—ditt personvern betyr noe' } }, guarantee: 'Vi garanterer ditt personvern og datasikkerhet.' },
     testimonials: { title: 'Hva brukerne våre sier', subtitle: 'Hør fra fornøyde kunder', comingSoon: 'Kommer snart', joinUsers: 'Bli med tusenvis av Mac-brukere som elsker MACA' },
-    pricing: { title: 'Priser', subtitle: 'Velg planen som passer deg', free: { title: 'Gratis', price: '$0', features: ['Kontroller opptil 3 apper', 'Volum per app', 'Demp per app', 'Lydrouting per app', 'Mastervolum', '10-bånds equalizer', 'Hurtigtaster'], cta: 'Last ned gratis' }, pro: { title: 'Pro', price: 'Kjøp i appen', features: ['Ubegrensede apper', 'Alle gratisfunksjoner', 'Ubegrensede lydprofiler', 'Full parametrisk EQ', 'Lydnormalisering', 'Ubegrensede EQ-forhåndsinnstillinger', 'Engangsbetaling • Ingen abonnement'], cta: 'Last ned i App Store', badge: 'Mest populær' } },
+    pricing: { title: 'Priser', subtitle: 'Velg planen som passer deg', free: { title: 'Gratis', price: '$0', features: ['Kontroller opptil 3 apper', 'Volum per app', 'Demp per app', 'Lydrouting per app', 'Mastervolum', '10-bånds equalizer', 'Hurtigtaster'], cta: 'Last ned gratis' }, pro: { title: 'Pro', price: '199 kr', features: ['Ubegrensede apper', 'Alle gratisfunksjoner', 'Ubegrensede lydprofiler', 'Full parametrisk EQ', 'Lydnormalisering', 'Ubegrensede EQ-forhåndsinnstillinger', 'Engangsbetaling • Ingen abonnement'], cta: 'Last ned i App Store', badge: 'Mest populær' } },
     benefits: { noSubscriptions: 'Ingen abonnementer', noTracking: 'Ingen sporing', noAds: 'Ingen reklamer', nativeSupport: 'Nativ støtte' },
     finalCta: { title: 'Kom i gang i dag', subtitle: 'Bli med tusenvis av Mac-brukere som elsker MACA', cta: 'Last ned i App Store' },
     footer: { product: 'Produkt', legal: 'Juridisk', imprint: 'Kolofon', privacy: 'Personvernerklæring', terms: 'Bruksvilkår', support: 'Støtte', tagline: 'Profesjonell lydkontroll for alle', copyright: '© 2026 AMX Mediensystem. Alle rettigheter forbeholdt.' },

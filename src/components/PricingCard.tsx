@@ -10,9 +10,10 @@ interface PricingCardProps {
   badge?: string;
   isPro?: boolean;
   delay: number;
+  onCtaClick?: () => void;
 }
 
-export function PricingCard({ title, price, features, cta, ctaLink, badge, isPro = false, delay }: PricingCardProps) {
+export function PricingCard({ title, price, features, cta, ctaLink, badge, isPro = false, delay, onCtaClick }: PricingCardProps) {
   const featureList = Array.isArray(features) ? features : [];
   return (
     <motion.div
@@ -62,6 +63,7 @@ export function PricingCard({ title, price, features, cta, ctaLink, badge, isPro
           href={ctaLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={onCtaClick}
           className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl font-medium text-[15px] transition-colors ${
             isPro
               ? 'bg-[#007AFF] hover:bg-[#0071E3] text-white shadow-[0_2px_8px_rgba(0,122,255,0.25)]'

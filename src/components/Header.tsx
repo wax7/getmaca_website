@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Moon, Sun, Menu, Download } from 'lucide-react';
+import { trackAppStoreClick } from '../utils/trackConversion';
 import { ReactNode, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import type { Language } from '../locales/translations';
@@ -98,6 +99,7 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
                 href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackAppStoreClick}
                 className="hidden lg:flex items-center gap-1.5 px-4 py-1.5 bg-[#007AFF] hover:bg-[#0071E3] text-white rounded-full transition-colors text-sm font-medium"
               >
                 <Download className="w-3.5 h-3.5" />

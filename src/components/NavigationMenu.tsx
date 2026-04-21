@@ -1,4 +1,5 @@
 import { X, Home, FileText, Download, Shield, HelpCircle, Clock, Moon, Sun, Globe, Check, Scale, Wrench, BookOpen } from 'lucide-react';
+import { trackAppStoreClick } from '../utils/trackConversion';
 import { Link, useNavigate } from 'react-router';
 import type { Language } from '../locales/translations';
 import { languageNames } from '../locales/translations';
@@ -695,7 +696,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
                     href={appStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={onClose}
+                    onClick={() => { trackAppStoreClick(); onClose(); }}
                     className="flex items-center justify-center gap-3 px-6 py-4 bg-[#007AFF] text-white rounded-full hover:bg-[#0071E3] transition-colors shadow-lg font-medium"
                   >
                     <Download className="w-5 h-5" />
