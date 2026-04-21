@@ -43,12 +43,12 @@ gtag('consent', 'default', {
   'ad_user_data': 'denied',
   'ad_personalization': 'denied',
   'analytics_storage': 'denied',
-  'wait_for_update': 500
+  'wait_for_update': 1500
 });
 gtag('set', 'url_passthrough', true);
 gtag('set', 'ads_data_redaction', true);
 gtag('js', new Date());
-gtag('config', '${TAG_ID}');
+gtag('config', '${TAG_ID}', { 'wait_for_update': 1500 });
 </script>`;
 
 let count = 0;
