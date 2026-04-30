@@ -18,6 +18,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6.0.2
+        with:
+          # Voller History-Clone benötigt für git-basierte lastmod-Werte
+          # in scripts/regenerate_sitemap.py (sonst hätten alle Pages
+          # dasselbe Datum = letzter Commit).
+          fetch-depth: 0
 
       - name: Prepare SEO artifacts
         run: |
