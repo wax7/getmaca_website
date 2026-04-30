@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { useParams, useLocation } from 'react-router';
+import { useParams, useLocation } from '@/utils/router-adapter';
 import { type Language } from '../locales/translations';
 import { faqContentTranslations } from '../utils/faq-content-translations';
 import { getGuideTranslation } from '../locales/guide';
@@ -172,7 +172,7 @@ const metaDescriptions: Record<string, Record<Language, string>> = {
 // ---------------------------------------------------------------------------
 const pageTitles: Record<string, Record<Language, string>> = {
   home: {
-    en: 'MACA – Per-App Volume Control for macOS | Mixer, EQ & Profiles',
+    en: 'MACA – Per-App Volume for macOS | Mixer, EQ & Profiles',
     de: 'MACA – Lautstärke pro App für macOS | Mixer, EQ & Profile',
     fr: 'MACA – Volume par Application macOS | Mixer, EQ & Profils Audio',
     es: 'MACA – Volumen por App en macOS | Mezclador, EQ y Perfiles',
@@ -638,6 +638,10 @@ export function DocumentHead() {
     const pageKey = ['faq', 'privacy', 'terms', 'imprint', 'feedback', 'guide', 'troubleshooting'].includes(pageName)
       ? pageName
       : 'home';
+    // 'history' page: SSR'd Head (pages/+Head.tsx) already sets correct meta;
+    // skip client-side override to avoid clobbering with home values.
+    const isHistory = pageName === 'history';
+    if (isHistory) return;
     const isHome = pageKey === 'home';
 
     // ── <title> ───────────────────────────────────────────────────────────
@@ -939,7 +943,7 @@ export function DocumentHead() {
         width: 1024,
         height: 1024,
       },
-      sameAs: [APP_STORE_URL],
+      sameAs: [APP_STORE_URL, 'https://discord.gg/hztjqAweUz'],
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -1011,6 +1015,12 @@ export function DocumentHead() {
           it: 'Risoluzione dei problemi', ja: 'トラブルシューティング', 'zh-Hans': '故障排除', 'zh-Hant': '故障排除',
           ar: 'حل المشكلات', ru: 'Устранение неполадок', nl: 'Probleemoplossing', tr: 'Sorun Giderme',
           sv: 'Felsökning', da: 'Fejlfinding', ko: '문제 해결', nb: 'Feilsøking',
+        },
+        history: {
+          en: 'Version History', de: 'Versionsverlauf', fr: 'Historique des versions', es: 'Historial de versiones',
+          it: 'Cronologia versioni', ja: 'バージョン履歴', 'zh-Hans': '版本历史', 'zh-Hant': '版本歷史',
+          ar: 'سجل الإصدارات', ru: 'История версий', nl: 'Versiegeschiedenis', tr: 'Sürüm Geçmişi',
+          sv: 'Versionshistorik', da: 'Versionshistorik', ko: '버전 기록', nb: 'Versjonshistorikk',
         },
       };
     const homeNames: Record<Language, string> = {

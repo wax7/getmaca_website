@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { Download, Volume2, VolumeX, Shield, Zap, Target, Layers, Keyboard, Palette, Lock, Server, Eye, Check, Star, Paintbrush, Music, Code, Wifi, Users, MessageCircle } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';
 import { homeSectionTranslations, homeFAQTranslations } from '../locales/home-translations';
@@ -25,6 +25,10 @@ import designCreateBg from 'figma:asset/ef27d3d39b4c2bdf481d15f23e6b0d5982edfc5d
 import producerMusicBg from 'figma:asset/767d5bccab2e861af9128623e97237d5127806b1.png';
 import developerCoderBg from 'figma:asset/51f64e556b66fd4249b648a51735a8604d871bdb.png';
 import remoteWorkerBg from 'figma:asset/693eda08fbef49e17fde694db1dfebab2cf5c87d.png';
+import designCreateBgWebp from 'figma:asset/ef27d3d39b4c2bdf481d15f23e6b0d5982edfc5d.webp';
+import producerMusicBgWebp from 'figma:asset/767d5bccab2e861af9128623e97237d5127806b1.webp';
+import developerCoderBgWebp from 'figma:asset/51f64e556b66fd4249b648a51735a8604d871bdb.webp';
+import remoteWorkerBgWebp from 'figma:asset/693eda08fbef49e17fde694db1dfebab2cf5c87d.webp';
 
 export function Home() {
   const currentLang = useValidatedLang();
@@ -216,10 +220,10 @@ export function Home() {
             </motion.div>
 
             <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-              <UseCaseCard icon={Paintbrush} title={t.useCases.designerTitle} description={t.useCases.designer} gradient="from-pink-500 to-purple-500" iconGradient="from-pink-400 to-purple-400" delay={0} backgroundImage={designCreateBg} />
-              <UseCaseCard icon={Music} title={t.useCases.producerTitle} description={t.useCases.producer} gradient="from-amber-500 to-orange-500" iconGradient="from-amber-400 to-orange-400" delay={0.1} backgroundImage={producerMusicBg} />
-              <UseCaseCard icon={Code} title={t.useCases.developerTitle} description={t.useCases.developer} gradient="from-emerald-500 to-teal-500" iconGradient="from-emerald-400 to-teal-400" delay={0.2} backgroundImage={developerCoderBg} />
-              <UseCaseCard icon={Wifi} title={t.useCases.remoteTitle} description={t.useCases.remote} gradient="from-blue-500 to-cyan-500" iconGradient="from-blue-400 to-cyan-400" delay={0.3} backgroundImage={remoteWorkerBg} />
+              <UseCaseCard icon={Paintbrush} title={t.useCases.designerTitle} description={t.useCases.designer} gradient="from-pink-500 to-purple-500" iconGradient="from-pink-400 to-purple-400" delay={0} backgroundImage={designCreateBg} backgroundImageWebp={designCreateBgWebp} />
+              <UseCaseCard icon={Music} title={t.useCases.producerTitle} description={t.useCases.producer} gradient="from-amber-500 to-orange-500" iconGradient="from-amber-400 to-orange-400" delay={0.1} backgroundImage={producerMusicBg} backgroundImageWebp={producerMusicBgWebp} />
+              <UseCaseCard icon={Code} title={t.useCases.developerTitle} description={t.useCases.developer} gradient="from-emerald-500 to-teal-500" iconGradient="from-emerald-400 to-teal-400" delay={0.2} backgroundImage={developerCoderBg} backgroundImageWebp={developerCoderBgWebp} />
+              <UseCaseCard icon={Wifi} title={t.useCases.remoteTitle} description={t.useCases.remote} gradient="from-blue-500 to-cyan-500" iconGradient="from-blue-400 to-cyan-400" delay={0.3} backgroundImage={remoteWorkerBg} backgroundImageWebp={remoteWorkerBgWebp} />
             </div>
           </div>
         </section>

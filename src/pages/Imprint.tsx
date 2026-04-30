@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { FileText } from 'lucide-react';

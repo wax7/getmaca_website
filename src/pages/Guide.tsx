@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import {
   BookOpen, X,

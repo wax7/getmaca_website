@@ -9,10 +9,11 @@ interface UseCaseCardProps {
   iconGradient: string;
   delay: number;
   backgroundImage?: string;
+  backgroundImageWebp?: string;
   overlayColor?: string;
 }
 
-export function UseCaseCard({ icon: Icon, title, description, gradient, iconGradient, delay, backgroundImage, overlayColor }: UseCaseCardProps) {
+export function UseCaseCard({ icon: Icon, title, description, gradient, iconGradient, delay, backgroundImage, backgroundImageWebp, overlayColor }: UseCaseCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -26,12 +27,16 @@ export function UseCaseCard({ icon: Icon, title, description, gradient, iconGrad
       <div className="relative h-48 sm:h-56 overflow-hidden">
         {backgroundImage ? (
           <>
-            <img
-              src={backgroundImage}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            <picture>
+              {backgroundImageWebp && <source srcSet={backgroundImageWebp} type="image/webp" />}
+              <img
+                src={backgroundImage}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30" />
           </>
         ) : (

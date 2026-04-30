@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useNavigate, Link } from 'react-router';
+import { useNavigate, Link } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import { Shield, ArrowLeft, Volume2 } from 'lucide-react';
 import { Language } from '../locales/translations';

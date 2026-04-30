@@ -1,7 +1,7 @@
-import { Outlet, useParams } from 'react-router';
+import type { ReactNode } from 'react';
+import { useParams } from '@/utils/router-adapter';
 import { ScrollToTop } from '../components/ScrollToTop';
 import { ScrollToTopButton } from '../components/ScrollToTopButton';
-import { DocumentHead } from '../components/DocumentHead';
 import { CookieBanner } from '../components/CookieBanner';
 import { resolveLanguage } from '../utils/language-config';
 
@@ -19,8 +19,8 @@ const noscriptMessages: Record<string, { title: string; desc: string; cta: strin
   nb: { title: 'MACA – Master Audio Control', desc: 'Per-app volumkontroll for macOS. Individuell mixer, 10-bands EQ, lydprofiler, Fokusmodus.', cta: 'Last ned fra App Store', jsNote: 'Denne nettsiden krever JavaScript. Vennligst aktiver JavaScript for full opplevelse.' },
 };
 
-export function RootLayout() {
-  const { lang } = useParams();
+export function RootLayout({ children }: { children?: ReactNode }) {
+  const { lang } = useParams<{ lang?: string }>();
   const currentLang = resolveLanguage(lang);
   const isRtl = currentLang === 'ar';
   const ns = noscriptMessages[currentLang] || noscriptMessages.en;
@@ -34,10 +34,13 @@ export function RootLayout() {
       >
         Skip to main content
       </a>
-      {/* Noscript fallback for crawlers / prerender: locale-aware message */}
+      {/* Noscript fallback for crawlers / prerender: locale-aware message.
+          NOTE: Wir nutzen <strong> statt <h1>, weil jede Page bereits ein eigenes
+          H1 rendert. Doppel-H1 schadet SEO (Google + Bing zählen H1s im DOM,
+          inkl. noscript-Inhalt). */}
       <noscript>
         <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>{ns.title}</h1>
+          <strong style={{ fontSize: '1.5rem', display: 'block', marginBottom: '1rem' }}>{ns.title}</strong>
           <p>{ns.desc}</p>
           <p>{ns.jsNote}</p>
           <a href="https://apps.apple.com/app/maca-master-audio-control/id6759258773">{ns.cta}</a>
@@ -45,11 +48,10 @@ export function RootLayout() {
       </noscript>
       {/* Sentinel element for IntersectionObserver-based scroll detection. */}
       <div id="top-sentinel" aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, width: '1px', height: '1px', pointerEvents: 'none' }} />
-      <DocumentHead />
       <ScrollToTop />
       <ScrollToTopButton />
       <CookieBanner />
-      <Outlet />
+      {children}
     </div>
   );
 }

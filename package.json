@@ -62,6 +62,8 @@
   "scripts": {
     "dev": "vike dev",
     "build": "vike build && node scripts/inject-gtag.js",
-    "preview": "vike preview"
+    "preview": "vike preview",
+    "indexnow": "node scripts/indexnow-submit.js",
+    "indexnow:dry": "node scripts/indexnow-submit.js --dry-run"
   }
 }

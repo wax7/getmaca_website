@@ -1,6 +1,6 @@
-import App from '../../src/App';
+import { HomeView } from '../../src/components/HomeView';
 import '../../src/index.css';
 
 export default function Page() {
-  return <App />;
+  return <HomeView />;
 }

@@ -52,21 +52,34 @@ gtag('config', '${TAG_ID}', { 'wait_for_update': 1500 });
 </script>`;
 
 let count = 0;
+let hreflangFixed = 0;
 for (const file of htmlFiles) {
   let html = readFileSync(file, 'utf-8');
+  let mutated = false;
 
-  // Skip if already injected (idempotent)
-  if (html.includes('Google tag (gtag.js)')) continue;
+  // ── Lowercase hreflang attribute (React renders camelCase hrefLang;
+  //    HTML5 spec is case-insensitive but strict validators / Search Console
+  //    prefer lowercase). Idempotent: only matches react-rendered camelCase.
+  if (html.includes('hrefLang=')) {
+    html = html.replace(/\bhrefLang=/g, 'hreflang=');
+    hreflangFixed++;
+    mutated = true;
+  }
 
-  // Inject right after <head> (or after first <head...> tag)
-  const headMatch = html.match(/<head[^>]*>/i);
-  if (!headMatch) continue;
+  // Skip gtag injection if already injected (idempotent)
+  if (!html.includes('Google tag (gtag.js)')) {
+    // Inject right after <head> (or after first <head...> tag)
+    const headMatch = html.match(/<head[^>]*>/i);
+    if (headMatch) {
+      const insertPos = headMatch.index + headMatch[0].length;
+      html = html.slice(0, insertPos) + GTAG_SNIPPET + html.slice(insertPos);
+      count++;
+      mutated = true;
+    }
+  }
 
-  const insertPos = headMatch.index + headMatch[0].length;
-  html = html.slice(0, insertPos) + GTAG_SNIPPET + html.slice(insertPos);
-
-  writeFileSync(file, html, 'utf-8');
-  count++;
+  if (mutated) writeFileSync(file, html, 'utf-8');
 }
 
 console.log(`✅ gtag injected into ${count} HTML files`);
+console.log(`✅ hreflang lowercased in ${hreflangFixed} HTML files`);

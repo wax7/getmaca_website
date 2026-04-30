@@ -1,8 +1,9 @@
-import { Link } from 'react-router';
+import { Link } from '@/utils/router-adapter';
 import type { Language } from '../locales/translations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { DiscordIcon } from './DiscordIcon';
 import macaAppLogo from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.png';
+import macaAppLogoWebp from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.webp';
 
 interface FooterProps {
   currentLang: Language;
@@ -228,6 +229,7 @@ export function Footer({ currentLang }: FooterProps) {
             <div className="flex items-center gap-2.5 mb-3">
               <ImageWithFallback
                 src={macaAppLogo}
+                webpSrc={macaAppLogoWebp}
                 alt="MACA App Icon"
                 className="w-8 h-8 rounded-[22%]"
                 width={32}

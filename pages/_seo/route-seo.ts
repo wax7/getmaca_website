@@ -16,13 +16,14 @@ export const SEO_PAGE_SLUGS = [
   'terms',
   'imprint',
   'feedback',
+  'history',
 ] as const;
 
 export type SeoPageKey = 'home' | typeof SEO_PAGE_SLUGS[number];
 
 const PAGE_TITLES: Record<SeoPageKey, Record<string, string>> = {
   home: {
-    en: 'MACA – Per-App Volume Control for macOS | Mixer, EQ & Profiles',
+    en: 'MACA – Per-App Volume for macOS | Mixer, EQ & Profiles',
     de: 'MACA – Lautstärke pro App für macOS | Mixer, EQ & Profile',
     fr: 'MACA – Volume par Application macOS | Mixer, EQ & Profils Audio',
     es: 'MACA – Volumen por App en macOS | Mezclador, EQ y Perfiles',
@@ -165,6 +166,24 @@ const PAGE_TITLES: Record<SeoPageKey, Record<string, string>> = {
     ko: '피드백 – MACA Master Audio Control',
     nb: 'Tilbakemelding – MACA Master Audio Control',
   },
+  history: {
+    en: 'Version History – MACA Master Audio Control',
+    de: 'Versionsverlauf – MACA Master Audio Control',
+    fr: 'Historique des Versions – MACA Master Audio Control',
+    es: 'Historial de Versiones – MACA Master Audio Control',
+    it: 'Cronologia Versioni – MACA Master Audio Control',
+    ja: 'バージョン履歴 – MACA Master Audio Control',
+    'zh-Hans': '版本历史 – MACA Master Audio Control',
+    'zh-Hant': '版本歷史 – MACA Master Audio Control',
+    ar: 'سجل الإصدارات – MACA Master Audio Control',
+    ru: 'История версий – MACA Master Audio Control',
+    nl: 'Versiegeschiedenis – MACA Master Audio Control',
+    tr: 'Sürüm Geçmişi – MACA Master Audio Control',
+    sv: 'Versionshistorik – MACA Master Audio Control',
+    da: 'Versionshistorik – MACA Master Audio Control',
+    ko: '버전 기록 – MACA Master Audio Control',
+    nb: 'Versjonshistorikk – MACA Master Audio Control',
+  },
 };
 
 const META_DESCRIPTIONS: Record<SeoPageKey, Record<string, string>> = {
@@ -210,7 +229,7 @@ const META_DESCRIPTIONS: Record<SeoPageKey, Record<string, string>> = {
     fr: 'Guide utilisateur étape par étape pour MACA. Configurer le volume par app, profils audio, égaliseur 10 bandes et Mode Focus sur macOS.',
     es: 'Guía de usuario paso a paso para MACA. Configura el volumen por app, perfiles de audio, ecualizador de 10 bandas y Modo Enfoque en macOS.',
     it: 'Guida utente passo passo per MACA. Configura volume per app, profili audio, equalizzatore 10 bande e Modalità Focus su macOS.',
-    ja: 'MACAユーザーガイド。アプリ別音量、オーディオプロファイル、10バンドEQ、フォーカスモードの設定方法をステップバイステップで解説。',
+    ja: 'MACAユーザーガイド。macOSでアプリ別音量、オーディオプロファイル、10バンドEQ、フォーカスモードを設定する方法をステップバイステップで詳しく解説します。インストールから上級設定まで。',
     'zh-Hans': 'MACA用户指南。逐步学习如何在macOS上设置每应用音量控制、音频配置文件、10段均衡器和专注模式。',
     'zh-Hant': 'MACA用戶指南。逐步學習如何在macOS上設定每應用音量控制、音頻配置文件、10段均衡器和專注模式。',
     ar: 'دليل المستخدم خطوة بخطوة لـ MACA. تعلم كيفية إعداد التحكم في الصوت لكل تطبيق والملفات الصوتية والمعادل ووضع التركيز على macOS.',
@@ -311,6 +330,24 @@ const META_DESCRIPTIONS: Record<SeoPageKey, Record<string, string>> = {
     da: 'Send feedback eller rapportér fejl for MACA – Master Audio Control for macOS. Hjælp os med at forbedre lydstyrke per app, EQ, profiler og Fokusmodus.',
     ko: 'MACA에 피드백을 보내거나 버그를 신고하세요 – macOS용 Master Audio Control. 앱별 볼륨, EQ, 프로필 및 포커스 모드 개선에 도움을 주세요.',
     nb: 'Send tilbakemelding eller rapporter feil for MACA – Master Audio Control for macOS. Hjelp oss å forbedre volum per app, EQ, profiler og Fokusmodus.',
+  },
+  history: {
+    en: 'Version history and changelog for MACA – Master Audio Control for macOS. Latest features, improvements and bug fixes for per-app volume control, EQ, audio profiles and Focus Mode.',
+    de: 'Versionsverlauf und Changelog für MACA – Master Audio Control für macOS. Neueste Features, Verbesserungen und Bugfixes für Lautstärke pro App, EQ, Audio-Profile und Fokus-Modus.',
+    fr: 'Historique des versions et journal des modifications pour MACA – Master Audio Control pour macOS. Dernières fonctionnalités, améliorations et corrections pour le volume par app, EQ et Mode Focus.',
+    es: 'Historial de versiones y registro de cambios para MACA – Master Audio Control para macOS. Últimas funciones, mejoras y correcciones de errores para volumen por app, EQ y Modo Enfoque.',
+    it: 'Cronologia versioni e changelog per MACA – Master Audio Control per macOS. Ultime funzionalità, miglioramenti e correzioni per volume per app, EQ e Modalità Focus.',
+    ja: 'macOS用 MACA – Master Audio Control のバージョン履歴とチェンジログ。アプリ別音量、EQ、オーディオプロファイル、フォーカスモードの最新機能、改善、バグ修正。',
+    'zh-Hans': 'macOS版 MACA – Master Audio Control 的版本历史和更新日志。最新功能、改进和错误修复，针对每应用音量、EQ、音频配置文件和专注模式。',
+    'zh-Hant': 'macOS版 MACA – Master Audio Control 的版本歷史和更新日誌。最新功能、改進和錯誤修復，針對每應用音量、EQ、音頻設定檔和專注模式。',
+    ar: 'سجل الإصدارات وسجل التغييرات لـ MACA – Master Audio Control لـ macOS. أحدث الميزات والتحسينات وإصلاحات الأخطاء للتحكم بصوت كل تطبيق والمعادل ووضع التركيز.',
+    ru: 'История версий и журнал изменений MACA – Master Audio Control для macOS. Новые функции, улучшения и исправления для громкости приложений, EQ, профилей и режима фокусировки.',
+    nl: 'Versiegeschiedenis en changelog voor MACA – Master Audio Control voor macOS. Nieuwste functies, verbeteringen en bugfixes voor volume per app, EQ, audioprofielen en Focusmodus.',
+    tr: 'macOS için MACA – Master Audio Control sürüm geçmişi ve değişiklik günlüğü. Uygulama bazlı ses kontrolü, EQ, ses profilleri ve Odak Modu için en yeni özellikler ve düzeltmeler.',
+    sv: 'Versionshistorik och ändringslogg för MACA – Master Audio Control för macOS. Senaste funktionerna, förbättringarna och buggfixarna för volym per app, EQ, ljudprofiler och Fokusläge.',
+    da: 'Versionshistorik og ændringslog for MACA – Master Audio Control for macOS. Nyeste funktioner, forbedringer og fejlrettelser for lydstyrke per app, EQ, lydprofiler og Fokusmodus.',
+    ko: 'macOS용 MACA – Master Audio Control의 버전 기록 및 변경 로그. 앱별 볼륨, EQ, 오디오 프로필 및 포커스 모드의 최신 기능, 개선 및 버그 수정.',
+    nb: 'Versjonshistorikk og endringslogg for MACA – Master Audio Control for macOS. Nyeste funksjoner, forbedringer og feilrettinger for volum per app, EQ, lydprofiler og Fokusmodus.',
   },
 };
 

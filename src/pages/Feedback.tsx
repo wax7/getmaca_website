@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import { MessageSquare, Bug, Lightbulb, Upload, X, Check, Send } from 'lucide-react';
 import { translations, Language } from '../locales/translations';

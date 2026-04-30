@@ -2,8 +2,11 @@ import type { Config } from 'vike/types';
 import vikeReact from 'vike-react/config';
 
 export default {
-  // Keep existing app behavior while emitting prerendered locale entry points.
-  ssr: false,
+  // SSR enabled: prerender writes full HTML body, hydrated by client.
+  // clientRouting enables SPA-style nav for <a href> via Vike (no full reload).
+  ssr: true,
   prerender: true,
+  clientRouting: true,
+  hydrationCanBeAborted: true,
   extends: [vikeReact],
 } satisfies Config;

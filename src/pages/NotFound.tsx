@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import { Home, ArrowLeft } from 'lucide-react';
 import { translations, type Language } from '../locales/translations';

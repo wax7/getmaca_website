@@ -12,7 +12,7 @@
  */
 
 import { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useParams, useNavigate } from '@/utils/router-adapter';
 import { type Language } from '../locales/translations';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from '../utils/language-config';
 

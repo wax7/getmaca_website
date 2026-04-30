@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router';
+import { Navigate } from '@/utils/router-adapter';
 import { type Language } from '../locales/translations';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, isValidLanguage } from '../utils/language-config';
 

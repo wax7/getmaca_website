@@ -1,6 +1,6 @@
 import { X, Home, FileText, Download, Shield, HelpCircle, Clock, Moon, Sun, Globe, Check, Scale, Wrench, BookOpen } from 'lucide-react';
 import { trackAppStoreClick } from '../utils/trackConversion';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from '@/utils/router-adapter';
 import type { Language } from '../locales/translations';
 import { languageNames } from '../locales/translations';
 import { motion, AnimatePresence } from 'motion/react';
@@ -616,7 +616,7 @@ export function NavigationMenu({ isOpen, onClose, currentLang, isDarkMode, onTog
 
                 <motion.div custom={4} initial="hidden" animate="visible" variants={menuItemVariants}>
                   <Link
-                    to="/history"
+                    to={`/${currentLang}/history`}
                     onClick={onClose}
                     className="flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
                   >

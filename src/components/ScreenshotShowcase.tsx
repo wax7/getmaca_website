@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { Language } from '../locales/translations';
 
-// Import real screenshots
+// Import real screenshots (PNG fallback + WebP modern)
 import screenshot1 from 'figma:asset/31fb86d38219c922a45a6dc661131a10a1ad8e23.png';
 import screenshot2 from 'figma:asset/e2cb8e5e5695be07037e17128c790451dd3bb748.png';
 import screenshot3 from 'figma:asset/4bba7de5516ff6cc1ee2e587ebb04b82f11fe63c.png';
@@ -12,6 +12,13 @@ import screenshot4 from 'figma:asset/b2679b7c3124c799faa5c96a97e26fbc9073e595.pn
 import screenshot5 from 'figma:asset/a5be3662d52a2a8e5acba1d6308e4e6c875caf94.png';
 import screenshot6 from 'figma:asset/04ab18392a3b3432344bb9b7f7679b6a7f60a6c6.png';
 import screenshot7 from 'figma:asset/6675a694d43ed8c7d9efcc9b053699ae9825c385.png';
+import screenshot1Webp from 'figma:asset/31fb86d38219c922a45a6dc661131a10a1ad8e23.webp';
+import screenshot2Webp from 'figma:asset/e2cb8e5e5695be07037e17128c790451dd3bb748.webp';
+import screenshot3Webp from 'figma:asset/4bba7de5516ff6cc1ee2e587ebb04b82f11fe63c.webp';
+import screenshot4Webp from 'figma:asset/b2679b7c3124c799faa5c96a97e26fbc9073e595.webp';
+import screenshot5Webp from 'figma:asset/a5be3662d52a2a8e5acba1d6308e4e6c875caf94.webp';
+import screenshot6Webp from 'figma:asset/04ab18392a3b3432344bb9b7f7679b6a7f60a6c6.webp';
+import screenshot7Webp from 'figma:asset/6675a694d43ed8c7d9efcc9b053699ae9825c385.webp';
 
 interface ScreenshotShowcaseProps {
   title: string;
@@ -21,6 +28,7 @@ interface ScreenshotShowcaseProps {
 
 interface Screenshot {
   image: string;
+  imageWebp?: string;
   title: Record<string, string>;
   description: Record<string, string>;
 }
@@ -41,6 +49,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
   const screenshots: Screenshot[] = [
     {
       image: screenshot1,
+      imageWebp: screenshot1Webp,
       title: {
         en: 'Complete Audio Control',
         de: 'Vollständige Audio-Kontrolle',
@@ -60,6 +69,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot2,
+      imageWebp: screenshot2Webp,
       title: {
         en: 'Individual App Control',
         de: 'Individuelle App-Kontrolle',
@@ -79,6 +89,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot3,
+      imageWebp: screenshot3Webp,
       title: {
         en: 'Gaming Profiles',
         de: 'Gaming-Profile',
@@ -98,6 +109,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot4,
+      imageWebp: screenshot4Webp,
       title: {
         en: 'Professional Equalizer',
         de: 'Professioneller Equalizer',
@@ -117,6 +129,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot5,
+      imageWebp: screenshot5Webp,
       title: {
         en: 'Quick Profile Switching',
         de: 'Schneller Profil-Wechsel',
@@ -136,6 +149,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot6,
+      imageWebp: screenshot6Webp,
       title: {
         en: 'Focus Mode',
         de: 'Fokus-Modus',
@@ -155,6 +169,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
     },
     {
       image: screenshot7,
+      imageWebp: screenshot7Webp,
       title: {
         en: 'Total Silence Mode',
         de: 'Totaler Stille-Modus',
@@ -324,6 +339,7 @@ export function ScreenshotShowcase({ title, subtitle, currentLang }: ScreenshotS
                 <div className="relative rounded-xl overflow-hidden mac-window flex items-center justify-center" style={{ minHeight: '300px', maxHeight: '700px' }}>
                   <ImageWithFallback
                     src={screenshot.image}
+                    webpSrc={screenshot.imageWebp}
                     alt={screenshot.title[lang] || screenshot.title.en}
                     className="w-auto h-auto max-w-full max-h-[700px] object-contain"
                     loading={index === 0 ? 'eager' : 'lazy'}

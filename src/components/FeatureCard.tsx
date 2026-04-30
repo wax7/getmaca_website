@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ReactNode } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { ArrowRight } from 'lucide-react';
 
 interface FeatureCardProps {

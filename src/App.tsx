@@ -4,7 +4,7 @@
  * Home is imported from /components/HomeView to bypass cached /pages/Home
  * Terms is imported from /components/TermsView to bypass cached /pages/Terms
  */
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider } from '@/utils/router-adapter';
 import { SitemapXml } from "./components/SitemapXml";
 import { RobotsTxt } from "./components/RobotsTxt";
 import { FaviconRedirect } from "./components/FaviconRedirect";
@@ -29,8 +29,11 @@ import { TermsView } from "./components/TermsView";
 //
 // SELF-CONTAINED: hardcodes language list to avoid any import-timing risk.
 // DocumentHead later re-applies everything with full page-specific detail.
+//
+// SSR-SAFE: skip when window is undefined (Vike pre-render).
 // ---------------------------------------------------------------------------
 (function immediateLocaleSEO() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
   try {
     const BASE_URL = 'https://getmaca.de';
     // Hardcoded – must match SUPPORTED_LANGUAGES in /utils/language-config.ts

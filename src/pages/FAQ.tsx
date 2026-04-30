@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useNavigate, Link } from 'react-router';
+import { useNavigate, Link } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import { HelpCircle, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { Language } from '../locales/translations';

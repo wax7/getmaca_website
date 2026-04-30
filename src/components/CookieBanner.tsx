@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useParams, Link } from 'react-router';
+import { useParams, Link } from '@/utils/router-adapter';
 import { Shield, Settings, ChevronDown, ChevronUp } from 'lucide-react';
 import { type Language } from '../locales/translations';
 

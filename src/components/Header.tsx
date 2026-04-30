@@ -2,11 +2,12 @@ import { motion } from 'motion/react';
 import { Moon, Sun, Menu, Download } from 'lucide-react';
 import { trackAppStoreClick } from '../utils/trackConversion';
 import { ReactNode, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from '@/utils/router-adapter';
 import type { Language } from '../locales/translations';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { NavigationMenu } from './NavigationMenu';
 import macaAppLogo from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.png';
+import macaAppLogoWebp from 'figma:asset/7726871357dffca8a1c72824ee6fcf70b91dc923.webp';
 
 const downloadLabels: Record<Language, string> = {
   en: 'Download',
@@ -80,6 +81,7 @@ export function Header({ scrolled, currentLang, children, isDarkMode, onToggleDa
             >
               <ImageWithFallback
                 src={macaAppLogo}
+                webpSrc={macaAppLogoWebp}
                 alt="MACA App Icon"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-[22%] flex-shrink-0"
                 width={36}

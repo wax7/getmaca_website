@@ -43,6 +43,22 @@ else
 fi
 echo ""
 
+echo -e "${BLUE}▶ Step 1b: Cleanup macOS Finder duplicates (' 2', ' 3' suffix)${NC}"
+DUP_COUNT=$(find . \( -name "* 2" -o -name "* 3" -o -name "* 2.*" -o -name "* 3.*" -o -name "* copy" -o -name "* copy.*" \) -not -path "./node_modules/*" -not -path "./.git/*" 2>/dev/null | wc -l | tr -d ' ')
+if [ "$DUP_COUNT" -gt 0 ]; then
+  echo -e "${YELLOW}  → Removing $DUP_COUNT duplicate file(s)${NC}"
+  find . \( -name "* 2" -o -name "* 3" -o -name "* 2.*" -o -name "* 3.*" -o -name "* copy" -o -name "* copy.*" \) -not -path "./node_modules/*" -not -path "./.git/*" -exec rm -rf {} + 2>/dev/null
+fi
+if [ -d build ]; then
+  find build \( -name "* 2" -o -name "* 3" -o -name "* 2.*" -o -name "* 3.*" \) -exec rm -rf {} + 2>/dev/null
+fi
+echo -e "${GREEN}  ✓ Cleanup done${NC}\n"
+
+if [ "$TAG" = "latest" ]; then
+  echo -e "${YELLOW}⚠️  WARNING: Pushing tag 'latest' will trigger Watchtower auto-deploy on production!${NC}"
+  echo -e "${YELLOW}    For safe testing use:  ./scripts/build-and-push.sh seo-test${NC}\n"
+fi
+
 echo -e "${BLUE}▶ Step 2: Build local image for test${NC}"
 docker build \
   --tag "$IMAGE_FULL_NAME:$TAG" \

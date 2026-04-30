@@ -102,16 +102,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="google-site-verification" content="LdTMMj9i3tWLwjP10_kzezUtSQ2b71WLWVcncciezE4" />
 
-    <!-- ── Canonical & Hreflang (static defaults) ── -->
+    <!-- ── Canonical & Hreflang (static defaults – Vike Head overrides per route) ── -->
     <link rel="canonical" href="https://getmaca.de/en" />
-    <link rel="alternate" hreflang="en"        href="https://getmaca.de/en" />
-    <link rel="alternate" hreflang="de"        href="https://getmaca.de/de" />
-    <link rel="alternate" hreflang="fr"        href="https://getmaca.de/fr" />
-    <link rel="alternate" hreflang="es"        href="https://getmaca.de/es" />
-    <link rel="alternate" hreflang="it"        href="https://getmaca.de/it" />
-    <link rel="alternate" hreflang="pt"        href="https://getmaca.de/pt" />
-    <link rel="alternate" hreflang="ja"        href="https://getmaca.de/ja" />
-    <link rel="alternate" hreflang="zh"        href="https://getmaca.de/zh" />
+    <link rel="alternate" hreflang="en"      href="https://getmaca.de/en" />
+    <link rel="alternate" hreflang="de"      href="https://getmaca.de/de" />
+    <link rel="alternate" hreflang="fr"      href="https://getmaca.de/fr" />
+    <link rel="alternate" hreflang="es"      href="https://getmaca.de/es" />
+    <link rel="alternate" hreflang="it"      href="https://getmaca.de/it" />
+    <link rel="alternate" hreflang="ja"      href="https://getmaca.de/ja" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant" />
+    <link rel="alternate" hreflang="ar"      href="https://getmaca.de/ar" />
+    <link rel="alternate" hreflang="ru"      href="https://getmaca.de/ru" />
+    <link rel="alternate" hreflang="nl"      href="https://getmaca.de/nl" />
+    <link rel="alternate" hreflang="tr"      href="https://getmaca.de/tr" />
+    <link rel="alternate" hreflang="sv"      href="https://getmaca.de/sv" />
+    <link rel="alternate" hreflang="da"      href="https://getmaca.de/da" />
+    <link rel="alternate" hreflang="ko"      href="https://getmaca.de/ko" />
+    <link rel="alternate" hreflang="nb"      href="https://getmaca.de/nb" />
     <link rel="alternate" hreflang="x-default" href="https://getmaca.de/en" />
 
     <!-- ── Open Graph ── -->
@@ -121,13 +129,22 @@
     <meta property="og:image:height" content="1024" />
     <meta property="og:image:alt" content="MACA – Master Audio Control App Icon" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:locale:alternate" content="fr_FR" />
     <meta property="og:locale:alternate" content="es_ES" />
     <meta property="og:locale:alternate" content="it_IT" />
-    <meta property="og:locale:alternate" content="pt_PT" />
     <meta property="og:locale:alternate" content="ja_JP" />
     <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="zh_TW" />
+    <meta property="og:locale:alternate" content="ar_SA" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:locale:alternate" content="sv_SE" />
+    <meta property="og:locale:alternate" content="da_DK" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="nb_NO" />
 
     <!-- ── Twitter Card ── -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -162,7 +179,7 @@
       "installUrl": "https://apps.apple.com/app/maca-master-audio-control/id6759258773",
       "softwareVersion": "2.0",
       "datePublished": "2024-12-01",
-      "inLanguage": ["en", "de", "fr", "es", "it", "pt", "ja", "zh"],
+      "inLanguage": ["en", "de", "fr", "es", "it", "ja", "zh-Hans", "zh-Hant", "ar", "ru", "nl", "tr", "sv", "da", "ko", "nb"],
       "featureList": [
         "Per-app volume control",
         "Individual app mute",
@@ -205,7 +222,7 @@
       "@id": "https://getmaca.de/#website",
       "url": "https://getmaca.de",
       "name": "MACA – Master Audio Control",
-      "inLanguage": ["en", "de", "fr", "es", "it", "pt", "ja", "zh"],
+      "inLanguage": ["en", "de", "fr", "es", "it", "ja", "zh-Hans", "zh-Hant", "ar", "ru", "nl", "tr", "sv", "da", "ko", "nb"],
       "publisher": { "@id": "https://getmaca.de/#organization" }
     }
     </script>
@@ -224,46 +241,7 @@
       }
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is MACA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MACA (Master Audio Control App) is a macOS application that gives you individual volume control for every app running on your Mac."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is MACA free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MACA offers a free version with core features. The Pro version unlocks audio profiles, enhanced equalizer, Focus Mode, and more — available as a one-time purchase with no subscription."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does MACA collect my data?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. MACA processes everything locally on your Mac. We do not collect, store, or transmit any personal data."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which macOS versions does MACA support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MACA requires macOS 15 (Sequoia) or newer and is optimized for Apple Silicon (M1/M2/M3/M4)."
-          }
-        }
-      ]
-    }
-    </script>
+    <!-- FAQPage and BreadcrumbList are injected per-route via pages/+Head.tsx -->
   </head>
 
   <body>

@@ -3,7 +3,7 @@ import { DocumentHead } from '../components/DocumentHead';
 import { Header } from '../components/Header';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useScrolled } from '../hooks/useScrolled';
-import { Link } from 'react-router';
+import { Link } from '@/utils/router-adapter';
 import { ArrowLeft } from 'lucide-react';
 
 // Read the user's preferred language from localStorage (set by LanguageSelector)

@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://getmaca.de/en</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -28,7 +28,7 @@
 
   <url>
     <loc>https://getmaca.de/en/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -75,8 +75,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/en/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/en/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/en/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -147,32 +195,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/en/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/de</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -196,7 +220,7 @@
 
   <url>
     <loc>https://getmaca.de/de/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -243,8 +267,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/de/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/de/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/de/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -315,32 +387,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/de/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/fr</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -364,7 +412,7 @@
 
   <url>
     <loc>https://getmaca.de/fr/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -411,8 +459,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/fr/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/fr/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/fr/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -483,32 +579,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/fr/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/es</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -532,7 +604,7 @@
 
   <url>
     <loc>https://getmaca.de/es/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -579,8 +651,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/es/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/es/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/es/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -651,32 +771,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/es/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/it</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -700,7 +796,7 @@
 
   <url>
     <loc>https://getmaca.de/it/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -747,8 +843,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/it/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/it/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/it/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -819,32 +963,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/it/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/ja</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -868,7 +988,7 @@
 
   <url>
     <loc>https://getmaca.de/ja/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -915,8 +1035,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/ja/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/ja/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/ja/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -987,32 +1155,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/ja/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/zh-Hans</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1036,7 +1180,7 @@
 
   <url>
     <loc>https://getmaca.de/zh-Hans/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1083,8 +1227,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/zh-Hans/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/zh-Hans/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/zh-Hans/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1155,32 +1347,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/zh-Hans/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/zh-Hant</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1204,7 +1372,7 @@
 
   <url>
     <loc>https://getmaca.de/zh-Hant/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1251,8 +1419,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/zh-Hant/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/zh-Hant/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/zh-Hant/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1323,32 +1539,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/zh-Hant/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/ar</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1372,7 +1564,7 @@
 
   <url>
     <loc>https://getmaca.de/ar/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1419,8 +1611,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/ar/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/ar/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/ar/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1491,32 +1731,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/ar/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/ru</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1540,7 +1756,7 @@
 
   <url>
     <loc>https://getmaca.de/ru/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1587,8 +1803,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/ru/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/ru/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/ru/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1659,32 +1923,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/ru/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/nl</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1708,7 +1948,7 @@
 
   <url>
     <loc>https://getmaca.de/nl/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1755,8 +1995,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/nl/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/nl/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/nl/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1827,32 +2115,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/nl/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/tr</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -1876,7 +2140,7 @@
 
   <url>
     <loc>https://getmaca.de/tr/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -1923,8 +2187,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/tr/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/tr/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/tr/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -1995,32 +2307,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/tr/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/sv</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -2044,7 +2332,7 @@
 
   <url>
     <loc>https://getmaca.de/sv/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -2091,8 +2379,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/sv/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/sv/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/sv/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -2163,32 +2499,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/sv/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/da</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -2212,7 +2524,7 @@
 
   <url>
     <loc>https://getmaca.de/da/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -2259,8 +2571,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/da/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/da/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/da/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -2331,32 +2691,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/da/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/ko</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -2380,7 +2716,7 @@
 
   <url>
     <loc>https://getmaca.de/ko/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -2427,8 +2763,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/ko/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/ko/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/ko/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -2499,32 +2883,8 @@
   </url>
 
   <url>
-    <loc>https://getmaca.de/ko/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
-  </url>
-
-  <url>
     <loc>https://getmaca.de/nb</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en"/>
@@ -2548,7 +2908,7 @@
 
   <url>
     <loc>https://getmaca.de/nb/guide</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/guide"/>
@@ -2595,8 +2955,56 @@
   </url>
 
   <url>
+    <loc>https://getmaca.de/nb/troubleshooting</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
+  </url>
+
+  <url>
+    <loc>https://getmaca.de/nb/history</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/history"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/history"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/history"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/history"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/history"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/history"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/history"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/history"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/history"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/history"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/history"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/history"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/history"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/history"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/history"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/history"/>
+  </url>
+
+  <url>
     <loc>https://getmaca.de/nb/imprint</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/imprint"/>
@@ -2664,30 +3072,6 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/terms"/>
     <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/terms"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/terms"/>
-  </url>
-
-  <url>
-    <loc>https://getmaca.de/nb/troubleshooting</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getmaca.de/en/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://getmaca.de/de/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getmaca.de/fr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://getmaca.de/es/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://getmaca.de/it/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://getmaca.de/ja/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://getmaca.de/zh-Hans/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://getmaca.de/zh-Hant/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getmaca.de/ar/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://getmaca.de/ru/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://getmaca.de/nl/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://getmaca.de/tr/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://getmaca.de/sv/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://getmaca.de/da/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://getmaca.de/ko/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://getmaca.de/nb/troubleshooting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://getmaca.de/en/troubleshooting"/>
   </url>
 
 </urlset>

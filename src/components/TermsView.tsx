@@ -1,5 +1,5 @@
 /* Terms of Use view component – MACA – 2026-03-12 */
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@/utils/router-adapter';
 import { motion } from 'motion/react';
 import { FileText, ArrowLeft } from 'lucide-react';
 import { type Language } from '../locales/translations';
