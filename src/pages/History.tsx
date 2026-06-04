@@ -75,9 +75,169 @@ export function History() {
 
           {/* Version Timeline */}
           <div className="space-y-12">
-            {/* Version 1.1.12 Build 084 */}
+
+            {/* Version 1.2.1 Build 096 */}
             <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
               <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Version 1.2.1 Build 096
+                  </h2>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Free Volume &amp; Mute Forever &bull; May 2026
+                  </p>
+                </div>
+                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
+                  Latest
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New (Free):</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Volume and mute are now permanently free for ALL apps — unlimited. The previous 3-app limit has been removed. Adjust volume and mute every audio app on your Mac at no cost.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Three Pro purchase options: monthly subscription, yearly subscription (best value), and one-time lifetime purchase — prices come directly from the App Store and are localized for every region.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Gentle Pro reminder — instead of an aggressive paywall, MACA now shows a discreet upgrade hint only after a few opens and only every 3–6 days thereafter. Silently skipped during an active trial or subscription.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Verified compatible with macOS 26.5 (Tahoe).</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.1.16 Build 095 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.1.16 Build 095
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Browser Audio Recognition Fix &bull; May 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Brave, Safari, Edge and other Chromium/WebKit-based browsers were not always recognized when they started playing audio. MACA now uses a multi-stage fallback that automatically retries — every browser is now reliably detected.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> The muting tap now stays alive after any failure and retries automatically with backoff (30 s → 30 min) — audio control recovers on its own without any manual action.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.1.15 Build 094 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.1.15 Build 094
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Bluetooth Stability &bull; April 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Bluetooth audio quality could degrade when another app used the microphone (e.g. during a video call). MACA now detects the Bluetooth profile change and recovers automatically — no more manual speaker-switching workaround.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> A rare high-pitched feedback tone (~4 kHz) that could appear on Bluetooth speakers after extended use has been eliminated.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.1.12 Build 086 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                  Version 1.1.12 Build 086
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Volume Fix, Security &amp; Audio Control Fix &bull; March 2026
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Per-app audio control (volume, mute) sometimes stopped working for Discord, Brave, and other Electron/Chromium apps — stale audio controllers are now validated before every reuse.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Audio routed through MACA was quieter than direct system audio — system volume was being applied twice, causing 6 dB of loss at 50% volume. Now fixed.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400 font-bold mt-1">✓</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Fixed:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Level meter and playback detection not working on startup for apps at 100% volume — they now activate instantly when you open MACA.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New (Beta):</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Multi-room audio routing — route different apps to multiple speakers simultaneously. Requires setup in Audio settings.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-purple-600 dark:text-purple-400 font-bold mt-1">★</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">New:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Local Control API for automation — control MACA from other apps or scripts on your Mac.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-1">↑</span>
+                  <div>
+                    <strong className="text-slate-900 dark:text-white">Improved:</strong>
+                    <span className="text-slate-700 dark:text-slate-300"> Better app detection during startup — no need to move a slider to get the level meter working.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Version 1.1.12 Build 084 */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 border border-slate-200 dark:border-slate-700">
+              <div className="mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
                     Version 1.1.12 Build 084
@@ -86,9 +246,6 @@ export function History() {
                     MultiRoom, Volume Fix &amp; Better Startup Performance &bull; March 22, 2026
                   </p>
                 </div>
-                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-semibold">
-                  Latest
-                </span>
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
