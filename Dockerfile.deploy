@@ -1,0 +1,31 @@
+# ── Production-only image ─────────────────────────────────────
+# The npm build runs in the GitHub Actions workflow (natively on the
+# amd64 runner) before this Dockerfile is invoked.  This stage only
+# copies the pre-built static files into an Nginx image.
+# Multi-arch (amd64 + arm64) is fast here: no Node.js under QEMU.
+FROM nginx:1.27-alpine
+
+LABEL maintainer="wax7"
+LABEL description="GetMaca Website – getmaca.de"
+LABEL org.opencontainers.image.source="https://github.com/wax7/getmaca_website"
+
+# Nginx configuration
+COPY nginx/nginx.conf  /etc/nginx/nginx.conf
+COPY nginx/conf.d/     /etc/nginx/conf.d/
+
+# Pre-built static assets (produced by 'npm run build' in CI)
+RUN rm -rf /usr/share/nginx/html/*
+COPY build/client/ /usr/share/nginx/html/
+
+# Prepare log directory
+RUN mkdir -p /var/log/nginx && \
+    chown -R nginx:nginx /var/log/nginx && \
+    chown -R nginx:nginx /usr/share/nginx/html && \
+    nginx -t
+
+EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost/health || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]

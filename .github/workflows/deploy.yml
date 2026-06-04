@@ -28,6 +28,24 @@ jobs:
         run: |
           bash scripts/prepare_seo_artifacts.sh
 
+      # ── Build website natively on amd64 runner ─────────────────
+      # Running 'npm run build' (Vike SSG, 145+ pre-rendered pages) inside
+      # the Docker ARM64 stage requires QEMU emulation → Node.js runs 5–10×
+      # slower and causes the build to hang.  We build here on the native
+      # runner and only copy the static output into the lightweight Nginx
+      # image below (no Node.js under QEMU needed for the Docker stage).
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build website (Vike SSG)
+        run: npm run build
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4.0.0
 
@@ -52,6 +70,7 @@ jobs:
         uses: docker/build-push-action@v7.0.0
         with:
           context: .
+          file: Dockerfile.deploy
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
